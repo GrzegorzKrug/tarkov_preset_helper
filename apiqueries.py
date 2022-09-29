@@ -67,6 +67,130 @@ items_request = """query {
 }
 """
 
+parts_request = """query {
+  items (types: mods){
+    name
+    conflictingSlotIds
+    conflictingItems{
+      name
+    }
+    category {
+      name
+    }
+    properties{
+      __typename
+      ... on ItemPropertiesWeapon{
+        slots{
+          id
+          name
+          nameId
+          required
+          filters{
+            allowedCategories{name}
+            allowedItems{name}
+            excludedCategories{name}
+            excludedItems{name}
+          }
+        }
+      }
+      ... on ItemPropertiesWeaponMod{       
+        recoilModifier
+        ergonomics
+        accuracyModifier
+        slots{
+          id
+          name
+          nameId          
+          required
+          filters{
+            allowedCategories{
+              name
+            }
+            allowedItems{
+              name
+            }
+            excludedCategories{
+              name
+            }
+            excludedItems{
+              name
+            }
+          }
+        }
+      }   
+      ... on ItemPropertiesMagazine{
+        ergonomics        
+      }
+      ... on ItemPropertiesScope{
+        ergonomics
+      } 
+
+    }
+
+  }
+}
+"""
+weapon_request = """query {
+  items (types: gun){
+    name
+    conflictingSlotIds
+    category {
+      name
+    }
+    properties{
+      __typename
+      ... on ItemPropertiesWeapon{
+        slots{
+          id
+          name
+          nameId
+          required
+          filters{
+            allowedCategories{name}
+            allowedItems{name}
+            excludedCategories{name}
+            excludedItems{name}
+          }
+        }
+      }
+      ... on ItemPropertiesWeaponMod{       
+        recoilModifier
+        ergonomics
+        accuracyModifier
+        slots{
+          id
+          name
+          nameId          
+          required
+          filters{
+            allowedCategories{
+              name
+            }
+            allowedItems{
+              name
+            }
+            excludedCategories{
+              name
+            }
+            excludedItems{
+              name
+            }
+          }
+        }
+      }   
+      ... on ItemPropertiesMagazine{
+        ergonomics        
+      }
+      ... on ItemPropertiesScope{
+        ergonomics
+      } 
+      
+    }
+		
+  }
+}
+"""
+
 JSON_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data") + os.path.sep
 PICS_DIR = os.path.join(JSON_DIR, "images") + os.path.sep
 # print(JSON_DIR)
@@ -83,7 +207,7 @@ def send_query(cur_query):
     # decoded = encoded.decode("ascii")
     # print(f"Encoded: {encoded}")
     # print(f"Decoded: {decoded}")
-    head = {"Accept-Encoding": "gzip, deflate, br"}
+    # head = {"Accept-Encoding": "gzip, deflate, br"}
 
     response = requests.get(url=API_URL, params={'query': cur_query}, )
     return response
@@ -114,6 +238,32 @@ def query_items():
             json.dump(js, file, indent=2)
     else:
         print(f"Items not ok: {response.status_code}")
+
+
+def query_parts():
+    response = send_query(parts_request)
+    if response.status_code == 200:
+        print("Query parts ok.")
+
+        js = json.loads(response.text)
+
+        with open(JSON_DIR + "parts.json", "wt") as file:
+            json.dump(js, file, indent=2)
+    else:
+        print(f"Parts not ok: {response.status_code}")
+
+
+def query_weapons():
+    response = send_query(weapon_request)
+    if response.status_code == 200:
+        print("Query guns ok.")
+
+        js = json.loads(response.text)
+
+        with open(JSON_DIR + "weapons.json", "wt") as file:
+            json.dump(js, file, indent=2)
+    else:
+        print(f"Guns not ok: {response.status_code}")
 
 
 def unify_image(img, to_dim):
@@ -174,7 +324,9 @@ def query_images():
 
 
 if __name__ == "__main__":
-    query_traders()
-    query_items()
+    # query_traders()
+    # query_items()
+    query_parts()
+    query_weapons()
     # query_images() # Long command
     pass
