@@ -36,6 +36,8 @@ items_request = """query {
     name
     shortName
     avg24hPrice
+    low24hPrice
+    lastLowPrice
     conflictingItems{
       name
     }
@@ -172,7 +174,7 @@ def query_images():
 
 
 if __name__ == "__main__":
-    # query_traders()
-    # query_items()
-    # query_images()
+    query_traders()
+    query_items()
+    # query_images() # Long command
     pass
