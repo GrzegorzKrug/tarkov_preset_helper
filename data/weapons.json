@@ -7,6 +7,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -298,7 +302,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M4A1_5.56x45_assault_rifle"
       },
       {
         "name": "Makarov PM 9x18PM pistol",
@@ -306,6 +311,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -329,7 +338,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_9x18PM_pistol"
       },
       {
         "name": "MP-133 12ga pump-action shotgun",
@@ -337,6 +347,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -500,7 +514,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-133_12ga_pump-action_shotgun"
       },
       {
         "name": "SV-98 7.62x54R bolt-action sniper rifle",
@@ -508,6 +523,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -788,7 +807,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SV-98_7.62x54R_bolt-action_sniper_rifle"
       },
       {
         "name": "MP-43-1C 12ga double-barrel shotgun",
@@ -796,6 +816,9 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -838,7 +861,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-43-1C_12ga_double-barrel_shotgun"
       },
       {
         "name": "Kalashnikov AK-74N 5.45x39 assault rifle",
@@ -846,6 +870,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1270,7 +1298,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74N_5.45x39_assault_rifle"
       },
       {
         "name": "SIG P226R 9x19 pistol",
@@ -1278,6 +1307,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1431,7 +1464,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_P226R_9x19_pistol"
       },
       {
         "name": "MP-153 12ga semi-automatic shotgun",
@@ -1439,6 +1473,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1575,7 +1613,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-153_12ga_semi-automatic_shotgun"
       },
       {
         "name": "PB 9x18PM silenced pistol",
@@ -1583,6 +1622,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1638,7 +1681,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PB_9x18PM_silenced_pistol"
       },
       {
         "name": "TT-33 7.62x25 TT pistol",
@@ -1646,6 +1690,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1748,7 +1796,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol"
       },
       {
         "name": "Simonov SKS 7.62x39 carbine",
@@ -1756,6 +1805,10 @@
         "category": {
           "name": "Assault carbine"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -1845,7 +1898,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_SKS_7.62x39_carbine"
       },
       {
         "name": "Saiga 12ga ver.10 12/76 semi-automatic shotgun",
@@ -1853,6 +1907,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2151,7 +2209,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga_12ga_ver.10_12/76_semi-automatic_shotgun"
       },
       {
         "name": "Yarygin MP-443 \"Grach\" 9x19 pistol",
@@ -2159,6 +2218,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2211,7 +2274,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Yarygin_MP-443_%22Grach%22_9x19_pistol"
       },
       {
         "name": "VSS Vintorez 9x39 special sniper rifle",
@@ -2219,6 +2283,10 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2395,7 +2463,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/VSS_Vintorez_9x39_special_sniper_rifle"
       },
       {
         "name": "Makarov PM (t) 9x18PM pistol",
@@ -2403,6 +2472,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2454,7 +2527,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_(t)_9x18PM_pistol"
       },
       {
         "name": "AS VAL 9x39 special assault rifle",
@@ -2462,6 +2536,10 @@
         "category": {
           "name": "Assault carbine"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2657,7 +2735,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AS_VAL_9x39_special_assault_rifle"
       },
       {
         "name": "PP-91 \"Kedr\" 9x18PM submachine gun",
@@ -2665,6 +2744,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2720,7 +2803,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91_%22Kedr%22_9x18PM_submachine_gun"
       },
       {
         "name": "Kalashnikov AKS-74U 5.45x39 assault rifle",
@@ -2728,6 +2812,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -2982,7 +3070,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74U_5.45x39_assault_rifle"
       },
       {
         "name": "PP-91-01 \"Kedr-B\" 9x18PM submachine gun",
@@ -2990,6 +3079,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -3045,7 +3138,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91-01_%22Kedr-B%22_9x18PM_submachine_gun"
       },
       {
         "name": "PP-9 \"Klin\" 9x18PMM submachine gun",
@@ -3053,6 +3147,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -3108,7 +3206,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-9_%22Klin%22_9x18PMM_submachine_gun"
       },
       {
         "name": "Kalashnikov AKS-74UN 5.45x39 assault rifle",
@@ -3116,6 +3215,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -3428,7 +3531,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UN_5.45x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AKS-74UB 5.45x39 assault rifle",
@@ -3436,6 +3540,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -3745,7 +3853,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UB_5.45x39_assault_rifle"
       },
       {
         "name": "Simonov OP-SKS 7.62x39 carbine (Hunting Rifle Version)",
@@ -3753,6 +3862,10 @@
         "category": {
           "name": "Assault carbine"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -3858,7 +3971,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_OP-SKS_7.62x39_carbine_(Hunting_Rifle_Version)"
       },
       {
         "name": "Lobaev Arms DVL-10 7.62x51 bolt-action sniper rifle",
@@ -3866,6 +3980,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -4154,7 +4272,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lobaev_Arms_DVL-10_7.62x51_bolt-action_sniper_rifle"
       },
       {
         "name": "SIG MPX 9x19 submachine gun",
@@ -4162,6 +4281,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -4354,7 +4477,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MPX_9x19_submachine_gun"
       },
       {
         "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)",
@@ -4362,6 +4486,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -4423,7 +4551,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5_9x19_submachine_gun_(Navy_3_Round_Burst)"
       },
       {
         "name": "PP-19-01 \"Vityaz\" 9x19 submachine gun",
@@ -4431,6 +4560,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -4720,7 +4853,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-19-01_%22Vityaz%22_9x19_submachine_gun"
       },
       {
         "name": "Kalashnikov AKM 7.62x39 assault rifle",
@@ -4728,6 +4862,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -5131,7 +5269,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKM_7.62x39_assault_rifle"
       },
       {
         "name": "Molot VPO-136 \"Vepr-KM\" 7.62x39 carbine",
@@ -5139,6 +5278,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -5536,7 +5679,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-136_%22Vepr-KM%22_7.62x39_carbine"
       },
       {
         "name": "Molot VPO-209 .366 TKM carbine",
@@ -5544,6 +5688,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -5902,7 +6050,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-209_.366_TKM_carbine"
       },
       {
         "name": "Serdyukov SR-1MP Gyurza 9x21 pistol",
@@ -5910,6 +6059,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -5949,7 +6102,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Serdyukov_SR-1MP_Gyurza_9x21_pistol"
       },
       {
         "name": "Saiga-9 9x19 carbine",
@@ -5957,6 +6111,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -6191,7 +6349,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga-9_9x19_carbine"
       },
       {
         "name": "Kalashnikov AKMS 7.62x39 assault rifle",
@@ -6199,6 +6358,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -6563,7 +6726,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMS_7.62x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AKMN 7.62x39 assault rifle",
@@ -6571,6 +6735,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7032,7 +7200,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMN_7.62x39_assault_rifle"
       },
       {
         "name": "Stechkin APS 9x18PM machine pistol",
@@ -7040,6 +7209,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7127,7 +7300,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Stechkin_APS_9x18PM_machine_pistol"
       },
       {
         "name": "Remington R11 RSASS 7.62x51 marksman rifle",
@@ -7135,6 +7309,11 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7572,7 +7751,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_R11_RSASS_7.62x51_marksman_rifle"
       },
       {
         "name": "TOZ-106 20ga bolt-action shotgun",
@@ -7580,6 +7760,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7644,7 +7828,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ-106_20ga_bolt-action_shotgun"
       },
       {
         "name": "Remington Model 870 12ga pump-action shotgun",
@@ -7652,6 +7837,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7775,7 +7964,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_870_12ga_pump-action_shotgun"
       },
       {
         "name": "Glock 17 9x19 pistol",
@@ -7783,6 +7973,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -7980,7 +8174,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_17_9x19_pistol"
       },
       {
         "name": "Springfield Armory M1A 7.62x51 rifle",
@@ -7988,6 +8183,11 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -8093,7 +8293,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Springfield_Armory_M1A_7.62x51_rifle"
       },
       {
         "name": "Kalashnikov AKS-74N 5.45x39 assault rifle",
@@ -8101,6 +8302,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -8489,7 +8694,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74N_5.45x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AKMSN 7.62x39 assault rifle",
@@ -8497,6 +8703,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -8919,7 +9129,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMSN_7.62x39_assault_rifle"
       },
       {
         "name": "APB 9x18PM silenced machine pistol",
@@ -8927,6 +9138,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -9030,7 +9245,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/APB_9x18PM_silenced_machine_pistol"
       },
       {
         "name": "Kalashnikov AK-74M 5.45x39 assault rifle",
@@ -9038,6 +9254,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -9429,7 +9649,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74M_5.45x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AK-101 5.56x45 assault rifle",
@@ -9437,6 +9658,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -9789,7 +10014,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-101_5.56x45_assault_rifle"
       },
       {
         "name": "Kalashnikov AK-102 5.56x45 assault rifle",
@@ -9797,6 +10023,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -10137,7 +10367,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-102_5.56x45_assault_rifle"
       },
       {
         "name": "Kalashnikov AK-103 7.62x39 assault rifle",
@@ -10145,6 +10376,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -10548,7 +10783,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-103_7.62x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AK-104 7.62x39 assault rifle",
@@ -10556,6 +10792,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -10947,7 +11187,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-104_7.62x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AK-105 5.45x39 assault rifle",
@@ -10955,6 +11196,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -11334,7 +11579,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-105_5.45x39_assault_rifle"
       },
       {
         "name": "Mosin 7.62x54R bolt-action rifle (Sniper)",
@@ -11342,6 +11588,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -11443,7 +11693,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Sniper)"
       },
       {
         "name": "DS Arms SA-58 7.62x51 assault rifle",
@@ -11451,6 +11702,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -11633,7 +11888,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/DS_Arms_SA-58_7.62x51_assault_rifle"
       },
       {
         "name": "Glock 18C 9x19 machine pistol",
@@ -11641,6 +11897,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -11799,7 +12059,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_18C_9x19_machine_pistol"
       },
       {
         "name": "TT-33 7.62x25 TT pistol (Golden)",
@@ -11807,6 +12068,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -11909,7 +12174,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol_(Golden)"
       },
       {
         "name": "HK MP7A1 4.6x30 submachine gun",
@@ -11917,6 +12183,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -12359,7 +12629,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A1_4.6x30_submachine_gun"
       },
       {
         "name": "HK 416A5 5.56x45 assault rifle",
@@ -12367,6 +12638,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -12622,7 +12897,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_416A5_5.56x45_assault_rifle"
       },
       {
         "name": "HK MP7A2 4.6x30 submachine gun",
@@ -12630,6 +12906,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -13166,7 +13446,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A2_4.6x30_submachine_gun"
       },
       {
         "name": "RPK-16 5.45x39 light machine gun",
@@ -13174,6 +13455,10 @@
         "category": {
           "name": "Machinegun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -13386,7 +13671,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RPK-16_5.45x39_light_machine_gun"
       },
       {
         "name": "Kalashnikov AK-74 5.45x39 assault rifle",
@@ -13394,6 +13680,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -13760,7 +14050,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74_5.45x39_assault_rifle"
       },
       {
         "name": "Kalashnikov AKS-74 5.45x39 assault rifle",
@@ -13768,6 +14059,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -14098,7 +14393,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74_5.45x39_assault_rifle"
       },
       {
         "name": "Mosin 7.62x54R bolt-action rifle (Infantry)",
@@ -14106,6 +14402,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -14191,7 +14491,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Infantry)"
       },
       {
         "name": "Remington Model 700 7.62x51 bolt-action sniper rifle",
@@ -14199,6 +14500,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -14318,7 +14623,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_700_7.62x51_bolt-action_sniper_rifle"
       },
       {
         "name": "ADAR 2-15 5.56x45 carbine",
@@ -14326,6 +14632,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -14617,7 +14927,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ADAR_2-15_5.56x45_carbine"
       },
       {
         "name": "SVDS 7.62x54R sniper rifle",
@@ -14625,6 +14936,10 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -14880,7 +15195,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SVDS_7.62x54R_sniper_rifle"
       },
       {
         "name": "Desert Tech MDR 5.56x45 assault rifle",
@@ -14888,6 +15204,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -15246,7 +15566,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_5.56x45_assault_rifle"
       },
       {
         "name": "Molot VPO-101 \"Vepr-Hunter\" 7.62x51 carbine",
@@ -15254,6 +15575,10 @@
         "category": {
           "name": "Assault carbine"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -15427,7 +15752,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-101_%22Vepr-Hunter%22_7.62x51_carbine"
       },
       {
         "name": "Beretta M9A3 9x19 pistol",
@@ -15435,6 +15761,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -15552,7 +15882,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Beretta_M9A3_9x19_pistol"
       },
       {
         "name": "ASh-12 12.7x55 assault rifle",
@@ -15560,6 +15891,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16134,7 +16469,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ASh-12_12.7x55_assault_rifle"
       },
       {
         "name": "FN P90 5.7x28 submachine gun",
@@ -16142,6 +16478,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16241,7 +16581,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_P90_5.7x28_submachine_gun"
       },
       {
         "name": "HK MP5K 9x19 submachine gun",
@@ -16249,6 +16590,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16307,7 +16652,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5K_9x19_submachine_gun"
       },
       {
         "name": "FN Five-seveN MK2 5.7x28 pistol",
@@ -16315,6 +16661,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16416,7 +16766,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol"
       },
       {
         "name": "Lone Star TX-15 DML 5.56x45 carbine",
@@ -16424,6 +16775,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16715,7 +17070,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lone_Star_TX-15_DML_5.56x45_carbine"
       },
       {
         "name": "FN Five-seveN MK2 5.7x28 pistol (FDE)",
@@ -16723,6 +17079,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -16824,7 +17184,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol"
       },
       {
         "name": "Desert Tech MDR 7.62x51 assault rifle",
@@ -16832,6 +17193,11 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17142,7 +17508,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_7.62x51_assault_rifle"
       },
       {
         "name": "Molot VPO-215 \"Gornostay\" .366 TKM bolt-action rifle",
@@ -17150,6 +17517,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17218,7 +17589,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-215_%22Gornostay%22_.366_TKM_bolt-action_rifle"
       },
       {
         "name": "B&T MP9-N 9x19 submachine gun",
@@ -17226,6 +17598,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17338,7 +17714,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9-N_9x19_submachine_gun"
       },
       {
         "name": "ORSIS T-5000M 7.62x51 bolt-action sniper rifle",
@@ -17346,6 +17723,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17414,7 +17795,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ORSIS_T-5000M_7.62x51_bolt-action_sniper_rifle"
       },
       {
         "name": "Knight's Armament Company SR-25 7.62x51 marksman rifle",
@@ -17422,6 +17804,11 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17605,7 +17992,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Knight%27s_Armament_Company_SR-25_7.62x51_marksman_rifle"
       },
       {
         "name": "B&T MP9 9x19 submachine gun",
@@ -17613,6 +18001,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17725,7 +18117,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9_9x19_submachine_gun"
       },
       {
         "name": "Colt M1911A1 .45 ACP pistol",
@@ -17733,6 +18126,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -17926,7 +18323,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M1911A1_.45_ACP_pistol"
       },
       {
         "name": "FN40GL Mk2 grenade launcher",
@@ -17934,6 +18332,11 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18311,7 +18714,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN40GL_Mk2_grenade_launcher"
       },
       {
         "name": "TOZ KS-23M 23x75mm pump-action shotgun",
@@ -18319,6 +18723,11 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18393,7 +18802,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ_KS-23M_23x75mm_pump-action_shotgun"
       },
       {
         "name": "Mossberg 590A1 12ga pump-action shotgun",
@@ -18401,6 +18811,10 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18497,7 +18911,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mossberg_590A1_12ga_pump-action_shotgun"
       },
       {
         "name": "PPSh-41 7.62x25 submachine gun",
@@ -18505,6 +18920,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18576,7 +18995,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PPSh-41_7.62x25_submachine_gun"
       },
       {
         "name": "Kel-Tec RFB 7.62x51 rifle",
@@ -18584,6 +19004,10 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18664,7 +19088,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kel-Tec_RFB_7.62x51_rifle"
       },
       {
         "name": "Colt M45A1 .45 ACP pistol",
@@ -18672,6 +19097,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -18870,7 +19299,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M45A1_.45_ACP_pistol"
       },
       {
         "name": "TDI KRISS Vector Gen.2 .45 ACP submachine gun",
@@ -18878,6 +19308,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -19231,7 +19665,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_.45_ACP_submachine_gun"
       },
       {
         "name": "SIG MCX .300 Blackout assault rifle",
@@ -19239,6 +19674,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -19467,7 +19906,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MCX_.300_Blackout_assault_rifle"
       },
       {
         "name": "SWORD International Mk-18 .338 LM marksman rifle",
@@ -19475,6 +19915,11 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -19645,7 +20090,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SWORD_International_Mk-18_.338_LM_marksman_rifle"
       },
       {
         "name": "HK UMP .45 ACP submachine gun",
@@ -19653,6 +20099,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -19898,7 +20348,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_UMP_.45_ACP_submachine_gun"
       },
       {
         "name": "TDI KRISS Vector Gen.2 9x19 submachine gun",
@@ -19906,6 +20357,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -20265,7 +20720,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_9x19_submachine_gun"
       },
       {
         "name": "Lebedev PL-15 9x19 pistol",
@@ -20273,6 +20729,9 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -20365,7 +20824,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lebedev_PL-15_9x19_pistol"
       },
       {
         "name": "Soyuz-TM STM-9 Gen.2 9x19 carbine",
@@ -20373,6 +20833,10 @@
         "category": {
           "name": "SMG"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -20626,7 +21090,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Soyuz-TM_STM-9_Gen.2_9x19_carbine"
       },
       {
         "name": "CMMG Mk47 Mutant 7.62x39 assault rifle",
@@ -20634,6 +21099,11 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "noFlea",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -20874,7 +21344,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CMMG_Mk47_Mutant_7.62x39_assault_rifle"
       },
       {
         "name": "MP-155 12ga semi-automatic shotgun",
@@ -20882,6 +21353,9 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -20996,7 +21470,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-155_12ga_semi-automatic_shotgun"
       },
       {
         "name": "MTs-255-12 12ga shotgun",
@@ -21004,6 +21479,9 @@
         "category": {
           "name": "Revolver"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -21072,7 +21550,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MTs-255-12_12ga_shotgun"
       },
       {
         "name": "FN SCAR-H 7.62x51 assault rifle (FDE)",
@@ -21080,6 +21559,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -21248,7 +21731,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle"
       },
       {
         "name": "HK G28 7.62x51 marksman rifle",
@@ -21256,6 +21740,10 @@
         "category": {
           "name": "Marksman rifle"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -21418,7 +21906,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G28_7.62x51_marksman_rifle"
       },
       {
         "name": "FN SCAR-H 7.62x51 assault rifle",
@@ -21426,6 +21915,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -21594,7 +22087,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle"
       },
       {
         "name": "FN SCAR-L 5.56x45 assault rifle",
@@ -21602,6 +22096,9 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -21821,7 +22318,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle"
       },
       {
         "name": "FN SCAR-L 5.56x45 assault rifle (FDE)",
@@ -21829,6 +22327,9 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22048,7 +22549,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle"
       },
       {
         "name": "HK USP .45 ACP pistol",
@@ -22056,6 +22558,10 @@
         "category": {
           "name": "Handgun"
         },
+        "types": [
+          "gun",
+          "wearable"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22205,7 +22711,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_USP_.45_ACP_pistol"
       },
       {
         "name": "Chiappa Rhino 50DS .357 revolver",
@@ -22213,6 +22720,9 @@
         "category": {
           "name": "Revolver"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22336,7 +22846,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_50DS_.357_revolver"
       },
       {
         "name": "MP-18 7.62x54R single-shot rifle",
@@ -22344,6 +22855,9 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22383,7 +22897,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-18_7.62x54R_single-shot_rifle"
       },
       {
         "name": "ZiD SP-81 26x75 signal pistol",
@@ -22391,10 +22906,15 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": []
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ZiD_SP-81_26x75_signal_pistol"
       },
       {
         "name": "RSP-30 reactive signal cartridge (Green)",
@@ -22402,10 +22922,15 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": []
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Green)"
       },
       {
         "name": "ROP-30 reactive flare cartridge (White)",
@@ -22413,10 +22938,14 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": []
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ROP-30_reactive_flare_cartridge_(White)"
       },
       {
         "name": "RSP-30 reactive signal cartridge (Red)",
@@ -22424,10 +22953,15 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": []
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Red)"
       },
       {
         "name": "HK G36 5.56x45 assault rifle",
@@ -22435,6 +22969,9 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22610,7 +23147,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G36_5.56x45_assault_rifle"
       },
       {
         "name": "RSP-30 reactive signal cartridge (Yellow)",
@@ -22618,10 +23156,15 @@
         "category": {
           "name": "Grenade launcher"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": []
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Yellow)"
       },
       {
         "name": "Chiappa Rhino 200DS 9x19 revolver",
@@ -22629,6 +23172,9 @@
         "category": {
           "name": "Revolver"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22687,7 +23233,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_200DS_9x19_revolver"
       },
       {
         "name": "Benelli M3 Super 90 dual-mode 12ga shotgun",
@@ -22695,6 +23242,9 @@
         "category": {
           "name": "Shotgun"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -22826,7 +23376,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Benelli_M3_Super_90_dual-mode_12ga_shotgun"
       },
       {
         "name": "M32A1 MSGL 40mm grenade launcher",
@@ -22834,6 +23385,10 @@
         "category": {
           "name": "Revolver"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -23317,7 +23872,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/M32A1_MSGL_40mm_grenade_launcher"
       },
       {
         "name": "Accuracy International AXMC .338 LM bolt-action sniper rifle",
@@ -23325,6 +23881,10 @@
         "category": {
           "name": "Sniper rifle"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -23380,7 +23940,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Accuracy_International_AXMC_.338_LM_bolt-action_sniper_rifle"
       },
       {
         "name": "Rifle Dynamics RD-704 7.62x39 assault rifle",
@@ -23388,6 +23949,10 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun",
+          "noFlea"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -23830,7 +24395,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Rifle_Dynamics_RD-704_7.62x39_assault_rifle"
       },
       {
         "name": "SAG AK-545 5.45x39 carbine",
@@ -23838,6 +24404,9 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -24067,7 +24636,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_5.45x39_carbine"
       },
       {
         "name": "SAG AK-545 Short 5.45x39 carbine",
@@ -24075,6 +24645,9 @@
         "category": {
           "name": "Assault rifle"
         },
+        "types": [
+          "gun"
+        ],
         "properties": {
           "__typename": "ItemPropertiesWeapon",
           "slots": [
@@ -24304,7 +24877,8 @@
               }
             }
           ]
-        }
+        },
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_Short_5.45x39_carbine"
       }
     ]
   }
