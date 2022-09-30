@@ -77,22 +77,9 @@ parts_request = """query {
     category {
       name
     }
+    types
     properties{
       __typename
-      ... on ItemPropertiesWeapon{
-        slots{
-          id
-          name
-          nameId
-          required
-          filters{
-            allowedCategories{name}
-            allowedItems{name}
-            excludedCategories{name}
-            excludedItems{name}
-          }
-        }
-      }
       ... on ItemPropertiesWeaponMod{       
         recoilModifier
         ergonomics
@@ -119,14 +106,14 @@ parts_request = """query {
         }
       }   
       ... on ItemPropertiesMagazine{
-        ergonomics        
+        ergonomics
       }
       ... on ItemPropertiesScope{
         ergonomics
       } 
-
     }
-
+    weight
+    wikiLink
   }
 }
 """
@@ -137,6 +124,7 @@ weapon_request = """query {
     category {
       name
     }
+    types
     properties{
       __typename
       ... on ItemPropertiesWeapon{
@@ -153,40 +141,8 @@ weapon_request = """query {
           }
         }
       }
-      ... on ItemPropertiesWeaponMod{       
-        recoilModifier
-        ergonomics
-        accuracyModifier
-        slots{
-          id
-          name
-          nameId          
-          required
-          filters{
-            allowedCategories{
-              name
-            }
-            allowedItems{
-              name
-            }
-            excludedCategories{
-              name
-            }
-            excludedItems{
-              name
-            }
-          }
-        }
-      }   
-      ... on ItemPropertiesMagazine{
-        ergonomics        
-      }
-      ... on ItemPropertiesScope{
-        ergonomics
-      } 
-      
     }
-		
+    wikiLink
   }
 }
 """
