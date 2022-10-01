@@ -70,6 +70,7 @@ items_request = """query {
 parts_request = """query {
   items (types: mods){
     name
+    shortName
     conflictingSlotIds
     conflictingItems{
       name
@@ -120,6 +121,7 @@ parts_request = """query {
 weapon_request = """query {
   items (types: gun){
     name
+    shortName
     conflictingSlotIds
     category {
       name
@@ -143,6 +145,7 @@ weapon_request = """query {
       }
     }
     wikiLink
+    weight
   }
 }
 """
@@ -280,9 +283,8 @@ def query_images():
 
 
 if __name__ == "__main__":
-    # query_traders()
     # query_items()
+    # query_images() # Long command
     query_parts()
     query_weapons()
-    # query_images() # Long command
-    pass
+    query_traders()
