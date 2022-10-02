@@ -20,10 +20,6 @@ traders_request = """query {
       minTraderLevel
       item {
         name
-        ergonomicsModifier
-        recoilModifier
-        accuracyModifier
-        weight
       }
     }
   }
@@ -79,6 +75,9 @@ parts_request = """query {
       name
     }
     types
+    avg24hPrice
+    low24hPrice
+    lastLowPrice
     properties{
       __typename
       ... on ItemPropertiesWeaponMod{       

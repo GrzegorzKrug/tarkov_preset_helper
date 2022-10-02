@@ -3,6 +3,7 @@
     "items": [
       {
         "name": "Colt M4A1 5.56x45 assault rifle",
+        "shortName": "M4A1",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -303,10 +304,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M4A1_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M4A1_5.56x45_assault_rifle",
+        "weight": 0.38
       },
       {
         "name": "Makarov PM 9x18PM pistol",
+        "shortName": "PM",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -339,10 +342,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_9x18PM_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_9x18PM_pistol",
+        "weight": 0.686
       },
       {
         "name": "MP-133 12ga pump-action shotgun",
+        "shortName": "MP-133",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -515,10 +520,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-133_12ga_pump-action_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-133_12ga_pump-action_shotgun",
+        "weight": 1.1
       },
       {
         "name": "SV-98 7.62x54R bolt-action sniper rifle",
+        "shortName": "SV-98",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -808,10 +815,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SV-98_7.62x54R_bolt-action_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SV-98_7.62x54R_bolt-action_sniper_rifle",
+        "weight": 1.5
       },
       {
         "name": "MP-43-1C 12ga double-barrel shotgun",
+        "shortName": "MP-43-1C",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -862,10 +871,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-43-1C_12ga_double-barrel_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-43-1C_12ga_double-barrel_shotgun",
+        "weight": 3.5
       },
       {
         "name": "Kalashnikov AK-74N 5.45x39 assault rifle",
+        "shortName": "AK-74N",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -1299,10 +1310,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74N_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74N_5.45x39_assault_rifle",
+        "weight": 2.092
       },
       {
         "name": "SIG P226R 9x19 pistol",
+        "shortName": "P226R",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -1465,10 +1478,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_P226R_9x19_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_P226R_9x19_pistol",
+        "weight": 0.231
       },
       {
         "name": "MP-153 12ga semi-automatic shotgun",
+        "shortName": "MP-153",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -1614,10 +1629,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-153_12ga_semi-automatic_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-153_12ga_semi-automatic_shotgun",
+        "weight": 1.2
       },
       {
         "name": "PB 9x18PM silenced pistol",
+        "shortName": "PB",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -1682,10 +1699,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PB_9x18PM_silenced_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PB_9x18PM_silenced_pistol",
+        "weight": 0.674
       },
       {
         "name": "TT-33 7.62x25 TT pistol",
+        "shortName": "TT",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -1797,10 +1816,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol",
+        "weight": 0.664
       },
       {
         "name": "Simonov SKS 7.62x39 carbine",
+        "shortName": "SKS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault carbine"
@@ -1899,10 +1920,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_SKS_7.62x39_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_SKS_7.62x39_carbine",
+        "weight": 2.627
       },
       {
         "name": "Saiga 12ga ver.10 12/76 semi-automatic shotgun",
+        "shortName": "Saiga-12ga v.10",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -2210,10 +2233,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga_12ga_ver.10_12/76_semi-automatic_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga_12ga_ver.10_12/76_semi-automatic_shotgun",
+        "weight": 2.622
       },
       {
         "name": "Yarygin MP-443 \"Grach\" 9x19 pistol",
+        "shortName": "MP-443 \"Grach\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -2275,10 +2300,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Yarygin_MP-443_%22Grach%22_9x19_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Yarygin_MP-443_%22Grach%22_9x19_pistol",
+        "weight": 0.79
       },
       {
         "name": "VSS Vintorez 9x39 special sniper rifle",
+        "shortName": "VSS \"Vintorez\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -2464,10 +2491,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/VSS_Vintorez_9x39_special_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/VSS_Vintorez_9x39_special_sniper_rifle",
+        "weight": 0.92
       },
       {
         "name": "Makarov PM (t) 9x18PM pistol",
+        "shortName": "PM (t)",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -2528,10 +2557,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_(t)_9x18PM_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Makarov_PM_(t)_9x18PM_pistol",
+        "weight": 0.69
       },
       {
         "name": "AS VAL 9x39 special assault rifle",
+        "shortName": "AS VAL",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault carbine"
@@ -2736,10 +2767,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AS_VAL_9x39_special_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AS_VAL_9x39_special_assault_rifle",
+        "weight": 0.92
       },
       {
         "name": "PP-91 \"Kedr\" 9x18PM submachine gun",
+        "shortName": "PP-91 \"Kedr\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -2804,10 +2837,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91_%22Kedr%22_9x18PM_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91_%22Kedr%22_9x18PM_submachine_gun",
+        "weight": 1.33
       },
       {
         "name": "Kalashnikov AKS-74U 5.45x39 assault rifle",
+        "shortName": "AKS-74U",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -3071,10 +3106,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74U_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74U_5.45x39_assault_rifle",
+        "weight": 1.809
       },
       {
         "name": "PP-91-01 \"Kedr-B\" 9x18PM submachine gun",
+        "shortName": "PP-91-01 \"Kedr-B\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -3139,10 +3176,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91-01_%22Kedr-B%22_9x18PM_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-91-01_%22Kedr-B%22_9x18PM_submachine_gun",
+        "weight": 1.33
       },
       {
         "name": "PP-9 \"Klin\" 9x18PMM submachine gun",
+        "shortName": "PP-9 \"Klin\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -3207,10 +3246,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-9_%22Klin%22_9x18PMM_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-9_%22Klin%22_9x18PMM_submachine_gun",
+        "weight": 1.33
       },
       {
         "name": "Kalashnikov AKS-74UN 5.45x39 assault rifle",
+        "shortName": "AKS-74UN",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -3532,10 +3573,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UN_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UN_5.45x39_assault_rifle",
+        "weight": 1.85
       },
       {
         "name": "Kalashnikov AKS-74UB 5.45x39 assault rifle",
+        "shortName": "AKS-74UB",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -3854,10 +3897,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UB_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74UB_5.45x39_assault_rifle",
+        "weight": 1.85
       },
       {
         "name": "Simonov OP-SKS 7.62x39 carbine (Hunting Rifle Version)",
+        "shortName": "OP-SKS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault carbine"
@@ -3972,10 +4017,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_OP-SKS_7.62x39_carbine_(Hunting_Rifle_Version)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Simonov_OP-SKS_7.62x39_carbine_(Hunting_Rifle_Version)",
+        "weight": 2.627
       },
       {
         "name": "Lobaev Arms DVL-10 7.62x51 bolt-action sniper rifle",
+        "shortName": "DVL-10",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -4273,10 +4320,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lobaev_Arms_DVL-10_7.62x51_bolt-action_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lobaev_Arms_DVL-10_7.62x51_bolt-action_sniper_rifle",
+        "weight": 1.12
       },
       {
         "name": "SIG MPX 9x19 submachine gun",
+        "shortName": "MPX",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -4478,10 +4527,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MPX_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MPX_9x19_submachine_gun",
+        "weight": 0.64
       },
       {
         "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)",
+        "shortName": "MP5",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -4552,10 +4603,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5_9x19_submachine_gun_(Navy_3_Round_Burst)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5_9x19_submachine_gun_(Navy_3_Round_Burst)",
+        "weight": 0.74
       },
       {
         "name": "PP-19-01 \"Vityaz\" 9x19 submachine gun",
+        "shortName": "PP-19-01",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -4854,10 +4907,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-19-01_%22Vityaz%22_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PP-19-01_%22Vityaz%22_9x19_submachine_gun",
+        "weight": 1.809
       },
       {
         "name": "Kalashnikov AKM 7.62x39 assault rifle",
+        "shortName": "AKM",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -5270,10 +5325,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKM_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKM_7.62x39_assault_rifle",
+        "weight": 2.092
       },
       {
         "name": "Molot VPO-136 \"Vepr-KM\" 7.62x39 carbine",
+        "shortName": "VPO-136 \"Vepr-KM\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -5680,10 +5737,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-136_%22Vepr-KM%22_7.62x39_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-136_%22Vepr-KM%22_7.62x39_carbine",
+        "weight": 2.092
       },
       {
         "name": "Molot VPO-209 .366 TKM carbine",
+        "shortName": "VPO-209",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -6051,10 +6110,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-209_.366_TKM_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-209_.366_TKM_carbine",
+        "weight": 2.092
       },
       {
         "name": "Serdyukov SR-1MP Gyurza 9x21 pistol",
+        "shortName": "SR-1MP",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -6103,10 +6164,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Serdyukov_SR-1MP_Gyurza_9x21_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Serdyukov_SR-1MP_Gyurza_9x21_pistol",
+        "weight": 0.79
       },
       {
         "name": "Saiga-9 9x19 carbine",
+        "shortName": "Saiga-9",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -6350,10 +6413,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga-9_9x19_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Saiga-9_9x19_carbine",
+        "weight": 1.962
       },
       {
         "name": "Kalashnikov AKMS 7.62x39 assault rifle",
+        "shortName": "AKMS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -6727,10 +6792,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMS_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMS_7.62x39_assault_rifle",
+        "weight": 2.092
       },
       {
         "name": "Kalashnikov AKMN 7.62x39 assault rifle",
+        "shortName": "AKMN",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -7201,10 +7268,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMN_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMN_7.62x39_assault_rifle",
+        "weight": 2.152
       },
       {
         "name": "Stechkin APS 9x18PM machine pistol",
+        "shortName": "APS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -7301,10 +7370,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Stechkin_APS_9x18PM_machine_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Stechkin_APS_9x18PM_machine_pistol",
+        "weight": 0.86
       },
       {
         "name": "Remington R11 RSASS 7.62x51 marksman rifle",
+        "shortName": "RSASS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -7752,10 +7823,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_R11_RSASS_7.62x51_marksman_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_R11_RSASS_7.62x51_marksman_rifle",
+        "weight": 1.72
       },
       {
         "name": "TOZ-106 20ga bolt-action shotgun",
+        "shortName": "TOZ-106",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -7829,10 +7902,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ-106_20ga_bolt-action_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ-106_20ga_bolt-action_shotgun",
+        "weight": 1.3
       },
       {
         "name": "Remington Model 870 12ga pump-action shotgun",
+        "shortName": "M870",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -7965,10 +8040,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_870_12ga_pump-action_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_870_12ga_pump-action_shotgun",
+        "weight": 1.1
       },
       {
         "name": "Glock 17 9x19 pistol",
+        "shortName": "Glock 17",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -8175,10 +8252,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_17_9x19_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_17_9x19_pistol",
+        "weight": 0.231
       },
       {
         "name": "Springfield Armory M1A 7.62x51 rifle",
+        "shortName": "M1A",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -8294,10 +8373,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Springfield_Armory_M1A_7.62x51_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Springfield_Armory_M1A_7.62x51_rifle",
+        "weight": 1.426
       },
       {
         "name": "Kalashnikov AKS-74N 5.45x39 assault rifle",
+        "shortName": "AKS-74N",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -8695,10 +8776,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74N_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74N_5.45x39_assault_rifle",
+        "weight": 2.092
       },
       {
         "name": "Kalashnikov AKMSN 7.62x39 assault rifle",
+        "shortName": "AKMSN",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -9130,10 +9213,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMSN_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKMSN_7.62x39_assault_rifle",
+        "weight": 2.092
       },
       {
         "name": "APB 9x18PM silenced machine pistol",
+        "shortName": "APB",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -9246,10 +9331,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/APB_9x18PM_silenced_machine_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/APB_9x18PM_silenced_machine_pistol",
+        "weight": 0.81
       },
       {
         "name": "Kalashnikov AK-74M 5.45x39 assault rifle",
+        "shortName": "AK-74M",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -9650,10 +9737,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74M_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74M_5.45x39_assault_rifle",
+        "weight": 2.392
       },
       {
         "name": "Kalashnikov AK-101 5.56x45 assault rifle",
+        "shortName": "AK-101",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -10015,10 +10104,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-101_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-101_5.56x45_assault_rifle",
+        "weight": 2.392
       },
       {
         "name": "Kalashnikov AK-102 5.56x45 assault rifle",
+        "shortName": "AK-102",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -10368,10 +10459,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-102_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-102_5.56x45_assault_rifle",
+        "weight": 1.992
       },
       {
         "name": "Kalashnikov AK-103 7.62x39 assault rifle",
+        "shortName": "AK-103",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -10784,10 +10877,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-103_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-103_7.62x39_assault_rifle",
+        "weight": 2.392
       },
       {
         "name": "Kalashnikov AK-104 7.62x39 assault rifle",
+        "shortName": "AK-104",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -11188,10 +11283,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-104_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-104_7.62x39_assault_rifle",
+        "weight": 1.992
       },
       {
         "name": "Kalashnikov AK-105 5.45x39 assault rifle",
+        "shortName": "AK-105",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -11580,10 +11677,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-105_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-105_5.45x39_assault_rifle",
+        "weight": 1.992
       },
       {
         "name": "Mosin 7.62x54R bolt-action rifle (Sniper)",
+        "shortName": "Mosin (Sniper)",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -11694,10 +11793,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Sniper)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Sniper)",
+        "weight": 0.8
       },
       {
         "name": "DS Arms SA-58 7.62x51 assault rifle",
+        "shortName": "SA-58",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -11889,10 +11990,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/DS_Arms_SA-58_7.62x51_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/DS_Arms_SA-58_7.62x51_assault_rifle",
+        "weight": 1.46
       },
       {
         "name": "Glock 18C 9x19 machine pistol",
+        "shortName": "Glock 18C",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -12060,10 +12163,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_18C_9x19_machine_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Glock_18C_9x19_machine_pistol",
+        "weight": 0.231
       },
       {
         "name": "TT-33 7.62x25 TT pistol (Golden)",
+        "shortName": "TT Gold",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -12175,10 +12280,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol_(Golden)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TT-33_7.62x25_TT_pistol_(Golden)",
+        "weight": 0.664
       },
       {
         "name": "HK MP7A1 4.6x30 submachine gun",
+        "shortName": "MP7A1",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -12630,10 +12737,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A1_4.6x30_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A1_4.6x30_submachine_gun",
+        "weight": 1.62
       },
       {
         "name": "HK 416A5 5.56x45 assault rifle",
+        "shortName": "HK 416A5",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -12898,10 +13007,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_416A5_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_416A5_5.56x45_assault_rifle",
+        "weight": 0.52
       },
       {
         "name": "HK MP7A2 4.6x30 submachine gun",
+        "shortName": "MP7A2",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -13447,10 +13558,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A2_4.6x30_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP7A2_4.6x30_submachine_gun",
+        "weight": 1.58
       },
       {
         "name": "RPK-16 5.45x39 light machine gun",
+        "shortName": "RPK-16",
         "conflictingSlotIds": [],
         "category": {
           "name": "Machinegun"
@@ -13672,10 +13785,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RPK-16_5.45x39_light_machine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RPK-16_5.45x39_light_machine_gun",
+        "weight": 1.5
       },
       {
         "name": "Kalashnikov AK-74 5.45x39 assault rifle",
+        "shortName": "AK-74",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -14051,10 +14166,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AK-74_5.45x39_assault_rifle",
+        "weight": 1.992
       },
       {
         "name": "Kalashnikov AKS-74 5.45x39 assault rifle",
+        "shortName": "AKS-74",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -14394,10 +14511,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74_5.45x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kalashnikov_AKS-74_5.45x39_assault_rifle",
+        "weight": 1.992
       },
       {
         "name": "Mosin 7.62x54R bolt-action rifle (Infantry)",
+        "shortName": "Mosin (Infantry)",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -14492,10 +14611,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Infantry)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mosin_7.62x54R_bolt-action_rifle_(Infantry)",
+        "weight": 0.76
       },
       {
         "name": "Remington Model 700 7.62x51 bolt-action sniper rifle",
+        "shortName": "M700",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -14624,10 +14745,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_700_7.62x51_bolt-action_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Remington_Model_700_7.62x51_bolt-action_sniper_rifle",
+        "weight": 0.55
       },
       {
         "name": "ADAR 2-15 5.56x45 carbine",
+        "shortName": "ADAR 2-15",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -14928,10 +15051,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ADAR_2-15_5.56x45_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ADAR_2-15_5.56x45_carbine",
+        "weight": 0.4
       },
       {
         "name": "SVDS 7.62x54R sniper rifle",
+        "shortName": "SVDS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -15196,10 +15321,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SVDS_7.62x54R_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SVDS_7.62x54R_sniper_rifle",
+        "weight": 1.72
       },
       {
         "name": "Desert Tech MDR 5.56x45 assault rifle",
+        "shortName": "MDR",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -15567,10 +15694,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_5.56x45_assault_rifle",
+        "weight": 2.8
       },
       {
         "name": "Molot VPO-101 \"Vepr-Hunter\" 7.62x51 carbine",
+        "shortName": "VPO-101 \"Vepr-Hunter\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault carbine"
@@ -15753,10 +15882,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-101_%22Vepr-Hunter%22_7.62x51_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-101_%22Vepr-Hunter%22_7.62x51_carbine",
+        "weight": 2.092
       },
       {
         "name": "Beretta M9A3 9x19 pistol",
+        "shortName": "M9A3",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -15883,10 +16014,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Beretta_M9A3_9x19_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Beretta_M9A3_9x19_pistol",
+        "weight": 0.231
       },
       {
         "name": "ASh-12 12.7x55 assault rifle",
+        "shortName": "ASh-12",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -16470,10 +16603,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ASh-12_12.7x55_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ASh-12_12.7x55_assault_rifle",
+        "weight": 5.1
       },
       {
         "name": "FN P90 5.7x28 submachine gun",
+        "shortName": "P90",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -16582,10 +16717,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_P90_5.7x28_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_P90_5.7x28_submachine_gun",
+        "weight": 0.7
       },
       {
         "name": "HK MP5K 9x19 submachine gun",
+        "shortName": "MP5K-N",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -16653,10 +16790,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5K_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_MP5K_9x19_submachine_gun",
+        "weight": 0.68
       },
       {
         "name": "FN Five-seveN MK2 5.7x28 pistol",
+        "shortName": "FN 5-7",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -16767,10 +16906,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol",
+        "weight": 0.23
       },
       {
         "name": "Lone Star TX-15 DML 5.56x45 carbine",
+        "shortName": "TX-15 DML",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -17071,10 +17212,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lone_Star_TX-15_DML_5.56x45_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lone_Star_TX-15_DML_5.56x45_carbine",
+        "weight": 0.31
       },
       {
         "name": "FN Five-seveN MK2 5.7x28 pistol (FDE)",
+        "shortName": "FN 5-7 FDE",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -17185,10 +17328,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_Five-seveN_MK2_5.7x28_pistol",
+        "weight": 0.23
       },
       {
         "name": "Desert Tech MDR 7.62x51 assault rifle",
+        "shortName": "MDR",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -17509,10 +17654,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_7.62x51_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Desert_Tech_MDR_7.62x51_assault_rifle",
+        "weight": 2.95
       },
       {
         "name": "Molot VPO-215 \"Gornostay\" .366 TKM bolt-action rifle",
+        "shortName": "VPO-215 \"Gornostay\"",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -17590,10 +17737,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-215_%22Gornostay%22_.366_TKM_bolt-action_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Molot_VPO-215_%22Gornostay%22_.366_TKM_bolt-action_rifle",
+        "weight": 0.55
       },
       {
         "name": "B&T MP9-N 9x19 submachine gun",
+        "shortName": "MP9-N",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -17715,10 +17864,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9-N_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9-N_9x19_submachine_gun",
+        "weight": 0.75
       },
       {
         "name": "ORSIS T-5000M 7.62x51 bolt-action sniper rifle",
+        "shortName": "T-5000M",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -17796,10 +17947,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ORSIS_T-5000M_7.62x51_bolt-action_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ORSIS_T-5000M_7.62x51_bolt-action_sniper_rifle",
+        "weight": 1.29
       },
       {
         "name": "Knight's Armament Company SR-25 7.62x51 marksman rifle",
+        "shortName": "SR-25",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -17993,10 +18146,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Knight%27s_Armament_Company_SR-25_7.62x51_marksman_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Knight%27s_Armament_Company_SR-25_7.62x51_marksman_rifle",
+        "weight": 0.51
       },
       {
         "name": "B&T MP9 9x19 submachine gun",
+        "shortName": "MP9",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -18118,10 +18273,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/B%26T_MP9_9x19_submachine_gun",
+        "weight": 0.75
       },
       {
         "name": "Colt M1911A1 .45 ACP pistol",
+        "shortName": "M1911A1",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -18324,10 +18481,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M1911A1_.45_ACP_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M1911A1_.45_ACP_pistol",
+        "weight": 0.231
       },
       {
         "name": "FN40GL Mk2 grenade launcher",
+        "shortName": "FN40GL",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -18715,10 +18874,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN40GL_Mk2_grenade_launcher"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN40GL_Mk2_grenade_launcher",
+        "weight": 2.92
       },
       {
         "name": "TOZ KS-23M 23x75mm pump-action shotgun",
+        "shortName": "KS-23M",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -18803,10 +18964,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ_KS-23M_23x75mm_pump-action_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TOZ_KS-23M_23x75mm_pump-action_shotgun",
+        "weight": 1.5
       },
       {
         "name": "Mossberg 590A1 12ga pump-action shotgun",
+        "shortName": "590A1",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -18912,10 +19075,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mossberg_590A1_12ga_pump-action_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Mossberg_590A1_12ga_pump-action_shotgun",
+        "weight": 1.1
       },
       {
         "name": "PPSh-41 7.62x25 submachine gun",
+        "shortName": "PPSh41",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -18996,10 +19161,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PPSh-41_7.62x25_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/PPSh-41_7.62x25_submachine_gun",
+        "weight": 1.01
       },
       {
         "name": "Kel-Tec RFB 7.62x51 rifle",
+        "shortName": "RFB",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -19089,10 +19256,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kel-Tec_RFB_7.62x51_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Kel-Tec_RFB_7.62x51_rifle",
+        "weight": 1.95
       },
       {
         "name": "Colt M45A1 .45 ACP pistol",
+        "shortName": "M45A1",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -19300,10 +19469,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M45A1_.45_ACP_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Colt_M45A1_.45_ACP_pistol",
+        "weight": 0.205
       },
       {
         "name": "TDI KRISS Vector Gen.2 .45 ACP submachine gun",
+        "shortName": "Vector .45ACP",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -19666,10 +19837,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_.45_ACP_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_.45_ACP_submachine_gun",
+        "weight": 1.86
       },
       {
         "name": "SIG MCX .300 Blackout assault rifle",
+        "shortName": "MCX .300 BLK",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -19907,10 +20080,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MCX_.300_Blackout_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SIG_MCX_.300_Blackout_assault_rifle",
+        "weight": 0.4
       },
       {
         "name": "SWORD International Mk-18 .338 LM marksman rifle",
+        "shortName": "Mk-18 Mj\u00f6lnir",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -20091,10 +20266,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SWORD_International_Mk-18_.338_LM_marksman_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SWORD_International_Mk-18_.338_LM_marksman_rifle",
+        "weight": 2.9
       },
       {
         "name": "HK UMP .45 ACP submachine gun",
+        "shortName": "UMP 45",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -20349,10 +20526,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_UMP_.45_ACP_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_UMP_.45_ACP_submachine_gun",
+        "weight": 1.22
       },
       {
         "name": "TDI KRISS Vector Gen.2 9x19 submachine gun",
+        "shortName": "Vector 9x19",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -20721,10 +20900,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_9x19_submachine_gun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/TDI_KRISS_Vector_Gen.2_9x19_submachine_gun",
+        "weight": 1.8
       },
       {
         "name": "Lebedev PL-15 9x19 pistol",
+        "shortName": "PL-15",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -20825,10 +21006,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lebedev_PL-15_9x19_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Lebedev_PL-15_9x19_pistol",
+        "weight": 0.49
       },
       {
         "name": "Soyuz-TM STM-9 Gen.2 9x19 carbine",
+        "shortName": "STM-9",
         "conflictingSlotIds": [],
         "category": {
           "name": "SMG"
@@ -21091,10 +21274,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Soyuz-TM_STM-9_Gen.2_9x19_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Soyuz-TM_STM-9_Gen.2_9x19_carbine",
+        "weight": 0.35
       },
       {
         "name": "CMMG Mk47 Mutant 7.62x39 assault rifle",
+        "shortName": "Mk47",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -21345,10 +21530,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CMMG_Mk47_Mutant_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CMMG_Mk47_Mutant_7.62x39_assault_rifle",
+        "weight": 0.51
       },
       {
         "name": "MP-155 12ga semi-automatic shotgun",
+        "shortName": "MP-155",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -21471,10 +21658,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-155_12ga_semi-automatic_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-155_12ga_semi-automatic_shotgun",
+        "weight": 1.1
       },
       {
         "name": "MTs-255-12 12ga shotgun",
+        "shortName": "MTs-255-12",
         "conflictingSlotIds": [],
         "category": {
           "name": "Revolver"
@@ -21551,10 +21740,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MTs-255-12_12ga_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MTs-255-12_12ga_shotgun",
+        "weight": 1.1
       },
       {
         "name": "FN SCAR-H 7.62x51 assault rifle (FDE)",
+        "shortName": "Mk 17",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -21732,10 +21923,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle",
+        "weight": 0.85
       },
       {
         "name": "HK G28 7.62x51 marksman rifle",
+        "shortName": "G28",
         "conflictingSlotIds": [],
         "category": {
           "name": "Marksman rifle"
@@ -21907,10 +22100,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G28_7.62x51_marksman_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G28_7.62x51_marksman_rifle",
+        "weight": 0.51
       },
       {
         "name": "FN SCAR-H 7.62x51 assault rifle",
+        "shortName": "Mk 17",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -22088,10 +22283,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-H_7.62x51_assault_rifle",
+        "weight": 0.85
       },
       {
         "name": "FN SCAR-L 5.56x45 assault rifle",
+        "shortName": "Mk 16",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -22319,10 +22516,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle",
+        "weight": 0.7
       },
       {
         "name": "FN SCAR-L 5.56x45 assault rifle (FDE)",
+        "shortName": "Mk 16",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -22550,10 +22749,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/FN_SCAR-L_5.56x45_assault_rifle",
+        "weight": 0.7
       },
       {
         "name": "HK USP .45 ACP pistol",
+        "shortName": "USP .45",
         "conflictingSlotIds": [],
         "category": {
           "name": "Handgun"
@@ -22712,10 +22913,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_USP_.45_ACP_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_USP_.45_ACP_pistol",
+        "weight": 0.222
       },
       {
         "name": "Chiappa Rhino 50DS .357 revolver",
+        "shortName": "CR 50DS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Revolver"
@@ -22847,10 +23050,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_50DS_.357_revolver"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_50DS_.357_revolver",
+        "weight": 0.685
       },
       {
         "name": "MP-18 7.62x54R single-shot rifle",
+        "shortName": "MP-18",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -22898,10 +23103,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-18_7.62x54R_single-shot_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/MP-18_7.62x54R_single-shot_rifle",
+        "weight": 0.76
       },
       {
         "name": "ZiD SP-81 26x75 signal pistol",
+        "shortName": "SP-81",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -22914,10 +23121,12 @@
           "__typename": "ItemPropertiesWeapon",
           "slots": []
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ZiD_SP-81_26x75_signal_pistol"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ZiD_SP-81_26x75_signal_pistol",
+        "weight": 0.6
       },
       {
         "name": "RSP-30 reactive signal cartridge (Green)",
+        "shortName": "Green",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -22930,10 +23139,12 @@
           "__typename": "ItemPropertiesWeapon",
           "slots": []
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Green)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Green)",
+        "weight": 0.6
       },
       {
         "name": "ROP-30 reactive flare cartridge (White)",
+        "shortName": "Flare",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -22945,10 +23156,12 @@
           "__typename": "ItemPropertiesWeapon",
           "slots": []
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ROP-30_reactive_flare_cartridge_(White)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ROP-30_reactive_flare_cartridge_(White)",
+        "weight": 0.6
       },
       {
         "name": "RSP-30 reactive signal cartridge (Red)",
+        "shortName": "Red",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -22961,10 +23174,12 @@
           "__typename": "ItemPropertiesWeapon",
           "slots": []
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Red)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Red)",
+        "weight": 0.6
       },
       {
         "name": "HK G36 5.56x45 assault rifle",
+        "shortName": "G36",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -23148,10 +23363,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G36_5.56x45_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/HK_G36_5.56x45_assault_rifle",
+        "weight": 0.8
       },
       {
         "name": "RSP-30 reactive signal cartridge (Yellow)",
+        "shortName": "Yellow",
         "conflictingSlotIds": [],
         "category": {
           "name": "Grenade launcher"
@@ -23164,10 +23381,12 @@
           "__typename": "ItemPropertiesWeapon",
           "slots": []
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Yellow)"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Yellow)",
+        "weight": 0.6
       },
       {
         "name": "Chiappa Rhino 200DS 9x19 revolver",
+        "shortName": "CR 200DS",
         "conflictingSlotIds": [],
         "category": {
           "name": "Revolver"
@@ -23234,10 +23453,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_200DS_9x19_revolver"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Chiappa_Rhino_200DS_9x19_revolver",
+        "weight": 0.5
       },
       {
         "name": "Benelli M3 Super 90 dual-mode 12ga shotgun",
+        "shortName": "M3 Super 90",
         "conflictingSlotIds": [],
         "category": {
           "name": "Shotgun"
@@ -23377,10 +23598,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Benelli_M3_Super_90_dual-mode_12ga_shotgun"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Benelli_M3_Super_90_dual-mode_12ga_shotgun",
+        "weight": 1.22
       },
       {
         "name": "M32A1 MSGL 40mm grenade launcher",
+        "shortName": "MSGL",
         "conflictingSlotIds": [],
         "category": {
           "name": "Revolver"
@@ -23873,10 +24096,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/M32A1_MSGL_40mm_grenade_launcher"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/M32A1_MSGL_40mm_grenade_launcher",
+        "weight": 3.3
       },
       {
         "name": "Accuracy International AXMC .338 LM bolt-action sniper rifle",
+        "shortName": "AXMC",
         "conflictingSlotIds": [],
         "category": {
           "name": "Sniper rifle"
@@ -23941,10 +24166,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Accuracy_International_AXMC_.338_LM_bolt-action_sniper_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Accuracy_International_AXMC_.338_LM_bolt-action_sniper_rifle",
+        "weight": 0.55
       },
       {
         "name": "Rifle Dynamics RD-704 7.62x39 assault rifle",
+        "shortName": "RD-704",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -24396,10 +24623,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Rifle_Dynamics_RD-704_7.62x39_assault_rifle"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Rifle_Dynamics_RD-704_7.62x39_assault_rifle",
+        "weight": 2.1
       },
       {
         "name": "SAG AK-545 5.45x39 carbine",
+        "shortName": "AK-545",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -24637,10 +24866,12 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_5.45x39_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_5.45x39_carbine",
+        "weight": 2.392
       },
       {
         "name": "SAG AK-545 Short 5.45x39 carbine",
+        "shortName": "AK-545 Short",
         "conflictingSlotIds": [],
         "category": {
           "name": "Assault rifle"
@@ -24878,7 +25109,8 @@
             }
           ]
         },
-        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_Short_5.45x39_carbine"
+        "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SAG_AK-545_Short_5.45x39_carbine",
+        "weight": 2.192
       }
     ]
   }

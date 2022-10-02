@@ -165,7 +165,15 @@ def clear_event_parts(parts):
     return good
 
 
-def load_all_df():
+def load_all_data():
+    """
+
+    Returns:
+        weapons_df
+        parts_df
+        traders_dict
+
+    """
     weapons, parts, traders = _load_jsons2()
     weapons = preproces_json_to_df(weapons)
     parts = preproces_json_to_df(parts)
@@ -177,8 +185,6 @@ def load_all_df():
 
     weapons.index = weapons['name']
     parts.index = parts['name']
-    # print(sum(dups))
-
 
     return weapons, parts, traders
 
@@ -373,15 +379,47 @@ class WeaponTree:
     counter = dict().fromkeys(['gun', 'mod', 'scope', 'magazine', 'laser', 'unkown'], 0)
 
     parts_df = {}
-    traders_df = {}
+    traders_df = None
 
     @classmethod
-    def __init__(cls, weapons_df, parts_df, traders_df):
+    def __init__(cls, weapons_df, parts_df, traders_dict):
         cls.parts_df = parts_df
-        cls.traders_df = traders_df
 
         cls.process_item(weapons_df)
         cls.process_item(parts_df)
+        cls.process_traders(traders_dict)
+
+    @classmethod
+    @measure_time_decorator
+    def process_traders(cls, traders_dict):
+        shop_df = pd.DataFrame(columns=['lastLowPrice', 'low24Price', 'avg24Price'], )
+
+        traders_levels_hashed = dict()  # Dict of sets
+
+        for trader_name, tr in traders_dict.items():
+            shop_df[trader_name] = np.nan
+            shop_df[trader_name + "Currency"] = np.nan
+
+            for i in range(1, 5):
+                key = trader_name + str(i)
+                traders_levels_hashed[key] = set()
+
+            for offer in tr['cashOffers']:
+                # print(offer)
+                item_name = offer['item']['name']
+                minLevel = offer['minTraderLevel']
+                price = offer['price']
+                currency = offer['currency']
+                shop_df.loc[item_name, [trader_name, trader_name + "Currency"]] = price, currency
+
+                for i in range(minLevel, 5):
+                    key = trader_name + str(i)
+                    traders_levels_hashed[key].add(item_name)
+
+        cls.traders_df = shop_df
+        cls.traders_levels_hashed = traders_levels_hashed
+        cls.euro = shop_df.loc['Euros', 'skier'].astype(int)
+        cls.usd = (shop_df.loc['Dollars', 'peacekeeper']).astype(int)
 
     @classmethod
     def add_item(cls, item):
@@ -463,15 +501,7 @@ class WeaponTree:
 
 
 if __name__ == "__main__":
-    weapons, parts, traders = load_all_df()
+    weapons_df, parts_df, traders_dict = load_all_data()
 
-    tree = WeaponTree(weapons, parts, traders)
+    tree = WeaponTree(weapons_df, parts_df, traders_dict)
 
-    print(tree)
-    print("Finished preprocessing.")
-
-    # first = list(tree.keys())[0]
-    # print(weapons.loc[first, 'wikiLink'])
-
-
-    # tree.find_best_brute(first)
