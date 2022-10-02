@@ -378,16 +378,46 @@ class WeaponTree:
     # n_mods = 0
     counter = dict().fromkeys(['gun', 'mod', 'scope', 'magazine', 'laser', 'unkown'], 0)
 
+    traders_levels_hashed = None
+    loaded = False
     parts_df = {}
     traders_df = None
+    euro = None
+    usd = None
 
     @classmethod
-    def __init__(cls, weapons_df, parts_df, traders_dict):
+    def __init__(cls, weapons_df, parts_df, traders_dict, regenerate=False):
         cls.parts_df = parts_df
 
         cls.process_item(weapons_df)
         cls.process_item(parts_df)
-        cls.process_traders(traders_dict)
+
+        if not regenerate:
+            cls.load()
+
+        if not cls.loaded:
+            cls.process_traders(traders_dict)
+            cls.save()
+
+    @classmethod
+    @measure_time_decorator
+    def save(cls):
+        serial = {key: list(it) for key, it in cls.traders_levels_hashed.items()}
+        with open(JSON_DIR + "traders_hashed.json", "wt") as fp:
+            json.dump(serial, fp, indent=2)
+
+    @classmethod
+    @measure_time_decorator
+    def load(cls):
+        path = JSON_DIR + "traders_hashed.json"
+        if not os.path.isfile(path):
+            return None
+        with open(path, 'rt') as fp:
+            js = json.load(fp)
+
+        traders_hash = {key: set(it) for key, it in js.items()}
+        cls.traders_levels_hashed = traders_hash
+        cls.loaded = True
 
     @classmethod
     @measure_time_decorator
@@ -504,4 +534,3 @@ if __name__ == "__main__":
     weapons_df, parts_df, traders_dict = load_all_data()
 
     tree = WeaponTree(weapons_df, parts_df, traders_dict)
-
