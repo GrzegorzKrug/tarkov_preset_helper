@@ -24,7 +24,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..')) # add paren
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.autosummary']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.autosummary', 'sphinx.ext.githubpages']
 
 templates_path = ['_templates']
 exclude_patterns = []
