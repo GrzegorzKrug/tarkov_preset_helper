@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>PresetAid &#8212; PresetAid 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyramid.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="apiqueries module" href="apiqueries.html" />
+    <link rel="prev" title="Welcome to PresetAid’s documentation!" href="../index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiqueries.html" title="apiqueries module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to PresetAid’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PresetAid 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">PresetAid</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="presetaid">
+<h1>PresetAid<a class="headerlink" href="#presetaid" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apiqueries.html">apiqueries module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.fetch_and_save_image"><code class="docutils literal notranslate"><span class="pre">fetch_and_save_image()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.query_images"><code class="docutils literal notranslate"><span class="pre">query_images()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.query_items"><code class="docutils literal notranslate"><span class="pre">query_items()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.query_parts"><code class="docutils literal notranslate"><span class="pre">query_parts()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.query_traders"><code class="docutils literal notranslate"><span class="pre">query_traders()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.query_weapons"><code class="docutils literal notranslate"><span class="pre">query_weapons()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.send_query"><code class="docutils literal notranslate"><span class="pre">send_query()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiqueries.html#apiqueries.unify_image"><code class="docutils literal notranslate"><span class="pre">unify_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.Item.read_item_type"><code class="docutils literal notranslate"><span class="pre">Item.read_item_type()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.ItemsTree"><code class="docutils literal notranslate"><span class="pre">ItemsTree</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.add_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.add_item()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.euro"><code class="docutils literal notranslate"><span class="pre">ItemsTree.euro</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.find_best_brute"><code class="docutils literal notranslate"><span class="pre">ItemsTree.find_best_brute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.find_greedy"><code class="docutils literal notranslate"><span class="pre">ItemsTree.find_greedy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.good_parts_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.good_parts_keys</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.items"><code class="docutils literal notranslate"><span class="pre">ItemsTree.items()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.load"><code class="docutils literal notranslate"><span class="pre">ItemsTree.load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.loaded"><code class="docutils literal notranslate"><span class="pre">ItemsTree.loaded</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.parts_df"><code class="docutils literal notranslate"><span class="pre">ItemsTree.parts_df</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.process_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_item()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.process_traders"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_traders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.remove_useless_parts"><code class="docutils literal notranslate"><span class="pre">ItemsTree.remove_useless_parts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.save"><code class="docutils literal notranslate"><span class="pre">ItemsTree.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.traders_df"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_df</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.traders_levels_hashed"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_levels_hashed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.usd"><code class="docutils literal notranslate"><span class="pre">ItemsTree.usd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.values"><code class="docutils literal notranslate"><span class="pre">ItemsTree.values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.ItemsTree.weapon_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.weapon_keys</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.Slot"><code class="docutils literal notranslate"><span class="pre">Slot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.Slot.read_slot_type"><code class="docutils literal notranslate"><span class="pre">Slot.read_slot_type()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.StringFormat"><code class="docutils literal notranslate"><span class="pre">StringFormat</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.StringFormat.culling"><code class="docutils literal notranslate"><span class="pre">StringFormat.culling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#main.StringFormat.split_wrap"><code class="docutils literal notranslate"><span class="pre">StringFormat.split_wrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.clear_event_parts"><code class="docutils literal notranslate"><span class="pre">clear_event_parts()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.compare_print_invalid"><code class="docutils literal notranslate"><span class="pre">compare_print_invalid()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.filter_guns_and_weaponparts"><code class="docutils literal notranslate"><span class="pre">filter_guns_and_weaponparts()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.load_all_data"><code class="docutils literal notranslate"><span class="pre">load_all_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.measure_time_decorator"><code class="docutils literal notranslate"><span class="pre">measure_time_decorator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.preproces_json_to_df"><code class="docutils literal notranslate"><span class="pre">preproces_json_to_df()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.query_df"><code class="docutils literal notranslate"><span class="pre">query_df()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../index.html"
+                          title="previous chapter">Welcome to PresetAid’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="apiqueries.html"
+                          title="next chapter">apiqueries module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rds/modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiqueries.html" title="apiqueries module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to PresetAid’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PresetAid 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">PresetAid</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Grzegorz Krug.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+    </div>
+  </body>
+</html>

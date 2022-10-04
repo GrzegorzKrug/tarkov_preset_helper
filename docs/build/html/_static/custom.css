@@ -1,0 +1,71 @@
+div.body p, div.body dd, div.body li {
+  line-height: 1.2em;
+}
+
+.py.class > dd > p{
+    /*color: rgb(0,0,70);*/
+}
+
+/* Inheritance */
+.py.class > dd > p > code{
+    color: gray;
+}
+
+/* Class keyword */
+.py.class > dt > .property > .pre {
+    color: black;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: capitalize;
+}
+
+/* Class Name */
+.py.class > dt .sig-name > .pre {    
+    color: rgb(150,0,50);
+    font-size: 1.1em;
+}
+
+/* Class method modifier keyword */
+.py.class > dd > .py.method > dt > .property > .pre {
+    color: gray;
+}
+
+/* class method keyword */
+.py.method > dt > .sig-name > .pre ,    /* class method keyword */
+.py.attribute > dt > .sig-name > .pre { /* attribute keyword */
+    color: rgb(15,0,100);
+    font-size: 0.9em;
+    line-height: 1em;
+}
+
+.py.function > dt > .sig-name > .pre {  /* function keyword */
+    color: rgb(0,80,90);
+    font-size: 0.9em;
+    line-height: 1em;
+}
+
+.py.method > dd > * , /* Method all */
+.py.class > dd > p:nth-of-type(2) ,   /* Method docstring "simple" variant */
+.py.class > dd > .simple > *,   /* Method docstring "simple" variant */
+.py.function > dd > * ,         /* Function docstring "simple" variant */
+.py.function > dd > * > *     /* Function docstring */
+ {
+    font-family: monospace;
+    color: rgb(0,100, 0);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.py.class {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.py.method, 
+.py.function,
+.py.attribute {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
