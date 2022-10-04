@@ -51,9 +51,10 @@ div.body p, div.body dd, div.body li {
 .py.function > dd > * > *     /* Function docstring */
  {
     font-family: monospace;
-    color: green;
-    font-size: 1.2em;
-    line-height: 1.3em;
+    color: rgb(0,100, 0);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2em;
 }
 
 .py.class {
