@@ -30,31 +30,34 @@ div.body p, div.body dd, div.body li {
     color: gray;
 }
 
-/* class method keyword */
-.py.method > dt > .sig-name > .pre ,    /* class method keyword */
-.py.attribute > dt > .sig-name > .pre { /* attribute keyword */
+                                        /* class method keyword */
+.py.method > dt > .sig-name > .pre ,        /* class method keyword */
+.py.attribute > dt > .sig-name > .pre {     /* attribute keyword */
     color: rgb(15,0,100);
-    font-size: 0.9em;
-    line-height: 1em;
+    font-size: 1em;
+    line-height: 1.05em;
 }
 
-.py.function > dt > .sig-name > .pre {  /* function keyword */
+.py.function > dt > .sig-name > .pre {      /* function keyword */
     color: rgb(0,80,90);
     font-size: 0.9em;
     line-height: 1em;
 }
 
-.py.method > dd > * , /* Method all */
-.py.class > dd > p:nth-of-type(2) ,   /* Method docstring "simple" variant */
-.py.class > dd > .simple > *,   /* Method docstring "simple" variant */
-.py.function > dd > * ,         /* Function docstring "simple" variant */
-.py.function > dd > * > *     /* Function docstring */
+.py.method > dd > * ,                       /* Method all */
+.py.class > dd > p:not(:first-child) ,      /* Clas/Method docstring "simple" variant */
+.py.class > dd > blockquote > * ,           /* Clas/Method docstring "blockquote" variant */
+.py.class > dd > .simple > *,               /* Method docstring "simple" variant */
+.py.class > dd > .line-block > *,           /* Line Blocks docstring variant */
+.py.function > dd > * ,                     /* Function docstring "simple" variant */
+.py.function > dd > * > * ,                 /* Function docstring */
+.py.function > dd > .line-block > *         /* Line Blocks docstring variant */
  {
     font-family: monospace;
-    color: rgb(0,100, 0);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.2em;
+    color: rgb(0, 100, 0);
+    font-size: 16px;
+    /*font-weight: 300;*/
+    line-height: 1em;
 }
 
 .py.class {

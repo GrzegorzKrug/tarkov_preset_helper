@@ -54,23 +54,37 @@
 <span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="main.Item">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_slots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['scope',</span> <span class="pre">'magazine']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Item" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Item" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#main.StringFormat" title="main.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Item.read_item_type">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_item_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Item.read_item_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<ul class="simple">
+<li><p>name</p></li>
+<li><p>name_short</p></li>
+<li><p>has_required_slots: bool</p></li>
+<li><p>part_type - string from <a class="reference internal" href="#main.ReadType.read_type" title="main.ReadType.read_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">ReadType.read_type()</span></code></a></p></li>
+<li><p>slots: dict() of enumerated slots instances</p></li>
+<li><p>good_slots_keys: set() filled by <a class="reference internal" href="#main.ItemsTree.reduce_not_important_slots" title="main.ItemsTree.reduce_not_important_slots"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree.reduce_not_important_slots</span></code></a></p></li>
+</ul>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="main.ItemsTree">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">ItemsTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weapons_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parts_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traders_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regenerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Data structure</p>
+<dl class="simple">
+<dt>Data structure</dt><dd><ul class="simple">
+<li><p>Item can have vary slots.</p></li>
+<li><p>Slot type can have same type item mounted.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.add_item">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.add_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.ItemsTree.counter">
+<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'device':</span> <span class="pre">0,</span> <span class="pre">'gun':</span> <span class="pre">0,</span> <span class="pre">'magazine':</span> <span class="pre">0,</span> <span class="pre">'mod':</span> <span class="pre">0,</span> <span class="pre">'mount':</span> <span class="pre">0,</span> <span class="pre">'sight':</span> <span class="pre">0}</span></em><a class="headerlink" href="#main.ItemsTree.counter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -80,12 +94,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.find_best_brute">
-<span class="sig-name descname"><span class="pre">find_best_brute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.find_best_brute" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.find_greedy">
-<span class="sig-name descname"><span class="pre">find_greedy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ergo_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recoil_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.find_greedy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">find_best_brute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ergo_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recoil_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.find_best_brute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -98,6 +107,11 @@
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.items" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.ItemsTree.items_dict">
+<span class="sig-name descname"><span class="pre">items_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#main.ItemsTree.items_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.keys">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.keys" title="Permalink to this definition">¶</a></dt>
@@ -105,13 +119,9 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.load">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.load" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.loaded">
-<span class="sig-name descname"><span class="pre">loaded</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#main.ItemsTree.loaded" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load hashed traders</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="main.ItemsTree.parts_df">
@@ -120,22 +130,34 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.process_item">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_item" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read items/guns from df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.process_traders">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_traders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_traders" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_traders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traders_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_traders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hashing trader items. Creating traders df. Reading euro/usd price.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>traders_dict</strong> (<em>dict</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.remove_useless_parts">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_useless_parts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.remove_useless_parts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTree.reduce_not_important_slots">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reduce_not_important_slots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.reduce_not_important_slots" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.ItemsTree.save">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.save" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.save" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -166,19 +188,47 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="main.ReadType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">ReadType</span></span><a class="headerlink" href="#main.ReadType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Defines part types and groups them.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.ReadType.read_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ob</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ReadType.read_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads object type. Works with</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ob</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.ReadType.types">
+<span class="sig-name descname"><span class="pre">types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['gun',</span> <span class="pre">'mount',</span> <span class="pre">'sight',</span> <span class="pre">'magazine',</span> <span class="pre">'device',</span> <span class="pre">'mod']</span></em><a class="headerlink" href="#main.ReadType.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="main.Slot">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Slot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#main.StringFormat" title="main.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a></p>
-<dl class="simple">
-<dt>Slot stores information of subparts.</dt><dd><p>slots - list of slots</p>
+<p>Slot stores information of subpart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>name</p></li>
+<li><p>name_id</p></li>
+<li><p>required</p></li>
+<li><p>allowedItems - None or list of itemKeys</p></li>
+<li><p>slot_type - str defined by <a class="reference internal" href="#main.ReadType.read_type" title="main.ReadType.read_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">ReadType.read_type()</span></code></a></p></li>
+</ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="main.Slot.read_slot_type">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_slot_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Slot.read_slot_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks what category is item. Some are excluded</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -194,22 +244,31 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="main.StringFormat.split_wrap">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">split_wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tabulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.StringFormat.split_wrap" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Break lines every <strong>wrap_at</strong> characters and add tabulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>txt</strong> (<em>str</em>) – string to break</p></li>
+<li><p><strong>tabulation</strong> (<em>int</em>) – depth</p></li>
+<li><p><strong>wrap_at</strong> (<em>int</em>) – break length</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>wrapped and tabulated text</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="main.clear_event_parts">
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">clear_event_parts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.clear_event_parts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removing event items with duplicated names
-Should remove only
-5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine (FDE) (Airsoft)</p>
+<dd><p>Removes event items. Currently 1 mag.</p>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="main.compare_print_invalid">
-<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">compare_print_invalid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_check</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_ok</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.compare_print_invalid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="main.filter_guns_and_weaponparts">
@@ -220,10 +279,19 @@ Should remove only
 <dl class="py function">
 <dt class="sig sig-object py" id="main.load_all_data">
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">load_all_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.load_all_data" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Returns:</dt><dd><p>weapons_df
-parts_df
-traders_dict</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>weapons_df - asd</p></li>
+<li><p>parts_df: asd</p></li>
+<li><p>traders_dict</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[<cite>pandas.DataFrame</cite>, <cite>pandas.DataFrame</cite>, <cite>dict</cite>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -231,7 +299,8 @@ traders_dict</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="main.measure_time_decorator">
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">measure_time_decorator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.measure_time_decorator" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Function times measured with <cite>perf_counter</cite>. Wraps used.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="main.preproces_json_to_df">
@@ -241,6 +310,11 @@ traders_dict</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="main.query_df">
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">query_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.query_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.sort_images_on_type">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">sort_images_on_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.sort_images_on_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -256,24 +330,21 @@ traders_dict</p>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">main module</a><ul>
-<li><a class="reference internal" href="#main.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a><ul>
-<li><a class="reference internal" href="#main.Item.read_item_type"><code class="docutils literal notranslate"><span class="pre">Item.read_item_type()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#main.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree"><code class="docutils literal notranslate"><span class="pre">ItemsTree</span></code></a><ul>
 <li><a class="reference internal" href="#main.ItemsTree.add_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.add_item()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTree.counter"><code class="docutils literal notranslate"><span class="pre">ItemsTree.counter</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.euro"><code class="docutils literal notranslate"><span class="pre">ItemsTree.euro</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.find_best_brute"><code class="docutils literal notranslate"><span class="pre">ItemsTree.find_best_brute()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.find_greedy"><code class="docutils literal notranslate"><span class="pre">ItemsTree.find_greedy()</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.good_parts_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.good_parts_keys</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.items"><code class="docutils literal notranslate"><span class="pre">ItemsTree.items()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTree.items_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTree.items_dict</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.keys()</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.load"><code class="docutils literal notranslate"><span class="pre">ItemsTree.load()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.loaded"><code class="docutils literal notranslate"><span class="pre">ItemsTree.loaded</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.parts_df"><code class="docutils literal notranslate"><span class="pre">ItemsTree.parts_df</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.process_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_item()</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.process_traders"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_traders()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.remove_useless_parts"><code class="docutils literal notranslate"><span class="pre">ItemsTree.remove_useless_parts()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTree.reduce_not_important_slots"><code class="docutils literal notranslate"><span class="pre">ItemsTree.reduce_not_important_slots()</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.save"><code class="docutils literal notranslate"><span class="pre">ItemsTree.save()</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.traders_df"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_df</span></code></a></li>
 <li><a class="reference internal" href="#main.ItemsTree.traders_levels_hashed"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_levels_hashed</span></code></a></li>
@@ -282,22 +353,24 @@ traders_dict</p>
 <li><a class="reference internal" href="#main.ItemsTree.weapon_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.weapon_keys</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#main.Slot"><code class="docutils literal notranslate"><span class="pre">Slot</span></code></a><ul>
-<li><a class="reference internal" href="#main.Slot.read_slot_type"><code class="docutils literal notranslate"><span class="pre">Slot.read_slot_type()</span></code></a></li>
+<li><a class="reference internal" href="#main.ReadType"><code class="docutils literal notranslate"><span class="pre">ReadType</span></code></a><ul>
+<li><a class="reference internal" href="#main.ReadType.read_type"><code class="docutils literal notranslate"><span class="pre">ReadType.read_type()</span></code></a></li>
+<li><a class="reference internal" href="#main.ReadType.types"><code class="docutils literal notranslate"><span class="pre">ReadType.types</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#main.Slot"><code class="docutils literal notranslate"><span class="pre">Slot</span></code></a></li>
 <li><a class="reference internal" href="#main.StringFormat"><code class="docutils literal notranslate"><span class="pre">StringFormat</span></code></a><ul>
 <li><a class="reference internal" href="#main.StringFormat.culling"><code class="docutils literal notranslate"><span class="pre">StringFormat.culling</span></code></a></li>
 <li><a class="reference internal" href="#main.StringFormat.split_wrap"><code class="docutils literal notranslate"><span class="pre">StringFormat.split_wrap()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#main.clear_event_parts"><code class="docutils literal notranslate"><span class="pre">clear_event_parts()</span></code></a></li>
-<li><a class="reference internal" href="#main.compare_print_invalid"><code class="docutils literal notranslate"><span class="pre">compare_print_invalid()</span></code></a></li>
 <li><a class="reference internal" href="#main.filter_guns_and_weaponparts"><code class="docutils literal notranslate"><span class="pre">filter_guns_and_weaponparts()</span></code></a></li>
 <li><a class="reference internal" href="#main.load_all_data"><code class="docutils literal notranslate"><span class="pre">load_all_data()</span></code></a></li>
 <li><a class="reference internal" href="#main.measure_time_decorator"><code class="docutils literal notranslate"><span class="pre">measure_time_decorator()</span></code></a></li>
 <li><a class="reference internal" href="#main.preproces_json_to_df"><code class="docutils literal notranslate"><span class="pre">preproces_json_to_df()</span></code></a></li>
 <li><a class="reference internal" href="#main.query_df"><code class="docutils literal notranslate"><span class="pre">query_df()</span></code></a></li>
+<li><a class="reference internal" href="#main.sort_images_on_type"><code class="docutils literal notranslate"><span class="pre">sort_images_on_type()</span></code></a></li>
 </ul>
 </li>
 </ul>

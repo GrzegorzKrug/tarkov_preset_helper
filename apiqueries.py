@@ -26,43 +26,6 @@ traders_request = """query {
 }
 """
 
-items_request = """query {
-  items {    
-    id
-    name
-    shortName
-    avg24hPrice
-    low24hPrice
-    lastLowPrice
-    conflictingItems{
-      name
-    }
-	weight
-    velocity
-    ergonomicsModifier
-    recoilModifier
-    accuracyModifier
-    loudness
-    baseImageLink
-    iconLink
-    wikiLink
-    category{
-      name
-    }
-    types
-    buyFor{
-      vendor{
-        name       	 
-      }
-      price
-      currency
-    }
-    
-    
-  }
-}
-"""
-
 parts_request = """query {
   items (types: mods){
     name
@@ -114,9 +77,11 @@ parts_request = """query {
     }
     weight
     wikiLink
+    baseImageLink
   }
 }
 """
+
 weapon_request = """query {
   items (types: gun){
     name
@@ -145,6 +110,7 @@ weapon_request = """query {
     }
     wikiLink
     weight
+    baseImageLink
   }
 }
 """
@@ -158,20 +124,19 @@ os.makedirs(PICS_DIR, exist_ok=True)
 
 
 def send_query(cur_query):
-    # query_bytes = cur_query.encode("ascii")
-    # print(f"ascii: {cur_query}")
-    # "Encoding works only on bytes! Thats why we convert string to bytes"
-    # encoded = base64.b64encode(query_bytes)
-    # decoded = encoded.decode("ascii")
-    # print(f"Encoded: {encoded}")
-    # print(f"Decoded: {decoded}")
-    # head = {"Accept-Encoding": "gzip, deflate, br"}
+    """
+    Sends graphql query
 
+    :param cur_query: graphQL query string
+
+    :return: response from request
+    """
     response = requests.get(url=API_URL, params={'query': cur_query}, )
     return response
 
 
 def query_traders():
+    """Send query of traders and saves json."""
     response = send_query(traders_request)
     # print(response)
     if response.status_code == 200:
@@ -185,20 +150,8 @@ def query_traders():
         print(f"Traders not ok: {response.status_code}")
 
 
-def query_items():
-    response = send_query(items_request)
-    if response.status_code == 200:
-        print("Query items ok.")
-
-        js = json.loads(response.text)
-
-        with open(JSON_DIR + "items.json", "wt") as file:
-            json.dump(js, file, indent=2)
-    else:
-        print(f"Items not ok: {response.status_code}")
-
-
 def query_parts():
+    """Sends query for modding parts and saves to json."""
     response = send_query(parts_request)
     if response.status_code == 200:
         print("Query parts ok.")
@@ -212,6 +165,9 @@ def query_parts():
 
 
 def query_weapons():
+    """
+    Sends query for guns and saves to json.
+    """
     response = send_query(weapon_request)
     if response.status_code == 200:
         print("Query guns ok.")
@@ -224,7 +180,14 @@ def query_weapons():
         print(f"Guns not ok: {response.status_code}")
 
 
-def unify_image(img, to_dim):
+def unify_image_size(img, to_dim: int):
+    """
+    Expand pic to square and scale to size.
+
+    :param img: 3d image
+
+    :param to_dim: integer
+    """
     h, w, c = img.shape
     # print(h, w, c)
     if h < w:
@@ -246,44 +209,67 @@ def unify_image(img, to_dim):
     return im
 
 
-def fetch_and_save_image(item):
+def windows_name_fix(path):
+    # path = path.copy()
+    chars = ['\\', '/', '"', "'", "*"]
+    for ch in chars:
+        path = path.replace(ch, '')
+    return path
+
+
+def _fetch_and_save_image(item):
+    """
+
+    Args:
+        item:
+
+    Returns:
+
+    """
     name = item['name']
     url = item['baseImageLink']
     response = requests.get(url)
     if response.status_code != 200:
         print(f"Failed: {name}")
         return None
-    # else:
 
-    # response.raw.decode_content = True
-    # decoded =
-    # np.frombuffer(response.content)
     pic_code = np.frombuffer(response.content, np.uint8)
     img = cv2.imdecode(pic_code, -1)
-    img = unify_image(img, 200)
+    img = unify_image_size(img, 200)
 
-    cv2.imwrite(PICS_DIR + f"{name}.png", img)
-    print(f"Saved: {name}")
+    dst = PICS_DIR + f"{windows_name_fix(name)}.png"
+    cv2.imwrite(dst, img)
+    if not os.path.isfile(dst):
+        print(f"FILE NOT SAVED: {name}")
+    # print(f"Saved: {name}- {dst}")
 
 
 def query_images():
+    """Threaded image downloader. Uses items.json not parts!"""
     MAX_PROCESS = 6
+    arg_list = []
 
-    with open(JSON_DIR + "items.json", "rt") as file:
+    "Get args from parts"
+    with open(JSON_DIR + "parts.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
-
-    pool = mpc.Pool(MAX_PROCESS)
-    arg_list = []
     for item in items:
         arg_list.append(item)
 
-    pool.map(func=fetch_and_save_image, iterable=arg_list)
+    "Get args from weapons"
+    with open(JSON_DIR + "weapons.json", "rt") as file:
+        data = json.load(file)
+        items = data['data']['items']
+
+    for item in items:
+        arg_list.append(item)
+
+    pool = mpc.Pool(MAX_PROCESS)
+    pool.map(func=_fetch_and_save_image, iterable=arg_list)
 
 
 if __name__ == "__main__":
-    # query_items()
-    # query_images() # Long command
-    query_parts()
-    query_weapons()
-    query_traders()
+    # query_parts()
+    # query_weapons()
+    # query_traders()
+    query_images()  # Long command

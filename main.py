@@ -5,14 +5,17 @@ import pandas as pd
 import sys
 import time
 
-from apiqueries import JSON_DIR, PICS_DIR
+import shutil
+
+from apiqueries import JSON_DIR, PICS_DIR, windows_name_fix
 from functools import wraps
 
 
 def _load_jsons():
     """
     Load data from of query from all items.
-    Returns: tuple of 2 dicts,
+
+    :return: tuple of 2 dicts,
             items, traders
 
     """
@@ -56,14 +59,8 @@ def _load_jsons2():
 
 
 def filter_guns_and_weaponparts(items):
-    """
-    Deeper filtration of weapons and parts.
-    Args:
-        items:
+    """Deeper filtration of weapons and parts."""
 
-    Returns:
-
-    """
     white_weapons = (
             'Assault rifle',
             'Assault carbine',
@@ -125,13 +122,13 @@ def preproces_json_to_df(js):
 
 
 def measure_time_decorator(func):
-    # func = wraps(func)
+    """ Function times measured with `perf_counter`. Wraps used."""
 
+    @wraps(func)
     def wrapper(*a, **kw):
         time_start = time.perf_counter()
         out = func(*a, **kw)
         duration = time.perf_counter() - time_start
-        # print(duration)
 
         if duration < 1e-3:
             txt = f"{duration * 1000000:>4.2f} us"
@@ -148,9 +145,8 @@ def measure_time_decorator(func):
 
 
 def clear_event_parts(parts):
+    """Removes event items. Currently 1 mag."""
     """
-        Removing event items with duplicated names
-        Should remove only
         5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine (FDE) (Airsoft)
     """
     mask = parts['wikiLink'].str.contains("Airsoft")
@@ -167,12 +163,13 @@ def clear_event_parts(parts):
 
 def load_all_data():
     """
+    :returns:
 
-    Returns:
-        weapons_df
-        parts_df
-        traders_dict
+    * weapons_df - asd
+    * parts_df: asd
+    * traders_dict
 
+    :rtype: tuple[`pandas.DataFrame`, `pandas.DataFrame`, `dict`]
     """
     weapons, parts, traders = _load_jsons2()
     weapons = preproces_json_to_df(weapons)
@@ -189,13 +186,9 @@ def load_all_data():
     return weapons, parts, traders
 
 
-def compare_print_invalid(df_check, df_ok, key='name'):
+def _compare_print_invalid(df_check, df_ok, key='name'):
     df_check = df_check.sort_values(key)
     mask = df_check.loc[:, key].isin(df_ok.loc[:, key])
-    # print(mask.shape)
-    # rows, *_ = mask.shape
-    # mask = df_check[:, key].isin(df_ok[:, key])
-    # print(mask.shape)
     scope = df_check.loc[~mask, :]
     for ind, row in scope.iterrows():
         print("Invalid:", row[key])
@@ -208,7 +201,10 @@ def query_df(df, key):
 
 
 class StringFormat:
-    culling = 80
+    """
+    Class to format string with nice table-prefix and adjust tabulation
+    """
+    culling = 80  # Integer
 
     @staticmethod
     def _get_prefix(tabulation):
@@ -217,6 +213,18 @@ class StringFormat:
 
     @classmethod
     def split_wrap(cls, txt, tabulation=1, wrap_at=60, ):
+        """
+        Break lines every **wrap_at** characters and add tabulation
+
+        :param txt: string to break
+        :type txt: str
+        :param tabulation: depth
+        :type tabulation: int
+        :param wrap_at: break length
+        :type wrap_at: int
+        :return: wrapped and tabulated text
+        :rtype: str
+        """
         txt = str(txt)
         prefix = cls._get_prefix(tabulation)
 
@@ -226,22 +234,82 @@ class StringFormat:
         return out
 
 
+class ReadType:
+    """ Defines part types and groups them."""
+    types = ['gun', 'mount', 'sight', 'magazine', 'device', 'mod']  # output types
+    _filtration_types = [
+            'nvg',
+            'muzzle', 'adapter', 'rail', 'barrel',
+            'mount', 'scope', 'sight',
+            'mag', 'device',
+            'mod'
+    ]
+    _group_dict = {
+            'nvg': 'sight',
+            'scope': 'sight',
+            'mag': 'magazine',
+            'barrel': 'mod',
+            'rail': 'mod',
+            'muzzle': 'mod',
+    }
+
+    @classmethod
+    def read_type(cls, ob):
+        """
+        Reads object type. Works with
+
+        :param ob:
+        :return:
+        """
+        # assert isinstance(ob_dict, dict), f"Working on dicts but got: {type(ob_dict)}"
+
+        if hasattr(ob, 'types'):
+            if "gun" in ob['types']:
+                return "gun"
+
+        if hasattr(ob, 'category'):
+            type_name = ob['category'].lower()
+        else:
+            type_name = ob['name'].lower()
+
+        for tp in cls._filtration_types[:-1]:
+            if tp in type_name:
+                type_ = tp
+                break
+        else:
+            type_ = cls.types[-1]
+
+        if type_ in cls._group_dict:
+            type_ = cls._group_dict[type_]
+
+        return type_
+
+
 class Slot(StringFormat):
     """
-    Slot stores information of subparts.
+    Slot stores information of subpart.
+
+    :fields:
+        * name
+        * name_id
+        * required
+        * allowedItems - None or list of itemKeys
+        * slot_type - str defined by :func:`ReadType.read_type`
     """
 
     def __init__(self, item):
         self.name = item['name']
         self.name_id = item['nameId']
         self.required = item['required']
-        self.filters = item['filters']
+        self._filters = item['filters']
+        self.allowedItems = None
+        self.slot_type = ReadType.read_type(item)
 
-        if self.filters:
-            self.allowedItems = [it['name'] for it in self.filters['allowedItems']]
-            self.allowedCategories = [it['name'] for it in self.filters['allowedCategories']]
-            self.excludedCategories = [it['name'] for it in self.filters['excludedCategories']]
-            self.excludedItems = [it['name'] for it in self.filters['excludedItems']]
+        if self._filters:
+            self.allowedItems = [it['name'] for it in self._filters['allowedItems']]
+            self.allowedCategories = [it['name'] for it in self._filters['allowedCategories']]
+            self.excludedCategories = [it['name'] for it in self._filters['excludedCategories']]
+            self.excludedItems = [it['name'] for it in self._filters['excludedItems']]
 
             self.allowedItems.sort()
             self.allowedCategories.sort()
@@ -260,9 +328,10 @@ class Slot(StringFormat):
         self.has_slots = True if self.allowedItems and len(self.allowedItems) > 0 else False
 
     def __str__(self, extra_tab=0):
-        txt = f"Slot name: {self.name}"
+        txt = f"Slot: {self.name}"
         txt += self.split_wrap(f"name_id: {self.name_id}")
         txt += self.split_wrap(f"required: {self.required}")
+        txt += self.split_wrap(f"type: {self.slot_type}")
 
         if self.filters:
             txt += self.split_wrap(f"filters:", 1 + extra_tab)
@@ -277,23 +346,37 @@ class Slot(StringFormat):
         txt += "\n"
         return txt
 
+    def __iter__(self):
+        return iter(self.allowedItems)
+
     def __repr__(self):
         return f"{self.name:<12} ({len(self.allowedItems):>2} mods)"
 
 
-class Item(StringFormat):
-    def __init__(self, item):
+class Item(StringFormat, ):
+    """
+    * name
+    * name_short
+    * has_required_slots: bool
+    * part_type - string from :func:`ReadType.read_type`
+    * slots: dict() of enumerated slots instances
+    * good_slots_keys: set() filled by :class:`ItemsTree.reduce_not_important_slots`
+    """
+
+    def __init__(self, item, ):
         self.name = item['name']
         self.name_short = item['shortName']
-        self.weight = item['weight']
         self.has_required_slots = None
-        # self.part_type = None
-        self.part_type = self.read_item_type(item)
+        self.part_type = ReadType.read_type(item)  # used for counter only
+        self.slots = dict()
+        self.good_slots_keys = set()
 
         # print(item['category'])
         self.category = item['category']
 
         prop = item['properties']
+        self.weight = item['weight']
+
         if prop:
             self.ergo = item['properties'].get('ergonomics', 0)
             self.recoil = item['properties'].get('recoilModifier', 0)
@@ -303,14 +386,27 @@ class Item(StringFormat):
             self.recoil = 0
             self.acc = 0
 
+        self._read_properties(prop)
+
+    def _read_properties(self, prop):
+        """Read if there are slots"""
         slots = prop.get('slots', None) if prop else None
 
         if slots:
             self.has_slots = True
-            self.slots = [Slot(sl) for sl in slots]
-            self.slots_keys = tuple(sl.name for sl in self.slots)
+            self.slots = {k: Slot(sl) for k, sl in enumerate(slots)}
 
-            for sl in self.slots:
+            "Drop empty slots"
+            self.slots = {
+                    k: sl for k, sl in self.slots.items()
+                    if sl.has_slots and not sl.required
+            }
+
+            if len(self.slots) <= 0:
+                self.has_slots = False
+                return None
+
+            for sl in self.slots.values():
                 if sl.required:
                     self.has_required_slots = True
                     break
@@ -319,39 +415,23 @@ class Item(StringFormat):
 
         else:
             self.has_slots = False
-            self.slots = None
-            self.slots_keys = None
+            self.slots = {}
 
-    @staticmethod
-    def read_item_type(item):
-        cat = item['category']
-        if "gun" in item['types']:
-            part_type = "gun"
-        elif "scope" in cat or "sight" in cat:
-            part_type = "scope"
-        elif "Mag" in cat:
-            part_type = "magazine"
-        elif "device" in cat.lower():
-            part_type = "laser"
-
-        elif "mods" in item['types']:
-            part_type = "mod"
-        else:
-            part_type = "unknown"
-
-        return part_type
+    def __iter__(self):
+        return iter(self.slots)
 
     def __str__(self, extra_tab=0):
         txt = f"ITEM: {self.name}"
         txt += self.split_wrap(f"category: {self.category}")
         txt += self.split_wrap(f"short: {self.name_short}")
-        txt += self.split_wrap(f"required slots: {self.has_required_slots}")
+
         if self.has_slots:
+            txt += self.split_wrap(f"required slots: {self.has_required_slots}")
             txt += self.split_wrap(f"slots: ", )
             for sl in self.slots:
                 txt += self.split_wrap(repr(sl), 2)
         else:
-            txt += self.split_wrap(f"slots: 0", )
+            txt += self.split_wrap(f"has slots: {self.has_slots}")
 
         # if self.filters:
         #     txt += self.split_wrap(f"filters:", 1 + extra_tab)
@@ -370,16 +450,20 @@ class Item(StringFormat):
         return txt
 
 
-class WeaponTree:
-    # _weapons = {}
-    # _parts = {}
-    _items = {}
-    # n_weapons = 0
-    # n_mods = 0
-    counter = dict().fromkeys(['gun', 'mod', 'scope', 'magazine', 'laser', 'unkown'], 0)
+class ItemsTree:
+    """
+    Data structure
+        * Item can have vary slots.
+        * Slot type can have same type item mounted.
+    """
+    items_dict = {}  # Dictionary of item instances
+    counter = dict().fromkeys(ReadType.types, 0)
+    weapon_keys = []
+    good_parts_keys = []
 
     traders_levels_hashed = None
-    loaded = False
+    _loaded = False
+
     parts_df = {}
     traders_df = None
     euro = None
@@ -387,17 +471,53 @@ class WeaponTree:
 
     @classmethod
     def __init__(cls, weapons_df, parts_df, traders_dict, regenerate=False):
+        """init doc"""
         cls.parts_df = parts_df
 
         cls.process_item(weapons_df)
+        cls.weapon_keys = sorted(list(weapons_df.index))
         cls.process_item(parts_df)
 
+        # cls.remove_useless_parts()
         if not regenerate:
             cls.load()
 
-        if not cls.loaded:
+        if not cls._loaded:
             cls.process_traders(traders_dict)
             cls.save()
+
+        cls.reduce_not_important_slots()
+
+    @classmethod
+    def add_item(cls, item):
+        assert isinstance(item, Item)
+        if item.name in cls.items_dict:
+            raise KeyError(f"Item is defined already: {item.name}")
+
+        cls.counter[item.part_type] += 1
+        cls.items_dict[item.name] = item
+
+    @classmethod
+    @measure_time_decorator
+    def reduce_not_important_slots(cls):
+        keys = list(cls.items_dict.keys())
+        good_parts_keys = set()
+        items_to_checkdelete = set(keys)
+        temp = items_to_checkdelete.copy()
+
+        while len(temp) > 0:
+            items_to_checkdelete = set()
+            for item_key in temp:
+                if item_key not in cls.items_dict:
+                    good_parts_keys.add(item_key)
+                    continue
+
+                item = cls.items_dict[item_key]
+
+                if item.ergo > 1 or item.recoil < 0 or item.acc > 0 or item.has_required_slots:
+                    good_parts_keys.add(item_key)
+
+            temp = items_to_checkdelete
 
     @classmethod
     @measure_time_decorator
@@ -409,19 +529,27 @@ class WeaponTree:
     @classmethod
     @measure_time_decorator
     def load(cls):
+        """Load hashed traders"""
         path = JSON_DIR + "traders_hashed.json"
         if not os.path.isfile(path):
             return None
+
         with open(path, 'rt') as fp:
             js = json.load(fp)
 
         traders_hash = {key: set(it) for key, it in js.items()}
         cls.traders_levels_hashed = traders_hash
-        cls.loaded = True
+        cls._loaded = True
 
     @classmethod
     @measure_time_decorator
     def process_traders(cls, traders_dict):
+        """
+        Hashing trader items. Creating traders df. Reading euro/usd price.
+
+        :param traders_dict:
+        :type traders_dict: dict
+        """
         shop_df = pd.DataFrame(columns=['lastLowPrice', 'low24Price', 'avg24Price'], )
 
         traders_levels_hashed = dict()  # Dict of sets
@@ -452,85 +580,87 @@ class WeaponTree:
         cls.usd = (shop_df.loc['Dollars', 'peacekeeper']).astype(int)
 
     @classmethod
-    def add_item(cls, item):
-        assert isinstance(item, Item)
-        if item.name in cls._items:
-            raise KeyError(f"Item is defined already: {item.name}")
-
-        # if item.part_type == "gun":
-        #     cls.n_weapons += 1
-        # elif item.part_type == "mod":
-        #     cls.n_weapons += 1
-        cls.counter[item.part_type] += 1
-        cls._items[item.name] = item
-
-    @classmethod
     @measure_time_decorator
     def process_item(cls, items_df):
+        """
+        Read items/guns from df
+
+        :param items_df:
+        :type items_df: pandas.DataFrame
+
+        """
         for ind, it_row in items_df.iterrows():
             item = Item(it_row)
-            # print(it_row['category'])
             cls.add_item(item)
 
     @classmethod
     def __str__(cls):
-        # keys = list(cls._weapons.keys())
-        # keys.sort()
-        # return "\n".join(keys)
-        return f"Items: {len(cls._items)} {cls.counter}"
+        return f"Items: {len(cls.items_dict)} {cls.counter}"
 
     @classmethod
     def keys(cls):
-        return cls._items.keys()
+        keys = list(cls.items_dict.keys())
+        keys.sort()
+        return keys
 
     @classmethod
     def values(cls):
-        return cls._items.values()
+        return cls.items_dict.values()
 
     @classmethod
     def items(cls):
-        return cls._items.items()
+        return cls.items_dict.items()
+
+    @classmethod
+    def __iter__(cls):
+        return iter(cls.items_dict)
 
     @classmethod
     def __getitem__(cls, item):
-        return cls._items[item]
+        return cls.items_dict[item]
 
     @classmethod
     def __setitem__(cls, *a, **kw):
         raise RuntimeError(f"Setting item not allowed for {cls}")
 
-    def find_greedy(self, name, ergo_factor=1, recoil_factor=3, weight_factor=0):
-        if name not in self._weapons:
-            raise KeyError("Passed wrong weapon name to function!")
-
-        slots = self._weapons[name]
-        print(slots)
-        print(f"Finding preset for '{name}'")
-
-        check_child_parts = slots['Pistol Grip']
-        print(check_child_parts)
-
     @measure_time_decorator
     def find_best_brute(self, name, ergo_factor=1, recoil_factor=3, weight_factor=0):
-        slots_dict = self._weapons[name]
+        item = self.items_dict[name]
         print(f"Finding preset for '{name}'")
 
-        for key, slot in slots_dict.items():
-            print()
-            print("= " * 10)
-            print(slot.name, slot.has_slots)
+        print(item.name)
+        for slot in item:
+            print(slot)
+            for item_key in slot:
+                subitem = self.items_dict[item_key]
+                print(subitem.__str__())
+            break
+        # print(slot)
 
-            for subpart_name in slot.allowedItems:
-                subpart = self._items[subpart_name]
-                print(subpart.has_slots, subpart_name)
-                print(subpart.__str__(1))
 
-        # pistol_grip = slots_dict['Pistol Grip']
-        # print(pistol_grip)
-        # slots[0]
+def sort_images_on_type():
+    for name in ReadType.types:
+        os.makedirs(JSON_DIR + f"pic-{name}", exist_ok=True)
+
+    for key, item in tree.items():
+        dst = JSON_DIR + f"pic-{item.part_type}{os.path.sep}{windows_name_fix(item.name)}.png"
+        src = PICS_DIR + windows_name_fix(item.name) + ".png"
+        if not os.path.isfile(src):
+            print(f"Skipped: {item.name}")
+            continue
+        shutil.copy(src, dst)
 
 
 if __name__ == "__main__":
     weapons_df, parts_df, traders_dict = load_all_data()
 
-    tree = WeaponTree(weapons_df, parts_df, traders_dict)
+    tree = ItemsTree(weapons_df, parts_df, traders_dict)
+    # print(tree.keys())
+
+
+    # tree.find_best_brute("Kalashnikov AK-74N 5.45x39 assault rifle")
+
+
+    # row = parts_df.loc['AK TROY Full Length Rail handguard & gas tube combo']
+    # it = Item(row)
+    # print(it)
