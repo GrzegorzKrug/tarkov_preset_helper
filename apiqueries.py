@@ -26,12 +26,15 @@ traders_request = """query {
 }
 """
 
-parts_request = """query {
-  items (types: mods){
+parts_request = """
+query {
+  items(types: mods) {
     name
     shortName
+    ergonomicsModifier
+    recoilModifier
     conflictingSlotIds
-    conflictingItems{
+    conflictingItems {
       name
     }
     category {
@@ -41,47 +44,78 @@ parts_request = """query {
     avg24hPrice
     low24hPrice
     lastLowPrice
-    properties{
-      __typename
-      ... on ItemPropertiesWeaponMod{       
+    properties {
+      ... on ItemPropertiesWeaponMod {
         recoilModifier
         ergonomics
         accuracyModifier
-        slots{
+        slots {
           id
           name
-          nameId          
+          nameId
           required
-          filters{
-            allowedCategories{
+          filters {
+            allowedCategories {
               name
             }
-            allowedItems{
+            allowedItems {
               name
             }
-            excludedCategories{
+            excludedCategories {
               name
             }
-            excludedItems{
+            excludedItems {
               name
             }
           }
         }
-      }   
-      ... on ItemPropertiesMagazine{
+      }
+      ... on ItemPropertiesMagazine {
         ergonomics
         recoilModifier
+
         capacity
         loadModifier
         ammoCheckModifier
         malfunctionChance
-        allowedAmmo{
-            name
+        allowedAmmo {
+          name
         }
       }
-      ... on ItemPropertiesScope{
+      ... on ItemPropertiesBarrel {
         ergonomics
-      } 
+        recoilModifier
+        centerOfImpact
+        deviationCurve
+        deviationMax
+      }
+
+      ... on ItemPropertiesScope {
+        ergonomics
+        recoilModifier
+        sightingRange
+        zoomLevels
+        slots {
+          id
+          name
+          nameId
+          required
+          filters {
+            allowedCategories {
+              name
+            }
+            allowedItems {
+              name
+            }
+            excludedCategories {
+              name
+            }
+            excludedItems {
+              name
+            }
+          }
+        }
+      }
     }
     weight
     wikiLink
@@ -90,28 +124,70 @@ parts_request = """query {
 }
 """
 
-weapon_request = """query {
-  items (types: gun){
+weapon_request = """
+query {
+  items(types: gun) {
     name
     shortName
+    ergonomicsModifier
+    recoilModifier
     conflictingSlotIds
     category {
       name
     }
+    conflictingItems {
+      name
+    }
     types
-    properties{
-      __typename
-      ... on ItemPropertiesWeapon{
-        slots{
+    properties {
+      ... on ItemPropertiesWeapon {
+        defaultPreset {
+          containsItems {
+            item {
+              name
+            }
+          }
+          properties {
+            __typename
+            ... on ItemPropertiesAmmo {
+              ammoType
+            }
+            ... on ItemPropertiesNightVision {
+              intensity
+            }
+            ... on ItemPropertiesWeaponMod {
+              ergonomics
+            }
+            ... on ItemPropertiesMagazine {
+              capacity
+            }
+            ... on ItemPropertiesBarrel {
+              ergonomics
+            }
+            ... on ItemPropertiesScope {
+              ergonomics
+            }
+          }
+        }
+
+        slots {
           id
           name
           nameId
           required
-          filters{
-            allowedCategories{name}
-            allowedItems{name}
-            excludedCategories{name}
-            excludedItems{name}
+          filters {
+            allowedCategories {
+              name
+            }
+            allowedItems {
+              name
+            }
+            excludedCategories {
+              name
+            }
+            excludedItems {
+              name
+            }
           }
         }
       }
@@ -322,8 +398,7 @@ def query_images():
 
 
 if __name__ == "__main__":
-    # query_parts()
-    # query_weapons()
-    # query_traders()
+    query_parts()
+    query_weapons()
+    query_traders()
     query_ammo()
-    # query_images()  # Long command

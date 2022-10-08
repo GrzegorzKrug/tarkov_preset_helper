@@ -4,16 +4,85 @@
    {
     "name": "Colt M4A1 5.56x45 assault rifle",
     "shortName": "M4A1",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Colt M4A1 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt A2 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 Colt AR-15 STANAG 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "M4A1 5.56x45 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 5.56x45 370mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt USGI A2 5.56x45 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "M4A1 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt M4 Carbine Length handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 rear sight carry handle"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "High Standard M4SS Stock"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "55d354084bdc2d8c2f8b4568",
@@ -311,16 +380,35 @@
    {
     "name": "Makarov PM 9x18PM pistol",
     "shortName": "PM",
+    "ergonomicsModifier": 85,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Makarov PM 9x18PM pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "PM 9x18PM 90-93 8-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "55d5a2ae4bdc2d1d4e8b4572",
@@ -350,16 +438,50 @@
    {
     "name": "MP-133 12ga pump-action shotgun",
     "shortName": "MP-133",
+    "ergonomicsModifier": 40,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MP-133 12ga pump-action shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-133 12ga 510mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-133 beechwood forestock"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-133 12ga 6-shell magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-133/153 wooden stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "560d19c44bdc2de22e8b457a",
@@ -529,16 +651,60 @@
    {
     "name": "SV-98 7.62x54R bolt-action sniper rifle",
     "shortName": "SV-98",
+    "ergonomicsModifier": 24,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SV-98 7.62x54R bolt-action sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 7.62x54R 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 anti-heat ribbon"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 7.62x54R muzzle device"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "SV-98 bipod"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "55d5a2c34bdc2d962f8b4575",
@@ -825,15 +991,39 @@
    {
     "name": "MP-43-1C 12ga double-barrel shotgun",
     "shortName": "MP-43-1C",
+    "ergonomicsModifier": 44,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MP-43-1C 12ga double-barrel shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-43-1C 12ga 725mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-43-1C buttpad"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "55d5a27c4bdc2d8c2f8b456f",
@@ -882,16 +1072,70 @@
    {
     "name": "Kalashnikov AK-74N 5.45x39 assault rifle",
     "shortName": "AK-74N",
+    "ergonomicsModifier": 31,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-74N 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden handguard (6P20 Sb.6)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P1 Sb.8V)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 dust cover (6P20 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden stock (6P20 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5648be524bdc2d91118b45a4",
@@ -1322,16 +1566,60 @@
    {
     "name": "SIG P226R 9x19 pistol",
     "shortName": "P226R",
+    "ergonomicsModifier": 80,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SIG P226R 9x19 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "P226 9x19 112mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "P226 polymer pistol grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "P226R MK25 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "P226 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "P226 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "P226 9x19 15-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "56d59f62d2720bdc418b4569",
@@ -1491,16 +1779,50 @@
    {
     "name": "MP-153 12ga semi-automatic shotgun",
     "shortName": "MP-153",
+    "ergonomicsModifier": 43,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MP-153 12ga semi-automatic shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-153 12ga 750mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-153 polymer forestock"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-153 12ga 4-shell magazine cap"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-133/153 plastic stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "56deec06d2720bec348b4567",
@@ -1643,16 +1965,45 @@
    {
     "name": "PB 9x18PM silenced pistol",
     "shortName": "PB",
+    "ergonomicsModifier": 80,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PB 9x18PM silenced pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "PM 9x18PM 90-93 8-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "PB 9x18PM sound suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "PB bakilte side grips"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "56e05b74d2720bb8668b4586",
@@ -1714,16 +2065,45 @@
    {
     "name": "TT-33 7.62x25 TT pistol",
     "shortName": "TT",
+    "ergonomicsModifier": 70,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TT-33 7.62x25 TT pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "TT 7.62x25 116mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "TT side grips"
+        }
+       },
+       {
+        "item": {
+         "name": "TT 7.62x25 tt-105 8-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "571a13b32459771fd448f522",
@@ -1832,16 +2212,45 @@
    {
     "name": "Simonov SKS 7.62x39 carbine",
     "shortName": "SKS",
+    "ergonomicsModifier": 40,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault carbine"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Simonov SKS 7.62x39 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "SKS TOZ wooden stock (56-A-231 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "SKS rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SKS 7.62x39 10-round internal box magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "574dae34245977459a2f3f5c",
@@ -1937,16 +2346,65 @@
    {
     "name": "Saiga 12ga ver.10 12/76 semi-automatic shotgun",
     "shortName": "Saiga-12ga v.10",
+    "ergonomicsModifier": 35,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Saiga 12ga ver.10 12/76 semi-automatic shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 polymer handguard (Sb.7-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 thread protection tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 dust cover (Sb.0-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 AK-style stock"
+        }
+       },
+       {
+        "item": {
+         "name": "SOK-12 12/76 sb.5 5-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "576166c92459773ccd7031c7",
@@ -2251,16 +2709,40 @@
    {
     "name": "Yarygin MP-443 \"Grach\" 9x19 pistol",
     "shortName": "MP-443 \"Grach\"",
+    "ergonomicsModifier": 75,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Yarygin MP-443 \"Grach\" 9x19 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-443 \"Grach\" 9x19 18-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-443 \"Grach\" polymer pistol grip"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "576a59ce2459771e7c64ef24",
@@ -2319,16 +2801,55 @@
    {
     "name": "VSS Vintorez 9x39 special sniper rifle",
     "shortName": "VSS \"Vintorez\"",
+    "ergonomicsModifier": 43,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "VSS Vintorez 9x39 special sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS 9x39 6L24 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS 9x39 integral barrel-suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS wooden stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57838c0b2459774a256959af",
@@ -2511,16 +3032,35 @@
    {
     "name": "Makarov PM (t) 9x18PM pistol",
     "shortName": "PM (t)",
+    "ergonomicsModifier": 80,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Makarov PM (t) 9x18PM pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "PM 9x18PM 90-93 8-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5792056c24597773da7463b1",
@@ -2578,16 +3118,60 @@
    {
     "name": "AS VAL 9x39 special assault rifle",
     "shortName": "AS VAL",
+    "ergonomicsModifier": 46,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault carbine"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "AS VAL 9x39 special assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AS VAL 9x39 integral barrel-suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "AS VAL rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AS VAL dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "VSS 9x39 6L25 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "AS VAL pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AS VAL skeleton stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57c44cb62459772d2d75e37f",
@@ -2789,16 +3373,40 @@
    {
     "name": "PP-91 \"Kedr\" 9x18PM submachine gun",
     "shortName": "PP-91 \"Kedr\"",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" 9x18PM submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" polymer pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" 9x18PM 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57d1536524597714020ae83b",
@@ -2860,16 +3468,65 @@
    {
     "name": "Kalashnikov AKS-74U 5.45x39 assault rifle",
     "shortName": "AKS-74U",
+    "ergonomicsModifier": 44,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKS-74U 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P4 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U metal skeleton stock (6P26 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U 5.45x39 muzzle brake (6P26 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U dust cover (6P26 Sb.7)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U gas tube (6P26 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U wooden handguard (6P26 Sb.6)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57dc31bc245977596d4ef3d2",
@@ -3130,16 +3787,50 @@
    {
     "name": "PP-91-01 \"Kedr-B\" 9x18PM submachine gun",
     "shortName": "PP-91-01 \"Kedr-B\"",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PP-91-01 \"Kedr-B\" 9x18PM submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" polymer pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91-01 \"Kedr-B\" threaded suppressor adapter"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91-01 \"Kedr-B\" 9x18PM sound suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" 9x18PM 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57f3c7872459773c9c1f34dd",
@@ -3201,16 +3892,40 @@
    {
     "name": "PP-9 \"Klin\" 9x18PMM submachine gun",
     "shortName": "PP-9 \"Klin\"",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PP-9 \"Klin\" 9x18PMM submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" polymer pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-91 \"Kedr\" 9x18PM 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "57f4cc31245977379c268554",
@@ -3272,16 +3987,65 @@
    {
     "name": "Kalashnikov AKS-74UN 5.45x39 assault rifle",
     "shortName": "AKS-74UN",
+    "ergonomicsModifier": 44,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKS-74UN 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P1 Sb.8V)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U metal skeleton stock (6P26 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U 5.45x39 muzzle brake (6P26 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U dust cover (6P26 Sb.7)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U gas tube (6P26 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U wooden handguard (6P26 Sb.6)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "583990e32459771419544dd5",
@@ -3600,16 +4364,65 @@
    {
     "name": "Kalashnikov AKS-74UB 5.45x39 assault rifle",
     "shortName": "AKS-74UB",
+    "ergonomicsModifier": 44,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKS-74UB 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P1 Sb.8V)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U metal skeleton stock (6P26 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U PBS-4 5.45x39 sound suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74UB dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U gas tube (6P26 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74U wooden handguard (6P26 Sb.6)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5839a40f24597726f856b514",
@@ -3925,16 +4738,50 @@
    {
     "name": "Simonov OP-SKS 7.62x39 carbine (Hunting Rifle Version)",
     "shortName": "OP-SKS",
+    "ergonomicsModifier": 40,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault carbine"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Simonov OP-SKS 7.62x39 carbine (Hunting Rifle Version)"
+        }
+       },
+       {
+        "item": {
+         "name": "OP-SKS wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "SKS rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SKS 7.62x39 10-round internal box magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "OP-SKS dovetail mount"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "587e02ff24597743df3deaec",
@@ -4046,16 +4893,60 @@
    {
     "name": "Lobaev Arms DVL-10 7.62x51 bolt-action sniper rifle",
     "shortName": "DVL-10",
+    "ergonomicsModifier": 40,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Lobaev Arms DVL-10 7.62x51 bolt-action sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "DVL-10 7.62x51 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "DVL-10 M2 7.62x51 660mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "DVL-10 M2 7.62x51 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "DVL-10 M2 handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "Hogue OverMolded Rubber Grip (Olive Drab)"
+        }
+       },
+       {
+        "item": {
+         "name": "Lobaev Arms stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "588892092459774ac91d4b12",
@@ -4350,16 +5241,90 @@
    {
     "name": "SIG MPX 9x19 submachine gun",
     "shortName": "MPX",
+    "ergonomicsModifier": 40,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SIG MPX 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX 9x19 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX GEN1 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX 9x19 203mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX A2 9x19 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX GEN1 handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX GEN1 handguard 2 inch rail"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX GEN1 handguard 4 inch rail"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX/MCX collapsing/telescoping stock"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX double latch charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "58948c8f86f77409493f7267",
@@ -4558,16 +5523,65 @@
    {
     "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)",
     "shortName": "MP5",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 9x19 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 Wide Tropical polymer handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 Drum rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 A2 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 3-lug thread protector"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 cocking handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5926bb2186f7744b1c6c6e62",
@@ -4635,16 +5649,70 @@
    {
     "name": "PP-19-01 \"Vityaz\" 9x19 submachine gun",
     "shortName": "PP-19-01",
+    "ergonomicsModifier": 35,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" metal skeleton stock"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" 9x19 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" 9x19 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59985d9386f7742a0913990a",
@@ -4940,16 +6008,70 @@
    {
     "name": "Kalashnikov AKM 7.62x39 assault rifle",
     "shortName": "AKM",
+    "ergonomicsModifier": 26,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKM 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM gas tube (6P1 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden handguard (6P1 Sb.6-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM 7.62x39 muzzle brake-compensator (6P1 0-14)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM bakelite pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM dust cover (6P1 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM rear sight (6P1 Sb.2-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden stock (6P1 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 30-round magazine (issued '55 or later)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59d6088586f774275f374831",
@@ -5359,16 +6481,70 @@
    {
     "name": "Molot VPO-136 \"Vepr-KM\" 7.62x39 carbine",
     "shortName": "VPO-136 \"Vepr-KM\"",
+    "ergonomicsModifier": 30,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Molot VPO-136 \"Vepr-KM\" 7.62x39 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "Molot AKM-type gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-136 \"Vepr-KM\" wooden handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-136 \"Vepr-KM\" 7.62x39 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "Molot AKM-type dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM rear sight (6P1 Sb.2-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-136 \"Vepr-KM\" wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 30-round magazine (issued '55 or later)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59e6152586f77473dc057aa3",
@@ -5772,16 +6948,70 @@
    {
     "name": "Molot VPO-209 .366 TKM carbine",
     "shortName": "VPO-209",
+    "ergonomicsModifier": 30,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Molot VPO-209 .366 TKM carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "Molot AKM-type gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-209 wooden handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-209 thread protector"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "Molot AKM-type dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-209 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-209 wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 30-round magazine (issued '55 or later)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59e6687d86f77411d949b253",
@@ -6146,16 +7376,35 @@
    {
     "name": "Serdyukov SR-1MP Gyurza 9x21 pistol",
     "shortName": "SR-1MP",
+    "ergonomicsModifier": 82,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Serdyukov SR-1MP Gyurza 9x21 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "SR-1MP 9x21 18-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59f98b4986f7746f546d2cf0",
@@ -6201,16 +7450,70 @@
    {
     "name": "Saiga-9 9x19 carbine",
     "shortName": "Saiga-9",
+    "ergonomicsModifier": 32,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Saiga-9 9x19 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" metal skeleton stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Saiga-9 9x19 sb.7 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Saiga-9 9x19 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "PP-19-01 \"Vityaz\" gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59f9cabd86f7743a10721f47",
@@ -6451,16 +7754,70 @@
    {
     "name": "Kalashnikov AKMS 7.62x39 assault rifle",
     "shortName": "AKMS",
+    "ergonomicsModifier": 24,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKMS 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM gas tube (6P1 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden handguard (6P1 Sb.6-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM 7.62x39 muzzle brake-compensator (6P1 0-14)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM dust cover (6P1 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM rear sight (6P1 Sb.2-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKMS shoulder piece (6P4 Sb.1-19)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKMS 7.62x39 aluminium 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "59ff346386f77477562ff5e4",
@@ -6831,16 +8188,70 @@
    {
     "name": "Kalashnikov AKMN 7.62x39 assault rifle",
     "shortName": "AKMN",
+    "ergonomicsModifier": 26,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKMN 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM gas tube (6P1 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden handguard (6P1 Sb.6-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM 7.62x39 muzzle brake-compensator (6P1 0-14)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM bakelite pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM dust cover (6P1 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM rear sight (6P1 Sb.2-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden stock (6P1 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 6L10 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a0ec13bfcdbcb00165aa687",
@@ -7308,16 +8719,50 @@
    {
     "name": "Stechkin APS 9x18PM machine pistol",
     "shortName": "APS",
+    "ergonomicsModifier": 70,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Stechkin APS 9x18PM machine pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "APS 9x18PM 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "APS bakelite side-pieces"
+        }
+       },
+       {
+        "item": {
+         "name": "APS front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "APS rear sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a17f98cfcdbcb0980087291",
@@ -7411,17 +8856,76 @@
    {
     "name": "Remington R11 RSASS 7.62x51 marksman rifle",
     "shortName": "RSASS",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Remington R11 RSASS 7.62x51 marksman rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Magpul MIAD pistol grip (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 7.62x51 Magpul PMAG 20 SR-LR GEN M3 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "7.62x51mm M80"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt A2 buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul PRS GEN2 stock (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "R11 RSASS handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 7.62x51 22 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 AAC Blackout 51T 7.62x51 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "JP Enterprises Gas System-6"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a367e5dc4a282000e497390",
@@ -7865,16 +9369,45 @@
    {
     "name": "TOZ-106 20ga bolt-action shotgun",
     "shortName": "TOZ-106",
+    "ergonomicsModifier": 60,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TOZ-106 20ga bolt-action shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "TOZ-106 20ga MTs 20-01 Sb.3 2-shot magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "TOZ-106 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "TOZ-106 002 pistol grip"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a38e6bac4a2826c6e06d79c",
@@ -7945,16 +9478,50 @@
    {
     "name": "Remington Model 870 12ga pump-action shotgun",
     "shortName": "M870",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Remington Model 870 12ga pump-action shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "M870 12ga 508mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "M870 SpeedFeed Short handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "M870 12ga 4-shell magazine cap"
+        }
+       },
+       {
+        "item": {
+         "name": "M870 SPS polymer stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a7828548dc32e5a9c28b517",
@@ -8084,16 +9651,55 @@
    {
     "name": "Glock 17 9x19 pistol",
     "shortName": "Glock 17",
+    "ergonomicsModifier": 90,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Glock 17 9x19 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 17 9x19 barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 17 9x19 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 9x19 17-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5a7ae0c351dfba0017554312",
@@ -8297,17 +9903,66 @@
    {
     "name": "Springfield Armory M1A 7.62x51 rifle",
     "shortName": "M1A",
+    "ergonomicsModifier": 28,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Springfield Armory M1A 7.62x51 rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A 7.62x51 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A SOCOM 16 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A SOCOM 16 upper part"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A 7.62x51 16 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A SOCOM 16 7.62x51 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "M1A SA XS Post .125 Blade front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M14 SA Enlarged Military Aperture rear sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5aafa857e5b5b0001848096b",
@@ -8419,16 +10074,70 @@
    {
     "name": "Kalashnikov AKS-74N 5.45x39 assault rifle",
     "shortName": "AKS-74N",
+    "ergonomicsModifier": 32,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKS-74N 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden handguard (6P20 Sb.6)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P4 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 dust cover (6P20 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74 metal skeletonized stock (6P21 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ab8e9fcd8ce870019439437",
@@ -8823,16 +10532,70 @@
    {
     "name": "Kalashnikov AKMSN 7.62x39 assault rifle",
     "shortName": "AKMSN",
+    "ergonomicsModifier": 24,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKMSN 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM gas tube (6P1 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden handguard (6P1 Sb.6-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-136 \"Vepr-KM\" 7.62x39 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM wooden pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM dust cover (6P1 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM rear sight (6P1 Sb.2-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKMSN shoulder piece (6P4N Sb.1-19)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKMS 7.62x39 aluminium 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5abcbc27d8ce8700182eceee",
@@ -9261,16 +11024,60 @@
    {
     "name": "APB 9x18PM silenced machine pistol",
     "shortName": "APB",
+    "ergonomicsModifier": 80,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "APB 9x18PM silenced machine pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "APS 9x18PM 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "APB detachable wire stock"
+        }
+       },
+       {
+        "item": {
+         "name": "APS bakelite side-pieces"
+        }
+       },
+       {
+        "item": {
+         "name": "APS front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "APB rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "APB 9x18PM sound suppressor"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5abccb7dd8ce87001773e279",
@@ -9380,16 +11187,70 @@
    {
     "name": "Kalashnikov AK-74M 5.45x39 assault rifle",
     "shortName": "AK-74M",
+    "ergonomicsModifier": 33,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-74M 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L23 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac4cd105acfc4001633985c",
@@ -9787,16 +11648,70 @@
    {
     "name": "Kalashnikov AK-101 5.56x45 assault rifle",
     "shortName": "AK-101",
+    "ergonomicsModifier": 35,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-101 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-101 5.56x45 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-101 5.56x45 6L29 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac66cb05acfc40198510a13",
@@ -10155,16 +12070,70 @@
    {
     "name": "Kalashnikov AK-102 5.56x45 assault rifle",
     "shortName": "AK-102",
+    "ergonomicsModifier": 38,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-102 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-102 5.56x45 muzzle brake-compensator (6P44 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-105 rear sight (6P44 Sb.1-30)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-101 5.56x45 6L29 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac66d015acfc400180ae6e7",
@@ -10511,16 +12480,70 @@
    {
     "name": "Kalashnikov AK-103 7.62x39 assault rifle",
     "shortName": "AK-103",
+    "ergonomicsModifier": 35,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-103 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-103 7.62x39 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-103 7.62x39 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac66d2e5acfc43b321d4b56",
@@ -10930,16 +12953,70 @@
    {
     "name": "Kalashnikov AK-104 7.62x39 assault rifle",
     "shortName": "AK-104",
+    "ergonomicsModifier": 38,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-104 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-104 7.62x39 muzzle brake-compensator (6P46 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-105 rear sight (6P44 Sb.1-30)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-103 7.62x39 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac66d725acfc43b321d4b63",
@@ -11337,16 +13414,70 @@
    {
     "name": "Kalashnikov AK-105 5.45x39 assault rifle",
     "shortName": "AK-105",
+    "ergonomicsModifier": 38,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-105 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 polymer handguard (6P20 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-105 5.45x39 muzzle brake-compensator (6P44 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK polymer pistol grip (6P1 Sb.8)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M dust cover (6P34 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-105 rear sight (6P44 Sb.1-30)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M polymer stock (6P34 Sb.15)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L23 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ac66d9b5acfc4001633997d",
@@ -11732,16 +13863,55 @@
    {
     "name": "Mosin 7.62x54R bolt-action rifle (Sniper)",
     "shortName": "Mosin (Sniper)",
+    "ergonomicsModifier": 17,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Mosin 7.62x54R bolt-action rifle (Sniper)"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle 7.62x54R 5-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle standard stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle 7.62x54R 730mm regular barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle rear sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ae08f0a5acfc408fb1398a3",
@@ -11849,16 +14019,85 @@
    {
     "name": "DS Arms SA-58 7.62x51 assault rifle",
     "shortName": "SA-58",
+    "ergonomicsModifier": 34,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "DS Arms SA-58 7.62x51 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 SAW-style pistol grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58/FAL 7.62x51 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 quad rail handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 7.62x51 11 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 3-Prong Trident 7.62x51 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 Holland Type rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 Extreme Duty dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58 buffer tube adapter"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul MOE Carbine stock (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul MOE Carbine rubber buttpad"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5b0bbe4e5acfc40dc528a72f",
@@ -12047,16 +14286,55 @@
    {
     "name": "Glock 18C 9x19 machine pistol",
     "shortName": "Glock 18C",
+    "ergonomicsModifier": 90,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Glock 18C 9x19 machine pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 18C 9x19 barrel with a compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 18C 9x19 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 9x19 17-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5b1fa9b25acfc40018633c03",
@@ -12221,16 +14499,45 @@
    {
     "name": "TT-33 7.62x25 TT pistol (Golden)",
     "shortName": "TT Gold",
+    "ergonomicsModifier": 70,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TT-33 7.62x25 TT pistol (Golden)"
+        }
+       },
+       {
+        "item": {
+         "name": "TT 7.62x25 116mm gilded barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "TT ornated side grips"
+        }
+       },
+       {
+        "item": {
+         "name": "TT 7.62x25 tt-105 8-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5b3b713c5acfc4330140bd8f",
@@ -12339,16 +14646,55 @@
    {
     "name": "HK MP7A1 4.6x30 submachine gun",
     "shortName": "MP7A1",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK MP7A1 4.6x30 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 4.6x30 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7A1 4.6x30 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7A1 stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ba26383d4351e00334c93db",
@@ -12797,16 +15143,85 @@
    {
     "name": "HK 416A5 5.56x45 assault rifle",
     "shortName": "HK 416A5",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK 416A5 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 HK Battle Grip Beavertail pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 HK Steel Maritime STANAG 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 5.56x45 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 5.56x45 14.5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt USGI A2 5.56x45 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 low profile gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 Quad Rail handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK Enhanced Tube buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 HK Slim Line buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 HK Extended Latch charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bb2475ed4351e00853264e5",
@@ -13068,16 +15483,55 @@
    {
     "name": "HK MP7A2 4.6x30 submachine gun",
     "shortName": "MP7A2",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK MP7A2 4.6x30 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 4.6x30 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7A1 4.6x30 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7 flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP7A2 stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bd70322209c4d00d7167b91",
@@ -13620,16 +16074,80 @@
    {
     "name": "RPK-16 5.45x39 light machine gun",
     "shortName": "RPK-16",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Machinegun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "RPK-16 5.45x39 light machine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-12 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 rear sight base"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-12 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 handguard rail"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 5.45x39 15 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "RPK-16 5.45x39 muzzle brake-compensator"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5beed0f50db834001c062b18",
@@ -13848,16 +16366,70 @@
    {
     "name": "Kalashnikov AK-74 5.45x39 assault rifle",
     "shortName": "AK-74",
+    "ergonomicsModifier": 30,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AK-74 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden handguard (6P20 Sb.6)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P4 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 dust cover (6P20 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden stock (6P20 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bf3e03b0db834001d2c4a9f",
@@ -14230,16 +16802,70 @@
    {
     "name": "Kalashnikov AKS-74 5.45x39 assault rifle",
     "shortName": "AKS-74",
+    "ergonomicsModifier": 31,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kalashnikov AKS-74 5.45x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 gas tube (6P20 Sb.1-2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 wooden handguard (6P20 Sb.6)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK bakelite pistol grip (6P4 Sb.9)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 dust cover (6P20 0-1)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 rear sight (6P20 Sb.2)"
+        }
+       },
+       {
+        "item": {
+         "name": "AKS-74 metal skeletonized stock (6P21 Sb.5)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L20 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bf3e0490db83400196199b2",
@@ -14576,16 +17202,55 @@
    {
     "name": "Mosin 7.62x54R bolt-action rifle (Infantry)",
     "shortName": "Mosin (Infantry)",
+    "ergonomicsModifier": 17,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Mosin 7.62x54R bolt-action rifle (Infantry)"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle 7.62x54R 5-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle Infantry stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle 7.62x54R 730mm regular barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Mosin Rifle rear sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bfd297f0db834001a66911b",
@@ -14677,16 +17342,45 @@
    {
     "name": "Remington Model 700 7.62x51 bolt-action sniper rifle",
     "shortName": "M700",
+    "ergonomicsModifier": 33,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Remington Model 700 7.62x51 bolt-action sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "M700 7.62x51 Wyatt's Outdoor 5-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "M700 Hogue Overmolded Ghillie stock"
+        }
+       },
+       {
+        "item": {
+         "name": "M700 7.62x51 20 inch threaded barrel"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5bfea6e90db834001b7347f5",
@@ -14812,16 +17506,75 @@
    {
     "name": "ADAR 2-15 5.56x45 carbine",
     "shortName": "ADAR 2-15",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "ADAR 2-15 5.56x45 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 ADAR 2-15 wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 Magpul PMAG 10 GEN M3 STANAG 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "ADAR 2-15 5.56x45 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 5.56x45 Molot Arms 406mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 ADAR 2-15 5.56x45 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "M4A1 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 ADAR 2-15 wooden handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 ADAR 2-15 buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 ADAR 2-15 charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5c07c60e0db8340023300521",
@@ -15119,16 +17872,85 @@
    {
     "name": "SVDS 7.62x54R sniper rifle",
     "shortName": "SVDS",
+    "ergonomicsModifier": 26,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SVDS 7.62x54R sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "SVD 7.62x54R 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS 7.62x54R 22 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS 7.62x54R muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS upper band"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS polymer handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "SVDS dust cover"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5c46fbd72e2216398b5a8c9e",
@@ -15390,16 +18212,55 @@
    {
     "name": "Desert Tech MDR 5.56x45 assault rifle",
     "shortName": "MDR",
+    "ergonomicsModifier": 72,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Desert Tech MDR 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR pistol grip (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 Magpul PMAG 30 GEN M3 W STANAG 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR handguard (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR 5.56x45 16 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Desert Tech 5.56x45 flash hider"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5c488a752e221602b412af65",
@@ -15764,16 +18625,55 @@
    {
     "name": "Molot VPO-101 \"Vepr-Hunter\" 7.62x51 carbine",
     "shortName": "VPO-101 \"Vepr-Hunter\"",
+    "ergonomicsModifier": 29,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault carbine"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Molot VPO-101 \"Vepr-Hunter\" 7.62x51 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-101 \"Vepr-Hunter\" gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-101 \"Vepr-Hunter\" dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-101 \"Vepr-Hunter\" rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-101 \"Vepr-Hunter\" stock"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-101 \"Vepr-Hunter\" 7.62x51 5-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5c501a4d2e221602b412b543",
@@ -15953,16 +18853,65 @@
    {
     "name": "Beretta M9A3 9x19 pistol",
     "shortName": "M9A3",
+    "ergonomicsModifier": 70,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Beretta M9A3 9x19 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 9x19 threaded barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 polymer side grips"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 9x19 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M9A3 9x19 17-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5cadc190ae921500103bb3b8",
@@ -16086,16 +19035,60 @@
    {
     "name": "ASh-12 12.7x55 assault rifle",
     "shortName": "ASh-12",
+    "ergonomicsModifier": 55,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "ASh-12 12.7x55 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 12.7x55 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 12.7x55 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 folding front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 polymer handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 vertical foregrip"
+        }
+       },
+       {
+        "item": {
+         "name": "ASh-12 rear sight carry handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5cadfbf7ae92152ac412eef4",
@@ -16676,16 +19669,75 @@
    {
     "name": "FN P90 5.7x28 submachine gun",
     "shortName": "P90",
+    "ergonomicsModifier": 60,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN P90 5.7x28 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 5.7x28 50-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 buttpad"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 5.7x28 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 Ring Sight reflex sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 upper receiver side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 5.7x28 10.5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 5.7x28 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "FN P90 charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5cc82d76e24e8d00134b4b85",
@@ -16791,16 +19843,60 @@
    {
     "name": "HK MP5K 9x19 submachine gun",
     "shortName": "MP5K-N",
+    "ergonomicsModifier": 55,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK MP5K 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 9x19 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5K 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5K polymer handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5 Drum rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5K End Cap stock"
+        }
+       },
+       {
+        "item": {
+         "name": "HK MP5K cocking handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5d2f0d8048f0356c925bc3b2",
@@ -16865,16 +19961,55 @@
    {
     "name": "FN Five-seveN MK2 5.7x28 pistol",
     "shortName": "FN 5-7",
+    "ergonomicsModifier": 86,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 5.7x28 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN 5.7x28 barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN 5.7x28 20-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5d3eb3b0a4b93615055e84d4",
@@ -16982,16 +20117,95 @@
    {
     "name": "Lone Star TX-15 DML 5.56x45 carbine",
     "shortName": "TX-15 DML",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Lone Star TX-15 DML 5.56x45 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Magpul MOE pistol grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "TX-15 5.56x45 Lightweight upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 5.56x45 18 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Thunder Beast Arms 223CB 5.56x45 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "Thunder Beast Arms Ultra 5 sound suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "Daniel Defense MK12 Low Profile Gas Block"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Lone Star Ion Lite handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul M-LOK 2.5 inch rail"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul M-LOK 4.1 inch rail"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul PRS GEN3 stock (Grey)"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Radian Weapons Raptor charging handle (Grey)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5d43021ca4b9362eab4b5e27",
@@ -17289,16 +20503,55 @@
    {
     "name": "FN Five-seveN MK2 5.7x28 pistol (FDE)",
     "shortName": "FN 5-7 FDE",
+    "ergonomicsModifier": 86,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 5.7x28 pistol (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN 5.7x28 barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN MK2 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN Five-seveN 5.7x28 20-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5d67abc1a4b93614ec501381",
@@ -17406,17 +20659,56 @@
    {
     "name": "Desert Tech MDR 7.62x51 assault rifle",
     "shortName": "MDR",
+    "ergonomicsModifier": 72,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Desert Tech MDR 7.62x51 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR pistol grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 7.62x51 Magpul PMAG 20 SR-LR GEN M3 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR handguard (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "MDR 7.62x51 16 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Desert Tech 7.62x51 flash hider"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5dcbd56fdbd3d91b3e5468d7",
@@ -17733,16 +21025,55 @@
    {
     "name": "Molot VPO-215 \"Gornostay\" .366 TKM bolt-action rifle",
     "shortName": "VPO-215 \"Gornostay\"",
+    "ergonomicsModifier": 41,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Molot VPO-215 \"Gornostay\" .366 TKM bolt-action rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-215 \"Gornostay\" .366 TKM 4-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-215 \"Gornostay\" stock"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-215 \"Gornostay\" .366TKM 23 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-215 \"Gornostay\" thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "VPO-215 \"Gornostay\" scope rail mount"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5de652c31b7e3716273428c0",
@@ -17817,16 +21148,65 @@
    {
     "name": "B&T MP9-N 9x19 submachine gun",
     "shortName": "MP9-N",
+    "ergonomicsModifier": 75,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "B&T MP9-N 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 9x19 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9-N vertical foregrip"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9-N 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5de7bd7bfd6b4e6e2276dc27",
@@ -17945,16 +21325,85 @@
    {
     "name": "ORSIS T-5000M 7.62x51 bolt-action sniper rifle",
     "shortName": "T-5000M",
+    "ergonomicsModifier": 35,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "ORSIS T-5000M 7.62x51 bolt-action sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M 7.62x51 5-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "T-5000M 7.62x51 660mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M 7.62x51 muzzle brake-compensator"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M aluminium body"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M medium length rail"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M long length rail"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M padded handguard grip"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M stock"
+        }
+       },
+       {
+        "item": {
+         "name": "ORSIS T-5000M scope mount"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5df24cf80dee1b22f862e9be",
@@ -18029,17 +21478,91 @@
    {
     "name": "Knight's Armament Company SR-25 7.62x51 marksman rifle",
     "shortName": "SR-25",
+    "ergonomicsModifier": 47,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Knight's Armament Company SR-25 7.62x51 marksman rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt A2 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 7.62x51 KAC 20-round steel magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "LMT SOPMOD stock"
+        }
+       },
+       {
+        "item": {
+         "name": "SR-25 7.62x51 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "SR-25 7.62x51 16 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 KAC QDC 7.62x51 flash suppressor kit"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 KAC Low Profile Gas Block"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 KAC URX 4 14.5 inch handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "KAC Folding Micro front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "KAC Folding Micro rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 KAC charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5df8ce05b11454561e39243d",
@@ -18229,16 +21752,60 @@
    {
     "name": "B&T MP9 9x19 submachine gun",
     "shortName": "MP9",
+    "ergonomicsModifier": 75,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "B&T MP9 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 9x19 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 charging handle"
+        }
+       },
+       {
+        "item": {
+         "name": "MP9 bottom rail"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5e00903ae9dc277128008b89",
@@ -18357,16 +21924,75 @@
    {
     "name": "Colt M1911A1 .45 ACP pistol",
     "shortName": "M1911A1",
+    "ergonomicsModifier": 75,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Colt M1911A1 .45 ACP pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 .45 ACP 127mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 side grips"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 .45 ACP pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 .45 ACP 7-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 trigger"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 hammer"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 slide stop"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5e81c3cbac2bb513793cdc77",
@@ -18566,17 +22192,36 @@
    {
     "name": "FN40GL Mk2 grenade launcher",
     "shortName": "FN40GL",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN40GL Mk2 grenade launcher"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Damage Industries ECS pistol grip (FDE)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ecd051046779c0def791544",
@@ -18960,17 +22605,51 @@
    {
     "name": "TOZ KS-23M 23x75mm pump-action shotgun",
     "shortName": "KS-23M",
+    "ergonomicsModifier": 38,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TOZ KS-23M 23x75mm pump-action shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "KS-23 23x75 700mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "KS-23M forestock"
+        }
+       },
+       {
+        "item": {
+         "name": "KS-23M 23x75 3-shell magazine cap"
+        }
+       },
+       {
+        "item": {
+         "name": "KS-23 wooden stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5e848cc2988a8701445df1ea",
@@ -19051,16 +22730,60 @@
    {
     "name": "Mossberg 590A1 12ga pump-action shotgun",
     "shortName": "590A1",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Mossberg 590A1 12ga pump-action shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590A1 12ga 20 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590 Ghost Ring front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590A1 SpeedFeed short handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590A1 12ga 8-shell magazine cap"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590A1 polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Mossberg 590 Ghost Ring rear sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5e870397991fd70db46995ca",
@@ -19163,16 +22886,50 @@
    {
     "name": "PPSh-41 7.62x25 submachine gun",
     "shortName": "PPSh41",
+    "ergonomicsModifier": 16,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "PPSh-41 7.62x25 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "PPSh-41 stock"
+        }
+       },
+       {
+        "item": {
+         "name": "PPSh-41 7.62x25 35-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "PPSh-41 dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "PPSh-41 7.62x25 10.6 inch barrel"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5ea03f7400685063ec28bfab",
@@ -19250,16 +23007,60 @@
    {
     "name": "Kel-Tec RFB 7.62x51 rifle",
     "shortName": "RFB",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Kel-Tec RFB 7.62x51 rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "SA-58/FAL 7.62x51 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "RFB 7.62x51 18 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "RFB thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "RFB handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "RFB handguard rail mount"
+        }
+       },
+       {
+        "item": {
+         "name": "RFB scope rail mount"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5f2a9575926fd93523393822",
@@ -19346,16 +23147,75 @@
    {
     "name": "Colt M45A1 .45 ACP pistol",
     "shortName": "M45A1",
+    "ergonomicsModifier": 78,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Colt M45A1 .45 ACP pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 .45 ACP National Match barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 Mil-Tac GVT G10 side grips"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 .45 ACP pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 Novak Lomount rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 Novak Lomount front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "M1911A1 .45 ACP Wilson Combat 7-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 trigger"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 hammer"
+        }
+       },
+       {
+        "item": {
+         "name": "M45A1 slide lock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5f36a0e5fbf956000b716b67",
@@ -19560,16 +23420,70 @@
    {
     "name": "TDI KRISS Vector Gen.2 .45 ACP submachine gun",
     "shortName": "Vector .45ACP",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TDI KRISS Vector Gen.2 .45 ACP submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock .45 ACP 13-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Defiance low profile flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Defiance low profile flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector Gen.2 folding stock"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector .45 ACP 5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector .45 ACP thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector side rail"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5fb64bc92b1b027b1f50bcf4",
@@ -19929,16 +23843,90 @@
    {
     "name": "SIG MCX .300 Blackout assault rifle",
     "shortName": "MCX .300 BLK",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SIG MCX .300 Blackout assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "5.56x45 Colt AR-15 STANAG 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX GEN1 .300 BLK upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX .300 BLK 229mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "SIG Sauer Taper-LOK 7.62x51/.300 BLK muzzle adapter"
+        }
+       },
+       {
+        "item": {
+         "name": "SIG Sauer Two Port Brake 7.62x51 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX GEN1 KeyMod 8 inch handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "MPX/MCX lightweight stock"
+        }
+       },
+       {
+        "item": {
+         "name": "MCX charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5fbcc1d9016cce60e8341ab5",
@@ -20173,17 +24161,76 @@
    {
     "name": "SWORD International Mk-18 .338 LM marksman rifle",
     "shortName": "Mk-18 Mj\u00f6lnir",
+    "ergonomicsModifier": 14,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SWORD International Mk-18 .338 LM marksman rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "Hogue OverMolded Rubber Grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk-18 .338 LM 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "B5 Systems Precision stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk-18 .338 LM upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk-18 .338 LM 24 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "SilencerCo AC-858 ASR .338 LM muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk-18 gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk-18 18 inch handguard"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5fc22d7c187fea44d52eda46",
@@ -20360,16 +24407,55 @@
    {
     "name": "HK UMP .45 ACP submachine gun",
     "shortName": "UMP 45",
+    "ergonomicsModifier": 62,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK UMP .45 ACP submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "HK UMP .45 ACP 25-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK UMP polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "HK UMP .45 ACP 8 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "HK UMP bottom handguard rail"
+        }
+       },
+       {
+        "item": {
+         "name": "HK UMP side handguard rail"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5fc3e272f8b6a877a729eac7",
@@ -20621,16 +24707,70 @@
    {
     "name": "TDI KRISS Vector Gen.2 9x19 submachine gun",
     "shortName": "Vector 9x19",
+    "ergonomicsModifier": 65,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "TDI KRISS Vector Gen.2 9x19 submachine gun"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 9x19 17-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Defiance low profile flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Defiance low profile flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector Gen.2 folding stock"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector 9x19 5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector 9x19 thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "KRISS Vector side rail"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "5fc3f2d5900b1d5091531e59",
@@ -20996,15 +25136,54 @@
    {
     "name": "Lebedev PL-15 9x19 pistol",
     "shortName": "PL-15",
+    "ergonomicsModifier": 93,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Lebedev PL-15 9x19 pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "PL-15 9x19 barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "PL-15 pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "PL-15 rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "PL-15 front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "PL-15 9x19 16-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "602a9740da11d6478d5a06de",
@@ -21103,16 +25282,80 @@
    {
     "name": "Soyuz-TM STM-9 Gen.2 9x19 carbine",
     "shortName": "STM-9",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "SMG"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Soyuz-TM STM-9 Gen.2 9x19 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 DLG Tactical DLG-123 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "Glock 9x19 \"Big Stick\" 33-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "STM-9 9x19 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "STM-9 9x19 10.5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "STM-9 9x19 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Soyuz-TM 9 inch M-LOK handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "Soyuz-TM buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "FAB Defense GL-CORE buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 MASP Industries Ambidextrous Battle Charging Handle"
+        }
+       },
+       {
+        "item": {
+         "name": "STM-9 magwell"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "60339954d62c9b14ed777c08",
@@ -21372,17 +25615,91 @@
    {
     "name": "CMMG Mk47 Mutant 7.62x39 assault rifle",
     "shortName": "Mk47",
+    "ergonomicsModifier": 42,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "CMMG Mk47 Mutant 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Magpul MOE pistol grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk47 Resolute 7.62x39 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk47 254mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 CMMG SV Brake 7.62x51 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "CMMG low profile gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 CMMG MK3 RML9 9 inch M-LOK handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul MBUS Gen2 flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Magpul MBUS Gen2 flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "CMMG buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "CMMG RipStock buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "Mk47 ambidextrous charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "606587252535c57a13424cff",
@@ -21629,15 +25946,49 @@
    {
     "name": "MP-155 12ga semi-automatic shotgun",
     "shortName": "MP-155",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MP-155 12ga semi-automatic shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-155 510mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-155 walnut forestock"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-155 12ga 6-shell magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-155 walnut stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "606dae0ab0e443224b421bb9",
@@ -21758,15 +26109,54 @@
    {
     "name": "MTs-255-12 12ga shotgun",
     "shortName": "MTs-255-12",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Revolver"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MTs-255-12 12ga shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "MTs-255-12 12ga cylinder"
+        }
+       },
+       {
+        "item": {
+         "name": "MTs-255-12 12ga 755mm barrel with rib"
+        }
+       },
+       {
+        "item": {
+         "name": "MTs-255-12 12ga choke"
+        }
+       },
+       {
+        "item": {
+         "name": "MTs-255-12 wooden stock"
+        }
+       },
+       {
+        "item": {
+         "name": "MTs-255-12 beechwood forestock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "60db29ce99594040e04c4a2b",
@@ -21841,16 +26231,100 @@
    {
     "name": "FN SCAR-H 7.62x51 assault rifle (FDE)",
     "shortName": "Mk 17",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 assault rifle (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Damage Industries ECS pistol grip (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 20-round magazine (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 upper receiver (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 16 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AAC SCAR-SD 51T 7.62x51 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR folding polymer stock (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR retractable polymer stock (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR rubber buttpad"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR cheek rest (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6165ac306ef05c2ce828ef76",
@@ -22025,16 +26499,120 @@
    {
     "name": "HK G28 7.62x51 marksman rifle",
     "shortName": "G28",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Marksman rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK G28 7.62x51 marksman rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 HK Battle Grip Beavertail pistol grip (RAL 8000)"
+        }
+       },
+       {
+        "item": {
+         "name": "HK417/G28 7.62x51 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G28 buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "HK Adjustable Buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "HK Adjustable Buttstock cheek rest"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G28 7.62x51 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "Recknagel Era-Tac 34mm ring scope mount"
+        }
+       },
+       {
+        "item": {
+         "name": "Schmidt & Bender PM II 3-12x50 34mm riflescope"
+        }
+       },
+       {
+        "item": {
+         "name": "Recknagel Era-Tac Sunshade mount for Aimpoint T-1"
+        }
+       },
+       {
+        "item": {
+         "name": "Aimpoint Micro T-1 reflex sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK417 7.62x51 16.5 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "HK Prolonged 7.62x51 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G28 B&T QD 7.62x51 sound suppressor"
+        }
+       },
+       {
+        "item": {
+         "name": "HK417 low profile gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "HK417 Extended Free Float handguard with flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK Sturmgriff foregrip"
+        }
+       },
+       {
+        "item": {
+         "name": "HK 416A5 flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK417 E1 extended charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6176aca650224f204c1da3fd",
@@ -22203,16 +26781,100 @@
    {
     "name": "FN SCAR-H 7.62x51 assault rifle",
     "shortName": "Mk 17",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt A2 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 20-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-H 7.62x51 20 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AAC SCAR-SD 51T 7.62x51 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR folding polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR retractable polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR rubber buttpad"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR cheek rest"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6183afd850224f204c1da516",
@@ -22387,15 +27049,99 @@
    {
     "name": "FN SCAR-L 5.56x45 assault rifle",
     "shortName": "Mk 16",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Colt A2 pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 18 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR folding polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR retractable polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR rubber buttpad"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR cheek rest"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6184055050224f204c1da542",
@@ -22621,15 +27367,99 @@
    {
     "name": "FN SCAR-L 5.56x45 assault rifle (FDE)",
     "shortName": "Mk 16",
+    "ergonomicsModifier": 45,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 assault rifle (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Damage Industries ECS pistol grip (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 30-round magazine (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 upper receiver (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 14 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR-L 5.56x45 flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR flip-up rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR bottom rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR side rail"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR folding polymer stock (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR retractable polymer stock (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR rubber buttpad"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR cheek rest (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "FN SCAR charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "618428466ef05c2ce828f21c",
@@ -22855,16 +27685,70 @@
    {
     "name": "HK USP .45 ACP pistol",
     "shortName": "USP .45",
+    "ergonomicsModifier": 82,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Handgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "wearable"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK USP .45 ACP pistol"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP .45 ACP standard barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP .45 ACP pistol slide"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP .45 ACP 12-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP trigger"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP hammer"
+        }
+       },
+       {
+        "item": {
+         "name": "HK USP slide lock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6193a720f8ee7e52e42109ef",
@@ -23020,15 +27904,49 @@
    {
     "name": "Chiappa Rhino 50DS .357 revolver",
     "shortName": "CR 50DS",
+    "ergonomicsModifier": 80,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Revolver"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Chiappa Rhino 50DS .357 revolver"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino .357 6-round cylinder"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino wooden pistol grip"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "61a4c8884f95bc3b2c5dc971",
@@ -23158,15 +28076,44 @@
    {
     "name": "MP-18 7.62x54R single-shot rifle",
     "shortName": "MP-18",
+    "ergonomicsModifier": 44,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "MP-18 7.62x54R single-shot rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-18 7.62x54R 600mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-18 wooden handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "MP-18 wooden stock"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "61f7c9e189e6fb1a5e3ea78f",
@@ -23212,16 +28159,19 @@
    {
     "name": "ZiD SP-81 26x75 signal pistol",
     "shortName": "SP-81",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": null,
      "slots": []
     },
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ZiD_SP-81_26x75_signal_pistol",
@@ -23231,16 +28181,19 @@
    {
     "name": "RSP-30 reactive signal cartridge (Green)",
     "shortName": "Green",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": null,
      "slots": []
     },
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Green)",
@@ -23250,15 +28203,18 @@
    {
     "name": "ROP-30 reactive flare cartridge (White)",
     "shortName": "Flare",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": null,
      "slots": []
     },
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ROP-30_reactive_flare_cartridge_(White)",
@@ -23268,16 +28224,19 @@
    {
     "name": "RSP-30 reactive signal cartridge (Red)",
     "shortName": "Red",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": null,
      "slots": []
     },
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Red)",
@@ -23287,15 +28246,74 @@
    {
     "name": "HK G36 5.56x45 assault rifle",
     "shortName": "G36",
+    "ergonomicsModifier": 48,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "HK G36 5.56x45 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 5.56x45 30-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 polymer stock"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 5.56x45 480mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 5.56x45 4-prong flash hider"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 gas block"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 6-vent handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 magwell"
+        }
+       },
+       {
+        "item": {
+         "name": "HK G36 HKV 3x carry handle"
+        }
+       },
+       {
+        "item": {
+         "name": "Hensoldt RV red dot sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "623063e994fc3f7b302a9699",
@@ -23477,16 +28495,19 @@
    {
     "name": "RSP-30 reactive signal cartridge (Yellow)",
     "shortName": "Yellow",
+    "ergonomicsModifier": 51,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Grenade launcher"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": null,
      "slots": []
     },
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/RSP-30_reactive_signal_cartridge_(Yellow)",
@@ -23496,15 +28517,44 @@
    {
     "name": "Chiappa Rhino 200DS 9x19 revolver",
     "shortName": "CR 200DS",
+    "ergonomicsModifier": 95,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Revolver"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Chiappa Rhino 200DS 9x19 revolver"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino 9x19 6-round cylinder"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino front sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Chiappa Rhino wooden pistol grip"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "624c2e8614da335f1e034d8e",
@@ -23569,15 +28619,69 @@
    {
     "name": "Benelli M3 Super 90 dual-mode 12ga shotgun",
     "shortName": "M3 Super 90",
+    "ergonomicsModifier": 42,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Shotgun"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Benelli M3 Super 90 dual-mode 12ga shotgun"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 Super 90 12ga 500mm barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 forend"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 Super 90 12ga 5-shell magazine cap"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 telescopic stock"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 telescopic stock pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 Super 90 upper receiver top rail"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 Ghost Ring rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "Benelli M3 Super 90 charging handle"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "6259b864ebedf17603599e89",
@@ -23715,16 +28819,50 @@
    {
     "name": "M32A1 MSGL 40mm grenade launcher",
     "shortName": "MSGL",
+    "ergonomicsModifier": 30,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Revolver"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "M32A1 MSGL 40mm grenade launcher"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-15 Damage Industries ECS pistol grip (FDE)"
+        }
+       },
+       {
+        "item": {
+         "name": "High Standard M4SS Stock"
+        }
+       },
+       {
+        "item": {
+         "name": "M32A1 40mm cylinder"
+        }
+       },
+       {
+        "item": {
+         "name": "Milkor M2A1 grenade launcher reflex sight"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "627533300b654e6532016da6",
@@ -24214,16 +29352,100 @@
    {
     "name": "Accuracy International AXMC .338 LM bolt-action sniper rifle",
     "shortName": "AXMC",
+    "ergonomicsModifier": 21,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Sniper rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Accuracy International AXMC .338 LM bolt-action sniper rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC .338 LM 10-round magazine"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC AX buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC .338 LM chassis"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC AX KeySlot 16 inch handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC AT X Top Rail "
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC Adapter Kit short length rail"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC Adapter Kit medium length rail"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC padded handguard grip"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC upper receiver"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC .338 LM 28 inch barrel"
+        }
+       },
+       {
+        "item": {
+         "name": "AI .338 LM Tactical Muzzle Brake "
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC thread protection cap"
+        }
+       },
+       {
+        "item": {
+         "name": "AI AXMC .338 LM bolt assembly"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "627e14b21713922ded6f2c16",
@@ -24285,16 +29507,75 @@
    {
     "name": "Rifle Dynamics RD-704 7.62x39 assault rifle",
     "shortName": "RD-704",
+    "ergonomicsModifier": 41,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun",
      "noFlea"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "Rifle Dynamics RD-704 7.62x39 assault rifle"
+        }
+       },
+       {
+        "item": {
+         "name": "RD-704 SLR ION Lite + Railed Gas Tube handguard & gas tube combo"
+        }
+       },
+       {
+        "item": {
+         "name": "AR-10 Dead Air Keymount 7.62x51 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "AK TangoDown Battle Grip pistol grip"
+        }
+       },
+       {
+        "item": {
+         "name": "RD-704 dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "AK RD Enhanced V2 Rear Sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AKM/AK-74 RD AK to M4 buffer tube adapter"
+        }
+       },
+       {
+        "item": {
+         "name": "Colt Carbine buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "SB Tactical SBA3 buttstock"
+        }
+       },
+       {
+        "item": {
+         "name": "AK 7.62x39 30-round magazine (issued '55 or later)"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "628a60ae6b1d481ff772e9ca",
@@ -24743,15 +30024,74 @@
    {
     "name": "SAG AK-545 5.45x39 carbine",
     "shortName": "AK-545",
+    "ergonomicsModifier": 50,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SAG AK-545 5.45x39 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG Mk. 2.1 gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG Mk.3 handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG railed dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74M 5.45x39 muzzle brake-compensator (6P20 0-20)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK Strike Industries Enhanced Pistol Grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "High Standard M4SS Stock"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L23 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "628b5638ad252a16da6dd247",
@@ -24987,15 +30327,74 @@
    {
     "name": "SAG AK-545 Short 5.45x39 carbine",
     "shortName": "AK-545 Short",
+    "ergonomicsModifier": 53,
+    "recoilModifier": null,
     "conflictingSlotIds": [],
     "category": {
      "name": "Assault rifle"
     },
+    "conflictingItems": [],
     "types": [
      "gun"
     ],
     "properties": {
-     "__typename": "ItemPropertiesWeapon",
+     "defaultPreset": {
+      "containsItems": [
+       {
+        "item": {
+         "name": "SAG AK-545 Short 5.45x39 carbine"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG Mk. 2.1 gas tube"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG Mk.3 handguard"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG railed dust cover"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG rear sight"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 PWS CQB 74 5.45x39 muzzle brake"
+        }
+       },
+       {
+        "item": {
+         "name": "AK Strike Industries Enhanced Pistol Grip (Black)"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-545 SAG buffer tube"
+        }
+       },
+       {
+        "item": {
+         "name": "High Standard M4SS Stock"
+        }
+       },
+       {
+        "item": {
+         "name": "AK-74 5.45x39 6L23 30-round magazine"
+        }
+       }
+      ],
+      "properties": {
+       "__typename": "ItemPropertiesPreset"
+      }
+     },
      "slots": [
       {
        "id": "628b9c37a733087d0d7fe84d",
