@@ -70,6 +70,14 @@ parts_request = """query {
       }   
       ... on ItemPropertiesMagazine{
         ergonomics
+        recoilModifier
+        capacity
+        loadModifier
+        ammoCheckModifier
+        malfunctionChance
+        allowedAmmo{
+            name
+        }
       }
       ... on ItemPropertiesScope{
         ergonomics
@@ -115,6 +123,35 @@ weapon_request = """query {
 }
 """
 
+ammo_request = """query {
+  ammo {
+    item {
+        name
+        shortName
+        wikiLink
+        baseImageLink
+    }
+    caliber
+    ammoType
+    accuracyModifier
+    recoilModifier
+    initialSpeed
+    
+    damage
+    armorDamage
+    fragmentationChance
+    ricochetChance
+    penetrationChance
+    penetrationPower
+    lightBleedModifier
+    heavyBleedModifier
+    
+    tracer
+    
+    weight
+  }
+}
+"""
 JSON_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data") + os.path.sep
 PICS_DIR = os.path.join(JSON_DIR, "images") + os.path.sep
 # print(JSON_DIR)
@@ -145,7 +182,7 @@ def query_traders():
         js = json.loads(response.text)
 
         with open(JSON_DIR + "traders.json", "wt") as file:
-            json.dump(js, file, indent=2)
+            json.dump(js, file, indent=1)
     else:
         print(f"Traders not ok: {response.status_code}")
 
@@ -159,7 +196,7 @@ def query_parts():
         js = json.loads(response.text)
 
         with open(JSON_DIR + "parts.json", "wt") as file:
-            json.dump(js, file, indent=2)
+            json.dump(js, file, indent=1)
     else:
         print(f"Parts not ok: {response.status_code}")
 
@@ -175,9 +212,25 @@ def query_weapons():
         js = json.loads(response.text)
 
         with open(JSON_DIR + "weapons.json", "wt") as file:
-            json.dump(js, file, indent=2)
+            json.dump(js, file, indent=1)
     else:
         print(f"Guns not ok: {response.status_code}")
+
+
+def query_ammo():
+    """
+    Sends query for ammo and saves to json.
+    """
+    response = send_query(ammo_request)
+    if response.status_code == 200:
+        print("Query ammo ok.")
+
+        js = json.loads(response.text)
+
+        with open(JSON_DIR + "ammo.json", "wt") as file:
+            json.dump(js, file, indent=1)
+    else:
+        print(f"Ammo not ok: {response.status_code}")
 
 
 def unify_image_size(img, to_dim: int):
@@ -272,4 +325,5 @@ if __name__ == "__main__":
     # query_parts()
     # query_weapons()
     # query_traders()
-    query_images()  # Long command
+    query_ammo()
+    # query_images()  # Long command
