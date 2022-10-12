@@ -3,17 +3,17 @@ import numpy as np
 import os
 import itertools
 import pandas as pd
-import sys
 import time
 
 import shutil
 
 from apiqueries import JSON_DIR, PICS_DIR, windows_name_fix
-from functools import wraps, lru_cache
+from functools import wraps
 from collections import deque
-from abc import abstractmethod, ABC
 
 import logging
+
+from tree_utils import ReadType, StringFormat, TreeWalkingMethods, ColorRemover
 
 
 def get_logger():
@@ -29,6 +29,7 @@ def get_logger():
     debug_file_handler.setFormatter(formatter)
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
+    console_handler.setLevel(13)
 
     log = logging.Logger(f"{os.path.basename(__file__)}", level=10)
     # logging.addLevelName(11, "Debug11")
@@ -42,7 +43,7 @@ def get_logger():
     log.propagate = True
     log.addHandler(main_file_handler)
     log.addHandler(debug_file_handler)
-    # log.addHandler(console_handler)
+    log.addHandler(console_handler)
 
     return log
 
@@ -271,129 +272,6 @@ def query_df(df, key):
     mk = df.loc[:, 'name'].str.contains(key)
     scope = df.loc[mk, :]
     return scope
-
-
-class StringFormat:
-    """
-    Class to format string with nice table-prefix and adjust tabulation
-    """
-    _end_line_lenght = 50  # Integer
-
-    @staticmethod
-    def _get_prefix(tabulation):
-        prefix = "\n" + "\t| " * tabulation
-        return prefix
-
-    @classmethod
-    def split_wrap(cls, txt, tabulation=1, wrap_at=80, ):
-        """
-        Break lines every **wrap_at** characters and add tabulation
-
-        :param txt: string to break
-        :type txt: str
-        :param tabulation: depth
-        :type tabulation: int
-        :param wrap_at: break length
-        :type wrap_at: int
-        :return: wrapped and tabulated text
-        :rtype: str
-        """
-        txt = str(txt)
-        prefix = cls._get_prefix(tabulation)
-
-        n_elements = np.ceil(len(txt) / wrap_at).astype(int)
-        segments = [txt[i * wrap_at:(i + 1) * wrap_at].strip() for i in range(n_elements)]
-        out = prefix + prefix.join(segments)
-        return out
-
-
-class ReadType:
-    """ Defines part types and groups them."""
-    _filtration_types = [
-            'nvg',
-            'rail',
-            'barrel', 'handguard', 'stock', 'receiver',
-            'muzzle', "adapter", "brake", "flash",
-            'mount', 'scope', 'sight',
-            'grip',
-
-            'device', 'tactical',
-            'magazine', 'gun',
-            'mod',
-    ]
-
-    _group_dict = {
-            'nvg': 'sight',
-            'scope': 'sight',
-            # 'mag': 'magazine',
-            # 'barrel': 'mod',
-            'rail': 'mount',
-            'muzzle': 'mod',
-            "flash": "mod",
-            "brake": "mod",
-            "suppressor": "mod",
-            'tactical': 'device',
-    }
-
-    types = []
-    "Defined output types"
-    # types = [k for k in _filtration_types if k not in group_dict]
-    for k in _filtration_types:
-        if k not in _group_dict:
-            types.append(k)
-    del k
-
-    @classmethod
-    def read_type(cls, ob):
-        """
-        Reads object type. Works for item, slot.
-
-        :param ob: Input object, containing `types` or `category`
-        :type ob: Union[`pandas.Series`, `dict`]
-        :return: type
-        :rtype: string
-        """
-
-        if hasattr(ob, 'types'):
-            if "gun" in ob['types']:
-                return "gun"
-
-        if hasattr(ob, 'category'):
-            type_name = ob['category'].lower()
-        else:
-            type_name = ob['name'].lower()
-
-        for tp in cls._filtration_types[:-1]:
-            if tp in type_name:
-                type_ = tp
-                break
-        else:
-            type_ = cls.types[-1]
-
-        if type_ in cls._group_dict:
-            type_ = cls._group_dict[type_]
-
-        return type_
-
-
-class TreeWalkingMethods(ABC):
-    """
-    Abstract base class.
-
-    :Required methods:
-        * `__getitem__` : return sub object
-        * `__iter__` : iterate over all sub keys
-    """
-
-    @abstractmethod
-    def __getitem__(self, item):
-        """Get sub object"""
-        pass
-
-    @abstractmethod
-    def __iter__(self):
-        """Iter through all items not good ones only!"""
-        pass
 
 
 class Slot(StringFormat, TreeWalkingMethods):
@@ -1040,6 +918,8 @@ class ItemsTree:
 
         ergo_factor = float(max([3 - factor, 1]))
         recoil_factor = float(max([factor - 1, 1]))
+        acc_factor = 0.1
+
         weapon = self.items_dict[name]
         LOGGER.info(f"Finding preset for '{name}'ergo: {ergo_factor},recoil: {recoil_factor}")
         LOGGER.info(f"Prapor:{praporLv}, Skier:{skierLv}, Mechanic:{mechanicLv}, "
@@ -1060,9 +940,11 @@ class ItemsTree:
         stack = deque(maxlen=1000)
         stack.append([root_key, None])
         # visited = set()
+        merged = set()
 
         iter_counter = 0
         max_iters = 100000
+        max_parts = 10_000
         while True:  # and ((i := i + 1) < max_iters):
             if (iter_counter := iter_counter + 1) > max_iters:
                 LOGGER.error(f"Breaking, max iterations {root_key}!")
@@ -1116,6 +998,7 @@ class ItemsTree:
             if not loop_compensation:
                 loop_compensation = 0
 
+            "Check if node has valuable slots / items"
             for cur_i, sub_key in enumerate(cur_node.good_keys[loop_compensation:], loop_compensation):
                 "Checking only valuable components"
 
@@ -1157,7 +1040,7 @@ class ItemsTree:
                         else:
                             "Create empty preset"
                             # LOGGER.log(20, f"Creating preset for :{cur_key}")
-                            scores[cur_key] = deque(maxlen=100000)
+                            scores[cur_key] = deque(maxlen=100_000)
 
                     if not sl.required:
                         "Sub part not required, adding Empty"
@@ -1174,17 +1057,23 @@ class ItemsTree:
                 else:
                     parent_node_key = root_key
 
-                if isitem:
+                if isitem and cur_key not in merged:
                     "PROPAGATE SLOTS TO ITEM LEVEL"
-                    LOGGER.log(12, f"Checking slots of {cur_key}")
+                    LOGGER.log(12, f"First Propagate. Checking slots of {cur_key}")
+                    merged.add(cur_key)
 
-                    if next_node_key not in scores:
-                        scores[next_node_key] = deque(maxlen=1000000)
+                    if parent_node_key != root_key:
+                        parent_node_key = cur_key
+                    scores[cur_key] = deque(maxlen=max_parts)
+
+                    # if next_node_key not in scores:
+                    #     scores[next_node_key] = deque(maxlen=max_parts)
 
                     cur_item_score = cur_node.ergo * ergo_factor \
                                      - (cur_node.recoil * recoil_factor) \
-                                     + cur_node.acc
+                                     + (cur_node.acc * acc_factor)
                     cur_item_conflicts = cur_node.conflictingItems
+
                     if cur_key in self._traders_df.index:
                         cur_item_price = self._traders_df.loc[cur_key, self.traders_keys].min()
                     else:
@@ -1196,14 +1085,14 @@ class ItemsTree:
                     cur_slot = (cur_key, 0)
                     if len(cur_node.slots_dict) == 1 and cur_slot in scores:
                         "PROPAGATE Item with One slot"
-                        LOGGER.log(11, f"Merging single slot of {cur_key}")
                         presets = scores[cur_slot]
+                        LOGGER.log(11, f"Merging single slot of {cur_key}, N: {len(presets)}")
                         if limit_propagation and isinstance(limit_propagation, int):
                             presets = sorted(presets, key=lambda x: x[1], reverse=True)
                             presets = presets[:limit_propagation]
 
+                        count = 0
                         for sub_ob in presets:
-                            LOGGER.log(10, f"PROPAGATING: {sub_ob[0]}")
                             parts, sc, cf, pr, wg = sub_ob
                             parts = parts.copy()
                             parts.add(cur_key)
@@ -1214,6 +1103,8 @@ class ItemsTree:
                             wg += cur_item_weight
                             if sc > 0:
                                 scores[parent_node_key].append((parts, sc, cf, pr, wg))
+                                count += 1
+                        LOGGER.log(11, f"Declared good items: {count}")
 
                     elif len(cur_node.slots_dict) > 1:
                         "PROPAGATE and merge slots"
@@ -1232,20 +1123,22 @@ class ItemsTree:
 
                         if len(iter_obs) == 0:
                             "NO SUB PARTS"
-                            LOGGER.log(11, f"No sub parts to merge for {cur_key}")
+                            LOGGER.log(13, f"No sub parts to merge for {cur_key}")
                             if cur_item_score > 0 or cur_node.required:
                                 scores[parent_node_key].append(({cur_key}, cur_item_score,
                                                                 cur_item_conflicts, cur_item_price,
                                                                 cur_item_weight))
 
                         elif len(iter_obs) == 1:
-                            LOGGER.log(11, f"Item has only sub parts in one slot: {cur_key}")
+                            LOGGER.log(11,
+                                       f"Item has only sub parts in one slot: {cur_key} - N:{len(iter_obs[0])}")
 
+                            count = 0
                             for pst, sc, cf, pr, wg in iter_obs[0]:
                                 conflict = cur_item_conflicts.intersection(pst)
 
                                 if len(conflict) > 0:
-                                    LOGGER.log(12, f"Conflict in preset: {pst}")
+                                    LOGGER.log(11, f"Conflict in preset: {pst}")
                                 else:
                                     "No conflicts so its ok."
                                     pst = pst.copy()
@@ -1255,17 +1148,22 @@ class ItemsTree:
                                     sc += cur_item_score
                                     pr += cur_item_price
                                     wg += cur_item_weight
-                                    LOGGER.log(12, f"No conflict. merging: {pst}")
+                                    LOGGER.log(12, f"No conflicts. Merged to -> {pst}")
                                     if sc > 0 or cur_node.required:
                                         scores[parent_node_key].append((pst, sc, cf, pr, wg))
+                                        count += 1
+                            LOGGER.log(11, f"Defined good items: {count}")
 
                         else:
-                            LOGGER.log(11, f"Combining items in sub parts: {cur_key}")
+                            n_elements = [len(ob) for ob in iter_obs]
+                            LOGGER.log(13, f"Combining items in sub parts: {cur_key}: {n_elements}")
 
                             # n_slots = len(iter_obs)
-                            saved = 0
+                            count = 0
+                            end_preset_stop = False
+                            stop_at_counter = 3 ** len(iter_obs)
                             for preset in itertools.product(*iter_obs):
-                                parts_names = [ob[0] for ob in preset]
+                                # parts_names = [ob[0] for ob in preset]
                                 # LOGGER.log(10, f"Checking combination of: {names}")
 
                                 # LOGGER.log(12, f"Checking preset of {n_slots}")
@@ -1280,11 +1178,11 @@ class ItemsTree:
                                     check_conf1 = cf1.intersection(pst2)
                                     check_conf2 = cf2.intersection(pst1)
                                     if check_conf1 or check_conf2:
-                                        LOGGER.log(12, "Preset has conflict.")
-                                        LOGGER.log(12,
-                                                   f"Preset: Checking combination of parts: {parts_names}")
-                                        LOGGER.log(12, f"Conflict1: {check_conf1}, "
-                                                       f"Conflict2: {check_conf2}")
+                                        # LOGGER.log(10, "Preset has conflict.")
+                                        # LOGGER.log(10,
+                                        #            f"Preset: Checking combination of parts: {parts_names}")
+                                        # LOGGER.log(10, f"Conflict1: {check_conf1}, "
+                                        #                f"Conflict2: {check_conf2}")
                                         valid = False
                                         break
 
@@ -1295,22 +1193,28 @@ class ItemsTree:
                                     wg1 += wg2
 
                                 if valid:
-                                    pst1.add(cur_key)
+                                    if root_key != next_node_key:
+                                        pst1.add(cur_key)
                                     cf1.update(cur_item_conflicts)
                                     sco1 += cur_item_score
                                     pr1 += cur_item_price
                                     wg1 += cur_item_weight
                                     if sco1 > 0 or cur_node.required:
                                         scores[parent_node_key].append((pst1, sco1, cf1, pr1, wg1))
-                                        saved += 1
+                                        count += 1
+                                        if root_key == cur_key and count > stop_at_counter:
+                                            end_preset_stop = True
+                                            break
                                     else:
-                                        LOGGER.log(12, f"Preset Rejected: score: {sco1}")
+                                        LOGGER.log(13, f"Preset valid and rejected: score: {sco1}")
+                                if end_preset_stop:
+                                    break
 
-                            LOGGER.log(11, f"Saved {saved} presets")
+                            LOGGER.log(11, f"Saved {count} presets")
 
                     else:
                         "ITEM HAS NO SLOTS or matching sub parts"
-                        # LOGGER.log(20, f"Item has no slots or sub parts: {cur_key}")
+                        LOGGER.log(11, f"Item has no slots or sub parts: {cur_key}")
                         # LOGGER.log(20, f"score: {cur_item_score}")
                         # LOGGER.log(11, f"Parent key: {parent_node_key}")
                         if cur_item_score > 0 or cur_node.required:
@@ -1320,7 +1224,20 @@ class ItemsTree:
                                             cur_item_price, cur_item_weight
                                     )
                             )
-                            LOGGER.log(11, f"scores[parent]: {scores[parent_node_key]}")
+                            # LOGGER.log(11, f"scores[parent]: {scores[parent_node_key]}")
+                    merged.add(cur_key)
+
+                if isitem and cur_key in merged:
+                    "Propagate first declaration"
+                    if stack:
+                        parent_node_key = stack[-1][0]
+                        LOGGER.log(12, f"Propagate declared: {cur_key}->{parent_node_key}")
+                        if parent_node_key not in scores:
+                            scores[parent_node_key] = deque(maxlen=max_parts)
+                        for ob in scores[cur_key]:
+                            scores[parent_node_key].append(ob)
+                            iter_counter += 1
+
 
                 else:
                     "THIS IS SLOT"
@@ -1333,13 +1250,6 @@ class ItemsTree:
                     break
                 else:
                     LOGGER.debug(f"Going back to {next_node_key} <-")
-        #
-        # LOGGER.log(12, "Keys in scores:")
-        # for k, v in scores.items():
-        #     LOGGER.log(12, k)
-        #     v = sorted(v, key=lambda x: x[1], reverse=True)
-        #     for vs in v:
-        #         LOGGER.debug(f"\t{vs}")
 
         LOGGER.log(13, "")
         LOGGER.log(13, "Results presets")
@@ -1347,12 +1257,12 @@ class ItemsTree:
         results = scores[name]
         results = sorted(results, key=lambda x: x[1], reverse=True)
 
-        with open("results.txt", "wt") as fp:
-            fp.write(f"Results of {name}\n")
-            for key in scores:
-                fp.write(f"- -{key}\n")
-            for res in results:
-                fp.write(f"{res[1]} - {res}\n")
+        # with open("results.txt", "wt") as fp:
+        #     fp.write(f"Results of {name}\n")
+        #     for key in scores:
+        #         fp.write(f"- -{key}\n")
+        #     for res in results:
+        #         fp.write(f"{res[1]} - {res}\n")
 
         return results
 
@@ -1377,24 +1287,24 @@ def sort_images_on_type():
 if __name__ == "__main__":
     weapons_df, parts_df, traders_dict = load_all_data()
 
-    tree = ItemsTree(weapons_df, parts_df, traders_dict, regenerate=True)
-    tree._dump_items(JSON_DIR)
-    tree.dump_weapons(JSON_DIR)
+    tree = ItemsTree(weapons_df, parts_df, traders_dict)
+    # tree._dump_items(JSON_DIR)
+    # tree.dump_weapons(JSON_DIR)
 
-    weaps = tree.weapon_keys
-    # print(weaps)
-    ak = [k for k in weaps if '105' in k.lower()][0]
+    ak = [k for k in tree.weapon_keys if 'rpk' in k.lower()][0]
     print(ak)
+    weapon = tree[ak]
+    print(weapon.default_preset)
 
     results = tree.find_best_brute(ak, factor=1,
-                                   limit_propagation=150, limit_top_propagation=10,
-                                   # praporLv=4, skierLv=4, mechanicLv=4,
-                                   # jaegerLv=4, peacekeeperLv=4,
+                                   limit_propagation=2000, limit_top_propagation=4,
+                                   praporLv=4, skierLv=4, mechanicLv=4,
+                                   jaegerLv=4, peacekeeperLv=4,
                                    )
     print()
     print(f"Got: {len(results)}")
 
-    for pres in results[:3]:
+    for pres in results[:5]:
         parts = pres[0]
         score = pres[1]
         print()
@@ -1403,10 +1313,11 @@ if __name__ == "__main__":
         ergo = sum(tree.items_dict[p].ergo for p in parts)
         recoil = sum(tree.items_dict[p].recoil for p in parts)
         acc = sum(tree.items_dict[p].acc for p in parts)
-        print(f"Ergo: {ergo}, Recoil: {recoil}, Acc: {acc}, Price: {pres[3]}")
+
+        print(f"Ergo: {ergo + weapon.ergo}, Recoil: {recoil}, Acc: {acc}, Price: {pres[3]}")
 
         zp = zip(ptypes, parts)
         zp = sorted(zp, key=lambda x: x[0])
 
         for pt, pr in zp:
-            print(pt, pr)
+            print(f"{pt}: {pr}")
