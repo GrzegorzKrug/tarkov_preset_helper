@@ -130,4 +130,92 @@ class ColorRemover:
     """
     Remove text from colored items.
     """
-    pass
+    # white_types = {}
+
+
+    refs = {}
+    rejected = set()
+    white_postfix = {
+            '(Red)',
+            '(Golden)',
+            '(Tan)',
+            '(Green)',
+            '(Yellow)',
+            '(Banana)',
+            '(Stealth Gray)',
+            '(Stainless steel)',
+            '(White)',
+
+            '(FDE)',
+            '(Plum)',
+            '(Olive Drab)',
+            '(Black)',
+            '(Grey)',
+
+            '(Forest Green)',
+            '(Coyote Brown)',
+            '(Foliage Green)',
+            '(Ghillie Earth)',
+            '(Ghillie Green)',
+
+            '(Anodized Bronze)',
+            '(Anodized Red)',
+
+            '(Navy 3 Round Burst)',
+            '(RAL 8000)',
+            '(dovetail)',
+            '(DDC)',
+
+    }
+
+    white_types = [
+            'sight', 'grip', 'magazine', 'handguard', 'mod', 'stock', 'mount', 'device',
+    ]
+
+    @classmethod
+    def add_name(cls, name: str, type_: str) -> str:
+        """
+
+        :param name:
+        :param type_:
+        :type name: `str`
+        :type type_: `str`
+        :return:
+        """
+        if type_ not in cls.white_types:
+            return None
+
+        if name.endswith(')'):
+            ind = name.find('(')
+            nawias = name[ind:]
+
+            if nawias in cls.white_postfix:
+                # if type_ not in cls.white_types:
+                #     cls.white_types[type_] = set()
+                # cls.white_types[type_].add(nawias)
+
+                clean_name = name[:ind - 1]
+                if clean_name not in cls.refs:
+                    cls.refs[clean_name] = {nawias}
+                else:
+                    cls.refs[clean_name].add(nawias)
+
+            else:
+                cls.rejected.add(nawias)
+
+    @classmethod
+    def rename(cls, name: str, type_: str):
+        if type_ not in cls.white_types:
+            # print(f"Rejecting name change: {name} - type: {type_}")
+            return name
+
+        if name.endswith(')'):
+            ind = name.find('(')
+            nawias = name[ind:]
+
+            if nawias in cls.white_postfix:
+                clean_name = name[:ind - 1]
+                if clean_name in cls.refs:
+                    return clean_name
+
+        return name

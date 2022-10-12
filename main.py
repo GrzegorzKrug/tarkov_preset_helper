@@ -7,7 +7,7 @@ import time
 
 import shutil
 
-from apiqueries import JSON_DIR, PICS_DIR, windows_name_fix
+from apiqueries import DATA_DIR, PICS_DIR, windows_name_fix
 from functools import wraps
 from collections import deque
 
@@ -62,10 +62,10 @@ def _load_jsons():
     # print(JSON_DIR)
     # print(PICS_DIR)
 
-    with open(JSON_DIR + "items.json", "rt") as file:
+    with open(DATA_DIR + "items.json", "rt") as file:
         items = json.load(file)['data']['items']
 
-    with open(JSON_DIR + "traders.json", "rt") as file:
+    with open(DATA_DIR + "traders.json", "rt") as file:
         traders = json.load(file)['data']['traders']
 
     traders = {tr['name'].lower(): tr for tr in traders}
@@ -84,13 +84,13 @@ def _load_jsons2():
     # print(JSON_DIR)
     # print(PICS_DIR)
 
-    with open(JSON_DIR + "traders.json", "rt") as file:
+    with open(DATA_DIR + "traders.json", "rt") as file:
         traders = json.load(file)['data']['traders']
 
-    with open(JSON_DIR + "weapons.json", "rt") as file:
+    with open(DATA_DIR + "weapons.json", "rt") as file:
         weapons = json.load(file)['data']['items']
 
-    with open(JSON_DIR + "parts.json", "rt") as file:
+    with open(DATA_DIR + "parts.json", "rt") as file:
         parts = json.load(file)['data']['items']
 
     traders = {tr['name'].lower(): tr for tr in traders}
@@ -162,6 +162,7 @@ def preproces_json_to_df(js):
             lambda x: x['name'])  # Extract name from dict
     df.loc[:, 'types'] = df.loc[:, 'types'].transform(
             lambda x: str(x))  # Extract name from dict
+    df = df.sort_values('name')
     return df
 
 
@@ -188,7 +189,7 @@ def measure_time_decorator(func):
     return wrapper
 
 
-def log_time_decorator(with_arg=True):
+def log_time_decorator(with_arg=True, debug=False):
     """ Logging time usage. Function times measured with `perf_counter`. Wraps used."""
 
     def decor(func):
@@ -206,9 +207,15 @@ def log_time_decorator(with_arg=True):
                 txt = f"{duration:4.2f} s"
 
             if with_arg:
-                LOGGER.info(f"{func.__name__}{a}{kw} elapsed in: {txt}")
+                if debug:
+                    LOGGER.debug(f"{func.__name__}{a}{kw} elapsed in: {txt}")
+                else:
+                    LOGGER.info(f"{func.__name__}{a}{kw} elapsed in: {txt}")
             else:
-                LOGGER.info(f"'{func.__name__}' elapsed in: {txt}")
+                if debug:
+                    LOGGER.debug(f"'{func.__name__}' elapsed in: {txt}")
+                else:
+                    LOGGER.info(f"'{func.__name__}' elapsed in: {txt}")
 
             return out
 
@@ -322,10 +329,10 @@ class Slot(StringFormat, TreeWalkingMethods):
         return f"SLOT: {self.name}, items: {len(self.allowedItems)}"
 
     def pretty_print(self, extra_tab=0):
-        txt = f"Slot: {self.name}"
-        txt += self.split_wrap(f"name_id: {self.name_id}")
-        txt += self.split_wrap(f"required: {self.required}")
-        txt += self.split_wrap(f"type: {self.slot_type}")
+        txt = self.split_wrap(f"Slot: {self.name}", extra_tab)
+        txt += self.split_wrap(f"name_id: {self.name_id}", extra_tab + 1)
+        txt += self.split_wrap(f"required: {self.required}", extra_tab + 1)
+        txt += self.split_wrap(f"type: {self.slot_type}", extra_tab + 1)
 
         if self.allowedItems:
             good_txt = self.split_wrap("good items", 2 + extra_tab)
@@ -382,17 +389,17 @@ class Item(StringFormat, TreeWalkingMethods):
         self.name = item['name']
         self.name_short = item['shortName']
         self.required = None
-        self.part_type = ReadType.read_type(item)  # used for counter only
         self.slots_dict = dict()
         self.good_keys = set()
         self.subpart_types = set()
         self.default_preset = set()
 
+        self.part_type = ReadType.read_type(item)  # used for counter only
+        ColorRemover.add_name(self.name, self.part_type)
+
         if "conflictingItems" in item:
             self.conflictingItems = item.loc['conflictingItems']
             if self.conflictingItems:
-                # print()
-                # print(self.conflictingItems)
                 self.conflictingItems = set([v['name'] for v in self.conflictingItems])
             else:
                 self.conflictingItems = set()
@@ -433,7 +440,6 @@ class Item(StringFormat, TreeWalkingMethods):
         self._extract_slots_from_properties(prop)
 
         if self.part_type == 'gun':
-            # print(self.name)
             self._extract_default_preset(prop)
 
     def _extract_default_preset(self, prop):
@@ -478,26 +484,28 @@ class Item(StringFormat, TreeWalkingMethods):
 
     def pretty_print(self, extra_tab=0):
         txt = f"ITEM: {self.name}"
-        txt += self.split_wrap(f"part_type: {self.part_type}")
-        txt += self.split_wrap(f"name_short: {self.name_short}")
+        txt += self.split_wrap(f"part_type: {self.part_type}", 1 + extra_tab)
+        txt += self.split_wrap(f"name_short: {self.name_short}", 1 + extra_tab)
+        if self.name in ColorRemover.refs:
+            txt += self.split_wrap(f"Variants: {ColorRemover.refs[self.name]}", 1 + extra_tab)
 
         if self.has_slots:
-            good_text = self.split_wrap(f"good slots: ", )
-            rest_text = self.split_wrap(f"useless slots: ", )
+            good_text = self.split_wrap(f"good slots: ", 1 + extra_tab)
+            rest_text = self.split_wrap(f"useless slots: ", 1 + extra_tab)
 
             for k, sl in self.slots_dict.items():
                 if k in self.slots_dict:
-                    good_text += self.split_wrap(f"{k}: " + repr(sl), 2)
+                    good_text += self.split_wrap(f"{k}: " + repr(sl), 2 + extra_tab)
                 else:
-                    rest_text += self.split_wrap(f"{k}: " + repr(sl), 2)
+                    rest_text += self.split_wrap(f"{k}: " + repr(sl), 2 + extra_tab)
 
             txt += good_text
             txt += rest_text
 
-            txt += self.split_wrap(f"sub parts: {sorted(self.subpart_types)}")
-            txt += self.split_wrap(f"required slots: {self.has_required_slots}")
+            txt += self.split_wrap(f"sub parts: {sorted(self.subpart_types)}", 1 + extra_tab)
+            txt += self.split_wrap(f"required slots: {self.has_required_slots}", 1 + extra_tab)
         else:
-            txt += self.split_wrap(f"slots: None")
+            txt += self.split_wrap(f"slots: None", 1 + extra_tab)
 
         # txt += self.split_wrap(f"Good slots:  {self.good_slots_keys}", 1 + extra_tab)
         txt += self.split_wrap(f"Ergonomics:  {self.ergo}", 1 + extra_tab)
@@ -505,10 +513,8 @@ class Item(StringFormat, TreeWalkingMethods):
         txt += self.split_wrap(f"Weight:      {self.weight}", 1 + extra_tab)
         txt += self.split_wrap(f"Accuracy:    {self.acc}", 1 + extra_tab)
 
-        # txt += self.split_wrap(f"allowedItems", 2)
-
         txt += "\n\t|" + "=" * self._end_line_lenght
-        # txt += "\n"
+
         return txt
 
     def __iter__(self):
@@ -582,48 +588,47 @@ class ItemsTree:
         if not regenerate:
             self.load()
 
-        if not self._loaded or not os.path.isfile(JSON_DIR + "traders_df.csv"):
+        if not self._loaded or not os.path.isfile(DATA_DIR + "traders_df.csv"):
             self.process_traders(traders_dict)
             self.save()
 
+        self.gather_slots_dict()
+        self.squash_item_colors()
         self.do_tree_backpropagation()
-        # self.do_tree_check()
+        self.do_tree_check()
 
     @classmethod
     def add_item(cls, item):
         """ Add item to tree"""
         assert isinstance(item, Item)
         if item.name in cls.items_dict:
-            raise KeyError(f"Item is defined already: {item.name}")
+            LOGGER.warning(f"Item is defined already: {item.name}")
 
         cls.counter[item.part_type] += 1
         cls.items_dict[item.name] = item
-        for k, sl in item.slots_dict.items():
-            hash_ = (item.name, k)
-            cls.slots_dict[hash_] = sl
+        # for k, sl in item.slots_dict.items():
+        #     hash_ = (item.name, k)
+        #     cls.slots_dict[hash_] = sl
+
+    @classmethod
+    def gather_slots_dict(cls):
+        for key, item in cls.items_dict.items():
+            for k, sl in item.slots_dict.items():
+                hash_ = (item.name, k)
+                cls.slots_dict[hash_] = sl
 
     @measure_time_decorator
-    def _dump_items(self, directory):
-        with open(f"{directory}{os.path.sep}links.txt", "wt")as fp:
-            for it in self.items_dict.values():
+    def dump_items(self, directory):
+        with open(f"{directory}{os.path.sep}items.txt", "wt")as fp:
+            for it_key, it in self.items_dict.items():
+                fp.write("\n")
                 fp.write(it.pretty_print())
-                fp.write("\n")
+                # fp.write("\n")
 
-        with open(f"{directory}{os.path.sep}conflicts.txt", "wt")as fp:
-            for it in self.items_dict.values():
-                if not it.conflictingItems:
-                    continue
-                if it.part_type in ['magazine', 'sight']:
-                    continue
-                fp.write(f"Item: {it.name}")
-                fp.write(f"\nptype: {it.part_type}")
-                fp.write("\nconflicts:")
-                fp.write(str(it.conflictingItems))
-                fp.write("\n")
-                # cfs = set([self.items_dict[key].part_type for key in it.conflictingItems if
-                #            key in self.items_dict])
-                fp.write(str(it.conflictingTypes))
-                fp.write("\n\n")
+                for sk in it:
+                    slot = self.slots_dict[(it_key, sk)]
+                    fp.write(slot.pretty_print(1))
+                    # fp.write("\n")
 
     @measure_time_decorator
     def dump_weapons(self, directory):
@@ -654,14 +659,14 @@ class ItemsTree:
     def save(self):
         """Save traders"""
         serial = {key: sorted(list(it)) for key, it in self.traders_levels_hashed.items()}
-        with open(JSON_DIR + "traders_hashed.json", "wt") as fp:
+        with open(DATA_DIR + "traders_hashed.json", "wt") as fp:
             json.dump(serial, fp, indent=2)
-        self._traders_df.to_csv(JSON_DIR + "traders_df.csv")
+        self._traders_df.to_csv(DATA_DIR + "traders_df.csv")
 
     @measure_time_decorator
     def load(self):
         """Load hashed traders"""
-        path = JSON_DIR + "traders_hashed.json"
+        path = DATA_DIR + "traders_hashed.json"
         if os.path.isfile(path):
             with open(path, 'rt') as fp:
                 js = json.load(fp)
@@ -669,8 +674,8 @@ class ItemsTree:
             traders_hash = {key: set(it) for key, it in js.items()}
             self.traders_levels_hashed = traders_hash
 
-            if os.path.isfile(JSON_DIR + "traders_df.csv"):
-                self._traders_df = pd.read_csv(JSON_DIR + "traders_df.csv", index_col=0)
+            if os.path.isfile(DATA_DIR + "traders_df.csv"):
+                self._traders_df = pd.read_csv(DATA_DIR + "traders_df.csv", index_col=0)
             else:
                 return False
         self._loaded = True
@@ -730,7 +735,7 @@ class ItemsTree:
         for ind, it_row in items_df.iterrows():
             item = Item(it_row)
             item.tree_verified = False
-            item.positive_modifier = None
+            # item.positive_modifier = None
             cls.add_item(item)
 
     @classmethod
@@ -766,8 +771,133 @@ class ItemsTree:
     def __setitem__(cls, *a, **kw):
         raise RuntimeError(f"Setting item not allowed for {cls}")
 
+    @measure_time_decorator
+    def squash_item_colors(self):
+        """
+
+        """
+        for name, ref_set in tuple(ColorRemover.refs.items()):
+            "Iterate over references. Check if valid."
+            if name in self.items_dict:
+                "Blank item exists"
+                refs = list(ref_set)
+                refs.insert(0, '')
+                ColorRemover.refs[name].add('')
+                item1 = self.items_dict[name]
+                item1_key = name
+            else:
+                refs = list(ref_set)
+                item1_key = f"{name} {refs[0]}"
+                item1 = self.items_dict[item1_key]
+
+            if item1.part_type not in ColorRemover.white_types:
+                "Skip renaming unwanted types"
+                assert name not in ColorRemover.refs, "This ref should not be there"
+                continue
+
+            if len(refs) < 2:
+                # print(f"Item has too few variants: {name}")
+                ColorRemover.refs.pop(name)
+                continue
+
+            valid = True
+            for rf in refs[1:]:
+                key2 = f"{name} {rf}"
+                item2 = self.items_dict[key2]
+                # print(f"checking: {item1.name} <> {key2}")
+                if item1.ergo != item2.ergo:
+                    # print(f"Ergo does not match, {item1.ergo} != {item2.ergo}")
+                    valid = False
+                    break
+                if item1.recoil != item2.recoil:
+                    # print(f"Recoil does not match, {item1.recoil} != {item2.recoil}")
+                    valid = False
+                    break
+                if item1.acc != item2.acc:
+                    # print(f"Acc does not match, {item1.acc} != {item2.acc}")
+                    valid = False
+                    break
+
+                if len(item1.slots_dict) != len(item2.slots_dict):
+                    # print(f"Parts have different slots length.")
+                    valid = False
+                    break
+
+                for rf2 in refs[1:]:
+                    item2_key = f"{name} {rf2}"
+
+                    for s1_key in item1:
+                        slot1 = self.slots_dict[(item1_key, s1_key)]
+                        slot2 = self.slots_dict[(item2_key, s1_key)]
+
+                        alow1 = set(slot1.allowedItems)
+                        alow2 = set(slot2.allowedItems)
+                        diff = alow1.difference(alow2)
+                        if diff:
+                            valid = False
+                            # print(f"Items have different sub parts: {diff}")
+                            break
+
+                    if not valid:
+                        break
+
+                if not valid:
+                    break
+
+            if not valid:
+                # print(f"Not valid: {name}")
+                ColorRemover.refs.pop(name)
+
+        "Finished checking."
+        "Replacing valid names."
+
+        "Assert valid objects are stored"
+        for ref_key in ColorRemover.refs:
+            # print(f"Checking REF: {ref_key}")
+            refs = list(ColorRemover.refs[ref_key])
+
+            if ref_key not in self.items_dict:
+                "If items is not dict, assigning existing one"
+                existing_key = f"{ref_key} {refs[0]}"
+                # print(f"{ref_key} <- {existing_key}")
+                self.items_dict[ref_key] = self.items_dict[existing_key]
+                self.items_dict[ref_key].name = ref_key
+
+                for sk in self.items_dict[ref_key]:
+                    chs = (ref_key, sk)
+
+                    self.slots_dict[chs] = self.items_dict[ref_key].slots_dict[sk]
+
+                drop_refs = refs
+
+            else:
+                drop_refs = [rf for rf in refs if rf != '']
+
+            for rf_drp in drop_refs:
+                drop_name = f"{ref_key} {rf_drp}"
+                self.items_dict.pop(drop_name)
+                "Popping item"
+
+                for sk in self.items_dict[ref_key]:
+                    hs = (drop_name, sk)
+                    self.slots_dict.pop(hs)
+                    # print(f"poping: {hs}")
+
+                "Popping all slots for others"
+
+        for sl_k, slot in self.slots_dict.items():
+            new_allowed = set()
+            for it_name in slot.allowedItems:
+                new_name = ColorRemover.rename(it_name, slot.slot_type)
+                # if new_name != it_name:
+                # print(f"Renaming {it_name} -> '{new_name}'")
+                new_allowed.add(new_name)
+
+            slot.allowedItems = sorted(new_allowed)
+            # print(type(slot.allowedItems))
+
     # @measure_time_decorator
-    @log_time_decorator(with_arg=False)
+    @log_time_decorator(with_arg=False, debug=True)
     def do_tree_backpropagation(self):
         """
         Propagate sub parts types. Find parts that modify gun positively in any way and store key in
@@ -782,12 +912,14 @@ class ItemsTree:
         for item_key in start_keys:
             item_ob = self.items_dict[item_key]
             if item_ob.ergo > 1 or item_ob.recoil < 0 or item_ob.acc > 0:
+                # print(f"Initial good part: {item_key}")
                 good_parts_keys.add(item_key)
 
             "Bottom end part. Verified"
             if not item_ob.slots_dict:
                 parts_verified.add(item_key)
                 item_ob.good_keys = list(item_ob.good_keys)
+                # print(f"End list part: {item_key}")
 
             item_ob.part_fitting_slots = {key: set() for key in ReadType.types}
             for conf_key in item_ob.conflictingItems:
@@ -795,30 +927,50 @@ class ItemsTree:
                     self.items_dict[conf_key].conflictingItems.add(item_key)
                     self.items_dict[conf_key].conflictingTypes.add(item_ob.part_type)
 
+        # print("Verified:")
+        # for ky in parts_verified:
+        #     print(ky)
+
         "Second loop for propagating sub parts with slots"
         check_parts = start_keys.difference(parts_verified)
+        # print(f"Second check start keys:")
+        # for ky in list(check_parts):
+        #     print(ky)
 
         loop_i = 0
         max_iters = 10
         while len(check_parts) > 0:
+            # print(f"Iteration: {loop_i}")
             temp_check_parts = check_parts
             check_parts = set()
 
             loop_i += 1
             if loop_i > max_iters:
                 print("Too many iterations. breaking!")
+                print("Parts not verified: ", len(temp_check_parts))
+                # for part in temp_check_parts:
+                #     print(part)
                 break
 
             "Check slots, propagate info"
             for item_key in temp_check_parts:
+                # print()
+                # print(f"Checking: {item_key}")
                 item_ob = self.items_dict[item_key]
+                if item_key in parts_verified:
+                    print(f"Checking again verified part! {item_key}\n" * 5)
 
                 found_not_verified_subpart = False
                 for slot_key, slot in item_ob.slots_dict.items():
+                    # print(f"checking slot: {slot_key}")
+
                     for allowed_item in slot.allowedItems:
+                        # print(f"checking subpart: {allowed_item}")
                         "Stop loop. Sub part is not verified"
                         if allowed_item not in parts_verified:
+                            # print(f"Good part of {item_key} : {allowed_item}")
                             found_not_verified_subpart = True
+                            # check_parts.add(allowed_item)
                             break
                         else:
                             sub_part = self.items_dict[allowed_item]
@@ -828,6 +980,7 @@ class ItemsTree:
                             item_ob.part_fitting_slots[sub_part.part_type].add(slot_key)
 
                         if allowed_item in good_parts_keys:
+                            # print(f"This is good part: {item_key}")
                             "Propagation of parent to tree"
                             good_parts_keys.add(item_key)
 
@@ -845,6 +998,7 @@ class ItemsTree:
                 else:
                     "Verified. If good it already stored."
                     parts_verified.add(item_key)
+                    # print(f"Verified: {item_key}")
                     item_ob.good_keys = sorted(list(item_ob.good_keys))
                     for slot_key in item_ob:
                         hs_ = (item_ob.name, slot_key)
@@ -858,19 +1012,29 @@ class ItemsTree:
         self.good_parts_keys = good_parts_keys
 
     # @measure_time_decorator
-    @log_time_decorator(with_arg=False)
+    @log_time_decorator(with_arg=False, debug=True)
     def do_tree_check(self):
         """
         Method for testing tree propagation.
         """
         for k, it in self.items_dict.items():
-            assert isinstance(it.good_keys, list), f"This part has wrong type of good_keys: {k}"
+            assert isinstance(
+                    it.good_keys, list), \
+                f"This part has wrong type of good_keys: {k}-{type(it.good_keys)}"
 
-        for k, it in self.slots_dict.items():
-            assert isinstance(it.good_keys, list), f"This part has wrong type of good_keys: {k}"
+            for i in it:
+                slot_key = (k, i)
+                assert slot_key in self.slots_dict, f"Slots is not in tree slot_dicts: {slot_key}"
+
+        for k, slot in self.slots_dict.items():
+            assert isinstance(slot.good_keys, list), f"This part has wrong type of good_keys: {k}"
+
+            for itname in slot:
+                assert itname in self.items_dict, \
+                    f"Slot has item({itname}) that does not exist in tree dict"
 
     # @measure_time_decorator
-    @log_time_decorator()
+    @log_time_decorator(debug=True)
     def get_hashed_part(self,
                         praporLv=1, skierLv=1, mechanicLv=1, jaegerLv=1, peacekeeperLv=1,
                         ):
@@ -889,11 +1053,12 @@ class ItemsTree:
     # @measure_time_decorator
     @log_time_decorator()
     def find_best_brute(self, name,
-                        factor=2,
-                        # ergo_factor=1,
-                        # recoil_factor=3,
+                        # factor=2,
+                        ergo_factor=1,
+                        recoil_factor=1,
                         weight_factor=0,
-                        praporLv=3, skierLv=3, mechanicLv=2, jaegerLv=2, peacekeeperLv=2,
+                        praporLv=3, skierLv=3,
+                        peacekeeperLv=2, mechanicLv=2, jaegerLv=2,
                         useDefault=True,
                         limit_propagation=100, limit_top_propagation=10,
                         ):
@@ -913,17 +1078,17 @@ class ItemsTree:
         :return:
         """
 
-        assert 0 <= factor <= 4, "Factor must be in range 0<4"
-        factor = int(factor)
+        # assert 0 <= factor <= 4, "Factor must be in range 0<4"
+        # factor = int(factor)
 
-        ergo_factor = float(max([3 - factor, 1]))
-        recoil_factor = float(max([factor - 1, 1]))
+        # ergo_factor = float(max([3 - factor, 1]))
+        # recoil_factor = float(max([factor - 1, 1]))
         acc_factor = 0.1
 
         weapon = self.items_dict[name]
-        LOGGER.info(f"Finding preset for '{name}'ergo: {ergo_factor},recoil: {recoil_factor}")
-        LOGGER.info(f"Prapor:{praporLv}, Skier:{skierLv}, Mechanic:{mechanicLv}, "
-                    f"Jaeger:{jaegerLv}, Peacekeeper:{peacekeeperLv}")
+        # LOGGER.info(f"Finding preset for '{name}'ergo: {ergo_factor},recoil: {recoil_factor}")
+        # LOGGER.info(f"Prapor:{praporLv}, Skier:{skierLv}, Mechanic:{mechanicLv}, "
+        #             f"Jaeger:{jaegerLv}, Peacekeeper:{peacekeeperLv}")
 
         available_parts = self.get_hashed_part(praporLv, skierLv, mechanicLv, jaegerLv, peacekeeperLv)
         if useDefault:
@@ -1040,7 +1205,7 @@ class ItemsTree:
                         else:
                             "Create empty preset"
                             # LOGGER.log(20, f"Creating preset for :{cur_key}")
-                            scores[cur_key] = deque(maxlen=100_000)
+                            scores[cur_key] = deque(maxlen=max_parts)
 
                     if not sl.required:
                         "Sub part not required, adding Empty"
@@ -1116,6 +1281,7 @@ class ItemsTree:
                             if root_key == next_node_key:
                                 limit_propagation = min([limit_propagation, limit_top_propagation])
 
+                            LOGGER.log(13, f"Limiting propagation to: {limit_propagation}")
                             iter_obs = [
                                     sorted(ob, key=lambda x: x[1], reverse=True)[:limit_propagation]
                                     for ob in iter_obs
@@ -1157,11 +1323,18 @@ class ItemsTree:
                         else:
                             n_elements = [len(ob) for ob in iter_obs]
                             LOGGER.log(13, f"Combining items in sub parts: {cur_key}: {n_elements}")
+                            LOGGER.log(13,
+                                       f"Parent ({parent_node_key}) maxsize: {scores[parent_node_key].maxlen}")
 
                             # n_slots = len(iter_obs)
                             count = 0
                             end_preset_stop = False
-                            stop_at_counter = 3 ** len(iter_obs)
+                            stop_at_counter = limit_top_propagation ** len(iter_obs)
+                            if stop_at_counter > max_parts:
+                                LOGGER.log(15,
+                                           f"Too many parts to return. limited counter to max size of deque: {max_parts}")
+                                stop_at_counter = max_parts - 1
+
                             for preset in itertools.product(*iter_obs):
                                 # parts_names = [ob[0] for ob in preset]
                                 # LOGGER.log(10, f"Checking combination of: {names}")
@@ -1202,7 +1375,7 @@ class ItemsTree:
                                     if sco1 > 0 or cur_node.required:
                                         scores[parent_node_key].append((pst1, sco1, cf1, pr1, wg1))
                                         count += 1
-                                        if root_key == cur_key and count > stop_at_counter:
+                                        if root_key == parent_node_key and count > stop_at_counter:
                                             end_preset_stop = True
                                             break
                                     else:
@@ -1246,23 +1419,25 @@ class ItemsTree:
 
                 if not stack:
                     "STACK IS EMPTY"
-                    LOGGER.info(f"======== Last item in tree. iteration: {iter_counter}")
+                    print(f"======== Last item in tree. iteration: {iter_counter}")
+                    LOGGER.info(f"Iterations: {iter_counter}")
                     break
                 else:
                     LOGGER.debug(f"Going back to {next_node_key} <-")
 
-        LOGGER.log(13, "")
-        LOGGER.log(13, "Results presets")
-
         results = scores[name]
+
         results = sorted(results, key=lambda x: x[1], reverse=True)
 
-        # with open("results.txt", "wt") as fp:
-        #     fp.write(f"Results of {name}\n")
-        #     for key in scores:
-        #         fp.write(f"- -{key}\n")
-        #     for res in results:
-        #         fp.write(f"{res[1]} - {res}\n")
+        with open("results.txt", "wt") as fp:
+            fp.write(f"Results of {name}\n")
+            for key in scores:
+                fp.write(f"- -{key}\n")
+            for res in results:
+                fp.write(f"{res[1]} - {res}\n")
+
+        top_scores = [rs[1] for rs in results[:5]]
+        LOGGER.info(f"Top scores: {top_scores}")
 
         return results
 
@@ -1273,10 +1448,10 @@ class ItemsTree:
 
 def sort_images_on_type():
     for name in ReadType.types:
-        os.makedirs(JSON_DIR + f"pic-{name}", exist_ok=True)
+        os.makedirs(DATA_DIR + f"pic-{name}", exist_ok=True)
 
     for key, item in tree.items():
-        dst = JSON_DIR + f"pic-{item.part_type}{os.path.sep}{windows_name_fix(item.name)}.png"
+        dst = DATA_DIR + f"pic-{item.part_type}{os.path.sep}{windows_name_fix(item.name)}.png"
         src = PICS_DIR + windows_name_fix(item.name) + ".png"
         if not os.path.isfile(src):
             print(f"Skipped: {item.name}")
@@ -1288,23 +1463,36 @@ if __name__ == "__main__":
     weapons_df, parts_df, traders_dict = load_all_data()
 
     tree = ItemsTree(weapons_df, parts_df, traders_dict)
-    # tree._dump_items(JSON_DIR)
+    # tree.do_tree_check()
+    tree.dump_items(DATA_DIR)
     # tree.dump_weapons(JSON_DIR)
 
-    ak = [k for k in tree.weapon_keys if 'rpk' in k.lower()][0]
+    ak = [k for k in tree.weapon_keys if '103' in k.lower()][0]
     print(ak)
     weapon = tree[ak]
     print(weapon.default_preset)
 
-    results = tree.find_best_brute(ak, factor=1,
-                                   limit_propagation=2000, limit_top_propagation=4,
-                                   praporLv=4, skierLv=4, mechanicLv=4,
-                                   jaegerLv=4, peacekeeperLv=4,
+    results = []
+    results = tree.find_best_brute(ak,
+                                   ergo_factor=3,
+                                   recoil_factor=4,
+                                   limit_propagation=100, limit_top_propagation=10,
+                                   # praporLv=4, skierLv=4, mechanicLv=4,
+                                   # jaegerLv=4, peacekeeperLv=4,
                                    )
     print()
     print(f"Got: {len(results)}")
+    price_lim = 0
+    # if price_lim:
+    #     ts = [(a, b, c, d, e) for (a, b, c, d, e) in results if d < price_lim]
+    #     if ts:
+    #         results = ts
+    #     else:
+    #         results = sorted(results, key=lambda x: x[1])
 
-    for pres in results[:5]:
+    # results = sorted(results, key=lambda x: x[3])
+
+    for pres in results[:3]:
         parts = pres[0]
         score = pres[1]
         print()
@@ -1317,7 +1505,12 @@ if __name__ == "__main__":
         print(f"Ergo: {ergo + weapon.ergo}, Recoil: {recoil}, Acc: {acc}, Price: {pres[3]}")
 
         zp = zip(ptypes, parts)
-        zp = sorted(zp, key=lambda x: x[0])
+        zp = sorted(zp, key=lambda x: (x[0], x[1]))
 
         for pt, pr in zp:
-            print(f"{pt}: {pr}")
+            if pr in ColorRemover.refs:
+                variant = f"variants: {ColorRemover.refs[pr]}"
+            else:
+                variant = ''
+            # short_name = tree.items_dict[pr].name_short
+            print(f"{pt:>10}: {pr} {variant},")

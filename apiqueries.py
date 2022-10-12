@@ -228,8 +228,8 @@ ammo_request = """query {
   }
 }
 """
-JSON_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data") + os.path.sep
-PICS_DIR = os.path.join(JSON_DIR, "images") + os.path.sep
+DATA_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data") + os.path.sep
+PICS_DIR = os.path.join(DATA_DIR, "images") + os.path.sep
 # print(JSON_DIR)
 # print(PICS_DIR)
 
@@ -257,7 +257,7 @@ def query_traders():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "traders.json", "wt") as file:
+        with open(DATA_DIR + "traders.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Traders not ok: {response.status_code}")
@@ -271,7 +271,7 @@ def query_parts():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "parts.json", "wt") as file:
+        with open(DATA_DIR + "parts.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Parts not ok: {response.status_code}")
@@ -287,7 +287,7 @@ def query_weapons():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "weapons.json", "wt") as file:
+        with open(DATA_DIR + "weapons.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Guns not ok: {response.status_code}")
@@ -303,7 +303,7 @@ def query_ammo():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "ammo.json", "wt") as file:
+        with open(DATA_DIR + "ammo.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Ammo not ok: {response.status_code}")
@@ -379,14 +379,14 @@ def query_images():
     arg_list = []
 
     "Get args from parts"
-    with open(JSON_DIR + "parts.json", "rt") as file:
+    with open(DATA_DIR + "parts.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
     for item in items:
         arg_list.append(item)
 
     "Get args from weapons"
-    with open(JSON_DIR + "weapons.json", "rt") as file:
+    with open(DATA_DIR + "weapons.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
 
