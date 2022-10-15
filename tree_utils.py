@@ -1,35 +1,70 @@
-from abc import ABC, abstractmethod
-
 import numpy as np
+
+from abc import ABC, abstractmethod
+from logger import LOGGER
 
 
 class ReadType:
     """ Defines part types and groups them."""
+    """
+    Types:
+        {'handguard', 'silencer', 'auxiliarymod', 'compact reflex sight', 'gas block', 
+        'cylindermagazine', 'thermalvision', 'flashhider', 'comb. tact. device', 
+        'springdrivencylinder', 'reflex sight', 'charging handle', 'stock', 'pistol grip', 
+        'comb. muzzle device', 'nightvision', 'receiver', 'foregrip', 'mount', 'assault scope',
+         'flashlight', 'special scope', 'ironsight', 'magazine', 'barrel', 'scope', 'bipod'}
+    Names:
+        {'handguard', 'catch', 'hammer', 'shroud', 'gas block', 
+        'ch. handle', 'muzzle', 'trigger', 'stock', 'pistol grip', 
+        'receiver', 'rear sight', 'mount', 'tactical', 'foregrip', 'ubgl', 
+        'magazine', 'barrel', 'scope', 'front sight', 'bipod'}
+    Diff:
+        {'flashlight', 'charging handle', 'silencer', 'auxiliarymod', 
+        'special scope', 'ironsight', 'cylindermagazine', 'thermalvision', 
+        'comb. muzzle device', 'nightvision', 'flashhider', 'comb. tact. device', 
+        'springdrivencylinder', 'assault scope', 'reflex sight', 'compact reflex sight'}
+    """
+
     _filtration_types = [
             'nvg',
             'rail',
             'barrel', 'handguard', 'stock', 'receiver',
             'muzzle', "adapter", "brake", "flash",
             'mount', 'scope', 'sight',
-            'grip',
+            'pistol grip', 'grip',
+            'silencer', 'suppressor',
+            'auxiliarymod',
+
+            'gas block',
+            'ubgl', 'bipod', 'ch. handle',
 
             'device', 'tactical',
-            'magazine', 'gun',
-            'mod',
+            'magazine', 'cylinder',
+            'charging handle', 'shroud',
+            'nightvision',
+            'gun', 'mod',
+            'unknown',
     ]
 
     _group_dict = {
+            'nightvision': 'sight',
             'nvg': 'sight',
             'scope': 'sight',
-            # 'mag': 'magazine',
-            # 'barrel': 'mod',
             'rail': 'mount',
-            'muzzle': 'mod',
-            "flash": "mod",
-            "brake": "mod",
-            "suppressor": "mod",
+            "flash": "muzzle",
+            "brake": "muzzle",
+            'cylinder': 'magazine',
             'tactical': 'device',
+            'silencer': 'suppressor',
+
+            'ubgl': 'mod',
+            'shroud': 'mod',
+            'charging handle': 'mod',
+            'ch. handle': 'mod',
+            'auxiliarymod': 'mod',
     }
+    # found_types = set()# Debug
+    # found_names = set()# Debug
 
     types = []
     "Defined output types"
@@ -56,15 +91,18 @@ class ReadType:
 
         if hasattr(ob, 'category'):
             type_name = ob['category'].lower()
+            # cls.found_types.add(type_name)
         else:
             type_name = ob['name'].lower()
+            # cls.found_names.add(type_name)
 
         for tp in cls._filtration_types[:-1]:
             if tp in type_name:
                 type_ = tp
                 break
         else:
-            type_ = cls.types[-1]
+            # print(f"Not found type: {ob}")
+            type_ = 'unknown'
 
         if type_ in cls._group_dict:
             type_ = cls._group_dict[type_]
@@ -134,7 +172,12 @@ class ColorRemover:
 
 
     refs = {}
+    "Items variant refs"
     rejected = set()
+    "Rejected colors ()"
+    accepted = set()
+    "Accepted colors ()"
+    parts_renamed = {}
     white_postfix = {
             '(Red)',
             '(Golden)',
@@ -170,10 +213,12 @@ class ColorRemover:
 
     white_types = [
             'sight', 'grip', 'magazine', 'handguard', 'mod', 'stock', 'mount', 'device',
+            'pistol grip', 'grip',
+            'muzzle', 'suppressor',
     ]
 
     @classmethod
-    def add_name(cls, name: str, type_: str) -> str:
+    def add_name(cls, name: str, type_: str):
         """
 
         :param name:
@@ -183,17 +228,14 @@ class ColorRemover:
         :return:
         """
         if type_ not in cls.white_types:
-            return None
+            return
 
         if name.endswith(')'):
             ind = name.find('(')
             nawias = name[ind:]
 
             if nawias in cls.white_postfix:
-                # if type_ not in cls.white_types:
-                #     cls.white_types[type_] = set()
-                # cls.white_types[type_].add(nawias)
-
+                cls.accepted.add(nawias)
                 clean_name = name[:ind - 1]
                 if clean_name not in cls.refs:
                     cls.refs[clean_name] = {nawias}
@@ -216,6 +258,19 @@ class ColorRemover:
             if nawias in cls.white_postfix:
                 clean_name = name[:ind - 1]
                 if clean_name in cls.refs:
+                    LOGGER.log(10, f"Renaming {name} -> {clean_name}")
+                    cls.parts_renamed[name] = clean_name
                     return clean_name
 
         return name
+
+    @classmethod
+    def pretty_print(cls):
+        txt = '\nAccepted:\n'
+        for key in cls.accepted:
+            txt += f"{key}\n"
+        txt += "\nRejected: \n"
+        for key in cls.rejected:
+            txt += f"{key}\n"
+
+        return txt

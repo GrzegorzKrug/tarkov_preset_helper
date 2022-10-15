@@ -7,69 +7,12 @@ import time
 
 import shutil
 
-from apiqueries import DATA_DIR, PICS_DIR, windows_name_fix
+from apiqueries import DATA_DIR, PICS_DIR, windows_name_fix, send_parts_query
 from functools import wraps
 from collections import deque
 
-import logging
-
+from logger import LOGGER
 from tree_utils import ReadType, StringFormat, TreeWalkingMethods, ColorRemover
-
-
-def get_logger():
-    os.makedirs("logs", exist_ok=True)
-
-    formatter = logging.Formatter(fmt="%(name)s - %(levelname)s : %(message)s")
-
-    main_file_handler = logging.FileHandler("logs.log", mode='at')
-    main_file_handler.setFormatter(formatter)
-    main_file_handler.setLevel("INFO")
-
-    debug_file_handler = logging.FileHandler("last_run.log", mode='wt')
-    debug_file_handler.setFormatter(formatter)
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    console_handler.setLevel(13)
-
-    log = logging.Logger(f"{os.path.basename(__file__)}", level=10)
-    # logging.addLevelName(11, "Debug11")
-    logging.addLevelName(10, "DebugL")
-    logging.addLevelName(11, "DebugHi")
-    logging.addLevelName(12, "DebugTop")
-    logging.addLevelName(13, "DebugResult")
-    logging.addLevelName(14, "DebugWarn")
-    logging.addLevelName(15, "DebugError")
-
-    log.propagate = True
-    log.addHandler(main_file_handler)
-    log.addHandler(debug_file_handler)
-    log.addHandler(console_handler)
-
-    return log
-
-
-LOGGER = get_logger()
-
-
-def _load_jsons():
-    """
-    Load data from of query from all items.
-
-    :return: tuple of 2 dicts,
-            items, traders
-
-    """
-    # print(JSON_DIR)
-    # print(PICS_DIR)
-
-    with open(DATA_DIR + "items.json", "rt") as file:
-        items = json.load(file)['data']['items']
-
-    with open(DATA_DIR + "traders.json", "rt") as file:
-        traders = json.load(file)['data']['traders']
-
-    traders = {tr['name'].lower(): tr for tr in traders}
-    return items, traders
 
 
 def _load_jsons2():
@@ -265,6 +208,28 @@ def load_all_data():
     parts.index = parts['name']
 
     return weapons, parts, traders
+
+
+def load_parts_only():
+    """
+    :returns:
+
+    * weapons_df -
+    * parts_df: asd
+    * traders_dict
+
+    :rtype: tuple[`pandas.DataFrame`, `pandas.DataFrame`, `dict`]
+    """
+    with open(DATA_DIR + "parts.json", "rt") as file:
+        parts = json.load(file)['data']['items']
+    parts = preproces_json_to_df(parts)
+
+    parts.sort_values(['name'], inplace=True)
+    parts = clear_event_parts(parts)
+
+    parts.index = parts['name']
+
+    return parts
 
 
 def _compare_print_invalid(df_check, df_ok, key='name'):
@@ -494,7 +459,7 @@ class Item(StringFormat, TreeWalkingMethods):
             rest_text = self.split_wrap(f"useless slots: ", 1 + extra_tab)
 
             for k, sl in self.slots_dict.items():
-                if k in self.slots_dict:
+                if k in self.good_keys:
                     good_text += self.split_wrap(f"{k}: " + repr(sl), 2 + extra_tab)
                 else:
                     rest_text += self.split_wrap(f"{k}: " + repr(sl), 2 + extra_tab)
@@ -570,32 +535,39 @@ class ItemsTree:
             'prapor', 'mechanic', 'skier', 'peacekeeper', 'jaeger',
             'therapist', 'ragman', 'fence',
     ]
+    df_price_check_avg = traders_keys + ['avg24hPrice']  # , 'lastLowPrice']
 
     euro = None
     "Current price in tarkovs ruble"
     usd = None
     "Current price in tarkovs ruble"
 
-    # @classmethod
-    def __init__(self, weapons_df, parts_df, traders_dict, regenerate=False):
+    def __init__(self, regenerate=False):
         """init doc"""
+        weapons_df, parts_df, traders_dict = load_all_data()
+
         self._parts_df = parts_df
 
         self.process_item(weapons_df)
         self.weapon_keys = sorted(list(weapons_df.index))
         self.process_item(parts_df)
 
-        if not regenerate:
-            self.load()
-
-        if not self._loaded or not os.path.isfile(DATA_DIR + "traders_df.csv"):
-            self.process_traders(traders_dict)
-            self.save()
-
         self.gather_slots_dict()
         self.squash_item_colors()
         self.do_tree_backpropagation()
+
+        if not regenerate:
+            self.load()
+
+        if not self._loaded:
+            self.process_traders(traders_dict)
+
         self.do_tree_check()
+        # print(f"Tree prepared, items: {len(self.items_dict)}, {self.counter}")
+        # print(ColorRemover.pretty_print())
+        # print(self.counter)
+        self.update_prices()
+        self.save()
 
     @classmethod
     def add_item(cls, item):
@@ -623,6 +595,7 @@ class ItemsTree:
             for it_key, it in self.items_dict.items():
                 fp.write("\n")
                 fp.write(it.pretty_print())
+                fp.write(f"\n\tIs in good keys: {it_key in self.good_parts_keys}\n")
                 # fp.write("\n")
 
                 for sk in it:
@@ -657,7 +630,7 @@ class ItemsTree:
 
     @measure_time_decorator
     def save(self):
-        """Save traders"""
+        """Save traders and hash tiers"""
         serial = {key: sorted(list(it)) for key, it in self.traders_levels_hashed.items()}
         with open(DATA_DIR + "traders_hashed.json", "wt") as fp:
             json.dump(serial, fp, indent=2)
@@ -689,7 +662,7 @@ class ItemsTree:
         :param traders_dict:
         :type traders_dict: dict
         """
-        shop_df = pd.DataFrame(columns=['lastLowPrice', 'low24Price', 'avg24Price'], )
+        shop_df = pd.DataFrame(columns=['lastLowPrice', 'low24hPrice', 'avg24hPrice'], )
 
         traders_levels_hashed = dict()  # Dict of sets
 
@@ -704,23 +677,60 @@ class ItemsTree:
             for offer in tr['cashOffers']:
                 # print(offer)
                 item_name = offer['item']['name']
+                duplicate = False
+                if item_name in ColorRemover.parts_renamed:
+                    item_name = ColorRemover.parts_renamed[item_name]
+                    if item_name in shop_df.index:
+                        duplicate = True
+
                 minLevel = offer['minTraderLevel']
                 price = offer['price']
                 currency = offer['currency']
-                shop_df.loc[item_name, [trader_name, trader_name + "Currency"]] = price, currency
+
+                if duplicate:
+                    shop_price, shop_curr = shop_df.loc[
+                        item_name, [trader_name, trader_name + "Currency"]]
+
+                    # print(f"Same part (diff color) in shop: {item_name}")
+
+                    if np.isnan(shop_price):
+                        "Nan price"
+                        shop_df.loc[item_name, [trader_name, trader_name + "Currency"]] = price, currency
+
+                    elif shop_curr == currency and shop_price > price:
+                        "Lower price"
+                        shop_df.loc[item_name, [trader_name, trader_name + "Currency"]] = price, currency
+                    elif shop_curr != currency and currency == 'RUB':
+                        "Price not in rub"
+                        shop_df.loc[
+                            item_name, [trader_name, trader_name + "Currency"]] = price, currency
+
+                else:
+                    shop_df.loc[item_name, [trader_name, trader_name + "Currency"]] = price, currency
 
                 for i in range(minLevel, 5):
                     key = trader_name + str(i)
                     traders_levels_hashed[key].add(item_name)
 
-        self._traders_df = shop_df
-        self.traders_levels_hashed = traders_levels_hashed
         self.euro = shop_df.loc['Euros', 'skier'].astype(int)
         self.usd = (shop_df.loc['Dollars', 'peacekeeper']).astype(int)
 
-        # with open("debug.txt", "wt") as fp:
-        #     for key in self._traders_df:
-        #         fp.write(f"{key}\n")
+        stack = shop_df.stack(dropna=False)
+        usdmask = stack == 'USD'
+        euromask = stack == 'EURO'
+
+        usd_shift = np.roll(usdmask, -1, 0)
+        euro_shift = np.roll(euromask, -1, 0)
+
+        stack[usdmask] = "RUB"
+        stack[euromask] = "RUB"
+        stack[euro_shift] = (stack[euro_shift] * self.euro).astype(int)
+        stack[usd_shift] = (stack[usd_shift] * self.usd).astype(int)
+
+        shop_df = stack.unstack()
+
+        self._traders_df = shop_df
+        self.traders_levels_hashed = traders_levels_hashed
 
     @classmethod
     @measure_time_decorator
@@ -737,6 +747,49 @@ class ItemsTree:
             item.tree_verified = False
             # item.positive_modifier = None
             cls.add_item(item)
+
+    # @log_time_decorator(with_arg=False)
+    @measure_time_decorator
+    def update_prices(self, request=False):
+        if request:
+            send_parts_query()
+        # send_parts_query()
+
+        parts_df = load_parts_only()
+
+        for ind, item in parts_df.iterrows():
+            name = item['name']
+            part_type = ReadType.read_type(item)
+            clean_name = ColorRemover.rename(name, part_type)
+
+            "AVERAGE"
+            new_price = item['avg24hPrice']
+            if isinstance(new_price, int):
+                pass
+            else:
+                print(f"Got no price: {clean_name} ({type(new_price)})")
+                new_price = 0
+
+            if clean_name in self._traders_df.index:
+                p = self._traders_df.loc[clean_name, 'avg24hPrice']
+                if p > new_price > 0 or (np.isnan(p) and new_price > 0) or p <= 0:
+                    self._traders_df.loc[clean_name, 'avg24hPrice'] = new_price
+
+            elif new_price > 0:
+                # print(f"Filling empty price: {clean_name} = {new_price}")
+                self._traders_df.loc[clean_name, 'avg24hPrice'] = new_price
+
+            else:
+                print(f"No average24 price for: {clean_name}")
+
+            "LOW PRICE"
+            low_price = item['lastLowPrice']
+            if isinstance(low_price, (float, int)):
+                pass
+            else:
+                low_price = np.nan
+
+            self._traders_df.loc[clean_name, 'lastLowPrice'] = low_price
 
     @classmethod
     def __str__(cls):
@@ -910,15 +963,17 @@ class ItemsTree:
 
         "First iteration of all items"
         for item_key in start_keys:
+            LOGGER.debug(f"Initial tree backpropagation: {item_key}")
             item_ob = self.items_dict[item_key]
             if item_ob.ergo > 1 or item_ob.recoil < 0 or item_ob.acc > 0:
-                # print(f"Initial good part: {item_key}")
+                LOGGER.debug(f"Initial good part: {item_key}")
                 good_parts_keys.add(item_key)
 
             "Bottom end part. Verified"
             if not item_ob.slots_dict:
                 parts_verified.add(item_key)
                 item_ob.good_keys = list(item_ob.good_keys)
+                LOGGER.debug(f"Initial bottom end: {item_key}")
                 # print(f"End list part: {item_key}")
 
             item_ob.part_fitting_slots = {key: set() for key in ReadType.types}
@@ -926,10 +981,6 @@ class ItemsTree:
                 if conf_key in self.items_dict:
                     self.items_dict[conf_key].conflictingItems.add(item_key)
                     self.items_dict[conf_key].conflictingTypes.add(item_ob.part_type)
-
-        # print("Verified:")
-        # for ky in parts_verified:
-        #     print(ky)
 
         "Second loop for propagating sub parts with slots"
         check_parts = start_keys.difference(parts_verified)
@@ -948,17 +999,17 @@ class ItemsTree:
             if loop_i > max_iters:
                 print("Too many iterations. breaking!")
                 print("Parts not verified: ", len(temp_check_parts))
+                print(temp_check_parts)
                 # for part in temp_check_parts:
                 #     print(part)
                 break
 
             "Check slots, propagate info"
             for item_key in temp_check_parts:
-                # print()
-                # print(f"Checking: {item_key}")
                 item_ob = self.items_dict[item_key]
                 if item_key in parts_verified:
-                    print(f"Checking again verified part! {item_key}\n" * 5)
+                    # print(f"Checking again verified part! {item_key}\n" * 5)
+                    raise RuntimeError("Checking verified part again in backpropagation!")
 
                 found_not_verified_subpart = False
                 for slot_key, slot in item_ob.slots_dict.items():
@@ -1050,16 +1101,19 @@ class ItemsTree:
         available_parts.update(peacekeeper)
         return available_parts
 
-    # @measure_time_decorator
+    @measure_time_decorator
     @log_time_decorator()
     def find_best_brute(self, name,
                         # factor=2,
                         ergo_factor=1,
                         recoil_factor=1,
                         weight_factor=0,
+                        acc_factor=0.1,
                         praporLv=3, skierLv=3,
                         peacekeeperLv=2, mechanicLv=2, jaegerLv=2,
                         useDefault=True,
+                        useAllParts=False,
+                        useSilencer=False,
                         limit_propagation=100, limit_top_propagation=10,
                         ):
         """
@@ -1078,14 +1132,16 @@ class ItemsTree:
         :return:
         """
 
+        factor_weights_sum = ergo_factor + recoil_factor + weight_factor + acc_factor
+
         # assert 0 <= factor <= 4, "Factor must be in range 0<4"
         # factor = int(factor)
 
         # ergo_factor = float(max([3 - factor, 1]))
         # recoil_factor = float(max([factor - 1, 1]))
-        acc_factor = 0.1
 
-        weapon = self.items_dict[name]
+
+        weapon_node = self.items_dict[name]
         # LOGGER.info(f"Finding preset for '{name}'ergo: {ergo_factor},recoil: {recoil_factor}")
         # LOGGER.info(f"Prapor:{praporLv}, Skier:{skierLv}, Mechanic:{mechanicLv}, "
         #             f"Jaeger:{jaegerLv}, Peacekeeper:{peacekeeperLv}")
@@ -1099,16 +1155,21 @@ class ItemsTree:
             key : (parts, score, conflicts, price, weight)
         """
 
-        root_key = next_node_key = name
-        glob_conflicts = self.items_dict[next_node_key].conflictingItems
+        root_key = name
+        glob_conflicts = self.items_dict[root_key].conflictingItems
 
         stack = deque(maxlen=1000)
-        stack.append([root_key, None])
-        # visited = set()
+        stack.append([root_key, 1])
+        next_node_key = (root_key, weapon_node.good_keys[0])
+        stack.append([next_node_key, 0])
+
+        LOGGER.debug("Initial stack")
+        LOGGER.debug(stack)
+
         merged = set()
 
         iter_counter = 0
-        max_iters = 100000
+        max_iters = 100_000
         max_parts = 10_000
         while True:  # and ((i := i + 1) < max_iters):
             if (iter_counter := iter_counter + 1) > max_iters:
@@ -1126,23 +1187,28 @@ class ItemsTree:
 
             if isitem:
                 go_back = False
-                if cur_key in weapon.default_preset and useDefault:
-                    LOGGER.debug("this is default part " * 5)
+
+                if useDefault and cur_key in weapon.default_preset:
                     pass
-
-                elif cur_key not in self.good_parts_keys:
-                    LOGGER.debug(f"!! Bad part:{cur_key}, skipping")
-                    # visited.add(cur_key)
-                    go_back = True
-
-                elif cur_key not in available_parts:
-                    LOGGER.debug("!! No trader for that part")
-                    # visited.add(cur_key)
-                    go_back = True
+                    LOGGER.debug("this is default part " * 5)
 
                 elif cur_key in glob_conflicts:
                     LOGGER.debug("!! This part has global conflict with weapon.")
-                    # visited.add(cur_key)
+                    go_back = True
+
+                elif cur_key in self.weapon_keys:
+                    LOGGER.debug("This is gun.")
+
+                elif cur_key not in self.good_parts_keys:
+                    LOGGER.debug(f"!! Bad part:{cur_key}, skipping")
+                    go_back = True
+
+                elif useAllParts:
+                    LOGGER.debug(f"All parts allowed. So its this: {cur_key}")
+                    pass
+
+                elif cur_key not in available_parts:
+                    LOGGER.debug("!! No trader for that part")
                     go_back = True
 
                 if go_back:
@@ -1156,22 +1222,22 @@ class ItemsTree:
                 if cur_node.part_type in ['sight', 'magazine', 'device']:
                     stack.pop()
                     next_node_key = stack[-1][0]
-                    LOGGER.debug(f"Restricted item type, going back to {next_node_key}")
+                    LOGGER.debug(f"Restricted item type({cur_key}), going back to {next_node_key}")
                     continue
 
             loop_compensation = stack[-1][1]
             if not loop_compensation:
                 loop_compensation = 0
 
+            LOGGER.debug(f"Loop compensation: {loop_compensation}")
+
             "Check if node has valuable slots / items"
             for cur_i, sub_key in enumerate(cur_node.good_keys[loop_compensation:], loop_compensation):
                 "Checking only valuable components"
 
                 hash_ = (cur_key, sub_key) if isitem else sub_key
-                # LOGGER.debug(f"checking sub key: {hash_}")
                 iter_counter += 1
 
-                # if hash_ not in visited:
                 "Only items are good. And in traders reach."
                 LOGGER.debug(f"Navigating -> {hash_}")
 
@@ -1189,13 +1255,14 @@ class ItemsTree:
 
                     sl = self.slots_dict[cur_key]
                     if cur_key not in scores:
-                        if sl.required:
+                        if sl.required and useDefault:
                             "CHECK IF SLOT IS REQUIRED AND THERE IS ONE PART FOR IT IN SCORES"
                             "Reason: default part is not in good keys."
                             "Result: Add this part to next iteration"
                             def_part_list = list(weapon.default_preset.intersection(sl.allowedItems))
                             "Getting intersection of weapon default and slot allowedItems"
-                            LOGGER.warning(f"Add default part to slot ob. For better efficiency")
+                            LOGGER.log(14, f"Add default part to slot ob. For better efficiency")
+
                             assert len(def_part_list) == 1, \
                                 f"Should be one default part, but got {len(def_part_list)}: {def_part_list}"
                             def_part_key = def_part_list[0]
@@ -1204,7 +1271,6 @@ class ItemsTree:
                             continue
                         else:
                             "Create empty preset"
-                            # LOGGER.log(20, f"Creating preset for :{cur_key}")
                             scores[cur_key] = deque(maxlen=max_parts)
 
                     if not sl.required:
@@ -1219,8 +1285,10 @@ class ItemsTree:
                 if stack:
                     "AT LEAST ONE ITEM IN STACK"
                     parent_node_key = next_node_key = stack[-1][0]
+                    LOGGER.debug(f"Going back to parent: {parent_node_key}")
                 else:
                     parent_node_key = root_key
+                    LOGGER.debug(f"Parent node set to root: {root_key}")
 
                 if isitem and cur_key not in merged:
                     "PROPAGATE SLOTS TO ITEM LEVEL"
@@ -1237,13 +1305,27 @@ class ItemsTree:
                     cur_item_score = cur_node.ergo * ergo_factor \
                                      - (cur_node.recoil * recoil_factor) \
                                      + (cur_node.acc * acc_factor)
+                    if cur_node.part_type == "suppressor" and useSilencer:
+                        LOGGER.debug("This is suppressor")
+                        cur_item_score += 1000
+
                     cur_item_conflicts = cur_node.conflictingItems
 
-                    if cur_key in self._traders_df.index:
+                    if cur_key in weapon.default_preset:
+                        cur_item_price = 0
+                        print(f"Default part, cost: 0, {cur_key}")
+                        LOGGER.log(14, f"Default part, cost: 0, {cur_key}")
+
+                    elif cur_key in self._traders_df.index:
                         cur_item_price = self._traders_df.loc[cur_key, self.traders_keys].min()
+                        if np.isnan(cur_item_price):
+                            cur_item_price = 0
+
                     else:
                         print(f"Not found price of: {cur_key}")
-                        cur_item_price = 0
+                        LOGGER.log(14, f"Price not found {cur_key}")
+                        cur_item_price = 1000_000_000
+                        # cur_item_price = 0
 
                     cur_item_weight = 10
 
@@ -1264,12 +1346,13 @@ class ItemsTree:
                             sc = sc + cur_item_score
                             cf = cf.copy()
                             cf.update(cur_item_conflicts)
-                            pr += cur_item_price
+                            if not np.isnan(cur_item_price):
+                                pr += cur_item_price
                             wg += cur_item_weight
                             if sc > 0:
                                 scores[parent_node_key].append((parts, sc, cf, pr, wg))
                                 count += 1
-                        LOGGER.log(11, f"Declared good items: {count}")
+                        LOGGER.log(12, f"Cached slot with good items: {count}")
 
                     elif len(cur_node.slots_dict) > 1:
                         "PROPAGATE and merge slots"
@@ -1281,7 +1364,7 @@ class ItemsTree:
                             if root_key == next_node_key:
                                 limit_propagation = min([limit_propagation, limit_top_propagation])
 
-                            LOGGER.log(13, f"Limiting propagation to: {limit_propagation}")
+                            LOGGER.log(11, f"Limiting propagation to: {limit_propagation}")
                             iter_obs = [
                                     sorted(ob, key=lambda x: x[1], reverse=True)[:limit_propagation]
                                     for ob in iter_obs
@@ -1289,7 +1372,7 @@ class ItemsTree:
 
                         if len(iter_obs) == 0:
                             "NO SUB PARTS"
-                            LOGGER.log(13, f"No sub parts to merge for {cur_key}")
+                            LOGGER.log(12, f"No sub parts to merge for {cur_key}")
                             if cur_item_score > 0 or cur_node.required:
                                 scores[parent_node_key].append(({cur_key}, cur_item_score,
                                                                 cur_item_conflicts, cur_item_price,
@@ -1376,12 +1459,10 @@ class ItemsTree:
                                         scores[parent_node_key].append((pst1, sco1, cf1, pr1, wg1))
                                         count += 1
                                         if root_key == parent_node_key and count > stop_at_counter:
-                                            end_preset_stop = True
+                                            # end_preset_stop = True
                                             break
                                     else:
                                         LOGGER.log(13, f"Preset valid and rejected: score: {sco1}")
-                                if end_preset_stop:
-                                    break
 
                             LOGGER.log(11, f"Saved {count} presets")
 
@@ -1404,13 +1485,12 @@ class ItemsTree:
                     "Propagate first declaration"
                     if stack:
                         parent_node_key = stack[-1][0]
-                        LOGGER.log(12, f"Propagate declared: {cur_key}->{parent_node_key}")
+                        LOGGER.log(11, f"Propagate stored values: {cur_key} -> {parent_node_key}")
                         if parent_node_key not in scores:
                             scores[parent_node_key] = deque(maxlen=max_parts)
                         for ob in scores[cur_key]:
                             scores[parent_node_key].append(ob)
                             iter_counter += 1
-
 
                 else:
                     "THIS IS SLOT"
@@ -1425,16 +1505,20 @@ class ItemsTree:
                 else:
                     LOGGER.debug(f"Going back to {next_node_key} <-")
 
-        results = scores[name]
+        "End of while"
 
+        results = scores[name]
         results = sorted(results, key=lambda x: x[1], reverse=True)
 
-        with open("results.txt", "wt") as fp:
-            fp.write(f"Results of {name}\n")
-            for key in scores:
-                fp.write(f"- -{key}\n")
-            for res in results:
-                fp.write(f"{res[1]} - {res}\n")
+        "Quick fix"
+        results = [(a, sc / factor_weights_sum, c, d, e) for a, sc, c, d, e in results]
+
+        # with open("results.txt", "wt") as fp:
+        #     fp.write(f"Results of {name}\n")
+        #     for key in scores:
+        #         fp.write(f"- -{key}\n")
+        #     for res in results:
+        #         fp.write(f"{res[1]} - {res}\n")
 
         top_scores = [rs[1] for rs in results[:5]]
         LOGGER.info(f"Top scores: {top_scores}")
@@ -1460,57 +1544,67 @@ def sort_images_on_type():
 
 
 if __name__ == "__main__":
-    weapons_df, parts_df, traders_dict = load_all_data()
-
-    tree = ItemsTree(weapons_df, parts_df, traders_dict)
-    # tree.do_tree_check()
+    tree = ItemsTree()
     tree.dump_items(DATA_DIR)
-    # tree.dump_weapons(JSON_DIR)
+    # tree.dump_weapons(DATA_DIR)
 
-    ak = [k for k in tree.weapon_keys if '103' in k.lower()][0]
-    print(ak)
-    weapon = tree[ak]
+    wep = [k for k in tree.weapon_keys if '74u' in k.lower()][0]
+    print(wep)
+    weapon = tree[wep]
     print(weapon.default_preset)
 
     results = []
-    results = tree.find_best_brute(ak,
-                                   ergo_factor=3,
-                                   recoil_factor=4,
-                                   limit_propagation=100, limit_top_propagation=10,
-                                   # praporLv=4, skierLv=4, mechanicLv=4,
-                                   # jaegerLv=4, peacekeeperLv=4,
+    results = tree.find_best_brute(wep,
+                                   ergo_factor=6,
+                                   recoil_factor=8,
+                                   limit_propagation=50, limit_top_propagation=10,
+                                   useAllParts=False, useSilencer=False,
+                                   praporLv=3, skierLv=2,
+                                   peacekeeperLv=2, mechanicLv=2, jaegerLv=3,
                                    )
     print()
+    print(wep)
     print(f"Got: {len(results)}")
-    price_lim = 0
-    # if price_lim:
-    #     ts = [(a, b, c, d, e) for (a, b, c, d, e) in results if d < price_lim]
-    #     if ts:
-    #         results = ts
-    #     else:
-    #         results = sorted(results, key=lambda x: x[1])
 
-    # results = sorted(results, key=lambda x: x[3])
+    print(wep)
+    print(wep)
+    print(wep)
+    print(wep)
 
-    for pres in results[:3]:
+    print()
+    print(wep)
+
+    show_n = 10
+    price_limit = 62_000
+
+    res_print = [r for r in results[1:] if r[3] <= price_limit]
+    res_print = res_print[::3]
+    res_print = [results[0]] + res_print[:show_n]
+
+    for pres in res_print:
         parts = pres[0]
         score = pres[1]
         print()
-        print(f"Points: {score}")
+        print(f"Points: {score:4.1f}")
         ptypes = [tree.items_dict[p].part_type for p in parts]
         ergo = sum(tree.items_dict[p].ergo for p in parts)
         recoil = sum(tree.items_dict[p].recoil for p in parts)
         acc = sum(tree.items_dict[p].acc for p in parts)
 
-        print(f"Ergo: {ergo + weapon.ergo}, Recoil: {recoil}, Acc: {acc}, Price: {pres[3]}")
+        price = f"{pres[3]:,.0f} RUB"
+        print(f"Ergo: +{ergo}, Recoil: {recoil}%, Acc: {acc}, Upgrade Price: {price}")
 
         zp = zip(ptypes, parts)
         zp = sorted(zp, key=lambda x: (x[0], x[1]))
 
-        for pt, pr in zp:
-            if pr in ColorRemover.refs:
-                variant = f"variants: {ColorRemover.refs[pr]}"
+        for pt, pn in zp:
+            if pn in ColorRemover.refs:
+                variant = f"(variants: {list(ColorRemover.refs[pn])})"
             else:
                 variant = ''
             # short_name = tree.items_dict[pr].name_short
-            print(f"{pt:>10}: {pr} {variant},")
+            if pn not in weapon.default_preset:
+                prc = tree._traders_df.loc[pn, tree.traders_keys].min()
+            else:
+                prc = 0
+            print(f"{pt:>15}: {prc:>8,.0f} R - {pn} {variant},")
