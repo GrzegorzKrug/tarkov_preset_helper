@@ -88,6 +88,26 @@ query {
         centerOfImpact
         deviationCurve
         deviationMax
+        slots {
+          id
+          name
+          nameId
+          required
+          filters {
+            allowedCategories {
+              name
+            }
+            allowedItems {
+              name
+            }
+            excludedCategories {
+              name
+            }
+            excludedItems {
+              name
+            }
+          }
+        }
       }
 
       ... on ItemPropertiesScope {
@@ -248,7 +268,7 @@ def send_query(cur_query):
     return response
 
 
-def query_traders():
+def send_traders_query():
     """Send query of traders and saves json."""
     response = send_query(traders_request)
     # print(response)
@@ -263,7 +283,7 @@ def query_traders():
         print(f"Traders not ok: {response.status_code}")
 
 
-def query_parts():
+def send_parts_query():
     """Sends query for modding parts and saves to json."""
     response = send_query(parts_request)
     if response.status_code == 200:
@@ -277,7 +297,7 @@ def query_parts():
         print(f"Parts not ok: {response.status_code}")
 
 
-def query_weapons():
+def send_weapons_query():
     """
     Sends query for guns and saves to json.
     """
@@ -293,7 +313,7 @@ def query_weapons():
         print(f"Guns not ok: {response.status_code}")
 
 
-def query_ammo():
+def send_ammo_query():
     """
     Sends query for ammo and saves to json.
     """
@@ -398,7 +418,7 @@ def query_images():
 
 
 if __name__ == "__main__":
+    # query_weapons()
+    # query_traders()
+    # query_ammo()
     query_parts()
-    query_weapons()
-    query_traders()
-    query_ammo()

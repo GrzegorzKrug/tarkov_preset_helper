@@ -1939,7 +1939,7 @@
      },
      {
       "currency": "EUR",
-      "price": 21596,
+      "price": 19743,
       "minTraderLevel": 3,
       "item": {
        "name": "Item case"
@@ -2188,7 +2188,7 @@
      },
      {
       "currency": "RUB",
-      "price": 108,
+      "price": 118,
       "minTraderLevel": 2,
       "item": {
        "name": "Euros"
@@ -2356,7 +2356,7 @@
      },
      {
       "currency": "USD",
-      "price": 91,
+      "price": 86,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine stock (Black)"
@@ -2468,7 +2468,7 @@
      },
      {
       "currency": "USD",
-      "price": 162,
+      "price": 152,
       "minTraderLevel": 3,
       "item": {
        "name": "AK Magpul MOE AKM handguard (Olive Drab)"
@@ -2548,7 +2548,7 @@
      },
      {
       "currency": "USD",
-      "price": 271,
+      "price": 255,
       "minTraderLevel": 3,
       "item": {
        "name": "EOTech XPS3-0 holographic sight"
@@ -2628,7 +2628,7 @@
      },
      {
       "currency": "USD",
-      "price": 83,
+      "price": 78,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul M-LOK AFG tactical foregrip (FDE)"
@@ -2668,7 +2668,7 @@
      },
      {
       "currency": "USD",
-      "price": 173,
+      "price": 163,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Daniel Defense RIS II 9.5 handguard"
@@ -2700,7 +2700,7 @@
      },
      {
       "currency": "EUR",
-      "price": 47,
+      "price": 43,
       "minTraderLevel": 1,
       "item": {
        "name": "Ultrafire WF-501B flashlight"
@@ -2844,7 +2844,7 @@
      },
      {
       "currency": "USD",
-      "price": 78,
+      "price": 73,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul AFG tactical foregrip (Black)"
@@ -4185,7 +4185,7 @@
     "cashOffers": [
      {
       "currency": "USD",
-      "price": 9509,
+      "price": 8976,
       "minTraderLevel": 2,
       "item": {
        "name": "Secure container Alpha"
@@ -4193,7 +4193,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 14,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR side rail"
@@ -4201,7 +4201,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 38,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR-L 5.56x45 flash hider"
@@ -4209,7 +4209,7 @@
      },
      {
       "currency": "USD",
-      "price": 1528,
+      "price": 1442,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 assault rifle (FDE)"
@@ -4217,7 +4217,7 @@
      },
      {
       "currency": "USD",
-      "price": 1592,
+      "price": 1502,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 assault rifle"
@@ -4225,7 +4225,7 @@
      },
      {
       "currency": "USD",
-      "price": 664,
+      "price": 626,
       "minTraderLevel": 4,
       "item": {
        "name": "HK G28 B&T QD 7.62x51 sound suppressor"
@@ -4233,7 +4233,7 @@
      },
      {
       "currency": "USD",
-      "price": 45,
+      "price": 42,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR flip-up rear sight"
@@ -4241,7 +4241,7 @@
      },
      {
       "currency": "USD",
-      "price": 475,
+      "price": 448,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 13 inch barrel"
@@ -4249,7 +4249,7 @@
      },
      {
       "currency": "RUB",
-      "price": 107,
+      "price": 114,
       "minTraderLevel": 1,
       "item": {
        "name": "Dollars"
@@ -4257,7 +4257,7 @@
      },
      {
       "currency": "USD",
-      "price": 86,
+      "price": 81,
       "minTraderLevel": 2,
       "item": {
        "name": "HK UMP .45 ACP 8 inch threaded barrel"
@@ -4265,7 +4265,7 @@
      },
      {
       "currency": "USD",
-      "price": 43,
+      "price": 40,
       "minTraderLevel": 3,
       "item": {
        "name": "HK Prolonged 7.62x51 flash hider"
@@ -4273,7 +4273,7 @@
      },
      {
       "currency": "USD",
-      "price": 48,
+      "price": 45,
       "minTraderLevel": 3,
       "item": {
        "name": "AAC SCAR-SD 51T 7.62x51 flash hider"
@@ -4281,7 +4281,7 @@
      },
      {
       "currency": "USD",
-      "price": 9,
+      "price": 7,
       "minTraderLevel": 4,
       "item": {
        "name": "5.56x45mm M855A1"
@@ -4289,7 +4289,7 @@
      },
      {
       "currency": "USD",
-      "price": 361,
+      "price": 340,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR-L 5.56x45 18 inch barrel"
@@ -4297,7 +4297,7 @@
      },
      {
       "currency": "USD",
-      "price": 2,
+      "price": 1,
       "minTraderLevel": 2,
       "item": {
        "name": "9x19mm Pst gzh"
@@ -4305,7 +4305,7 @@
      },
      {
       "currency": "USD",
-      "price": 1048,
+      "price": 989,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR-L 5.56x45 assault rifle"
@@ -4313,7 +4313,7 @@
      },
      {
       "currency": "USD",
-      "price": 428,
+      "price": 404,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 16 inch barrel"
@@ -4321,7 +4321,7 @@
      },
      {
       "currency": "USD",
-      "price": 344,
+      "price": 324,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-L 5.56x45 10 inch barrel"
@@ -4329,7 +4329,7 @@
      },
      {
       "currency": "USD",
-      "price": 215,
+      "price": 203,
       "minTraderLevel": 2,
       "item": {
        "name": "Aimpoint ACRO P-1 reflex sight"
@@ -4337,7 +4337,7 @@
      },
      {
       "currency": "USD",
-      "price": 1227,
+      "price": 1158,
       "minTraderLevel": 3,
       "item": {
        "name": "FN SCAR-L 5.56x45 assault rifle (FDE)"
@@ -4345,7 +4345,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 30,
       "minTraderLevel": 3,
       "item": {
        "name": "HK USP Red Dot sight mount"
@@ -4353,7 +4353,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 38,
       "minTraderLevel": 2,
       "item": {
        "name": "M18 smoke grenade (Green)"
@@ -4361,7 +4361,7 @@
      },
      {
       "currency": "USD",
-      "price": 470,
+      "price": 443,
       "minTraderLevel": 2,
       "item": {
        "name": "HK UMP B&T OEM .45 ACP sound suppressor"
@@ -4369,7 +4369,7 @@
      },
      {
       "currency": "USD",
-      "price": 101,
+      "price": 95,
       "minTraderLevel": 3,
       "item": {
        "name": "Model 7290 Flash Bang grenade"
@@ -4377,7 +4377,7 @@
      },
      {
       "currency": "USD",
-      "price": 229,
+      "price": 215,
       "minTraderLevel": 2,
       "item": {
        "name": "HK USP .45 ACP pistol"
@@ -4385,7 +4385,7 @@
      },
      {
       "currency": "USD",
-      "price": 279,
+      "price": 263,
       "minTraderLevel": 3,
       "item": {
        "name": "HK USP .45 ACP pistol"
@@ -4393,7 +4393,7 @@
      },
      {
       "currency": "USD",
-      "price": 26,
+      "price": 24,
       "minTraderLevel": 2,
       "item": {
        "name": "HK USP .45 ACP 12-round magazine"
@@ -4401,7 +4401,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 37,
       "minTraderLevel": 4,
       "item": {
        "name": "HK417/G28 7.62x51 20-round magazine"
@@ -4409,7 +4409,7 @@
      },
      {
       "currency": "USD",
-      "price": 501,
+      "price": 473,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 20 inch barrel"
@@ -4417,7 +4417,7 @@
      },
      {
       "currency": "USD",
-      "price": 71,
+      "price": 66,
       "minTraderLevel": 3,
       "item": {
        "name": "FN SCAR-L 5.56x45 upper receiver"
@@ -4425,7 +4425,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 38,
       "minTraderLevel": 3,
       "item": {
        "name": "HK USP .45 ACP Elite compensator"
@@ -4433,7 +4433,7 @@
      },
      {
       "currency": "USD",
-      "price": 282,
+      "price": 266,
       "minTraderLevel": 2,
       "item": {
        "name": "Aimpoint PRO reflex sight"
@@ -4441,7 +4441,7 @@
      },
      {
       "currency": "USD",
-      "price": 52,
+      "price": 48,
       "minTraderLevel": 4,
       "item": {
        "name": "FN SCAR-H 7.62x51 20-round magazine (FDE)"
@@ -4449,7 +4449,7 @@
      },
      {
       "currency": "USD",
-      "price": 30,
+      "price": 28,
       "minTraderLevel": 2,
       "item": {
        "name": "B&T QD NAR mount for Aimpoint ACRO"
@@ -4457,7 +4457,7 @@
      },
      {
       "currency": "USD",
-      "price": 17,
+      "price": 16,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR bottom rail"
@@ -4465,7 +4465,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 33,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR flip-up front sight"
@@ -4473,7 +4473,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 30,
       "minTraderLevel": 2,
       "item": {
        "name": "Aimpoint QRP2 mount for CompM4/PRO reflex sights"
@@ -4481,7 +4481,7 @@
      },
      {
       "currency": "USD",
-      "price": 74,
+      "price": 69,
       "minTraderLevel": 3,
       "item": {
        "name": "FN SCAR-L 5.56x45 upper receiver (FDE)"
@@ -4489,7 +4489,7 @@
      },
      {
       "currency": "USD",
-      "price": 30,
+      "price": 28,
       "minTraderLevel": 1,
       "item": {
        "name": "Aimpoint Micro H-2 Standard Mount"
@@ -4497,7 +4497,7 @@
      },
      {
       "currency": "USD",
-      "price": 25,
+      "price": 23,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR-L 5.56x45 30-round magazine"
@@ -4505,7 +4505,7 @@
      },
      {
       "currency": "USD",
-      "price": 63,
+      "price": 59,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5 B&T QD 9x19 muzzle brake"
@@ -4513,7 +4513,7 @@
      },
      {
       "currency": "USD",
-      "price": 25,
+      "price": 23,
       "minTraderLevel": 1,
       "item": {
        "name": "P226 9x19 15-round magazine"
@@ -4521,7 +4521,7 @@
      },
      {
       "currency": "USD",
-      "price": 18,
+      "price": 16,
       "minTraderLevel": 2,
       "item": {
        "name": "HK USP rail adapter"
@@ -4529,7 +4529,7 @@
      },
      {
       "currency": "USD",
-      "price": 44,
+      "price": 41,
       "minTraderLevel": 2,
       "item": {
        "name": "5.56x45 Magpul PMAG 30 GEN M3 W STANAG 30-round magazine"
@@ -4537,7 +4537,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 1,
       "item": {
        "name": "5.56x45mm M855"
@@ -4545,7 +4545,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 34,
       "minTraderLevel": 1,
       "item": {
        "name": "High Standard M4SS Stock"
@@ -4553,7 +4553,7 @@
      },
      {
       "currency": "USD",
-      "price": 250,
+      "price": 235,
       "minTraderLevel": 1,
       "item": {
        "name": "Aimpoint Micro H-2 reflex sight"
@@ -4561,7 +4561,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR-L 5.56x45 30-round magazine (FDE)"
@@ -4569,7 +4569,7 @@
      },
      {
       "currency": "USD",
-      "price": 271,
+      "price": 255,
       "minTraderLevel": 3,
       "item": {
        "name": "FN SCAR-L 5.56x45 14 inch barrel"
@@ -4577,7 +4577,7 @@
      },
      {
       "currency": "USD",
-      "price": 5,
+      "price": 4,
       "minTraderLevel": 2,
       "item": {
        "name": "5.56x45mm M856A1"
@@ -4585,7 +4585,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 3,
       "item": {
        "name": "FN SCAR-H 7.62x51 20-round magazine"
@@ -4593,7 +4593,7 @@
      },
      {
       "currency": "USD",
-      "price": 90,
+      "price": 85,
       "minTraderLevel": 1,
       "item": {
        "name": "SKS 7.62x39 ProMag SKS-A5 20-round magazine"
@@ -4601,7 +4601,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 26,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR charging handle"
@@ -4609,7 +4609,7 @@
      },
      {
       "currency": "USD",
-      "price": 50,
+      "price": 47,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Badger Ordnance Tactical Charging Handle Latch"
@@ -4617,7 +4617,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 2,
       "item": {
        "name": "FN SCAR rubber buttpad"
@@ -4625,7 +4625,7 @@
      },
      {
       "currency": "USD",
-      "price": 71,
+      "price": 66,
       "minTraderLevel": 4,
       "item": {
        "name": "HK USP .45 ACP Match compensator"
@@ -4633,7 +4633,7 @@
      },
      {
       "currency": "USD",
-      "price": 35,
+      "price": 32,
       "minTraderLevel": 1,
       "item": {
        "name": "5.56x45 Magpul PMAG 20 GEN M3 STANAG 20-round magazine"
@@ -4641,7 +4641,7 @@
      },
      {
       "currency": "USD",
-      "price": 82,
+      "price": 77,
       "minTraderLevel": 2,
       "item": {
        "name": "NcSTAR MPR45 Backup mount"
@@ -4649,7 +4649,7 @@
      },
      {
       "currency": "USD",
-      "price": 428,
+      "price": 404,
       "minTraderLevel": 4,
       "item": {
        "name": "ELCAN SpecterDR 1x/4x scope (FDE)"
@@ -4657,7 +4657,7 @@
      },
      {
       "currency": "USD",
-      "price": 75,
+      "price": 71,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine stock (FDE)"
@@ -4665,7 +4665,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 13,
       "minTraderLevel": 1,
       "item": {
        "name": "AR-15 Colt A2 pistol grip"
@@ -4673,7 +4673,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "Hogue OverMolded Rubber Grip (Black)"
@@ -4681,7 +4681,7 @@
      },
      {
       "currency": "USD",
-      "price": 277,
+      "price": 261,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 5.56x45 370mm barrel"
@@ -4689,7 +4689,7 @@
      },
      {
       "currency": "USD",
-      "price": 90,
+      "price": 85,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul M-LOK AFG tactical foregrip (Olive Drab)"
@@ -4697,7 +4697,7 @@
      },
      {
       "currency": "USD",
-      "price": 216,
+      "price": 204,
       "minTraderLevel": 3,
       "item": {
        "name": "AN/PEQ-15 tactical device"
@@ -4705,7 +4705,7 @@
      },
      {
       "currency": "USD",
-      "price": 63,
+      "price": 59,
       "minTraderLevel": 2,
       "item": {
        "name": "AR-15 KAC QDC 5.56x45 flash suppressor kit"
@@ -4713,7 +4713,7 @@
      },
      {
       "currency": "USD",
-      "price": 5,
+      "price": 3,
       "minTraderLevel": 3,
       "item": {
        "name": ".300 Blackout M62 Tracer"
@@ -4721,7 +4721,7 @@
      },
      {
       "currency": "USD",
-      "price": 483,
+      "price": 456,
       "minTraderLevel": 3,
       "item": {
        "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint hybrid assault scope"
@@ -4729,7 +4729,7 @@
      },
      {
       "currency": "USD",
-      "price": 2,
+      "price": 1,
       "minTraderLevel": 1,
       "item": {
        "name": "9x19mm PSO gzh"
@@ -4737,7 +4737,7 @@
      },
      {
       "currency": "USD",
-      "price": 70,
+      "price": 66,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 Magpul PMAG 40 GEN M3 STANAG 40-round magazine"
@@ -4745,7 +4745,7 @@
      },
      {
       "currency": "USD",
-      "price": 38,
+      "price": 35,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX/MCX retractable stock pipe adapter"
@@ -4753,7 +4753,7 @@
      },
      {
       "currency": "USD",
-      "price": 47,
+      "price": 44,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Magpul MOE pistol grip (Black)"
@@ -4761,7 +4761,7 @@
      },
      {
       "currency": "USD",
-      "price": 1473,
+      "price": 1390,
       "minTraderLevel": 3,
       "item": {
        "name": "Ops-Core FAST MT Super High Cut helmet (Black)"
@@ -4769,7 +4769,7 @@
      },
      {
       "currency": "USD",
-      "price": 121,
+      "price": 113,
       "minTraderLevel": 2,
       "item": {
        "name": "AK CAA RS47 handguard"
@@ -4777,7 +4777,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "Hogue OverMolded Rubber Grip (FDE)"
@@ -4785,7 +4785,7 @@
      },
      {
       "currency": "USD",
-      "price": 62,
+      "price": 58,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul AFG tactical foregrip (FDE)"
@@ -4793,7 +4793,7 @@
      },
      {
       "currency": "USD",
-      "price": 20,
+      "price": 18,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 cocking handle"
@@ -4801,7 +4801,7 @@
      },
      {
       "currency": "USD",
-      "price": 372,
+      "price": 350,
       "minTraderLevel": 3,
       "item": {
        "name": "ELCAN SpecterDR 1x/4x scope"
@@ -4809,7 +4809,7 @@
      },
      {
       "currency": "USD",
-      "price": 215,
+      "price": 203,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 5.56x45 260mm barrel"
@@ -4817,7 +4817,7 @@
      },
      {
       "currency": "USD",
-      "price": 169,
+      "price": 159,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Daniel Defense RIS II 9.5 handguard (Coyote Brown)"
@@ -4825,7 +4825,7 @@
      },
      {
       "currency": "USD",
-      "price": 226,
+      "price": 213,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 War Sport LVOA-C handguard (Black)"
@@ -4833,7 +4833,7 @@
      },
      {
       "currency": "USD",
-      "price": 43,
+      "price": 40,
       "minTraderLevel": 2,
       "item": {
        "name": "TangoDown Stubby BGV-MK46K foregrip (FDE)"
@@ -4841,7 +4841,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 1,
       "item": {
        "name": "Burris FastFire Weaver Base"
@@ -4849,7 +4849,7 @@
      },
      {
       "currency": "USD",
-      "price": 901,
+      "price": 850,
       "minTraderLevel": 2,
       "item": {
        "name": "Colt M4A1 5.56x45 assault rifle"
@@ -4857,7 +4857,7 @@
      },
      {
       "currency": "USD",
-      "price": 44,
+      "price": 41,
       "minTraderLevel": 2,
       "item": {
        "name": "P226 Sight Mount 220-239 rear sight bearing"
@@ -4865,7 +4865,7 @@
      },
      {
       "currency": "USD",
-      "price": 1005,
+      "price": 948,
       "minTraderLevel": 4,
       "item": {
        "name": "Ops-Core SLAAP armor helmet plate (Tan)"
@@ -4873,7 +4873,7 @@
      },
      {
       "currency": "USD",
-      "price": 43,
+      "price": 40,
       "minTraderLevel": 2,
       "item": {
        "name": "TangoDown Stubby BGV-MK46K foregrip (Stealth Gray)"
@@ -4881,7 +4881,7 @@
      },
      {
       "currency": "USD",
-      "price": 65,
+      "price": 61,
       "minTraderLevel": 2,
       "item": {
        "name": "Daniel Defense MK12 Low Profile Gas Block"
@@ -4889,7 +4889,7 @@
      },
      {
       "currency": "USD",
-      "price": 91,
+      "price": 86,
       "minTraderLevel": 3,
       "item": {
        "name": "M67 hand grenade"
@@ -4897,7 +4897,7 @@
      },
      {
       "currency": "USD",
-      "price": 13,
+      "price": 11,
       "minTraderLevel": 3,
       "item": {
        "name": "7.62x51mm M62 Tracer"
@@ -4905,7 +4905,7 @@
      },
      {
       "currency": "USD",
-      "price": 126,
+      "price": 118,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul UBR GEN2 stock (Black)"
@@ -4913,7 +4913,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 14,
       "minTraderLevel": 2,
       "item": {
        "name": "P226 Combat pistol grip (FDE)"
@@ -4921,7 +4921,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "Hogue OverMolded Rubber Grip (Ghillie Earth)"
@@ -4929,7 +4929,7 @@
      },
      {
       "currency": "USD",
-      "price": 155,
+      "price": 146,
       "minTraderLevel": 2,
       "item": {
        "name": "SIG P226R 9x19 pistol"
@@ -4937,7 +4937,7 @@
      },
      {
       "currency": "USD",
-      "price": 8,
+      "price": 7,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX flip-up front sight"
@@ -4945,7 +4945,7 @@
      },
      {
       "currency": "USD",
-      "price": 186,
+      "price": 176,
       "minTraderLevel": 1,
       "item": {
        "name": "Burris FastFire 3 reflex sight"
@@ -4953,7 +4953,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 26,
       "minTraderLevel": 1,
       "item": {
        "name": "Aimpoint Micro Standard Mount"
@@ -4961,7 +4961,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 13,
       "minTraderLevel": 2,
       "item": {
        "name": "Colt Carbine buffer tube"
@@ -4969,7 +4969,7 @@
      },
      {
       "currency": "USD",
-      "price": 23,
+      "price": 21,
       "minTraderLevel": 4,
       "item": {
        "name": "7.62x51mm M61"
@@ -4977,7 +4977,7 @@
      },
      {
       "currency": "USD",
-      "price": 127,
+      "price": 119,
       "minTraderLevel": 2,
       "item": {
        "name": "SureFire X400 Ultra tactical flashlight with laser"
@@ -4985,7 +4985,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 9x19 30-round magazine"
@@ -4993,7 +4993,7 @@
      },
      {
       "currency": "USD",
-      "price": 92,
+      "price": 86,
       "minTraderLevel": 3,
       "item": {
        "name": "MFT BUS stock"
@@ -5001,7 +5001,7 @@
      },
      {
       "currency": "USD",
-      "price": 205,
+      "price": 193,
       "minTraderLevel": 2,
       "item": {
        "name": "Leupold DeltaPoint Reflex Sight"
@@ -5009,7 +5009,7 @@
      },
      {
       "currency": "USD",
-      "price": 271,
+      "price": 255,
       "minTraderLevel": 2,
       "item": {
        "name": "EOTech XPS3-0 holographic sight"
@@ -5017,7 +5017,7 @@
      },
      {
       "currency": "USD",
-      "price": 20,
+      "price": 18,
       "minTraderLevel": 1,
       "item": {
        "name": "DeltaPoint Cross Slot Mount base"
@@ -5025,7 +5025,7 @@
      },
      {
       "currency": "USD",
-      "price": 90,
+      "price": 85,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul M-LOK AFG tactical foregrip (Stealth Gray)"
@@ -5033,7 +5033,7 @@
      },
      {
       "currency": "USD",
-      "price": 241,
+      "price": 227,
       "minTraderLevel": 2,
       "item": {
        "name": "EOTech 553 holographic sight"
@@ -5041,7 +5041,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 2,
       "item": {
        "name": "P226 9x19 threaded barrel"
@@ -5049,7 +5049,7 @@
      },
      {
       "currency": "USD",
-      "price": 456,
+      "price": 430,
       "minTraderLevel": 2,
       "item": {
        "name": "SIG MPX 9x19 submachine gun"
@@ -5057,7 +5057,7 @@
      },
      {
       "currency": "USD",
-      "price": 599,
+      "price": 565,
       "minTraderLevel": 3,
       "item": {
        "name": "SIG MPX 9x19 submachine gun"
@@ -5065,7 +5065,7 @@
      },
      {
       "currency": "USD",
-      "price": 25,
+      "price": 23,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 Drum rear sight"
@@ -5073,7 +5073,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "Hogue OverMolded Rubber Grip (Olive Drab)"
@@ -5081,7 +5081,7 @@
      },
      {
       "currency": "USD",
-      "price": 156,
+      "price": 146,
       "minTraderLevel": 3,
       "item": {
        "name": "AK Magpul MOE AKM handguard (Stealth Gray)"
@@ -5089,7 +5089,7 @@
      },
      {
       "currency": "USD",
-      "price": 537,
+      "price": 507,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC QDSS NT-4 5.56x45 sound suppressor (Black)"
@@ -5097,7 +5097,7 @@
      },
      {
       "currency": "USD",
-      "price": 319,
+      "price": 301,
       "minTraderLevel": 3,
       "item": {
        "name": "Aimpoint Micro T-1 reflex sight"
@@ -5105,7 +5105,7 @@
      },
      {
       "currency": "USD",
-      "price": 143,
+      "price": 134,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5 A2 stock"
@@ -5113,7 +5113,7 @@
      },
      {
       "currency": "USD",
-      "price": 301,
+      "price": 284,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5SD 9x19 sound suppressor"
@@ -5121,7 +5121,7 @@
      },
      {
       "currency": "USD",
-      "price": 32,
+      "price": 30,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5 3-lug thread protector"
@@ -5129,7 +5129,7 @@
      },
      {
       "currency": "USD",
-      "price": 156,
+      "price": 147,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Naroh Arms GRAL-S pistol grip"
@@ -5137,7 +5137,7 @@
      },
      {
       "currency": "USD",
-      "price": 130,
+      "price": 122,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul UBR GEN2 stock (FDE)"
@@ -5145,7 +5145,7 @@
      },
      {
       "currency": "USD",
-      "price": 481,
+      "price": 454,
       "minTraderLevel": 4,
       "item": {
        "name": "SIG Sauer BRAVO4 4x30 scope"
@@ -5153,7 +5153,7 @@
      },
      {
       "currency": "USD",
-      "price": 253,
+      "price": 238,
       "minTraderLevel": 4,
       "item": {
        "name": "AK Krebs Custom UFM KeyMod handguard"
@@ -5161,7 +5161,7 @@
      },
      {
       "currency": "USD",
-      "price": 405,
+      "price": 382,
       "minTraderLevel": 4,
       "item": {
        "name": "Ops-Core FAST multi-hit ballistic face shield"
@@ -5169,7 +5169,7 @@
      },
      {
       "currency": "USD",
-      "price": 60,
+      "price": 56,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul AFG tactical foregrip (Forest Green)"
@@ -5177,7 +5177,7 @@
      },
      {
       "currency": "USD",
-      "price": 136,
+      "price": 128,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 PWS CQB 5.56x45 muzzle brake"
@@ -5185,7 +5185,7 @@
      },
      {
       "currency": "USD",
-      "price": 80,
+      "price": 75,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul M-LOK AFG tactical foregrip (FDE)"
@@ -5193,7 +5193,7 @@
      },
      {
       "currency": "USD",
-      "price": 31,
+      "price": 29,
       "minTraderLevel": 2,
       "item": {
        "name": "AK-74 5.45x39 Magpul PMAG 30 GEN M3 30-round magazine"
@@ -5201,7 +5201,7 @@
      },
      {
       "currency": "USD",
-      "price": 74,
+      "price": 69,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine stock (Foliage Green)"
@@ -5209,7 +5209,7 @@
      },
      {
       "currency": "USD",
-      "price": 50,
+      "price": 47,
       "minTraderLevel": 3,
       "item": {
        "name": "AK 7.62x39 US Palm \"AK30\" 30-round magazine (Black)"
@@ -5217,7 +5217,7 @@
      },
      {
       "currency": "USD",
-      "price": 155,
+      "price": 146,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 A3 old model stock"
@@ -5225,7 +5225,7 @@
      },
      {
       "currency": "USD",
-      "price": 183,
+      "price": 173,
       "minTraderLevel": 4,
       "item": {
        "name": "Fortis Shift tactical foregrip"
@@ -5233,7 +5233,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 2,
       "item": {
        "name": "Trijicon RMR high profile mount"
@@ -5241,7 +5241,7 @@
      },
      {
       "currency": "USD",
-      "price": 21,
+      "price": 19,
       "minTraderLevel": 2,
       "item": {
        "name": "Vltor CASV KeyMod 4 inch rail"
@@ -5249,7 +5249,7 @@
      },
      {
       "currency": "USD",
-      "price": 52,
+      "price": 48,
       "minTraderLevel": 2,
       "item": {
        "name": "AK TAPCO SAW-Style pistol grip (FDE)"
@@ -5257,7 +5257,7 @@
      },
      {
       "currency": "USD",
-      "price": 47,
+      "price": 44,
       "minTraderLevel": 2,
       "item": {
        "name": "Norotos Titanium Advanced Tactical Mount"
@@ -5265,7 +5265,7 @@
      },
      {
       "currency": "USD",
-      "price": 35,
+      "price": 33,
       "minTraderLevel": 3,
       "item": {
        "name": "HK MP5 Wide Tropical polymer handguard"
@@ -5273,7 +5273,7 @@
      },
      {
       "currency": "USD",
-      "price": 92,
+      "price": 86,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul M-LOK AFG tactical foregrip (Black)"
@@ -5281,7 +5281,7 @@
      },
      {
       "currency": "USD",
-      "price": 979,
+      "price": 924,
       "minTraderLevel": 2,
       "item": {
        "name": "SilencerCo Hybrid 46 multi-caliber silencer"
@@ -5289,7 +5289,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "Hogue OverMolded Rubber Grip (Ghillie Green)"
@@ -5297,7 +5297,7 @@
      },
      {
       "currency": "USD",
-      "price": 62,
+      "price": 58,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5SD polymer handguard"
@@ -5305,7 +5305,7 @@
      },
      {
       "currency": "USD",
-      "price": 166,
+      "price": 156,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Daniel Defense RIS II 9.5 handguard"
@@ -5313,7 +5313,7 @@
      },
      {
       "currency": "USD",
-      "price": 1580,
+      "price": 1491,
       "minTraderLevel": 4,
       "item": {
        "name": "Remington R11 RSASS 7.62x51 marksman rifle"
@@ -5321,7 +5321,7 @@
      },
      {
       "currency": "USD",
-      "price": 53,
+      "price": 49,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Stark AR Rifle Grip (Black)"
@@ -5329,7 +5329,7 @@
      },
      {
       "currency": "USD",
-      "price": 458,
+      "price": 432,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 7.62x51 22 inch barrel"
@@ -5337,7 +5337,7 @@
      },
      {
       "currency": "USD",
-      "price": 49,
+      "price": 46,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5SD B&T tri-rail ring mount"
@@ -5345,7 +5345,7 @@
      },
      {
       "currency": "USD",
-      "price": 53,
+      "price": 49,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Stark AR Rifle Grip (FDE)"
@@ -5353,7 +5353,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 2,
       "item": {
        "name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30-round magazine"
@@ -5361,7 +5361,7 @@
      },
      {
       "currency": "USD",
-      "price": 43,
+      "price": 40,
       "minTraderLevel": 1,
       "item": {
        "name": "Ultrafire WF-501B flashlight"
@@ -5369,7 +5369,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 1,
       "item": {
        "name": "5.56x45mm M856"
@@ -5377,7 +5377,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 2,
       "item": {
        "name": "5.56x45mm MK 255 Mod 0 (RRLP)"
@@ -5385,7 +5385,7 @@
      },
      {
       "currency": "USD",
-      "price": 157,
+      "price": 148,
       "minTraderLevel": 2,
       "item": {
        "name": "AK Magpul MOE AKM handguard (FDE)"
@@ -5393,7 +5393,7 @@
      },
      {
       "currency": "USD",
-      "price": 51,
+      "price": 48,
       "minTraderLevel": 2,
       "item": {
        "name": "P226 Trijicon RMR mount"
@@ -5401,7 +5401,7 @@
      },
      {
       "currency": "USD",
-      "price": 1324,
+      "price": 1249,
       "minTraderLevel": 2,
       "item": {
        "name": "Wilcox Skull Lock head mount"
@@ -5409,7 +5409,7 @@
      },
      {
       "currency": "USD",
-      "price": 84,
+      "price": 79,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine stock (Stealth Gray)"
@@ -5417,7 +5417,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 34,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine"
@@ -5425,7 +5425,7 @@
      },
      {
       "currency": "USD",
-      "price": 89,
+      "price": 84,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5SD 9x19 upper receiver"
@@ -5433,7 +5433,7 @@
      },
      {
       "currency": "USD",
-      "price": 10,
+      "price": 9,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX flip-up rear sight"
@@ -5441,7 +5441,7 @@
      },
      {
       "currency": "USD",
-      "price": 38,
+      "price": 35,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 9x19 upper receiver"
@@ -5449,7 +5449,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 2,
       "item": {
        "name": "Vltor CASV KeyMod 6 inch rail"
@@ -5457,7 +5457,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 30,
       "minTraderLevel": 1,
       "item": {
        "name": "Kiba Arms 25mm accessory ring mount"
@@ -5465,7 +5465,7 @@
      },
      {
       "currency": "USD",
-      "price": 448,
+      "price": 422,
       "minTraderLevel": 3,
       "item": {
        "name": "SilencerCo Osprey 9 9x19 sound suppressor"
@@ -5473,7 +5473,7 @@
      },
      {
       "currency": "USD",
-      "price": 95,
+      "price": 89,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 MFI HK universal low profile scope mount"
@@ -5481,7 +5481,7 @@
      },
      {
       "currency": "USD",
-      "price": 525,
+      "price": 495,
       "minTraderLevel": 3,
       "item": {
        "name": "Ops-Core FAST RAC Headset"
@@ -5489,7 +5489,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 2,
       "item": {
        "name": "4.6x30mm Action SX"
@@ -5497,7 +5497,7 @@
      },
      {
       "currency": "USD",
-      "price": 100,
+      "price": 95,
       "minTraderLevel": 3,
       "item": {
        "name": "Vltor EMOD stock"
@@ -5505,7 +5505,7 @@
      },
      {
       "currency": "USD",
-      "price": 388,
+      "price": 366,
       "minTraderLevel": 3,
       "item": {
        "name": "Ops-Core FAST Side Armor"
@@ -5513,7 +5513,7 @@
      },
      {
       "currency": "USD",
-      "price": 74,
+      "price": 70,
       "minTraderLevel": 3,
       "item": {
        "name": "Viking Tactics UVG tactical foregrip"
@@ -5521,7 +5521,7 @@
      },
      {
       "currency": "USD",
-      "price": 74,
+      "price": 70,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul AFG tactical foregrip (Black)"
@@ -5529,7 +5529,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 3,
       "item": {
        "name": "M1A 7.62x51 20-round magazine"
@@ -5537,7 +5537,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 2,
       "item": {
        "name": "Colt A2 buffer tube"
@@ -5545,7 +5545,7 @@
      },
      {
       "currency": "USD",
-      "price": 73,
+      "price": 69,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine rubber buttpad"
@@ -5553,7 +5553,7 @@
      },
      {
       "currency": "USD",
-      "price": 133,
+      "price": 125,
       "minTraderLevel": 3,
       "item": {
        "name": "Ops-Core FAST Visor"
@@ -5561,7 +5561,7 @@
      },
      {
       "currency": "USD",
-      "price": 54,
+      "price": 51,
       "minTraderLevel": 2,
       "item": {
        "name": "SilencerCo Hybrid 46 Direct Thread Mount adapter"
@@ -5569,7 +5569,7 @@
      },
      {
       "currency": "USD",
-      "price": 368,
+      "price": 347,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Vltor MUR-1S 5.56x45 upper receiver"
@@ -5577,7 +5577,7 @@
      },
      {
       "currency": "USD",
-      "price": 441,
+      "price": 416,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 7.62x51 18 inch barrel"
@@ -5585,7 +5585,7 @@
      },
      {
       "currency": "USD",
-      "price": 73,
+      "price": 68,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul MOE Carbine stock (Olive Drab)"
@@ -5593,7 +5593,7 @@
      },
      {
       "currency": "USD",
-      "price": 241,
+      "price": 227,
       "minTraderLevel": 3,
       "item": {
        "name": "Ops-Core FAST Gunsight Mandible"
@@ -5601,7 +5601,7 @@
      },
      {
       "currency": "USD",
-      "price": 57,
+      "price": 53,
       "minTraderLevel": 2,
       "item": {
        "name": "AK TAPCO SAW-Style pistol grip (Black)"
@@ -5609,7 +5609,7 @@
      },
      {
       "currency": "USD",
-      "price": 20,
+      "price": 18,
       "minTraderLevel": 2,
       "item": {
        "name": "Trijicon RMR low profile mount"
@@ -5617,7 +5617,7 @@
      },
      {
       "currency": "USD",
-      "price": 242,
+      "price": 227,
       "minTraderLevel": 2,
       "item": {
        "name": "UNTAR helmet"
@@ -5625,7 +5625,7 @@
      },
      {
       "currency": "USD",
-      "price": 41,
+      "price": 38,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 7.62x51 Magpul PMAG 20 SR-LR GEN M3 20-round magazine"
@@ -5633,7 +5633,7 @@
      },
      {
       "currency": "USD",
-      "price": 758,
+      "price": 715,
       "minTraderLevel": 4,
       "item": {
        "name": "AAC 762-SDN-6 multi-caliber sound suppressor"
@@ -5641,7 +5641,7 @@
      },
      {
       "currency": "USD",
-      "price": 1875,
+      "price": 1770,
       "minTraderLevel": 4,
       "item": {
        "name": "GPNVG-18 Night Vision goggles"
@@ -5649,7 +5649,7 @@
      },
      {
       "currency": "USD",
-      "price": 276,
+      "price": 260,
       "minTraderLevel": 2,
       "item": {
        "name": "Trijicon RMR reflex sight"
@@ -5657,7 +5657,7 @@
      },
      {
       "currency": "USD",
-      "price": 23,
+      "price": 21,
       "minTraderLevel": 2,
       "item": {
        "name": "Vltor CASV KeyMod 2 inch rail"
@@ -5665,7 +5665,7 @@
      },
      {
       "currency": "USD",
-      "price": 85,
+      "price": 80,
       "minTraderLevel": 1,
       "item": {
        "name": "AR-15 KAC RIS handguard"
@@ -5673,7 +5673,7 @@
      },
      {
       "currency": "USD",
-      "price": 12,
+      "price": 10,
       "minTraderLevel": 1,
       "item": {
        "name": "AR-15 Colt A2 rear sight"
@@ -5681,7 +5681,7 @@
      },
      {
       "currency": "USD",
-      "price": 26,
+      "price": 24,
       "minTraderLevel": 1,
       "item": {
        "name": "Aimpoint Micro Spacer High"
@@ -5689,7 +5689,7 @@
      },
      {
       "currency": "USD",
-      "price": 289,
+      "price": 273,
       "minTraderLevel": 3,
       "item": {
        "name": "Alpha Dog Alpha 9 9x19 sound suppressor"
@@ -5697,7 +5697,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 2,
       "item": {
        "name": "AN/PVS-14 Dual Dovetail Mount"
@@ -5705,7 +5705,7 @@
      },
      {
       "currency": "USD",
-      "price": 190,
+      "price": 179,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 War Sport LVOA-S handguard (Black)"
@@ -5713,7 +5713,7 @@
      },
      {
       "currency": "USD",
-      "price": 37,
+      "price": 34,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Magpul MIAD pistol grip (FDE)"
@@ -5721,7 +5721,7 @@
      },
      {
       "currency": "USD",
-      "price": 469,
+      "price": 442,
       "minTraderLevel": 4,
       "item": {
        "name": "AK 7.62x39 ProMag AK-A-16 73-round drum magazine"
@@ -5729,7 +5729,7 @@
      },
      {
       "currency": "USD",
-      "price": 692,
+      "price": 653,
       "minTraderLevel": 4,
       "item": {
        "name": "3V Gear Paratus 3-Day Operator's Tactical backpack"
@@ -5737,7 +5737,7 @@
      },
      {
       "currency": "USD",
-      "price": 1242,
+      "price": 1172,
       "minTraderLevel": 3,
       "item": {
        "name": "DS Arms SA-58 7.62x51 assault rifle"
@@ -5745,7 +5745,7 @@
      },
      {
       "currency": "USD",
-      "price": 1254,
+      "price": 1184,
       "minTraderLevel": 4,
       "item": {
        "name": "DS Arms SA-58 7.62x51 assault rifle"
@@ -5753,7 +5753,7 @@
      },
      {
       "currency": "USD",
-      "price": 25,
+      "price": 22,
       "minTraderLevel": 1,
       "item": {
        "name": "MPX 9x19 30-round magazine"
@@ -5761,7 +5761,7 @@
      },
      {
       "currency": "USD",
-      "price": 16,
+      "price": 15,
       "minTraderLevel": 1,
       "item": {
        "name": "AR-15 Colt USGI A2 5.56x45 flash hider"
@@ -5769,7 +5769,7 @@
      },
      {
       "currency": "USD",
-      "price": 54,
+      "price": 50,
       "minTraderLevel": 3,
       "item": {
        "name": "AK 7.62x39 US Palm \"AK30\" 30-round magazine (FDE)"
@@ -5777,7 +5777,7 @@
      },
      {
       "currency": "USD",
-      "price": 227,
+      "price": 214,
       "minTraderLevel": 3,
       "item": {
        "name": "R11 RSASS handguard"
@@ -5785,7 +5785,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 3,
       "item": {
        "name": "HK MP7 4.6x30 20-round magazine"
@@ -5793,7 +5793,7 @@
      },
      {
       "currency": "USD",
-      "price": 53,
+      "price": 49,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 AAC Blackout 51T 7.62x51 flash hider"
@@ -5801,7 +5801,7 @@
      },
      {
       "currency": "USD",
-      "price": 22,
+      "price": 20,
       "minTraderLevel": 2,
       "item": {
        "name": "SIG Sauer ROMEO sight mount"
@@ -5809,7 +5809,7 @@
      },
      {
       "currency": "USD",
-      "price": 24,
+      "price": 22,
       "minTraderLevel": 1,
       "item": {
        "name": "5.56x45 Colt AR-15 STANAG 30-round magazine"
@@ -5817,7 +5817,7 @@
      },
      {
       "currency": "USD",
-      "price": 93,
+      "price": 87,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul RVG foregrip (Black)"
@@ -5825,7 +5825,7 @@
      },
      {
       "currency": "USD",
-      "price": 32,
+      "price": 30,
       "minTraderLevel": 2,
       "item": {
        "name": "SA-58/FAL 7.62x51 20-round magazine"
@@ -5833,7 +5833,7 @@
      },
      {
       "currency": "USD",
-      "price": 4,
+      "price": 3,
       "minTraderLevel": 3,
       "item": {
        "name": "5.7x28mm SB193"
@@ -5841,7 +5841,7 @@
      },
      {
       "currency": "USD",
-      "price": 572,
+      "price": 539,
       "minTraderLevel": 4,
       "item": {
        "name": "EOTech HHS-1 hybrid sight (Tan)"
@@ -5849,7 +5849,7 @@
      },
      {
       "currency": "USD",
-      "price": 11,
+      "price": 9,
       "minTraderLevel": 1,
       "item": {
        "name": "AR-15 rear sight carry handle"
@@ -5857,7 +5857,7 @@
      },
      {
       "currency": "USD",
-      "price": 451,
+      "price": 425,
       "minTraderLevel": 2,
       "item": {
        "name": "MF-UNTAR body armor"
@@ -5865,7 +5865,7 @@
      },
      {
       "currency": "USD",
-      "price": 193,
+      "price": 182,
       "minTraderLevel": 4,
       "item": {
        "name": "Magpul PRS GEN2 stock (FDE)"
@@ -5873,7 +5873,7 @@
      },
      {
       "currency": "USD",
-      "price": 53,
+      "price": 49,
       "minTraderLevel": 4,
       "item": {
        "name": "SA-58/FAL 7.62x51 SLR 30-round magazine"
@@ -5881,7 +5881,7 @@
      },
      {
       "currency": "USD",
-      "price": 241,
+      "price": 227,
       "minTraderLevel": 2,
       "item": {
        "name": "SIG Sauer ROMEO4 reflex sight"
@@ -5889,7 +5889,7 @@
      },
      {
       "currency": "USD",
-      "price": 408,
+      "price": 385,
       "minTraderLevel": 4,
       "item": {
        "name": "Crye Precision AirFrame Ears"
@@ -5897,7 +5897,7 @@
      },
      {
       "currency": "USD",
-      "price": 1031,
+      "price": 973,
       "minTraderLevel": 3,
       "item": {
        "name": "HK 416A5 5.56x45 assault rifle"
@@ -5905,7 +5905,7 @@
      },
      {
       "currency": "USD",
-      "price": 547,
+      "price": 515,
       "minTraderLevel": 4,
       "item": {
        "name": "Gemtech ONE multi-caliber sound suppressor"
@@ -5913,7 +5913,7 @@
      },
      {
       "currency": "USD",
-      "price": 66,
+      "price": 62,
       "minTraderLevel": 4,
       "item": {
        "name": "M14 7.62x51 30-round magazine"
@@ -5921,7 +5921,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 37,
       "minTraderLevel": 2,
       "item": {
        "name": "5.56x45 HK PM Gen.2 STANAG 30-round magazine"
@@ -5929,7 +5929,7 @@
      },
      {
       "currency": "USD",
-      "price": 1211,
+      "price": 1142,
       "minTraderLevel": 3,
       "item": {
        "name": "Desert Tech MDR 5.56x45 assault rifle"
@@ -5937,7 +5937,7 @@
      },
      {
       "currency": "USD",
-      "price": 6,
+      "price": 5,
       "minTraderLevel": 3,
       "item": {
        "name": "5.7x28mm SS190"
@@ -5945,7 +5945,7 @@
      },
      {
       "currency": "USD",
-      "price": 4,
+      "price": 3,
       "minTraderLevel": 3,
       "item": {
        "name": "4.6x30mm FMJ SX"
@@ -5953,7 +5953,7 @@
      },
      {
       "currency": "USD",
-      "price": 22,
+      "price": 20,
       "minTraderLevel": 1,
       "item": {
        "name": "SA-58/FAL 7.62x51 10-round magazine"
@@ -5961,7 +5961,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 33,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 HK V2 pistol grip"
@@ -5969,7 +5969,7 @@
      },
      {
       "currency": "USD",
-      "price": 71,
+      "price": 67,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX/MCX PMM ULSS foldable stock"
@@ -5977,7 +5977,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 3,
       "item": {
        "name": "Gemtech ONE direct thread mount adapter"
@@ -5985,7 +5985,7 @@
      },
      {
       "currency": "USD",
-      "price": 10,
+      "price": 9,
       "minTraderLevel": 2,
       "item": {
        "name": "HK 416A5 flip-up rear sight"
@@ -5993,7 +5993,7 @@
      },
      {
       "currency": "USD",
-      "price": 577,
+      "price": 544,
       "minTraderLevel": 4,
       "item": {
        "name": "EOTech HHS-1 hybrid sight"
@@ -6001,7 +6001,7 @@
      },
      {
       "currency": "USD",
-      "price": 39,
+      "price": 36,
       "minTraderLevel": 2,
       "item": {
        "name": "KAC Folding rear sight"
@@ -6009,7 +6009,7 @@
      },
      {
       "currency": "USD",
-      "price": 1498,
+      "price": 1414,
       "minTraderLevel": 4,
       "item": {
        "name": "Crye Precision AirFrame helmet (Tan)"
@@ -6017,7 +6017,7 @@
      },
      {
       "currency": "USD",
-      "price": 83,
+      "price": 78,
       "minTraderLevel": 3,
       "item": {
        "name": "AK US Palm pistol grip"
@@ -6025,7 +6025,7 @@
      },
      {
       "currency": "USD",
-      "price": 183,
+      "price": 172,
       "minTraderLevel": 3,
       "item": {
        "name": "SA-58/FAL Magpul PRS 2 polymer stock"
@@ -6033,7 +6033,7 @@
      },
      {
       "currency": "USD",
-      "price": 209,
+      "price": 197,
       "minTraderLevel": 4,
       "item": {
        "name": "AKM/AK-74 Magpul Zhukov-S stock"
@@ -6041,7 +6041,7 @@
      },
      {
       "currency": "USD",
-      "price": 24,
+      "price": 22,
       "minTraderLevel": 2,
       "item": {
        "name": "AR-15 HK Extended Latch charging handle"
@@ -6049,7 +6049,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 26,
       "minTraderLevel": 3,
       "item": {
        "name": "FN P90 5.7x28 upper receiver"
@@ -6057,7 +6057,7 @@
      },
      {
       "currency": "USD",
-      "price": 137,
+      "price": 129,
       "minTraderLevel": 3,
       "item": {
        "name": "HK 416A5 Midwest Industries 9 inch M-LOK handguard"
@@ -6065,7 +6065,7 @@
      },
      {
       "currency": "USD",
-      "price": 942,
+      "price": 889,
       "minTraderLevel": 3,
       "item": {
        "name": "Springfield Armory M1A 7.62x51 rifle"
@@ -6073,7 +6073,7 @@
      },
      {
       "currency": "USD",
-      "price": 1103,
+      "price": 1041,
       "minTraderLevel": 4,
       "item": {
        "name": "Springfield Armory M1A 7.62x51 rifle"
@@ -6081,7 +6081,7 @@
      },
      {
       "currency": "USD",
-      "price": 215,
+      "price": 203,
       "minTraderLevel": 3,
       "item": {
        "name": "Armasight NVG head strap"
@@ -6089,7 +6089,7 @@
      },
      {
       "currency": "USD",
-      "price": 44,
+      "price": 41,
       "minTraderLevel": 2,
       "item": {
        "name": "5.56x45 Magpul PMAG 30 GEN M3 W STANAG 30-round magazine (FDE)"
@@ -6097,7 +6097,7 @@
      },
      {
       "currency": "USD",
-      "price": 92,
+      "price": 86,
       "minTraderLevel": 2,
       "item": {
        "name": "HK 416A5 Quad Rail handguard"
@@ -6105,7 +6105,7 @@
      },
      {
       "currency": "USD",
-      "price": 2,
+      "price": 8,
       "minTraderLevel": 4,
       "item": {
        "name": ".300 Blackout AP"
@@ -6113,7 +6113,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 26,
       "minTraderLevel": 2,
       "item": {
        "name": "SLR-106/AK 5.56x45 Circle 10 30-round magazine"
@@ -6121,7 +6121,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 3,
       "item": {
        "name": "5.7x28mm L191"
@@ -6129,7 +6129,7 @@
      },
      {
       "currency": "USD",
-      "price": 43,
+      "price": 40,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX/MCX Maxim Defense CQB telescoping stock"
@@ -6137,7 +6137,7 @@
      },
      {
       "currency": "USD",
-      "price": 712,
+      "price": 672,
       "minTraderLevel": 3,
       "item": {
        "name": "HK MP7A1 4.6x30 submachine gun"
@@ -6145,7 +6145,7 @@
      },
      {
       "currency": "USD",
-      "price": 26,
+      "price": 24,
       "minTraderLevel": 3,
       "item": {
        "name": "Aimpoint Standard Spacer"
@@ -6153,7 +6153,7 @@
      },
      {
       "currency": "USD",
-      "price": 106,
+      "price": 100,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 Precision Armanent M11 Severe-Duty 7.62x51 muzzle brake"
@@ -6161,7 +6161,7 @@
      },
      {
       "currency": "USD",
-      "price": 119,
+      "price": 112,
       "minTraderLevel": 3,
       "item": {
        "name": "FN P90 5.7x28 50-round magazine"
@@ -6169,7 +6169,7 @@
      },
      {
       "currency": "USD",
-      "price": 257,
+      "price": 242,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 Lantac Drakon 7.62x51 muzzle brake-compensator"
@@ -6177,7 +6177,7 @@
      },
      {
       "currency": "USD",
-      "price": 1171,
+      "price": 1105,
       "minTraderLevel": 4,
       "item": {
        "name": "FN P90 5.7x28 submachine gun"
@@ -6185,7 +6185,7 @@
      },
      {
       "currency": "USD",
-      "price": 18,
+      "price": 16,
       "minTraderLevel": 1,
       "item": {
        "name": "MPX 9x19 20-round magazine"
@@ -6193,7 +6193,7 @@
      },
      {
       "currency": "USD",
-      "price": 153,
+      "price": 144,
       "minTraderLevel": 3,
       "item": {
        "name": "Steiner DBAL-PL tactical device"
@@ -6201,7 +6201,7 @@
      },
      {
       "currency": "USD",
-      "price": 9,
+      "price": 8,
       "minTraderLevel": 3,
       "item": {
        "name": ".45 ACP AP"
@@ -6209,7 +6209,7 @@
      },
      {
       "currency": "USD",
-      "price": 163,
+      "price": 153,
       "minTraderLevel": 4,
       "item": {
        "name": "HK 416A5 Midwest Industries 13.5 inch M-LOK handguard"
@@ -6217,7 +6217,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3 3 inch rail"
@@ -6225,7 +6225,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 26,
       "minTraderLevel": 3,
       "item": {
        "name": "Aimpoint LRP mount for CompM4 sights"
@@ -6233,7 +6233,7 @@
      },
      {
       "currency": "USD",
-      "price": 39,
+      "price": 36,
       "minTraderLevel": 3,
       "item": {
        "name": "Lantac BMD Blast Mitigation Device A3 direct thread adapter"
@@ -6241,7 +6241,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 HK Steel Maritime STANAG 30-round magazine"
@@ -6249,7 +6249,7 @@
      },
      {
       "currency": "USD",
-      "price": 553,
+      "price": 521,
       "minTraderLevel": 3,
       "item": {
        "name": "MSA ACH TC-2002 MICH Series helmet"
@@ -6257,7 +6257,7 @@
      },
      {
       "currency": "USD",
-      "price": 74,
+      "price": 69,
       "minTraderLevel": 3,
       "item": {
        "name": "HK 416A5 5.56x45 upper receiver"
@@ -6265,7 +6265,7 @@
      },
      {
       "currency": "USD",
-      "price": 30,
+      "price": 28,
       "minTraderLevel": 4,
       "item": {
        "name": "M700 AB Arms MOD*X buffer tube side folder adapter"
@@ -6273,7 +6273,7 @@
      },
      {
       "currency": "USD",
-      "price": 73,
+      "price": 68,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX Midwest Industries 4.5 inch M-LOK handguard"
@@ -6281,7 +6281,7 @@
      },
      {
       "currency": "USD",
-      "price": 21,
+      "price": 19,
       "minTraderLevel": 4,
       "item": {
        "name": ".338 Lapua Magnum FMJ"
@@ -6289,7 +6289,7 @@
      },
      {
       "currency": "USD",
-      "price": 355,
+      "price": 335,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ballistic face shield (Coyote Brown)"
@@ -6297,7 +6297,7 @@
      },
      {
       "currency": "USD",
-      "price": 355,
+      "price": 335,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ballistic face shield (Black)"
@@ -6305,7 +6305,7 @@
      },
      {
       "currency": "USD",
-      "price": 125,
+      "price": 118,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 HK E1 buttstock"
@@ -6313,7 +6313,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 3,
       "item": {
        "name": "5.7x28mm SS198LF"
@@ -6321,7 +6321,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 HK 30 STANAG polymer 30-round magazine"
@@ -6329,7 +6329,7 @@
      },
      {
       "currency": "USD",
-      "price": 93,
+      "price": 87,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX 9x19 10.5 inch barrel"
@@ -6337,7 +6337,7 @@
      },
      {
       "currency": "USD",
-      "price": 81,
+      "price": 77,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Thunder Beast Arms 223CB 5.56x45 muzzle brake"
@@ -6345,7 +6345,7 @@
      },
      {
       "currency": "USD",
-      "price": 22,
+      "price": 20,
       "minTraderLevel": 1,
       "item": {
        "name": "M9A3 9x19 17-round magazine"
@@ -6353,7 +6353,7 @@
      },
      {
       "currency": "USD",
-      "price": 37,
+      "price": 34,
       "minTraderLevel": 1,
       "item": {
        "name": "KAC vertical foregrip"
@@ -6361,7 +6361,7 @@
      },
      {
       "currency": "USD",
-      "price": 178,
+      "price": 168,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Daniel Defense RIS II FSP 9.5 handguard (Coyote Brown)"
@@ -6369,7 +6369,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 34,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine (FDE)"
@@ -6377,7 +6377,7 @@
      },
      {
       "currency": "USD",
-      "price": 31,
+      "price": 29,
       "minTraderLevel": 4,
       "item": {
        "name": "M700 AB Arms MOD*X rail mount"
@@ -6385,7 +6385,7 @@
      },
      {
       "currency": "USD",
-      "price": 26,
+      "price": 24,
       "minTraderLevel": 2,
       "item": {
        "name": "KAC Folding front sight"
@@ -6393,7 +6393,7 @@
      },
      {
       "currency": "USD",
-      "price": 1673,
+      "price": 1579,
       "minTraderLevel": 3,
       "item": {
        "name": "CQC Osprey MK4A plate carrier (Assault, MTP)"
@@ -6401,7 +6401,7 @@
      },
      {
       "currency": "USD",
-      "price": 1171,
+      "price": 1105,
       "minTraderLevel": 3,
       "item": {
        "name": "Knight's Armament Company SR-25 7.62x51 marksman rifle"
@@ -6409,7 +6409,7 @@
      },
      {
       "currency": "USD",
-      "price": 218,
+      "price": 205,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5K 9x19 submachine gun"
@@ -6417,7 +6417,7 @@
      },
      {
       "currency": "USD",
-      "price": 21,
+      "price": 19,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 long panel"
@@ -6425,7 +6425,7 @@
      },
      {
       "currency": "USD",
-      "price": 188,
+      "price": 178,
       "minTraderLevel": 3,
       "item": {
        "name": "SKS 7.62x39 ProMag AALVX 35-round magazine"
@@ -6433,7 +6433,7 @@
      },
      {
       "currency": "USD",
-      "price": 21,
+      "price": 19,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 long panel (FDE)"
@@ -6441,7 +6441,7 @@
      },
      {
       "currency": "USD",
-      "price": 322,
+      "price": 304,
       "minTraderLevel": 2,
       "item": {
        "name": "SIG Sauer SRD9 9x19 sound suppressor"
@@ -6449,7 +6449,7 @@
      },
      {
       "currency": "USD",
-      "price": 30,
+      "price": 28,
       "minTraderLevel": 3,
       "item": {
        "name": "MP9 9x19 25-round magazine"
@@ -6457,7 +6457,7 @@
      },
      {
       "currency": "USD",
-      "price": 70,
+      "price": 66,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 Magpul PMAG 40 GEN M3 STANAG 40-round magazine (FDE)"
@@ -6465,7 +6465,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 13,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 short panel"
@@ -6473,7 +6473,7 @@
      },
      {
       "currency": "USD",
-      "price": 1705,
+      "price": 1609,
       "minTraderLevel": 4,
       "item": {
        "name": "Desert Tech MDR 7.62x51 assault rifle"
@@ -6481,7 +6481,7 @@
      },
      {
       "currency": "USD",
-      "price": 125,
+      "price": 117,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 Keeno Arms SHREWD 7.62x51 muzzle brake"
@@ -6489,7 +6489,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 33,
       "minTraderLevel": 1,
       "item": {
        "name": "HK MP5 9x19 20-round magazine"
@@ -6497,7 +6497,7 @@
      },
      {
       "currency": "USD",
-      "price": 82,
+      "price": 77,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 AAC Blackout 51T 5.56x45 flash hider"
@@ -6505,7 +6505,7 @@
      },
      {
       "currency": "USD",
-      "price": 59,
+      "price": 55,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX 9x19 6.5 inch barrel"
@@ -6513,7 +6513,7 @@
      },
      {
       "currency": "USD",
-      "price": 113,
+      "price": 106,
       "minTraderLevel": 4,
       "item": {
        "name": "M700 AB Arms MOD*X GEN 3 KeyMod handguard"
@@ -6521,7 +6521,7 @@
      },
      {
       "currency": "USD",
-      "price": 427,
+      "price": 403,
       "minTraderLevel": 3,
       "item": {
        "name": "Gemtech SFN-57 5.7x28 sound suppressor"
@@ -6529,7 +6529,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 31,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 stopper panel (FDE)"
@@ -6537,7 +6537,7 @@
      },
      {
       "currency": "USD",
-      "price": 21,
+      "price": 19,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX Geissele SCH charging handle"
@@ -6545,7 +6545,7 @@
      },
      {
       "currency": "USD",
-      "price": 1549,
+      "price": 1462,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ballistic Helmet (Black)"
@@ -6553,7 +6553,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 2,
       "item": {
        "name": "5.7x28mm SS197SR"
@@ -6561,7 +6561,7 @@
      },
      {
       "currency": "USD",
-      "price": 123,
+      "price": 116,
       "minTraderLevel": 3,
       "item": {
        "name": "TACCOM Carbine Brake multi-caliber muzzle brake"
@@ -6569,7 +6569,7 @@
      },
      {
       "currency": "USD",
-      "price": 578,
+      "price": 545,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC PRS/QDC 7.62x51 sound suppressor"
@@ -6577,7 +6577,7 @@
      },
      {
       "currency": "USD",
-      "price": 70,
+      "price": 66,
       "minTraderLevel": 2,
       "item": {
        "name": "AR-10 KAC QDC 7.62x51 flash suppressor kit"
@@ -6585,7 +6585,7 @@
      },
      {
       "currency": "USD",
-      "price": 244,
+      "price": 230,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul PRS GEN3 stock (Black)"
@@ -6593,7 +6593,7 @@
      },
      {
       "currency": "USD",
-      "price": 108,
+      "price": 102,
       "minTraderLevel": 2,
       "item": {
        "name": "SOE Micro Rig"
@@ -6601,7 +6601,7 @@
      },
      {
       "currency": "USD",
-      "price": 442,
+      "price": 416,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ear Covers (Coyote Brown)"
@@ -6609,7 +6609,7 @@
      },
      {
       "currency": "USD",
-      "price": 1743,
+      "price": 1645,
       "minTraderLevel": 4,
       "item": {
        "name": "CQC Osprey MK4A plate carrier (Protection, MTP)"
@@ -6617,7 +6617,7 @@
      },
      {
       "currency": "USD",
-      "price": 112,
+      "price": 105,
       "minTraderLevel": 3,
       "item": {
        "name": "Lantac BMD 7.62x51 Blast Mitigation Device"
@@ -6625,7 +6625,7 @@
      },
      {
       "currency": "USD",
-      "price": 86,
+      "price": 81,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX Midwest Industries 6.5 inch M-LOK handguard"
@@ -6633,7 +6633,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 26,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 7.62x51 KAC 20-round steel magazine"
@@ -6641,7 +6641,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 31,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 stopper panel"
@@ -6649,7 +6649,7 @@
      },
      {
       "currency": "USD",
-      "price": 20,
+      "price": 19,
       "minTraderLevel": 2,
       "item": {
        "name": "MP9 9x19 15-round magazine"
@@ -6657,7 +6657,7 @@
      },
      {
       "currency": "USD",
-      "price": 442,
+      "price": 416,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ear Covers (Black)"
@@ -6665,7 +6665,7 @@
      },
      {
       "currency": "USD",
-      "price": 130,
+      "price": 122,
       "minTraderLevel": 1,
       "item": {
        "name": "Beretta M9A3 9x19 pistol"
@@ -6673,7 +6673,7 @@
      },
      {
       "currency": "USD",
-      "price": 1475,
+      "price": 1392,
       "minTraderLevel": 4,
       "item": {
        "name": "Team Wendy EXFIL Ballistic Helmet (Coyote Brown)"
@@ -6681,7 +6681,7 @@
      },
      {
       "currency": "USD",
-      "price": 841,
+      "price": 794,
       "minTraderLevel": 3,
       "item": {
        "name": "Armasight N-15 Night Vision Goggles"
@@ -6689,7 +6689,7 @@
      },
      {
       "currency": "USD",
-      "price": 334,
+      "price": 315,
       "minTraderLevel": 3,
       "item": {
        "name": "Aimpoint CompM4 reflex sight"
@@ -6697,7 +6697,7 @@
      },
      {
       "currency": "USD",
-      "price": 323,
+      "price": 305,
       "minTraderLevel": 4,
       "item": {
        "name": "SR-25 7.62x51 16 inch barrel"
@@ -6705,7 +6705,7 @@
      },
      {
       "currency": "USD",
-      "price": 140,
+      "price": 132,
       "minTraderLevel": 4,
       "item": {
        "name": "MPX 9x19 14 inch barrel"
@@ -6713,7 +6713,7 @@
      },
      {
       "currency": "USD",
-      "price": 212,
+      "price": 200,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 KAC URX 3.1 10.75 inch handguard"
@@ -6721,7 +6721,7 @@
      },
      {
       "currency": "USD",
-      "price": 313,
+      "price": 295,
       "minTraderLevel": 2,
       "item": {
        "name": "FN Five-seveN MK2 5.7x28 pistol (FDE)"
@@ -6729,7 +6729,7 @@
      },
      {
       "currency": "USD",
-      "price": 40,
+      "price": 38,
       "minTraderLevel": 3,
       "item": {
        "name": "FN P90 stock"
@@ -6737,7 +6737,7 @@
      },
      {
       "currency": "USD",
-      "price": 13,
+      "price": 12,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 KAC ambidextrous charging handle"
@@ -6745,7 +6745,7 @@
      },
      {
       "currency": "USD",
-      "price": 27,
+      "price": 24,
       "minTraderLevel": 3,
       "item": {
        "name": "FN P90 buttpad"
@@ -6753,7 +6753,7 @@
      },
      {
       "currency": "USD",
-      "price": 105,
+      "price": 99,
       "minTraderLevel": 3,
       "item": {
        "name": "MPX Midwest Industries 10.5 inch M-LOK handguard"
@@ -6761,7 +6761,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 2,
       "item": {
        "name": "M9A3 Sight Mount rear sight rail"
@@ -6769,7 +6769,7 @@
      },
      {
       "currency": "USD",
-      "price": 34,
+      "price": 32,
       "minTraderLevel": 1,
       "item": {
        "name": "P226 9x19 20-round extended magazine"
@@ -6777,7 +6777,7 @@
      },
      {
       "currency": "USD",
-      "price": 33,
+      "price": 30,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC Folding Micro front sight"
@@ -6785,7 +6785,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 13,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC URX 3/3.1 short panel (FDE)"
@@ -6793,7 +6793,7 @@
      },
      {
       "currency": "USD",
-      "price": 44,
+      "price": 41,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX 9x19 4.5 inch barrel"
@@ -6801,7 +6801,7 @@
      },
      {
       "currency": "USD",
-      "price": 116,
+      "price": 109,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 Thunder Beast Arms 30CB 7.62x51 muzzle brake"
@@ -6809,7 +6809,7 @@
      },
      {
       "currency": "USD",
-      "price": 22,
+      "price": 20,
       "minTraderLevel": 2,
       "item": {
        "name": "AR-10 7.62x51 KAC 10-round steel magazine"
@@ -6817,7 +6817,7 @@
      },
      {
       "currency": "USD",
-      "price": 42,
+      "price": 39,
       "minTraderLevel": 2,
       "item": {
        "name": "FN Five-seveN 5.7x28 20-round magazine"
@@ -6825,7 +6825,7 @@
      },
      {
       "currency": "USD",
-      "price": 520,
+      "price": 491,
       "minTraderLevel": 2,
       "item": {
        "name": "MSA ACH TC-2001 MICH Series helmet"
@@ -6833,7 +6833,7 @@
      },
      {
       "currency": "USD",
-      "price": 41,
+      "price": 38,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC Folding Micro rear sight"
@@ -6841,7 +6841,7 @@
      },
      {
       "currency": "USD",
-      "price": 2,
+      "price": 1,
       "minTraderLevel": 1,
       "item": {
        "name": ".45 ACP Match FMJ"
@@ -6849,7 +6849,7 @@
      },
      {
       "currency": "USD",
-      "price": 23,
+      "price": 21,
       "minTraderLevel": 2,
       "item": {
        "name": "MP9 9x19 20-round magazine"
@@ -6857,7 +6857,7 @@
      },
      {
       "currency": "USD",
-      "price": 196,
+      "price": 185,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Daniel Defense RIS II 12.25 handguard (Coyote Brown)"
@@ -6865,7 +6865,7 @@
      },
      {
       "currency": "USD",
-      "price": 412,
+      "price": 388,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 5.56x45 20 inch barrel"
@@ -6873,7 +6873,7 @@
      },
      {
       "currency": "USD",
-      "price": 48,
+      "price": 45,
       "minTraderLevel": 3,
       "item": {
        "name": "FN Five-seveN 5.7x28 threaded barrel"
@@ -6881,7 +6881,7 @@
      },
      {
       "currency": "USD",
-      "price": 169,
+      "price": 159,
       "minTraderLevel": 4,
       "item": {
        "name": "M700 AB Arms MOD*X GEN 3 stock"
@@ -6889,7 +6889,7 @@
      },
      {
       "currency": "USD",
-      "price": 2,
+      "price": 1,
       "minTraderLevel": 2,
       "item": {
        "name": ".45 ACP Lasermatch FMJ"
@@ -6897,7 +6897,7 @@
      },
      {
       "currency": "USD",
-      "price": 163,
+      "price": 153,
       "minTraderLevel": 3,
       "item": {
        "name": "HK MP5 CAA HX-5 handguard"
@@ -6905,7 +6905,7 @@
      },
      {
       "currency": "USD",
-      "price": 37,
+      "price": 34,
       "minTraderLevel": 2,
       "item": {
        "name": "M1911A1 .45 ACP threaded barrel"
@@ -6913,7 +6913,7 @@
      },
      {
       "currency": "USD",
-      "price": 208,
+      "price": 197,
       "minTraderLevel": 4,
       "item": {
        "name": "B5 Systems Precision stock"
@@ -6921,7 +6921,7 @@
      },
      {
       "currency": "USD",
-      "price": 79,
+      "price": 75,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Rainier Arms Avalanche MOD2 charging handle"
@@ -6929,7 +6929,7 @@
      },
      {
       "currency": "USD",
-      "price": 188,
+      "price": 178,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 KAC URX 3 8 inch handguard"
@@ -6937,7 +6937,7 @@
      },
      {
       "currency": "USD",
-      "price": 258,
+      "price": 243,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon SRS-02 reflex sight"
@@ -6945,7 +6945,7 @@
      },
      {
       "currency": "USD",
-      "price": 313,
+      "price": 295,
       "minTraderLevel": 3,
       "item": {
        "name": "FN Five-seveN MK2 5.7x28 pistol"
@@ -6953,7 +6953,7 @@
      },
      {
       "currency": "USD",
-      "price": 276,
+      "price": 260,
       "minTraderLevel": 3,
       "item": {
        "name": "Galvion Caiman Hybrid Ballistic Mandible Guard"
@@ -6961,7 +6961,7 @@
      },
      {
       "currency": "USD",
-      "price": 110,
+      "price": 103,
       "minTraderLevel": 4,
       "item": {
        "name": "Ferfrans CRD 5.56x45 Concussion Reduction Device"
@@ -6969,7 +6969,7 @@
      },
      {
       "currency": "USD",
-      "price": 13,
+      "price": 11,
       "minTraderLevel": 2,
       "item": {
        "name": "HK UMP side handguard rail"
@@ -6977,7 +6977,7 @@
      },
      {
       "currency": "USD",
-      "price": 401,
+      "price": 378,
       "minTraderLevel": 3,
       "item": {
        "name": "SR-25 7.62x51 20 inch barrel"
@@ -6985,7 +6985,7 @@
      },
      {
       "currency": "USD",
-      "price": 47,
+      "price": 44,
       "minTraderLevel": 3,
       "item": {
        "name": "MP9 9x19 30-round magazine"
@@ -6993,7 +6993,7 @@
      },
      {
       "currency": "USD",
-      "price": 240,
+      "price": 225,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-10 Lancer LCH7 12.5 inch M-LOK handguard"
@@ -7001,7 +7001,7 @@
      },
      {
       "currency": "USD",
-      "price": 95,
+      "price": 90,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 Ferfrans CQB 5.56x45 muzzle brake"
@@ -7009,7 +7009,7 @@
      },
      {
       "currency": "USD",
-      "price": 25,
+      "price": 23,
       "minTraderLevel": 3,
       "item": {
        "name": "M1911A1 .45 ACP Mec-Gar 11-round magazine"
@@ -7017,7 +7017,7 @@
      },
      {
       "currency": "USD",
-      "price": 117,
+      "price": 109,
       "minTraderLevel": 2,
       "item": {
        "name": "AN/PEQ-2 tactical device"
@@ -7025,7 +7025,7 @@
      },
      {
       "currency": "USD",
-      "price": 288,
+      "price": 271,
       "minTraderLevel": 2,
       "item": {
        "name": "B&T MP9 9x19 submachine gun"
@@ -7033,7 +7033,7 @@
      },
      {
       "currency": "USD",
-      "price": 255,
+      "price": 240,
       "minTraderLevel": 2,
       "item": {
        "name": "LBT-8005A Day Pack backpack"
@@ -7041,7 +7041,7 @@
      },
      {
       "currency": "USD",
-      "price": 586,
+      "price": 552,
       "minTraderLevel": 3,
       "item": {
        "name": "SIG Sauer SRD762Ti 7.62x51 sound suppressor"
@@ -7049,7 +7049,7 @@
      },
      {
       "currency": "USD",
-      "price": 5,
+      "price": 4,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45mm MK 318 Mod 0 (SOST)"
@@ -7057,7 +7057,7 @@
      },
      {
       "currency": "USD",
-      "price": 27,
+      "price": 25,
       "minTraderLevel": 1,
       "item": {
        "name": "HK UMP .45 ACP 25-round magazine"
@@ -7065,7 +7065,7 @@
      },
      {
       "currency": "USD",
-      "price": 572,
+      "price": 539,
       "minTraderLevel": 4,
       "item": {
        "name": "AFAK tactical individual first aid kit"
@@ -7073,7 +7073,7 @@
      },
      {
       "currency": "USD",
-      "price": 118,
+      "price": 111,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-15 SilencerCo ASR 5.56x45 flash hider"
@@ -7081,7 +7081,7 @@
      },
      {
       "currency": "USD",
-      "price": 85,
+      "price": 80,
       "minTraderLevel": 3,
       "item": {
        "name": "Tactical Dynamics Skeletonized Foregrip"
@@ -7089,7 +7089,7 @@
      },
      {
       "currency": "USD",
-      "price": 37,
+      "price": 34,
       "minTraderLevel": 1,
       "item": {
        "name": "CAT hemostatic tourniquet"
@@ -7097,7 +7097,7 @@
      },
      {
       "currency": "USD",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 3,
       "item": {
        "name": ".45 ACP Hydra-Shok"
@@ -7105,7 +7105,7 @@
      },
      {
       "currency": "USD",
-      "price": 22,
+      "price": 20,
       "minTraderLevel": 3,
       "item": {
        "name": "SIG Sauer 7.62x51 3-prong flash hider"
@@ -7113,7 +7113,7 @@
      },
      {
       "currency": "USD",
-      "price": 451,
+      "price": 425,
       "minTraderLevel": 3,
       "item": {
        "name": "Remington Model 700 7.62x51 bolt-action sniper rifle"
@@ -7121,7 +7121,7 @@
      },
      {
       "currency": "USD",
-      "price": 211,
+      "price": 199,
       "minTraderLevel": 3,
       "item": {
        "name": "Galvion Caiman Fixed Arm Visor"
@@ -7129,7 +7129,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 2,
       "item": {
        "name": "HK UMP bottom handguard rail"
@@ -7137,7 +7137,7 @@
      },
      {
       "currency": "USD",
-      "price": 62,
+      "price": 58,
       "minTraderLevel": 3,
       "item": {
        "name": "SIG Sauer Vertical Foregrip KeyMod (Black)"
@@ -7145,7 +7145,7 @@
      },
      {
       "currency": "USD",
-      "price": 320,
+      "price": 302,
       "minTraderLevel": 2,
       "item": {
        "name": "HK UMP .45 ACP submachine gun"
@@ -7153,7 +7153,7 @@
      },
      {
       "currency": "USD",
-      "price": 679,
+      "price": 640,
       "minTraderLevel": 4,
       "item": {
        "name": "Galvion Caiman Hybrid Ballistic Applique"
@@ -7161,7 +7161,7 @@
      },
      {
       "currency": "USD",
-      "price": 614,
+      "price": 579,
       "minTraderLevel": 4,
       "item": {
        "name": "SIG Sauer SRD762-QD 7.62x51 sound suppressor"
@@ -7169,7 +7169,7 @@
      },
      {
       "currency": "USD",
-      "price": 81,
+      "price": 76,
       "minTraderLevel": 3,
       "item": {
        "name": "Magpul RVG foregrip (FDE)"
@@ -7177,7 +7177,7 @@
      },
      {
       "currency": "USD",
-      "price": 89,
+      "price": 84,
       "minTraderLevel": 2,
       "item": {
        "name": "KRISS Defiance DS150 stock (Black)"
@@ -7185,7 +7185,7 @@
      },
      {
       "currency": "USD",
-      "price": 701,
+      "price": 662,
       "minTraderLevel": 4,
       "item": {
        "name": "SilencerCo Saker ASR 556 5.56x45 sound suppressor"
@@ -7193,7 +7193,7 @@
      },
      {
       "currency": "USD",
-      "price": 241,
+      "price": 226,
       "minTraderLevel": 4,
       "item": {
        "name": "Mesa Tactical Crosshair Hydraulic buffer tube"
@@ -7201,7 +7201,7 @@
      },
      {
       "currency": "USD",
-      "price": 66,
+      "price": 62,
       "minTraderLevel": 3,
       "item": {
        "name": "SIG Sauer Two Port Brake 7.62x51 muzzle brake"
@@ -7209,7 +7209,7 @@
      },
      {
       "currency": "USD",
-      "price": 23,
+      "price": 21,
       "minTraderLevel": 2,
       "item": {
        "name": "AR-15 MASP Industries Ambidextrous Battle Charging Handle"
@@ -7217,7 +7217,7 @@
      },
      {
       "currency": "USD",
-      "price": 89,
+      "price": 84,
       "minTraderLevel": 3,
       "item": {
        "name": "KRISS Defiance DS150 stock (FDE)"
@@ -7225,7 +7225,7 @@
      },
      {
       "currency": "USD",
-      "price": 36,
+      "price": 34,
       "minTraderLevel": 3,
       "item": {
        "name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30-round magazine (FDE)"
@@ -7233,7 +7233,7 @@
      },
      {
       "currency": "USD",
-      "price": 7,
+      "price": 6,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 hand stop"
@@ -7241,7 +7241,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 25,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 5.56x45 30-round magazine"
@@ -7249,7 +7249,7 @@
      },
      {
       "currency": "USD",
-      "price": 67,
+      "price": 63,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 6-vent handguard"
@@ -7257,7 +7257,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 25,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 front sight"
@@ -7265,7 +7265,7 @@
      },
      {
       "currency": "USD",
-      "price": 15,
+      "price": 14,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 rear sight"
@@ -7273,7 +7273,7 @@
      },
      {
       "currency": "USD",
-      "price": 29,
+      "price": 27,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 2-vent handguard"
@@ -7281,7 +7281,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 4,
       "item": {
        "name": "HK G36 4-vent handguard"
@@ -7289,7 +7289,7 @@
      },
      {
       "currency": "USD",
-      "price": 68,
+      "price": 64,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 polymer stock"
@@ -7297,7 +7297,7 @@
      },
      {
       "currency": "USD",
-      "price": 19,
+      "price": 17,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 bottom handguard rail"
@@ -7305,7 +7305,7 @@
      },
      {
       "currency": "USD",
-      "price": 13,
+      "price": 11,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 side handguard rail"
@@ -7313,7 +7313,7 @@
      },
      {
       "currency": "USD",
-      "price": 49,
+      "price": 46,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 bipod"
@@ -7321,7 +7321,7 @@
      },
      {
       "currency": "USD",
-      "price": 35,
+      "price": 32,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 gas block"
@@ -7329,7 +7329,7 @@
      },
      {
       "currency": "USD",
-      "price": 158,
+      "price": 149,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 5.56x45 228mm barrel"
@@ -7337,7 +7337,7 @@
      },
      {
       "currency": "USD",
-      "price": 186,
+      "price": 176,
       "minTraderLevel": 4,
       "item": {
        "name": "HK G36 5.56x45 318mm barrel"
@@ -7345,7 +7345,7 @@
      },
      {
       "currency": "USD",
-      "price": 210,
+      "price": 198,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 5.56x45 480mm barrel"
@@ -7353,7 +7353,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 sight mount"
@@ -7361,7 +7361,7 @@
      },
      {
       "currency": "USD",
-      "price": 46,
+      "price": 43,
       "minTraderLevel": 3,
       "item": {
        "name": "HK G36 sight mount"
@@ -7369,7 +7369,7 @@
      },
      {
       "currency": "USD",
-      "price": 35,
+      "price": 32,
       "minTraderLevel": 4,
       "item": {
        "name": "HK G36 optic rail with flip-up sights"
@@ -7377,7 +7377,7 @@
      },
      {
       "currency": "USD",
-      "price": 107,
+      "price": 101,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 HKV 3x carry handle"
@@ -7385,7 +7385,7 @@
      },
      {
       "currency": "USD",
-      "price": 96,
+      "price": 91,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 HKV ZF 1.5x carry handle"
@@ -7393,7 +7393,7 @@
      },
      {
       "currency": "USD",
-      "price": 91,
+      "price": 85,
       "minTraderLevel": 2,
       "item": {
        "name": "Hensoldt RV red dot sight"
@@ -7401,7 +7401,7 @@
      },
      {
       "currency": "USD",
-      "price": 17,
+      "price": 15,
       "minTraderLevel": 2,
       "item": {
        "name": "Hensoldt RIS top rail"
@@ -7409,7 +7409,7 @@
      },
      {
       "currency": "USD",
-      "price": 13,
+      "price": 11,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 magwell"
@@ -7417,7 +7417,7 @@
      },
      {
       "currency": "USD",
-      "price": 63,
+      "price": 59,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36C 5.56x45 4-prong flash hider"
@@ -7425,7 +7425,7 @@
      },
      {
       "currency": "USD",
-      "price": 78,
+      "price": 74,
       "minTraderLevel": 2,
       "item": {
        "name": "HK G36 5.56x45 4-prong flash hider"
@@ -7433,7 +7433,7 @@
      },
      {
       "currency": "USD",
-      "price": 799,
+      "price": 754,
       "minTraderLevel": 4,
       "item": {
        "name": "KAC QDC 5.56x45 sound suppressor"
@@ -7441,7 +7441,7 @@
      },
      {
       "currency": "USD",
-      "price": 81,
+      "price": 76,
       "minTraderLevel": 3,
       "item": {
        "name": "KAC QDC 5.56x45 3-Prong Flash Eliminator"
@@ -7449,7 +7449,7 @@
      },
      {
       "currency": "USD",
-      "price": 237,
+      "price": 223,
       "minTraderLevel": 4,
       "item": {
        "name": "Milkor M2A1 grenade launcher reflex sight"
@@ -7457,7 +7457,7 @@
      },
      {
       "currency": "USD",
-      "price": 102,
+      "price": 96,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 Dead Air Keymount 7.62x51 muzzle brake"
@@ -7465,7 +7465,7 @@
      },
      {
       "currency": "USD",
-      "price": 97,
+      "price": 92,
       "minTraderLevel": 2,
       "item": {
        "name": "SB Tactical SBA3 buttstock"
@@ -7473,7 +7473,7 @@
      },
      {
       "currency": "USD",
-      "price": 203,
+      "price": 191,
       "minTraderLevel": 4,
       "item": {
        "name": "Oakley SI Batwolf glasses"
@@ -7481,7 +7481,7 @@
      },
      {
       "currency": "USD",
-      "price": 401,
+      "price": 378,
       "minTraderLevel": 4,
       "item": {
        "name": "40x46mm M386 (HE) grenade"
@@ -7489,7 +7489,7 @@
      },
      {
       "currency": "USD",
-      "price": 162,
+      "price": 152,
       "minTraderLevel": 1,
       "item": {
        "name": "Colt M1911A1 .45 ACP pistol"
@@ -7497,7 +7497,7 @@
      },
      {
       "currency": "USD",
-      "price": 14,
+      "price": 12,
       "minTraderLevel": 1,
       "item": {
        "name": "M1911A1 .45 ACP 7-round magazine"
@@ -7505,7 +7505,7 @@
      },
      {
       "currency": "USD",
-      "price": 4,
+      "price": 3,
       "minTraderLevel": 3,
       "item": {
        "name": "9x19mm QuakeMaker"
@@ -7513,7 +7513,7 @@
      },
      {
       "currency": "USD",
-      "price": 4,
+      "price": 3,
       "minTraderLevel": 3,
       "item": {
        "name": "7.62x51mm M80"
@@ -7521,7 +7521,7 @@
      },
      {
       "currency": "USD",
-      "price": 9,
+      "price": 7,
       "minTraderLevel": 3,
       "item": {
        "name": "9x19mm AP 6.3"
@@ -7529,7 +7529,7 @@
      },
      {
       "currency": "USD",
-      "price": 265,
+      "price": 250,
       "minTraderLevel": 2,
       "item": {
        "name": "Trijicon ACOG TA11D 3.5x35 scope"
@@ -7537,7 +7537,7 @@
      },
      {
       "currency": "USD",
-      "price": 49,
+      "price": 46,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon TA51 sight mount"
@@ -7545,7 +7545,7 @@
      },
      {
       "currency": "USD",
-      "price": 70,
+      "price": 66,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon RMR mount for ACOG scopes"
@@ -7553,7 +7553,7 @@
      },
      {
       "currency": "USD",
-      "price": 312,
+      "price": 294,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon ACOG TA01NSN 4x32 scope (Black)"
@@ -7561,7 +7561,7 @@
      },
      {
       "currency": "USD",
-      "price": 303,
+      "price": 286,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon ACOG TA01NSN 4x32 scope (Tan)"
@@ -7569,7 +7569,7 @@
      },
      {
       "currency": "USD",
-      "price": 28,
+      "price": 26,
       "minTraderLevel": 3,
       "item": {
        "name": "Trijicon ACOG backup rear sight"
@@ -7577,7 +7577,7 @@
      },
      {
       "currency": "USD",
-      "price": 58,
+      "price": 54,
       "minTraderLevel": 3,
       "item": {
        "name": "AR-10 KAC Low Profile Gas Block"
@@ -7585,7 +7585,7 @@
      },
      {
       "currency": "USD",
-      "price": 351,
+      "price": 331,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)"
@@ -7593,7 +7593,7 @@
      },
      {
       "currency": "USD",
-      "price": 592,
+      "price": 558,
       "minTraderLevel": 2,
       "item": {
        "name": "HK MP5 9x19 submachine gun (Navy 3 Round Burst)"
@@ -7934,7 +7934,7 @@
      },
      {
       "currency": "EUR",
-      "price": 43,
+      "price": 39,
       "minTraderLevel": 1,
       "item": {
        "name": "MPX GEN1 9x19 upper receiver"
@@ -7998,7 +7998,7 @@
      },
      {
       "currency": "EUR",
-      "price": 68,
+      "price": 62,
       "minTraderLevel": 2,
       "item": {
        "name": "MPX-SD 9x19 165mm barrel"
@@ -8006,7 +8006,7 @@
      },
      {
       "currency": "EUR",
-      "price": 121,
+      "price": 110,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock 9x19 SGM Tactical 50-round drum magazine"
@@ -8014,7 +8014,7 @@
      },
      {
       "currency": "EUR",
-      "price": 135,
+      "price": 123,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock Viper Cut pistol slide"
@@ -8022,7 +8022,7 @@
      },
      {
       "currency": "EUR",
-      "price": 23,
+      "price": 21,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock 17 9x19 barrel with a compensator"
@@ -8030,7 +8030,7 @@
      },
      {
       "currency": "EUR",
-      "price": 74,
+      "price": 68,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock 9x19 CARVER Custom 4 Port compensator"
@@ -8038,7 +8038,7 @@
      },
      {
       "currency": "EUR",
-      "price": 13,
+      "price": 12,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock SAI 9x19 thread protector"
@@ -8078,7 +8078,7 @@
      },
      {
       "currency": "EUR",
-      "price": 50,
+      "price": 45,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock Aimtech mount base"
@@ -8094,7 +8094,7 @@
      },
      {
       "currency": "EUR",
-      "price": 13,
+      "price": 12,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Pachmayr Tactical Grip Glove"
@@ -8126,7 +8126,7 @@
      },
      {
       "currency": "EUR",
-      "price": 136,
+      "price": 124,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Vendetta Precision VP-09 Interceptor 5.56x45 muzzle brake"
@@ -8150,7 +8150,7 @@
      },
      {
       "currency": "EUR",
-      "price": 39,
+      "price": 35,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock 17 9x19 pistol slide"
@@ -8166,7 +8166,7 @@
      },
      {
       "currency": "EUR",
-      "price": 20,
+      "price": 18,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock 17 9x19 barrel"
@@ -8174,7 +8174,7 @@
      },
      {
       "currency": "EUR",
-      "price": 152,
+      "price": 138,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Lone Wolf AlphaWolf Custom pistol slide"
@@ -8206,7 +8206,7 @@
      },
      {
       "currency": "EUR",
-      "price": 36,
+      "price": 33,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock 9x19 \"Big Stick\" 33-round magazine"
@@ -8214,7 +8214,7 @@
      },
      {
       "currency": "EUR",
-      "price": 137,
+      "price": 125,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock 9x19 SAI threaded barrel"
@@ -8222,7 +8222,7 @@
      },
      {
       "currency": "EUR",
-      "price": 42,
+      "price": 37,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock 9x19 Lone Wolf LWD-COMP9 compensator"
@@ -8238,7 +8238,7 @@
      },
      {
       "currency": "EUR",
-      "price": 61,
+      "price": 56,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock 9x19 CARVER Custom Decelerator 3 Port compensator"
@@ -8246,7 +8246,7 @@
      },
      {
       "currency": "EUR",
-      "price": 68,
+      "price": 62,
       "minTraderLevel": 4,
       "item": {
        "name": "UM Tactical UM3 pistol sight mount"
@@ -8294,7 +8294,7 @@
      },
      {
       "currency": "EUR",
-      "price": 79,
+      "price": 71,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock 9x19 Strike Industries G4 SlideComp compensator"
@@ -8318,7 +8318,7 @@
      },
      {
       "currency": "EUR",
-      "price": 276,
+      "price": 252,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock ZEV Tech HEX Spartan RMR pistol slide"
@@ -8334,7 +8334,7 @@
      },
      {
       "currency": "EUR",
-      "price": 96,
+      "price": 87,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock 9x19 Lone Wolf AlphaWolf threaded barrel"
@@ -8350,7 +8350,7 @@
      },
      {
       "currency": "EUR",
-      "price": 34,
+      "price": 31,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock 9x19 Lone Wolf AlphaWolf Bullnose compensator"
@@ -8358,7 +8358,7 @@
      },
      {
       "currency": "EUR",
-      "price": 170,
+      "price": 155,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock Polymer80 PS9 pistol slide"
@@ -8390,7 +8390,7 @@
      },
      {
       "currency": "EUR",
-      "price": 22,
+      "price": 19,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock 9x19 Magpul PMAG GL9 21-round magazine"
@@ -8414,7 +8414,7 @@
      },
      {
       "currency": "EUR",
-      "price": 55,
+      "price": 50,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock 9x19 Double Diamond flash hider"
@@ -8430,7 +8430,7 @@
      },
      {
       "currency": "EUR",
-      "price": 25,
+      "price": 22,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock ZEV Tech rear sight"
@@ -8438,7 +8438,7 @@
      },
      {
       "currency": "EUR",
-      "price": 529,
+      "price": 483,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock 9x19 Fischer Development FD917 sound suppressor"
@@ -8470,7 +8470,7 @@
      },
      {
       "currency": "EUR",
-      "price": 3,
+      "price": 2,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock ZEV Tech sight mount cap"
@@ -8550,7 +8550,7 @@
      },
      {
       "currency": "EUR",
-      "price": 242,
+      "price": 221,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock ZEV Tech HEX Gen3 RMR pistol slide"
@@ -8574,7 +8574,7 @@
      },
      {
       "currency": "EUR",
-      "price": 252,
+      "price": 230,
       "minTraderLevel": 4,
       "item": {
        "name": "Hera Arms CQR tactical foregrip"
@@ -8598,7 +8598,7 @@
      },
      {
       "currency": "EUR",
-      "price": 459,
+      "price": 419,
       "minTraderLevel": 4,
       "item": {
        "name": "AR-15 Hera Arms CQR pistol grip/buttstock"
@@ -8662,7 +8662,7 @@
      },
      {
       "currency": "EUR",
-      "price": 72,
+      "price": 66,
       "minTraderLevel": 3,
       "item": {
        "name": "Glock 9x19 Double Diamond threaded barrel"
@@ -8702,7 +8702,7 @@
      },
      {
       "currency": "EUR",
-      "price": 17,
+      "price": 15,
       "minTraderLevel": 4,
       "item": {
        "name": "Glock ZEV Tech front sight"
@@ -8766,7 +8766,7 @@
      },
      {
       "currency": "EUR",
-      "price": 97,
+      "price": 88,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Lone Wolf AlphaWolf pistol slide"
@@ -9126,7 +9126,7 @@
      },
      {
       "currency": "EUR",
-      "price": 421,
+      "price": 385,
       "minTraderLevel": 1,
       "item": {
        "name": "WI-FI Camera"
@@ -9142,7 +9142,7 @@
      },
      {
       "currency": "EUR",
-      "price": 50,
+      "price": 45,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Aimtech Tiger Shark sight mount"
@@ -10686,7 +10686,7 @@
      },
      {
       "currency": "EUR",
-      "price": 50,
+      "price": 45,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Dead Ringer Snake Eye rear sight"
@@ -10694,7 +10694,7 @@
      },
      {
       "currency": "EUR",
-      "price": 13,
+      "price": 12,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock TruGlo TFX front sight"
@@ -10702,7 +10702,7 @@
      },
      {
       "currency": "EUR",
-      "price": 23,
+      "price": 20,
       "minTraderLevel": 1,
       "item": {
        "name": "Glock TruGlo TFX rear sight"
@@ -10710,7 +10710,7 @@
      },
      {
       "currency": "EUR",
-      "price": 24,
+      "price": 21,
       "minTraderLevel": 2,
       "item": {
        "name": "Glock Dead Ringer Snake Eye front sight"
