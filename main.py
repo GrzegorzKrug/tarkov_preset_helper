@@ -7,7 +7,8 @@ import time
 
 import shutil
 
-from apiqueries import DATA_DIR, PICS_DIR, windows_name_fix, send_parts_query
+from apiqueries import windows_name_fix, send_parts_query
+from global_settings import MAIN_DATA_DIR, PICS_DIR, JSON_DIR, CSV_DIR
 from functools import wraps
 from collections import deque
 
@@ -27,13 +28,13 @@ def _load_jsons2():
     # print(JSON_DIR)
     # print(PICS_DIR)
 
-    with open(DATA_DIR + "traders.json", "rt") as file:
+    with open(JSON_DIR + "traders.json", "rt") as file:
         traders = json.load(file)['data']['traders']
 
-    with open(DATA_DIR + "weapons.json", "rt") as file:
+    with open(JSON_DIR + "weapons.json", "rt") as file:
         weapons = json.load(file)['data']['items']
 
-    with open(DATA_DIR + "parts.json", "rt") as file:
+    with open(JSON_DIR + "parts.json", "rt") as file:
         parts = json.load(file)['data']['items']
 
     traders = {tr['name'].lower(): tr for tr in traders}
@@ -220,7 +221,7 @@ def load_parts_only():
 
     :rtype: tuple[`pandas.DataFrame`, `pandas.DataFrame`, `dict`]
     """
-    with open(DATA_DIR + "parts.json", "rt") as file:
+    with open(JSON_DIR + "parts.json", "rt") as file:
         parts = json.load(file)['data']['items']
     parts = preproces_json_to_df(parts)
 
@@ -591,7 +592,7 @@ class ItemsTree:
 
     @measure_time_decorator
     def dump_items(self, directory):
-        with open(f"{directory}{os.path.sep}items.txt", "wt")as fp:
+        with open(f"{directory}{os.path.sep}tree-items.txt", "wt")as fp:
             for it_key, it in self.items_dict.items():
                 fp.write("\n")
                 fp.write(it.pretty_print())
@@ -632,14 +633,14 @@ class ItemsTree:
     def save(self):
         """Save traders and hash tiers"""
         serial = {key: sorted(list(it)) for key, it in self.traders_levels_hashed.items()}
-        with open(DATA_DIR + "traders_hashed.json", "wt") as fp:
+        with open(JSON_DIR + "traders_hashed.json", "wt") as fp:
             json.dump(serial, fp, indent=2)
-        self._traders_df.to_csv(DATA_DIR + "traders_df.csv")
+        self._traders_df.to_csv(CSV_DIR + "traders_df.csv")
 
     @measure_time_decorator
     def load(self):
         """Load hashed traders"""
-        path = DATA_DIR + "traders_hashed.json"
+        path = JSON_DIR + "traders_hashed.json"
         if os.path.isfile(path):
             with open(path, 'rt') as fp:
                 js = json.load(fp)
@@ -647,11 +648,11 @@ class ItemsTree:
             traders_hash = {key: set(it) for key, it in js.items()}
             self.traders_levels_hashed = traders_hash
 
-            if os.path.isfile(DATA_DIR + "traders_df.csv"):
-                self._traders_df = pd.read_csv(DATA_DIR + "traders_df.csv", index_col=0)
+            if os.path.isfile(CSV_DIR + "traders_df.csv"):
+                self._traders_df = pd.read_csv(CSV_DIR + "traders_df.csv", index_col=0)
             else:
                 return False
-        self._loaded = True
+            self._loaded = True
 
     # @measure_time_decorator
     @log_time_decorator(with_arg=False)
@@ -760,7 +761,7 @@ class ItemsTree:
         for ind, item in parts_df.iterrows():
             name = item['name']
             part_type = ReadType.read_type(item)
-            clean_name = ColorRemover.rename(name, part_type)
+            clean_name = ColorRemover.rename(name, part_type, loginfo='shopname')
 
             "AVERAGE"
             new_price = item['avg24hPrice']
@@ -829,8 +830,8 @@ class ItemsTree:
         """
 
         """
+        "Check if all variants are same and valid"
         for name, ref_set in tuple(ColorRemover.refs.items()):
-            "Iterate over references. Check if valid."
             if name in self.items_dict:
                 "Blank item exists"
                 refs = list(ref_set)
@@ -934,14 +935,13 @@ class ItemsTree:
                 for sk in self.items_dict[ref_key]:
                     hs = (drop_name, sk)
                     self.slots_dict.pop(hs)
-                    # print(f"poping: {hs}")
 
                 "Popping all slots for others"
 
         for sl_k, slot in self.slots_dict.items():
             new_allowed = set()
             for it_name in slot.allowedItems:
-                new_name = ColorRemover.rename(it_name, slot.slot_type)
+                new_name = ColorRemover.rename(it_name, slot.slot_type, loginfo='ItemName')
                 # if new_name != it_name:
                 # print(f"Renaming {it_name} -> '{new_name}'")
                 new_allowed.add(new_name)
@@ -1219,7 +1219,7 @@ class ItemsTree:
 
             cur_node = self.items_dict[cur_key] if isitem else self.slots_dict[cur_key]
             if isitem:
-                if cur_node.part_type in ['sight', 'magazine', 'device']:
+                if cur_node.part_type in ['sight', 'device']:
                     stack.pop()
                     next_node_key = stack[-1][0]
                     LOGGER.debug(f"Restricted item type({cur_key}), going back to {next_node_key}")
@@ -1532,10 +1532,10 @@ class ItemsTree:
 
 def sort_images_on_type():
     for name in ReadType.types:
-        os.makedirs(DATA_DIR + f"pic-{name}", exist_ok=True)
+        os.makedirs(MAIN_DATA_DIR + f"pic-{name}", exist_ok=True)
 
     for key, item in tree.items():
-        dst = DATA_DIR + f"pic-{item.part_type}{os.path.sep}{windows_name_fix(item.name)}.png"
+        dst = MAIN_DATA_DIR + f"pic-{item.part_type}{os.path.sep}{windows_name_fix(item.name)}.png"
         src = PICS_DIR + windows_name_fix(item.name) + ".png"
         if not os.path.isfile(src):
             print(f"Skipped: {item.name}")
@@ -1545,37 +1545,32 @@ def sort_images_on_type():
 
 if __name__ == "__main__":
     tree = ItemsTree()
-    tree.dump_items(DATA_DIR)
+    tree.dump_items(MAIN_DATA_DIR)
     # tree.dump_weapons(DATA_DIR)
 
-    wep = [k for k in tree.weapon_keys if '74u' in k.lower()][0]
+    wep = [k for k in tree.weapon_keys if '133' in k.lower()][0]
     print(wep)
     weapon = tree[wep]
     print(weapon.default_preset)
 
     results = []
     results = tree.find_best_brute(wep,
-                                   ergo_factor=6,
+                                   ergo_factor=5,
                                    recoil_factor=8,
                                    limit_propagation=50, limit_top_propagation=10,
                                    useAllParts=False, useSilencer=False,
                                    praporLv=3, skierLv=2,
-                                   peacekeeperLv=2, mechanicLv=2, jaegerLv=3,
+                                   peacekeeperLv=2, mechanicLv=3, jaegerLv=3,
                                    )
-    print()
+    time.sleep(0.1)
     print(wep)
     print(f"Got: {len(results)}")
 
     print(wep)
     print(wep)
-    print(wep)
-    print(wep)
 
-    print()
-    print(wep)
-
-    show_n = 10
-    price_limit = 62_000
+    show_n = 5
+    price_limit = 32_000
 
     res_print = [r for r in results[1:] if r[3] <= price_limit]
     res_print = res_print[::3]

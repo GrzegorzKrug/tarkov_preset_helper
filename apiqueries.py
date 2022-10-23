@@ -1,4 +1,3 @@
-import base64
 import cv2
 import json
 import numpy as np
@@ -7,11 +6,13 @@ import requests
 
 import multiprocessing as mpc
 
+from global_settings import JSON_DIR, PICS_DIR
+
 
 API_URL = """https://api.tarkov.dev/graphql"""
 PARAMS = """"""
 
-traders_request = """query {
+traders_graphql_query = """query {
   traders {
     name
     cashOffers {
@@ -26,7 +27,33 @@ traders_request = """query {
 }
 """
 
-parts_request = """
+food_graphql_query = """
+query {
+  items(types: provisions) {
+    name
+    shortName
+    category {
+      name
+    }
+    types
+    avg24hPrice
+    low24hPrice
+    lastLowPrice
+    properties {
+      ... on ItemPropertiesFoodDrink {
+        energy
+        hydration
+        units
+      }
+    }
+    weight
+    wikiLink
+    baseImageLink
+  }
+}
+"""
+
+parts_graphql_query = """
 query {
   items(types: mods) {
     name
@@ -144,7 +171,7 @@ query {
 }
 """
 
-weapon_request = """
+weapon_graphql_query = """
 query {
   items(types: gun) {
     name
@@ -219,7 +246,7 @@ query {
 }
 """
 
-ammo_request = """query {
+ammo_graphql_query = """query {
   ammo {
     item {
         name
@@ -248,12 +275,10 @@ ammo_request = """query {
   }
 }
 """
-DATA_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data") + os.path.sep
-PICS_DIR = os.path.join(DATA_DIR, "images") + os.path.sep
+
+
 # print(JSON_DIR)
 # print(PICS_DIR)
-
-os.makedirs(PICS_DIR, exist_ok=True)
 
 
 def send_query(cur_query):
@@ -270,28 +295,43 @@ def send_query(cur_query):
 
 def send_traders_query():
     """Send query of traders and saves json."""
-    response = send_query(traders_request)
+    response = send_query(traders_graphql_query)
     # print(response)
     if response.status_code == 200:
         print("Query traders ok.")
 
         js = json.loads(response.text)
 
-        with open(DATA_DIR + "traders.json", "wt") as file:
+        with open(JSON_DIR + "traders.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Traders not ok: {response.status_code}")
 
 
+def send_food_query():
+    """Send query of traders and saves json."""
+    response = send_query(food_graphql_query)
+    # print(response)
+    if response.status_code == 200:
+        print("Query Food ok.")
+
+        js = json.loads(response.text)
+
+        with open(JSON_DIR + "food.json", "wt") as file:
+            json.dump(js, file, indent=1)
+    else:
+        print(f"Food not ok: {response.status_code}")
+
+
 def send_parts_query():
     """Sends query for modding parts and saves to json."""
-    response = send_query(parts_request)
+    response = send_query(parts_graphql_query)
     if response.status_code == 200:
         print("Query parts ok.")
 
         js = json.loads(response.text)
 
-        with open(DATA_DIR + "parts.json", "wt") as file:
+        with open(JSON_DIR + "parts.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Parts not ok: {response.status_code}")
@@ -301,13 +341,13 @@ def send_weapons_query():
     """
     Sends query for guns and saves to json.
     """
-    response = send_query(weapon_request)
+    response = send_query(weapon_graphql_query)
     if response.status_code == 200:
         print("Query guns ok.")
 
         js = json.loads(response.text)
 
-        with open(DATA_DIR + "weapons.json", "wt") as file:
+        with open(JSON_DIR + "weapons.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Guns not ok: {response.status_code}")
@@ -317,13 +357,13 @@ def send_ammo_query():
     """
     Sends query for ammo and saves to json.
     """
-    response = send_query(ammo_request)
+    response = send_query(ammo_graphql_query)
     if response.status_code == 200:
         print("Query ammo ok.")
 
         js = json.loads(response.text)
 
-        with open(DATA_DIR + "ammo.json", "wt") as file:
+        with open(JSON_DIR + "ammo.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Ammo not ok: {response.status_code}")
@@ -366,50 +406,68 @@ def windows_name_fix(path):
     return path
 
 
-def _fetch_and_save_image(item):
+def _fetch_and_save_image(item, overwrite=False):
     """
 
     Args:
-        item:
+        item: must have: `name` and `baseImageLink`
 
     Returns:
 
     """
     name = item['name']
     url = item['baseImageLink']
+    dst = PICS_DIR + f"{windows_name_fix(name)}.png"
+
+    if os.path.isfile(dst) and not overwrite:
+        # print(f"Skipping existing image: {name}")
+        return None
+
     response = requests.get(url)
     if response.status_code != 200:
-        print(f"Failed: {name}")
+        print(f"Failed on pic request: `{name}`")
         return None
 
     pic_code = np.frombuffer(response.content, np.uint8)
     img = cv2.imdecode(pic_code, -1)
-    img = unify_image_size(img, 200)
+    # img = downsize_picture(img, 200)
 
-    dst = PICS_DIR + f"{windows_name_fix(name)}.png"
     cv2.imwrite(dst, img)
     if not os.path.isfile(dst):
-        print(f"FILE NOT SAVED: {name}")
-    # print(f"Saved: {name}- {dst}")
+        print(f"FILE NOT SAVED: `{name}`")
+    print(f"Saved image: `{name}`")
 
 
-def query_images():
+def fetch_images():
     """Threaded image downloader. Uses items.json not parts!"""
-    MAX_PROCESS = 6
+    MAX_PROCESS = 10
     arg_list = []
 
     "Get args from parts"
-    with open(DATA_DIR + "parts.json", "rt") as file:
+    with open(JSON_DIR + "parts.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
     for item in items:
         arg_list.append(item)
 
     "Get args from weapons"
-    with open(DATA_DIR + "weapons.json", "rt") as file:
+    with open(JSON_DIR + "weapons.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
+    for item in items:
+        arg_list.append(item)
 
+    "Get args "
+    with open(JSON_DIR + "ammo.json", "rt") as file:
+        data = json.load(file)
+        items = data['data']['ammo']
+    for item in items:
+        arg_list.append(item['item'])
+
+    "Get args "
+    with open(JSON_DIR + "food.json", "rt") as file:
+        data = json.load(file)
+        items = data['data']['items']
     for item in items:
         arg_list.append(item)
 
@@ -418,7 +476,9 @@ def query_images():
 
 
 if __name__ == "__main__":
-    # query_weapons()
-    # query_traders()
-    # query_ammo()
-    query_parts()
+    # send_weapons_query()
+    # send_traders_query()
+    # send_ammo_query()
+    # send_parts_query()
+    send_food_query()
+    # fetch_images()

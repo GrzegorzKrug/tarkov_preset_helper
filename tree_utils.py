@@ -246,7 +246,7 @@ class ColorRemover:
                 cls.rejected.add(nawias)
 
     @classmethod
-    def rename(cls, name: str, type_: str):
+    def rename(cls, name: str, type_: str, loginfo='part'):
         if type_ not in cls.white_types:
             # print(f"Rejecting name change: {name} - type: {type_}")
             return name
@@ -258,7 +258,7 @@ class ColorRemover:
             if nawias in cls.white_postfix:
                 clean_name = name[:ind - 1]
                 if clean_name in cls.refs:
-                    LOGGER.log(10, f"Renaming {name} -> {clean_name}")
+                    LOGGER.log(10, f"Renaming ({loginfo}) {name} -> {clean_name}")
                     cls.parts_renamed[name] = clean_name
                     return clean_name
 
