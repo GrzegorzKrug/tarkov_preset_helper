@@ -10,9 +10,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 18534,
-    "low24hPrice": 12000,
-    "lastLowPrice": 13999,
+    "avg24hPrice": 18825,
+    "low24hPrice": 12999,
+    "lastLowPrice": 15333,
     "properties": {
      "energy": 0,
      "hydration": 60,
@@ -31,9 +31,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 14882,
-    "low24hPrice": 10999,
-    "lastLowPrice": 14999,
+    "avg24hPrice": 16345,
+    "low24hPrice": 11888,
+    "lastLowPrice": 15000,
     "properties": {
      "energy": 10,
      "hydration": -5,
@@ -53,9 +53,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 3155,
-    "low24hPrice": 2000,
-    "lastLowPrice": 3000,
+    "avg24hPrice": 3275,
+    "low24hPrice": 2850,
+    "lastLowPrice": 2850,
     "properties": {},
     "weight": 0.04,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Aseptic_bandage",
@@ -71,9 +71,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 4248,
-    "low24hPrice": 3000,
-    "lastLowPrice": 4044,
+    "avg24hPrice": 4486,
+    "low24hPrice": 2000,
+    "lastLowPrice": 3200,
     "properties": {},
     "weight": 0.17,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Aluminum_splint",
@@ -89,9 +89,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 7693,
-    "low24hPrice": 5000,
-    "lastLowPrice": 6666,
+    "avg24hPrice": 8666,
+    "low24hPrice": 3998,
+    "lastLowPrice": 8000,
     "properties": {},
     "weight": 0.1,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Analgin_painkillers",
@@ -108,9 +108,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 21616,
-    "low24hPrice": 13777,
-    "lastLowPrice": 13777,
+    "avg24hPrice": 19903,
+    "low24hPrice": 15000,
+    "lastLowPrice": 20000,
     "properties": {},
     "weight": 0.1,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Morphine_injector",
@@ -126,9 +126,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 32883,
-    "low24hPrice": 22222,
-    "lastLowPrice": 29000,
+    "avg24hPrice": 35351,
+    "low24hPrice": 19000,
+    "lastLowPrice": 35000,
     "properties": {},
     "weight": 0.6,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Salewa_first_aid_kit",
@@ -143,9 +143,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 13303,
-    "low24hPrice": 7777,
-    "lastLowPrice": 12468,
+    "avg24hPrice": 14757,
+    "low24hPrice": 7000,
+    "lastLowPrice": 13690,
     "properties": {
      "energy": 8,
      "hydration": 30,
@@ -164,9 +164,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 11084,
-    "low24hPrice": 8500,
-    "lastLowPrice": 9954,
+    "avg24hPrice": 14429,
+    "low24hPrice": 9399,
+    "lastLowPrice": 10000,
     "properties": {
      "energy": 30,
      "hydration": -15,
@@ -185,9 +185,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 17133,
-    "low24hPrice": 9000,
-    "lastLowPrice": 15420,
+    "avg24hPrice": 21460,
+    "low24hPrice": 11250,
+    "lastLowPrice": 26770,
     "properties": {
      "energy": 48,
      "hydration": -2,
@@ -206,9 +206,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 16148,
-    "low24hPrice": 13000,
-    "lastLowPrice": 13000,
+    "avg24hPrice": 17771,
+    "low24hPrice": 15500,
+    "lastLowPrice": 19999,
     "properties": {
      "energy": 75,
      "hydration": -65,
@@ -227,9 +227,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 33382,
-    "low24hPrice": 9000,
-    "lastLowPrice": 9000,
+    "avg24hPrice": 51758,
+    "low24hPrice": 19750,
+    "lastLowPrice": 52000,
     "properties": {
      "energy": 20,
      "hydration": -10,
@@ -248,9 +248,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 17716,
-    "low24hPrice": 12222,
-    "lastLowPrice": 14444,
+    "avg24hPrice": 20340,
+    "low24hPrice": 12990,
+    "lastLowPrice": 21000,
     "properties": {
      "energy": 50,
      "hydration": -5,
@@ -269,9 +269,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 17090,
-    "low24hPrice": 10777,
-    "lastLowPrice": 12000,
+    "avg24hPrice": 23771,
+    "low24hPrice": 15000,
+    "lastLowPrice": 20000,
     "properties": {
      "energy": 35,
      "hydration": 5,
@@ -291,9 +291,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 14607,
-    "low24hPrice": 10000,
-    "lastLowPrice": 14888,
+    "avg24hPrice": 16867,
+    "low24hPrice": 9900,
+    "lastLowPrice": 18999,
     "properties": {
      "energy": 45,
      "hydration": -5,
@@ -312,9 +312,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 18532,
-    "low24hPrice": 9000,
-    "lastLowPrice": 12000,
+    "avg24hPrice": 22298,
+    "low24hPrice": 11999,
+    "lastLowPrice": 19999,
     "properties": {
      "energy": 40,
      "hydration": 0,
@@ -333,9 +333,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 19725,
-    "low24hPrice": 11555,
-    "lastLowPrice": 16949,
+    "avg24hPrice": 24900,
+    "low24hPrice": 9000,
+    "lastLowPrice": 24011,
     "properties": {
      "energy": 40,
      "hydration": -13,
@@ -354,9 +354,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 21029,
-    "low24hPrice": 12200,
-    "lastLowPrice": 12200,
+    "avg24hPrice": 22167,
+    "low24hPrice": 13000,
+    "lastLowPrice": 24000,
     "properties": {
      "energy": 47,
      "hydration": -3,
@@ -375,9 +375,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 17344,
-    "low24hPrice": 12000,
-    "lastLowPrice": 14998,
+    "avg24hPrice": 22277,
+    "low24hPrice": 11665,
+    "lastLowPrice": 21888,
     "properties": {
      "energy": 50,
      "hydration": -5,
@@ -396,9 +396,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 34681,
-    "low24hPrice": 23666,
-    "lastLowPrice": 28800,
+    "avg24hPrice": 38955,
+    "low24hPrice": 28900,
+    "lastLowPrice": 30000,
     "properties": {
      "energy": 35,
      "hydration": -15,
@@ -417,8 +417,8 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 12646,
-    "low24hPrice": 7000,
+    "avg24hPrice": 11483,
+    "low24hPrice": 8888,
     "lastLowPrice": 10000,
     "properties": {
      "energy": 0,
@@ -438,12 +438,12 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 12357,
-    "low24hPrice": 8998,
-    "lastLowPrice": 11000,
+    "avg24hPrice": 11331,
+    "low24hPrice": 8000,
+    "lastLowPrice": 8260,
     "properties": {
-     "energy": 5,
-     "hydration": 25,
+     "energy": 0,
+     "hydration": 0,
      "units": 40
     },
     "weight": 1,
@@ -459,12 +459,12 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 13413,
-    "low24hPrice": 9800,
-    "lastLowPrice": 12000,
+    "avg24hPrice": 12182,
+    "low24hPrice": 7888,
+    "lastLowPrice": 8888,
     "properties": {
-     "energy": 6,
-     "hydration": 30,
+     "energy": 0,
+     "hydration": 0,
      "units": 40
     },
     "weight": 1,
@@ -480,12 +480,12 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 13446,
-    "low24hPrice": 9999,
-    "lastLowPrice": 11500,
+    "avg24hPrice": 14327,
+    "low24hPrice": 9000,
+    "lastLowPrice": 9887,
     "properties": {
-     "energy": 8,
-     "hydration": 28,
+     "energy": 0,
+     "hydration": 0,
      "units": 40
     },
     "weight": 1,
@@ -501,9 +501,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 18867,
-    "low24hPrice": 13333,
-    "lastLowPrice": 18000,
+    "avg24hPrice": 16321,
+    "low24hPrice": 11999,
+    "lastLowPrice": 15000,
     "properties": {
      "energy": 12,
      "hydration": 20,
@@ -522,9 +522,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 20778,
-    "low24hPrice": 13333,
-    "lastLowPrice": 16420,
+    "avg24hPrice": 21914,
+    "low24hPrice": 10799,
+    "lastLowPrice": 10799,
     "properties": {
      "energy": 5,
      "hydration": 15,
@@ -543,9 +543,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 22247,
-    "low24hPrice": 14444,
-    "lastLowPrice": 19555,
+    "avg24hPrice": 25523,
+    "low24hPrice": 15555,
+    "lastLowPrice": 21222,
     "properties": {
      "energy": 20,
      "hydration": 30,
@@ -564,9 +564,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 13990,
-    "low24hPrice": 9000,
-    "lastLowPrice": 12997,
+    "avg24hPrice": 15149,
+    "low24hPrice": 7777,
+    "lastLowPrice": 14000,
     "properties": {
      "energy": 10,
      "hydration": -10,
@@ -585,9 +585,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 16346,
-    "low24hPrice": 9066,
-    "lastLowPrice": 15800,
+    "avg24hPrice": 14041,
+    "low24hPrice": 11000,
+    "lastLowPrice": 14647,
     "properties": {
      "energy": 10,
      "hydration": 20,
@@ -607,9 +607,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 5416,
-    "low24hPrice": 3000,
-    "lastLowPrice": 3249,
+    "avg24hPrice": 4186,
+    "low24hPrice": 3200,
+    "lastLowPrice": 3333,
     "properties": {},
     "weight": 0.043,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Army_bandage",
@@ -625,9 +625,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 115612,
-    "low24hPrice": 89999,
-    "lastLowPrice": 97100,
+    "avg24hPrice": 126648,
+    "low24hPrice": 99999,
+    "lastLowPrice": 120000,
     "properties": {},
     "weight": 0.1,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Golden_Star_balm",
@@ -643,9 +643,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 5953,
-    "low24hPrice": 5000,
-    "lastLowPrice": 5199,
+    "avg24hPrice": 6670,
+    "low24hPrice": 4989,
+    "lastLowPrice": 6666,
     "properties": {},
     "weight": 0.2,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AI-2_medkit",
@@ -661,9 +661,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 37010,
-    "low24hPrice": 18000,
-    "lastLowPrice": 30000,
+    "avg24hPrice": 35984,
+    "low24hPrice": 24000,
+    "lastLowPrice": 35000,
     "properties": {},
     "weight": 0.01,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Vaseline_balm",
@@ -678,9 +678,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 22422,
-    "low24hPrice": 14444,
-    "lastLowPrice": 19999,
+    "avg24hPrice": 26070,
+    "low24hPrice": 18888,
+    "lastLowPrice": 33333,
     "properties": {
      "energy": 80,
      "hydration": 0,
@@ -699,9 +699,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 23252,
-    "low24hPrice": 13333,
-    "lastLowPrice": 20000,
+    "avg24hPrice": 25768,
+    "low24hPrice": 14900,
+    "lastLowPrice": 30000,
     "properties": {
      "energy": 70,
      "hydration": 0,
@@ -721,9 +721,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 52127,
-    "low24hPrice": 35000,
-    "lastLowPrice": 44420,
+    "avg24hPrice": 45758,
+    "low24hPrice": 34499,
+    "lastLowPrice": 54000,
     "properties": {},
     "weight": 1.6,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Grizzly_medical_kit",
@@ -739,9 +739,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 13635,
+    "avg24hPrice": 13083,
     "low24hPrice": 10000,
-    "lastLowPrice": 12222,
+    "lastLowPrice": 10500,
     "properties": {},
     "weight": 1,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Car_first_aid_kit",
@@ -757,9 +757,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 23870,
-    "low24hPrice": 19420,
-    "lastLowPrice": 21000,
+    "avg24hPrice": 21384,
+    "low24hPrice": 18450,
+    "lastLowPrice": 22000,
     "properties": {},
     "weight": 0.5,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/IFAK_individual_first_aid_kit",
@@ -775,9 +775,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 19693,
-    "low24hPrice": 14893,
-    "lastLowPrice": 16000,
+    "avg24hPrice": 23974,
+    "low24hPrice": 14123,
+    "lastLowPrice": 59900,
     "properties": {},
     "weight": 0.3,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Augmentin_antibiotic_pills",
@@ -792,12 +792,12 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 57631,
-    "low24hPrice": 42500,
-    "lastLowPrice": 42500,
+    "avg24hPrice": 68980,
+    "low24hPrice": 56000,
+    "lastLowPrice": 62222,
     "properties": {
-     "energy": 70,
-     "hydration": -45,
+     "energy": 0,
+     "hydration": 0,
      "units": 70
     },
     "weight": 0.5,
@@ -814,9 +814,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 20046,
-    "low24hPrice": 14000,
-    "lastLowPrice": 21999,
+    "avg24hPrice": 19394,
+    "low24hPrice": 13000,
+    "lastLowPrice": 19000,
     "properties": {},
     "weight": 0.22,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Aluminum_splint",
@@ -832,9 +832,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 65226,
-    "low24hPrice": 47000,
-    "lastLowPrice": 59000,
+    "avg24hPrice": 68162,
+    "low24hPrice": 45555,
+    "lastLowPrice": 70000,
     "properties": {},
     "weight": 0.1,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Ibuprofen_painkillers",
@@ -849,9 +849,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 12993,
-    "low24hPrice": 9999,
-    "lastLowPrice": 10000,
+    "avg24hPrice": 15391,
+    "low24hPrice": 9000,
+    "lastLowPrice": 19999,
     "properties": {
      "energy": 100,
      "hydration": -99,
@@ -870,9 +870,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 15360,
-    "low24hPrice": 10000,
-    "lastLowPrice": 12000,
+    "avg24hPrice": 22233,
+    "low24hPrice": 11995,
+    "lastLowPrice": 20599,
     "properties": {
      "energy": 55,
      "hydration": -5,
@@ -893,9 +893,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 28478,
-    "low24hPrice": 21000,
-    "lastLowPrice": 27444,
+    "avg24hPrice": 31824,
+    "low24hPrice": 24000,
+    "lastLowPrice": 33000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Propital_regenerative_stimulant_injector",
@@ -912,9 +912,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 39839,
-    "low24hPrice": 33330,
-    "lastLowPrice": 40000,
+    "avg24hPrice": 40818,
+    "low24hPrice": 26000,
+    "lastLowPrice": 26000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SJ1_TGLabs_combat_stimulant_injector",
@@ -931,9 +931,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 68626,
-    "low24hPrice": 55000,
-    "lastLowPrice": 66666,
+    "avg24hPrice": 69448,
+    "low24hPrice": 55554,
+    "lastLowPrice": 57000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/SJ6_TGLabs_combat_stimulant_injector",
@@ -950,9 +950,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 42341,
-    "low24hPrice": 30000,
-    "lastLowPrice": 39333,
+    "avg24hPrice": 44865,
+    "low24hPrice": 35555,
+    "lastLowPrice": 38000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Zagustin_hemostatic_drug_injector",
@@ -969,9 +969,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 112499,
-    "low24hPrice": 87999,
-    "lastLowPrice": 99999,
+    "avg24hPrice": 113468,
+    "low24hPrice": 91969,
+    "lastLowPrice": 150000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/ETG-change_regenerative_stimulant_injector",
@@ -986,9 +986,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 36200,
-    "low24hPrice": 20000,
-    "lastLowPrice": 31199,
+    "avg24hPrice": 37499,
+    "low24hPrice": 22000,
+    "lastLowPrice": 39000,
     "properties": {
      "energy": 20,
      "hydration": 100,
@@ -1009,9 +1009,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 20231,
-    "low24hPrice": 17000,
-    "lastLowPrice": 19000,
+    "avg24hPrice": 22649,
+    "low24hPrice": 18999,
+    "lastLowPrice": 34000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Adrenaline_injector",
@@ -1027,9 +1027,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 32122,
-    "low24hPrice": 23000,
-    "lastLowPrice": 26666,
+    "avg24hPrice": 33551,
+    "low24hPrice": 24443,
+    "lastLowPrice": 31888,
     "properties": {},
     "weight": 0.4,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CMS_surgical_kit",
@@ -1045,9 +1045,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 49600,
-    "low24hPrice": 34500,
-    "lastLowPrice": 45500,
+    "avg24hPrice": 49497,
+    "low24hPrice": 43000,
+    "lastLowPrice": 47656,
     "properties": {},
     "weight": 1.2,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Surv12_field_surgical_kit",
@@ -1063,9 +1063,9 @@
      "barter",
      "provisions"
     ],
-    "avg24hPrice": 126438,
-    "low24hPrice": 115000,
-    "lastLowPrice": 122111,
+    "avg24hPrice": 119315,
+    "low24hPrice": 108000,
+    "lastLowPrice": 110000,
     "properties": {
      "energy": 25,
      "hydration": 100,
@@ -1084,9 +1084,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 246833,
-    "low24hPrice": 220000,
-    "lastLowPrice": 238000,
+    "avg24hPrice": 247158,
+    "low24hPrice": 230000,
+    "lastLowPrice": 244999,
     "properties": {
      "energy": 20,
      "hydration": -10,
@@ -1105,9 +1105,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 58532,
-    "low24hPrice": 47000,
-    "lastLowPrice": 59000,
+    "avg24hPrice": 55796,
+    "low24hPrice": 43999,
+    "lastLowPrice": 50000,
     "properties": {
      "energy": 10,
      "hydration": -35,
@@ -1126,9 +1126,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 29909,
+    "avg24hPrice": 30363,
     "low24hPrice": 20000,
-    "lastLowPrice": 25000,
+    "lastLowPrice": 29999,
     "properties": {
      "energy": 0,
      "hydration": -50,
@@ -1148,9 +1148,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 4668,
-    "low24hPrice": 3000,
-    "lastLowPrice": 4262,
+    "avg24hPrice": 4948,
+    "low24hPrice": 4000,
+    "lastLowPrice": 4599,
     "properties": {},
     "weight": 0.132,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Esmarch_tourniquet",
@@ -1166,9 +1166,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 20418,
-    "low24hPrice": 14899,
-    "lastLowPrice": 16000,
+    "avg24hPrice": 18947,
+    "low24hPrice": 13000,
+    "lastLowPrice": 17777,
     "properties": {},
     "weight": 0.043,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CALOK-B_hemostatic_applicator",
@@ -1183,12 +1183,12 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 23371,
-    "low24hPrice": 13333,
-    "lastLowPrice": 28888,
+    "avg24hPrice": 23129,
+    "low24hPrice": 15000,
+    "lastLowPrice": 23887,
     "properties": {
-     "energy": 15,
-     "hydration": 65,
+     "energy": 0,
+     "hydration": 0,
      "units": 60
     },
     "weight": 0.6,
@@ -1206,9 +1206,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 51699,
-    "low24hPrice": 35678,
-    "lastLowPrice": 35678,
+    "avg24hPrice": 69618,
+    "low24hPrice": 36500,
+    "lastLowPrice": 55999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/3-(b-TG)_stimulant_injector",
@@ -1225,9 +1225,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 26675,
-    "low24hPrice": 23948,
-    "lastLowPrice": 55420,
+    "avg24hPrice": 26411,
+    "low24hPrice": 19995,
+    "lastLowPrice": 23999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/L1_(Norepinephrine)_injector",
@@ -1244,8 +1244,8 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 30561,
-    "low24hPrice": 22222,
+    "avg24hPrice": 31670,
+    "low24hPrice": 25420,
     "lastLowPrice": 26666,
     "properties": {},
     "weight": 0.05,
@@ -1263,9 +1263,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 34049,
-    "low24hPrice": 28666,
-    "lastLowPrice": 29999,
+    "avg24hPrice": 34017,
+    "low24hPrice": 28887,
+    "lastLowPrice": 28999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AHF1-M_stimulant_injector",
@@ -1282,9 +1282,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 69118,
-    "low24hPrice": 55000,
-    "lastLowPrice": 76000,
+    "avg24hPrice": 79781,
+    "low24hPrice": 40000,
+    "lastLowPrice": 79999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Meldonin_injector",
@@ -1301,9 +1301,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 100494,
-    "low24hPrice": 86000,
-    "lastLowPrice": 101998,
+    "avg24hPrice": 97374,
+    "low24hPrice": 79999,
+    "lastLowPrice": 92000,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/M.U.L.E._stimulant_injector",
@@ -1320,9 +1320,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 43552,
-    "low24hPrice": 36999,
-    "lastLowPrice": 40000,
+    "avg24hPrice": 44235,
+    "low24hPrice": 30000,
+    "lastLowPrice": 39999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/%22Obdolbos%22_cocktail_injector",
@@ -1339,9 +1339,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 53163,
-    "low24hPrice": 50000,
-    "lastLowPrice": 56222,
+    "avg24hPrice": 64327,
+    "low24hPrice": 44000,
+    "lastLowPrice": 119999,
     "properties": {},
     "weight": 0.05,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/XTG-12_antidote_injector",
@@ -1376,9 +1376,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 40264,
-    "low24hPrice": 20000,
-    "lastLowPrice": 38887,
+    "avg24hPrice": 37284,
+    "low24hPrice": 22111,
+    "lastLowPrice": 34000,
     "properties": {},
     "weight": 0.8,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/AFAK_tactical_individual_first_aid_kit",
@@ -1394,9 +1394,9 @@
      "meds",
      "provisions"
     ],
-    "avg24hPrice": 10252,
-    "low24hPrice": 5900,
-    "lastLowPrice": 10999,
+    "avg24hPrice": 10923,
+    "low24hPrice": 4400,
+    "lastLowPrice": 6500,
     "properties": {},
     "weight": 0.08,
     "wikiLink": "https://escapefromtarkov.fandom.com/wiki/CAT_hemostatic_tourniquet",
@@ -1411,9 +1411,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 23580,
-    "low24hPrice": 14444,
-    "lastLowPrice": 18000,
+    "avg24hPrice": 25000,
+    "low24hPrice": 11451,
+    "lastLowPrice": 28000,
     "properties": {
      "energy": 5,
      "hydration": 50,
@@ -1433,12 +1433,12 @@
      "barter",
      "provisions"
     ],
-    "avg24hPrice": 18557,
+    "avg24hPrice": 18876,
     "low24hPrice": 15000,
-    "lastLowPrice": 20000,
+    "lastLowPrice": 15900,
     "properties": {
-     "energy": 20,
-     "hydration": 20,
+     "energy": 0,
+     "hydration": 0,
      "units": 1
     },
     "weight": 0.3,
@@ -1454,9 +1454,9 @@
     "types": [
      "provisions"
     ],
-    "avg24hPrice": 27604,
-    "low24hPrice": 17500,
-    "lastLowPrice": 21000,
+    "avg24hPrice": 28761,
+    "low24hPrice": 24000,
+    "lastLowPrice": 26666,
     "properties": {
      "energy": 0,
      "hydration": 0,

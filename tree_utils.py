@@ -274,3 +274,111 @@ class ColorRemover:
             txt += f"{key}\n"
 
         return txt
+
+
+class Score(tuple):
+    """
+        Inherits from `tuple`
+
+        parts `set`:
+
+        score `float`
+
+        conflicts `set`
+
+        price `int`
+
+        weight `float`
+
+        ergo `float`
+
+        recoil `float`
+
+        acc `float`
+
+        is_silencer `bool`
+
+    """
+
+    # def __new__(cls, arg):
+    #     """
+    #
+    #     :param parts:
+    #     :param score:
+    #     :param conflicts:
+    #     :param price:
+    #     :param weight:
+    #     :param ergo:
+    #     :param recoil:
+    #     :param acc:
+    #     :param is_silencer:
+    #     """
+    #     parts, score, conflicts, price, weight, ergo, recoil, acc, is_silencer = arg
+    #     return super().__new__(
+    #             cls,
+    #             (parts, score, conflicts, price, weight, ergo, recoil, acc, is_silencer)
+    #     )
+
+    def __str__(self):
+        return f"Preset with score: {self[1]}"
+
+    @property
+    def parts(self):
+        return self[0].copy()
+
+    @property
+    def score(self):
+        return self[1]
+
+    @property
+    def conflicts(self):
+        return self[2].copy()
+
+    @property
+    def price(self):
+        return self[3]
+
+    @property
+    def weight(self):
+        return self[4]
+
+    @property
+    def ergo(self):
+        return self[5]
+
+    @property
+    def recoil(self):
+        return self[6]
+
+    @property
+    def acc(self):
+        return self[7]
+
+    @property
+    def is_silencer(self):
+        return self[8]
+
+    def update(
+            self,
+            parts=None, score=None, conflicts=None,
+            price=None, weight=None, ergo=None,
+            recoil=None, is_silencer=None):
+        """Return new instance of tuple with updated values"""
+        if parts is None:
+            parts = self.parts.copy()
+        if score is None:
+            score = self.score
+        if conflicts is None:
+            conflicts = self.conflicts.copy()
+        if price is None:
+            price = self.price
+        if weight is None:
+            weight = self.weight
+        if ergo is None:
+            ergo = self.ergo
+        if recoil is None:
+            recoil = self.recoil
+        if is_silencer is None:
+            is_silencer = self.is_silencer
+
+        return Score((parts, score, conflicts, price, weight, ergo, recoil, is_silencer))

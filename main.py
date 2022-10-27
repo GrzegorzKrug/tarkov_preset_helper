@@ -6,14 +6,15 @@ import pandas as pd
 import time
 
 import shutil
+import pickle
 
 from apiqueries import windows_name_fix, send_parts_query
-from global_settings import MAIN_DATA_DIR, PICS_DIR, JSON_DIR, CSV_DIR
+from global_settings import MAIN_DATA_DIR, PICS_DIR, JSON_DIR, CSV_DIR, SRC_DIR
 from functools import wraps
 from collections import deque
 
 from logger import LOGGER
-from tree_utils import ReadType, StringFormat, TreeWalkingMethods, ColorRemover
+from tree_utils import ReadType, StringFormat, TreeWalkingMethods, ColorRemover, Score
 
 
 def _load_jsons2():
@@ -28,13 +29,13 @@ def _load_jsons2():
     # print(JSON_DIR)
     # print(PICS_DIR)
 
-    with open(JSON_DIR + "traders.json", "rt") as file:
+    with open(SRC_DIR + "traders.json", "rt") as file:
         traders = json.load(file)['data']['traders']
 
-    with open(JSON_DIR + "weapons.json", "rt") as file:
+    with open(SRC_DIR + "weapons.json", "rt") as file:
         weapons = json.load(file)['data']['items']
 
-    with open(JSON_DIR + "parts.json", "rt") as file:
+    with open(SRC_DIR + "parts.json", "rt") as file:
         parts = json.load(file)['data']['items']
 
     traders = {tr['name'].lower(): tr for tr in traders}
@@ -120,9 +121,9 @@ def measure_time_decorator(func):
         duration = time.perf_counter() - time_start
 
         if duration < 1e-3:
-            txt = f"{duration * 1000000:>4.2f} us"
+            txt = f"{duration * 1000000:>6.1f} us"
         elif duration < 1:
-            txt = f"{duration * 1000:>4.2f} ms"
+            txt = f"{duration * 1000:>6.2f} ms"
         else:
             txt = f"{duration:4.2f} s"
 
@@ -133,7 +134,7 @@ def measure_time_decorator(func):
     return wrapper
 
 
-def log_time_decorator(with_arg=True, debug=False):
+def log_method_time_decorator(with_args=False, debug=False):
     """ Logging time usage. Function times measured with `perf_counter`. Wraps used."""
 
     def decor(func):
@@ -144,20 +145,55 @@ def log_time_decorator(with_arg=True, debug=False):
             duration = time.perf_counter() - time_start
 
             if duration < 1e-3:
+                txt = f"{duration * 1000000:>6.1f} us"
+            elif duration < 1:
+                txt = f"{duration * 1000:>6.2f} ms"
+            else:
+                txt = f"{duration:4.2f} s"
+
+            if with_args:
+                if debug:
+                    LOGGER.log(13, f"{func.__name__}{a}{kw} elapsed in: {txt}")
+                else:
+                    LOGGER.info(f"{func.__name__}{a}{kw} elapsed in: {txt}")
+            else:
+                if debug:
+                    LOGGER.log(13, f"'{func.__name__}' elapsed in: {txt}")
+                else:
+                    LOGGER.info(f"'{func.__name__}' elapsed in: {txt}")
+
+            return out
+
+        return wrapper
+
+    return decor
+
+
+def log_function_time_decorator(with_args=False, debug=False):
+    """ Logging time usage. Function times measured with `perf_counter`. Wraps used."""
+
+    def decor(func):
+        @wraps(func)
+        def wrapper(*a, **kw):
+            time_start = time.perf_counter()
+            out = func(*a, **kw)
+            duration = time.perf_counter() - time_start
+
+            if duration < 1e-3:
                 txt = f"{duration * 1000000:>4.2f} us"
             elif duration < 1:
                 txt = f"{duration * 1000:>4.2f} ms"
             else:
                 txt = f"{duration:4.2f} s"
 
-            if with_arg:
+            if with_args:
                 if debug:
-                    LOGGER.debug(f"{func.__name__}{a}{kw} elapsed in: {txt}")
+                    LOGGER.log(13, f"{func.__name__}{a}{kw} elapsed in: {txt}")
                 else:
                     LOGGER.info(f"{func.__name__}{a}{kw} elapsed in: {txt}")
             else:
                 if debug:
-                    LOGGER.debug(f"'{func.__name__}' elapsed in: {txt}")
+                    LOGGER.log(13, f"'{func.__name__}' elapsed in: {txt}")
                 else:
                     LOGGER.info(f"'{func.__name__}' elapsed in: {txt}")
 
@@ -221,7 +257,7 @@ def load_parts_only():
 
     :rtype: tuple[`pandas.DataFrame`, `pandas.DataFrame`, `dict`]
     """
-    with open(JSON_DIR + "parts.json", "rt") as file:
+    with open(SRC_DIR + "parts.json", "rt") as file:
         parts = json.load(file)['data']['items']
     parts = preproces_json_to_df(parts)
 
@@ -354,7 +390,7 @@ class Item(StringFormat, TreeWalkingMethods):
     def __init__(self, item):
         self.name = item['name']
         self.name_short = item['shortName']
-        self.required = None
+        self.required_slots = set()
         self.slots_dict = dict()
         self.good_keys = set()
         self.subpart_types = set()
@@ -425,20 +461,20 @@ class Item(StringFormat, TreeWalkingMethods):
             self.has_slots = True
             self.slots_dict = {k: Slot(sl) for k, sl in enumerate(slots)}
 
-            "Drop empty slots"
-            self.slots_dict = {
-                    k: sl for k, sl in self.slots_dict.items()
-                    if (len(sl.allowedItems) > 0) or sl.required
-            }
+            # "Drop empty slots"
+            # self.slots_dict = {
+            #         k: sl for k, sl in self.slots_dict.items()
+            #         if (len(sl.allowedItems) > 0) or sl.required
+            # }
 
             if len(self.slots_dict) <= 0:
                 self.has_slots = False
                 return None
 
             self.has_required_slots = False
-            for sl in self.slots_dict.values():
+            for k, sl in self.slots_dict.items():
                 if sl.required:
-                    self.required = True
+                    self.required_slots.add(k)
                 self.subpart_types.add(sl.slot_type)
 
         else:
@@ -455,6 +491,11 @@ class Item(StringFormat, TreeWalkingMethods):
         if self.name in ColorRemover.refs:
             txt += self.split_wrap(f"Variants: {ColorRemover.refs[self.name]}", 1 + extra_tab)
 
+        txt += self.split_wrap(f"Ergonomics:  {self.ergo}", 1 + extra_tab)
+        txt += self.split_wrap(f"Recoil Mod.: {self.recoil}", 1 + extra_tab)
+        txt += self.split_wrap(f"Weight:      {self.weight}", 1 + extra_tab)
+        txt += self.split_wrap(f"Accuracy:    {self.acc}", 1 + extra_tab)
+
         if self.has_slots:
             good_text = self.split_wrap(f"good slots: ", 1 + extra_tab)
             rest_text = self.split_wrap(f"useless slots: ", 1 + extra_tab)
@@ -469,15 +510,19 @@ class Item(StringFormat, TreeWalkingMethods):
             txt += rest_text
 
             txt += self.split_wrap(f"sub parts: {sorted(self.subpart_types)}", 1 + extra_tab)
-            txt += self.split_wrap(f"required slots: {self.has_required_slots}", 1 + extra_tab)
+            txt += self.split_wrap(f"required slots: {self.required_slots}", 1 + extra_tab)
         else:
             txt += self.split_wrap(f"slots: None", 1 + extra_tab)
 
+        if self.conflictingItems:
+            txt += self.split_wrap("Conflict items:", 1 + extra_tab)
+            confs = sorted(self.conflictingItems)
+            for cf in confs:
+                txt += self.split_wrap(cf, 2 + extra_tab)
+        else:
+            txt += self.split_wrap("Conflict items: None", 1 + extra_tab)
+
         # txt += self.split_wrap(f"Good slots:  {self.good_slots_keys}", 1 + extra_tab)
-        txt += self.split_wrap(f"Ergonomics:  {self.ergo}", 1 + extra_tab)
-        txt += self.split_wrap(f"Recoil Mod.: {self.recoil}", 1 + extra_tab)
-        txt += self.split_wrap(f"Weight:      {self.weight}", 1 + extra_tab)
-        txt += self.split_wrap(f"Accuracy:    {self.acc}", 1 + extra_tab)
 
         txt += "\n\t|" + "=" * self._end_line_lenght
 
@@ -490,6 +535,96 @@ class Item(StringFormat, TreeWalkingMethods):
     def __getitem__(self, key):
         """Get item"""
         return self.slots_dict[key]
+
+    def __eq__(self, other: 'Item'):
+        if not isinstance(other, Item):
+            return False
+
+        elif self.part_type != other.part_type:
+            return False
+
+        elif self.ergo != other.ergo:
+            return False
+
+        elif self.recoil != other.recoil:
+            return False
+
+        elif self.acc != other.acc:
+            return False
+
+        elif self.weight != other.weight:
+            return False
+
+        diff = self.conflictingItems.difference(other.conflictingItems)
+        if len(diff) > 0:
+            return False
+
+        current_subs = set(it for sl in self.slots_dict.values() for it in sl.allowedItems)
+        other_subs = set(it for sl in other.slots_dict.values() for it in sl.allowedItems)
+
+        if len(current_subs) != len(other_subs):
+            return False
+
+        parts_diff = current_subs.difference(other_subs)
+        if parts_diff:
+            return False
+
+        return True
+
+
+@log_function_time_decorator(debug=True)
+def load_cache():
+    if os.path.isfile(CACHE_PATH):
+        with open(CACHE_PATH, "rb") as fp:
+            cache = pickle.load(fp)
+            return cache
+
+    return dict()
+
+
+@log_function_time_decorator(debug=True)
+def save_cache(cache):
+    with open(CACHE_PATH, "wb") as fp:
+        pickle.dump(cache, fp)
+
+
+CACHE_PATH = MAIN_DATA_DIR + "cache.pickle"
+CACHE = load_cache()
+
+
+def cache_results(valid_minutes=60):
+    """
+    Decorator that validates time of last generation.
+    :param valid_minutes:
+    :return:
+    """
+    def decorator(fun):
+        @wraps(fun)
+        def wrapper(self, name, *a, **kw):
+            # print(f"A: {a}")
+            # print(f"Kw: {kw}")
+            assert not kw, f"Why there is kw? {kw}"
+            keyhash = name, a
+            if keyhash in CACHE:
+                submit_time, res = CACHE[keyhash]
+                if valid_minutes >= 0 and time.time() > (submit_time + valid_minutes * 60):
+                    # print(f"Old result, making new for: {name}")
+                    res = fun(self, name, *a, **kw)
+                else:
+                    # print(f"Got cached results: {name}")
+                    return res
+
+            else:
+                "Not cached"
+                res = fun(self, name, *a, **kw)
+
+            # print(f"Caching new result: {name}")
+            CACHE[keyhash] = (time.time(), res)
+            return res
+
+        return wrapper
+
+    return decorator
 
 
 class ItemsTree:
@@ -558,7 +693,7 @@ class ItemsTree:
         self.do_tree_backpropagation()
 
         if not regenerate:
-            self.load()
+            self.load_traders()
 
         if not self._loaded:
             self.process_traders(traders_dict)
@@ -568,7 +703,7 @@ class ItemsTree:
         # print(ColorRemover.pretty_print())
         # print(self.counter)
         self.update_prices()
-        self.save()
+        self.save_traders()
 
     @classmethod
     def add_item(cls, item):
@@ -630,7 +765,7 @@ class ItemsTree:
                         fp.write(f"\tDefault: {common_def}\n")
 
     @measure_time_decorator
-    def save(self):
+    def save_traders(self):
         """Save traders and hash tiers"""
         serial = {key: sorted(list(it)) for key, it in self.traders_levels_hashed.items()}
         with open(JSON_DIR + "traders_hashed.json", "wt") as fp:
@@ -638,7 +773,7 @@ class ItemsTree:
         self._traders_df.to_csv(CSV_DIR + "traders_df.csv")
 
     @measure_time_decorator
-    def load(self):
+    def load_traders(self):
         """Load hashed traders"""
         path = JSON_DIR + "traders_hashed.json"
         if os.path.isfile(path):
@@ -655,7 +790,7 @@ class ItemsTree:
             self._loaded = True
 
     # @measure_time_decorator
-    @log_time_decorator(with_arg=False)
+    @log_method_time_decorator()
     def process_traders(self, traders_dict):
         """
         Hashing trader items. Creating traders df. Reading euro/usd price.
@@ -950,7 +1085,7 @@ class ItemsTree:
             # print(type(slot.allowedItems))
 
     # @measure_time_decorator
-    @log_time_decorator(with_arg=False, debug=True)
+    @log_method_time_decorator(debug=True)
     def do_tree_backpropagation(self):
         """
         Propagate sub parts types. Find parts that modify gun positively in any way and store key in
@@ -997,9 +1132,9 @@ class ItemsTree:
 
             loop_i += 1
             if loop_i > max_iters:
-                print("Too many iterations. breaking!")
-                print("Parts not verified: ", len(temp_check_parts))
-                print(temp_check_parts)
+                LOGGER.critical("Too many iterations. breaking!")
+                LOGGER.critical("Parts not verified: ", len(temp_check_parts))
+                LOGGER.critical(temp_check_parts)
                 # for part in temp_check_parts:
                 #     print(part)
                 break
@@ -1049,7 +1184,7 @@ class ItemsTree:
                 else:
                     "Verified. If good it already stored."
                     parts_verified.add(item_key)
-                    # print(f"Verified: {item_key}")
+                    LOGGER.log(13, f"Verified: {item_key}")
                     item_ob.good_keys = sorted(list(item_ob.good_keys))
                     for slot_key in item_ob:
                         hs_ = (item_ob.name, slot_key)
@@ -1063,7 +1198,7 @@ class ItemsTree:
         self.good_parts_keys = good_parts_keys
 
     # @measure_time_decorator
-    @log_time_decorator(with_arg=False, debug=True)
+    @log_method_time_decorator(debug=True)
     def do_tree_check(self):
         """
         Method for testing tree propagation.
@@ -1085,7 +1220,7 @@ class ItemsTree:
                     f"Slot has item({itname}) that does not exist in tree dict"
 
     # @measure_time_decorator
-    @log_time_decorator(debug=True)
+    @log_method_time_decorator(with_args=True, debug=True)
     def get_hashed_part(self,
                         praporLv=1, skierLv=1, mechanicLv=1, jaegerLv=1, peacekeeperLv=1,
                         ):
@@ -1101,73 +1236,138 @@ class ItemsTree:
         available_parts.update(peacekeeper)
         return available_parts
 
-    @measure_time_decorator
-    @log_time_decorator()
-    def find_best_brute(self, name,
-                        # factor=2,
-                        ergo_factor=1,
-                        recoil_factor=1,
-                        weight_factor=0,
-                        acc_factor=0.1,
-                        praporLv=3, skierLv=3,
-                        peacekeeperLv=2, mechanicLv=2, jaegerLv=2,
-                        useDefault=True,
-                        useAllParts=False,
-                        useSilencer=False,
-                        limit_propagation=100, limit_top_propagation=10,
-                        ):
+    # @measure_time_decorator
+    @log_method_time_decorator()
+    def find_best_preset(self, weapon_key,
+                         # factor=2,
+                         ergo_factor=1,
+                         recoil_factor=1,
+                         weight_factor=0,
+                         acc_factor=0.1,
+                         prapor_lv=3, skier_lv=3,
+                         peacekeeper_lv=2, mechanic_lv=2, jaeger_lv=2,
+                         use_all_parts=False,
+                         want_silencer=False,
+                         ):
         """
 
-        :param name:
-        :param factor: 0: 3ergo, 1: 2ergo, 2: balanced, 3: 2recoil, 4: 3recoil
-        :type factor: `int`
+        :param weapon_key: name
+        :param ergo_factor:
+        :type ergo_factor: `int`
+
         :param weight_factor:
-        :param praporLv:
-        :param skierLv:
-        :param mechanicLv:
-        :param jaegerLv:
-        :param peacekeeperLv:
+        :param prapor_lv:
+        :param skier_lv:
+        :param mechanic_lv:
+        :param jaeger_lv:
+        :param peacekeeper_lv:
         :param useDefault: - Put default part if none is available
-        :param limit_propagation: Limit propagation by propagating n best
         :return:
         """
 
         factor_weights_sum = ergo_factor + recoil_factor + weight_factor + acc_factor
+        weapon = self.items_dict[weapon_key]
+        weapon: Item
 
-        # assert 0 <= factor <= 4, "Factor must be in range 0<4"
-        # factor = int(factor)
+        if not weapon.good_keys:
+            scores = weapon.default_preset
 
-        # ergo_factor = float(max([3 - factor, 1]))
-        # recoil_factor = float(max([factor - 1, 1]))
-
-
-        weapon_node = self.items_dict[name]
-        # LOGGER.info(f"Finding preset for '{name}'ergo: {ergo_factor},recoil: {recoil_factor}")
-        # LOGGER.info(f"Prapor:{praporLv}, Skier:{skierLv}, Mechanic:{mechanicLv}, "
-        #             f"Jaeger:{jaegerLv}, Peacekeeper:{peacekeeperLv}")
-
-        available_parts = self.get_hashed_part(praporLv, skierLv, mechanicLv, jaegerLv, peacekeeperLv)
-        if useDefault:
+        else:
+            available_parts = self.get_hashed_part(
+                    prapor_lv, skier_lv, mechanic_lv, jaeger_lv,
+                    peacekeeper_lv
+            )
             available_parts.update(weapon.default_preset)
 
+            only_slots_score = self.get_combination_for_each_slot(
+                    weapon_key,
+                    mechanic_lv, jaeger_lv,
+                    peacekeeper_lv, prapor_lv, skier_lv,
+                    use_all_parts,
+            )
+
+            # print()
+            # for k, presets in only_slots_score.items():
+            #     print(f"Got parts {len(presets)} for slot: {k}")
+            #     preset: Score
+            #     presets = sorted(presets, key=lambda x: (str(sorted(x[0])),))
+            #     for preset in presets:
+            #         parts = preset.parts
+            #         parts = sorted(parts)
+            #         if preset[-1]:
+            #             print(parts)
+
+        scores = {}
+
+        # results = scores[name]
+        # results = sorted(results, key=lambda x: x[1], reverse=True)
+        #
+        # "Quick normalisation"
+        # results = [(a, sc / factor_weights_sum, c, d, e) for a, sc, c, d, e in results]
+        #
+        # # with open("results.txt", "wt") as fp:
+        # #     fp.write(f"Results of {name}\n")
+        # #     for key in scores:
+        # #         fp.write(f"- -{key}\n")
+        # #     for res in results:
+        # #         fp.write(f"{res[1]} - {res}\n")
+        #
+        # top_scores = [rs[1] for rs in results[:5]]
+        # LOGGER.info(f"Top scores: {top_scores}")
+        #
+        # return results
+
+    # @staticmethod
+
+    @log_method_time_decorator(debug=True)
+    def reevaluate_presets(self, scores):
+        for k, pres in scores.items():
+            pres: Score
+            print(f"{k} Possible parts in weapon slot:", len(pres))
+
+            for pres in pres:
+                # print()
+                # print(pres.score, pres.ergo, pres.recoil, pres.is_silencer)
+                # print(pres.parts)
+                pres.parts.add("siema")
+                # print(pres.parts)
+
+    @cache_results(valid_minutes=-1)
+    def get_combination_for_each_slot(self,
+                                      weapon_key,
+                                      mechanicLv, jaegerLv,
+                                      peacekeeperLv, praporLv, skierLv,
+                                      useAllParts,
+                                      ):
+        weapon_node = self.items_dict[weapon_key]
+        # ergo_factor = 1
+        # recoil_factor = 1
+        # acc_factor = 1
         scores = {}
         """
-            key : (parts, score, conflicts, price, weight)
+        keys: Union[str, tuple(str, int)]
+        
+        items: `deque`
         """
 
-        root_key = name
-        glob_conflicts = self.items_dict[root_key].conflictingItems
+        if not useAllParts:
+            available_parts = self.get_hashed_part(
+                    praporLv, skierLv, mechanicLv, jaegerLv, peacekeeperLv)
+            available_parts.update(weapon_node.default_preset)
+        else:
+            available_parts = set()
 
         stack = deque(maxlen=1000)
-        stack.append([root_key, 1])
-        next_node_key = (root_key, weapon_node.good_keys[0])
-        stack.append([next_node_key, 0])
+        root_key = weapon_key
+        glob_conflicts = self.items_dict[root_key].conflictingItems
 
+        print("Good keys:", weapon_node.good_keys)
+        next_node_key = (root_key, weapon_node.good_keys[0])
+        stack.append([root_key, 1])
+        stack.append([next_node_key, 0])
         LOGGER.debug("Initial stack")
         LOGGER.debug(stack)
-
         merged = set()
-
         iter_counter = 0
         max_iters = 100_000
         max_parts = 10_000
@@ -1188,7 +1388,7 @@ class ItemsTree:
             if isitem:
                 go_back = False
 
-                if useDefault and cur_key in weapon.default_preset:
+                if cur_key in weapon_node.default_preset:
                     pass
                     LOGGER.debug("this is default part " * 5)
 
@@ -1226,6 +1426,7 @@ class ItemsTree:
                     continue
 
             loop_compensation = stack[-1][1]
+            "Continue iteration. Dont start from 0"
             if not loop_compensation:
                 loop_compensation = 0
 
@@ -1235,49 +1436,69 @@ class ItemsTree:
             for cur_i, sub_key in enumerate(cur_node.good_keys[loop_compensation:], loop_compensation):
                 "Checking only valuable components"
 
-                hash_ = (cur_key, sub_key) if isitem else sub_key
+                next_node_key = (cur_key, sub_key) if isitem else sub_key
                 iter_counter += 1
 
                 "Only items are good. And in traders reach."
-                LOGGER.debug(f"Navigating -> {hash_}")
+                LOGGER.debug(f"Navigating -> {next_node_key}")
 
                 stack[-1][1] = cur_i + 1
-                stack.append([hash_, 0])
-                next_node_key = hash_
+                stack.append([next_node_key, 0])
                 break
 
             else:
                 "All components have been checked"
                 LOGGER.debug(f"Finished checking sub parts: {cur_key}")
+                is_invalid = False
 
                 if not isitem:
-                    "THIS IS END CHECKING SLOT"
+                    "Slot Finish. THIS IS END"
 
                     sl = self.slots_dict[cur_key]
                     if cur_key not in scores:
-                        if sl.required and useDefault:
+                        if sl.required:
                             "CHECK IF SLOT IS REQUIRED AND THERE IS ONE PART FOR IT IN SCORES"
                             "Reason: default part is not in good keys."
                             "Result: Add this part to next iteration"
-                            def_part_list = list(weapon.default_preset.intersection(sl.allowedItems))
+                            def_part_list = list(
+                                    weapon_node.default_preset.intersection(sl.allowedItems))
                             "Getting intersection of weapon default and slot allowedItems"
                             LOGGER.log(14, f"Add default part to slot ob. For better efficiency")
 
-                            assert len(def_part_list) == 1, \
-                                f"Should be one default part, but got {len(def_part_list)}: {def_part_list}"
-                            def_part_key = def_part_list[0]
-                            next_node_key = def_part_key
-                            stack.append((next_node_key, 0))
-                            continue
+                            if len(def_part_list) != 1:
+                                # LOGGER.warning(f"Missing part:{cur_key}")
+                                # LOGGER.warning(f"Defaults: {weapon_node.default_preset}")
+
+                                # empty_req_slot = stack[-3][0]
+                                parent_node_key = stack[-2][0]
+                                # merged.add(parent_node_key)
+                                LOGGER.warning(
+                                        f"Should be one default part, "
+                                        f"but got {len(def_part_list)}: {def_part_list}, "
+                                        f"for: {parent_node_key}, "
+                                        f"at: {cur_key},"
+                                        f"weapon: {weapon_key}"
+                                )
+                                is_invalid = True
+
+                            else:
+                                def_part_key = def_part_list[0]
+                                next_node_key = def_part_key
+                                stack.append((next_node_key, 0))
+                                continue  # Next while loop
                         else:
                             "Create empty preset"
+                            print(f"Creating empty score: {cur_key}")
                             scores[cur_key] = deque(maxlen=max_parts)
 
                     if not sl.required:
-                        "Sub part not required, adding Empty"
-                        scores[cur_key].append((set(), 0, set(), 0, 0))
+                        "Slot is not required, adding empty preset"
+                        scores[cur_key].append(Score((set(), 0, set(), 0, 0, 0, 0, 0, False)))
 
                     "Else: Does not matter. Not required or is in scores"
+
+                if is_invalid:
+                    stack.pop()
 
                 stack.pop()
                 "Go higher"
@@ -1287,210 +1508,29 @@ class ItemsTree:
                     parent_node_key = next_node_key = stack[-1][0]
                     LOGGER.debug(f"Going back to parent: {parent_node_key}")
                 else:
-                    parent_node_key = root_key
-                    LOGGER.debug(f"Parent node set to root: {root_key}")
+                    "Don't merge top level"
+                    break
 
                 if isitem and cur_key not in merged:
-                    "PROPAGATE SLOTS TO ITEM LEVEL"
-                    LOGGER.log(12, f"First Propagate. Checking slots of {cur_key}")
-                    merged.add(cur_key)
+                    iter_counter = self.merge_item_subparts(
+                            cur_key, cur_node,
+                            iter_counter, max_parts,
+                            merged, next_node_key, root_key, scores,
+                    )
 
-                    if parent_node_key != root_key:
-                        parent_node_key = cur_key
-                    scores[cur_key] = deque(maxlen=max_parts)
+                if isitem:
+                    "Propagate this item with attachments to upper slot"
+                    LOGGER.log(11, f"Propagate stored values: {cur_key} -> {parent_node_key}")
+                    if parent_node_key not in scores:
+                        # print(f"Defining parent: {parent_node_key}")
+                        scores[parent_node_key] = deque(maxlen=max_parts)
+                    # else:
+                    #     print(f"Parent is defined: {parent_node_key}")
 
-                    # if next_node_key not in scores:
-                    #     scores[next_node_key] = deque(maxlen=max_parts)
-
-                    cur_item_score = cur_node.ergo * ergo_factor \
-                                     - (cur_node.recoil * recoil_factor) \
-                                     + (cur_node.acc * acc_factor)
-                    if cur_node.part_type == "suppressor" and useSilencer:
-                        LOGGER.debug("This is suppressor")
-                        cur_item_score += 1000
-
-                    cur_item_conflicts = cur_node.conflictingItems
-
-                    if cur_key in weapon.default_preset:
-                        cur_item_price = 0
-                        print(f"Default part, cost: 0, {cur_key}")
-                        LOGGER.log(14, f"Default part, cost: 0, {cur_key}")
-
-                    elif cur_key in self._traders_df.index:
-                        cur_item_price = self._traders_df.loc[cur_key, self.traders_keys].min()
-                        if np.isnan(cur_item_price):
-                            cur_item_price = 0
-
-                    else:
-                        print(f"Not found price of: {cur_key}")
-                        LOGGER.log(14, f"Price not found {cur_key}")
-                        cur_item_price = 1000_000_000
-                        # cur_item_price = 0
-
-                    cur_item_weight = 10
-
-                    cur_slot = (cur_key, 0)
-                    if len(cur_node.slots_dict) == 1 and cur_slot in scores:
-                        "PROPAGATE Item with One slot"
-                        presets = scores[cur_slot]
-                        LOGGER.log(11, f"Merging single slot of {cur_key}, N: {len(presets)}")
-                        if limit_propagation and isinstance(limit_propagation, int):
-                            presets = sorted(presets, key=lambda x: x[1], reverse=True)
-                            presets = presets[:limit_propagation]
-
-                        count = 0
-                        for sub_ob in presets:
-                            parts, sc, cf, pr, wg = sub_ob
-                            parts = parts.copy()
-                            parts.add(cur_key)
-                            sc = sc + cur_item_score
-                            cf = cf.copy()
-                            cf.update(cur_item_conflicts)
-                            if not np.isnan(cur_item_price):
-                                pr += cur_item_price
-                            wg += cur_item_weight
-                            if sc > 0:
-                                scores[parent_node_key].append((parts, sc, cf, pr, wg))
-                                count += 1
-                        LOGGER.log(12, f"Cached slot with good items: {count}")
-
-                    elif len(cur_node.slots_dict) > 1:
-                        "PROPAGATE and merge slots"
-
-                        iter_obs = [scores[(cur_key, k)] for k in cur_node if (cur_key, k) in scores]
-                        if limit_propagation \
-                                and isinstance(limit_propagation, int) \
-                                and len(iter_obs) > 0:
-                            if root_key == next_node_key:
-                                limit_propagation = min([limit_propagation, limit_top_propagation])
-
-                            LOGGER.log(11, f"Limiting propagation to: {limit_propagation}")
-                            iter_obs = [
-                                    sorted(ob, key=lambda x: x[1], reverse=True)[:limit_propagation]
-                                    for ob in iter_obs
-                            ]
-
-                        if len(iter_obs) == 0:
-                            "NO SUB PARTS"
-                            LOGGER.log(12, f"No sub parts to merge for {cur_key}")
-                            if cur_item_score > 0 or cur_node.required:
-                                scores[parent_node_key].append(({cur_key}, cur_item_score,
-                                                                cur_item_conflicts, cur_item_price,
-                                                                cur_item_weight))
-
-                        elif len(iter_obs) == 1:
-                            LOGGER.log(11,
-                                       f"Item has only sub parts in one slot: {cur_key} - N:{len(iter_obs[0])}")
-
-                            count = 0
-                            for pst, sc, cf, pr, wg in iter_obs[0]:
-                                conflict = cur_item_conflicts.intersection(pst)
-
-                                if len(conflict) > 0:
-                                    LOGGER.log(11, f"Conflict in preset: {pst}")
-                                else:
-                                    "No conflicts so its ok."
-                                    pst = pst.copy()
-                                    cf = cf.copy()
-                                    pst.add(cur_key)
-                                    cf.update(cur_item_conflicts)
-                                    sc += cur_item_score
-                                    pr += cur_item_price
-                                    wg += cur_item_weight
-                                    LOGGER.log(12, f"No conflicts. Merged to -> {pst}")
-                                    if sc > 0 or cur_node.required:
-                                        scores[parent_node_key].append((pst, sc, cf, pr, wg))
-                                        count += 1
-                            LOGGER.log(11, f"Defined good items: {count}")
-
-                        else:
-                            n_elements = [len(ob) for ob in iter_obs]
-                            LOGGER.log(13, f"Combining items in sub parts: {cur_key}: {n_elements}")
-                            LOGGER.log(13,
-                                       f"Parent ({parent_node_key}) maxsize: {scores[parent_node_key].maxlen}")
-
-                            # n_slots = len(iter_obs)
-                            count = 0
-                            end_preset_stop = False
-                            stop_at_counter = limit_top_propagation ** len(iter_obs)
-                            if stop_at_counter > max_parts:
-                                LOGGER.log(15,
-                                           f"Too many parts to return. limited counter to max size of deque: {max_parts}")
-                                stop_at_counter = max_parts - 1
-
-                            for preset in itertools.product(*iter_obs):
-                                # parts_names = [ob[0] for ob in preset]
-                                # LOGGER.log(10, f"Checking combination of: {names}")
-
-                                # LOGGER.log(12, f"Checking preset of {n_slots}")
-                                valid = True
-                                pst1, sco1, cf1, pr1, wg1 = preset[0]
-                                pst1 = pst1.copy()
-                                cf1 = cf1.copy()
-
-                                for pst2, sco2, cf2, pr2, wg2 in preset[1:]:
-                                    iter_counter += 1
-
-                                    check_conf1 = cf1.intersection(pst2)
-                                    check_conf2 = cf2.intersection(pst1)
-                                    if check_conf1 or check_conf2:
-                                        # LOGGER.log(10, "Preset has conflict.")
-                                        # LOGGER.log(10,
-                                        #            f"Preset: Checking combination of parts: {parts_names}")
-                                        # LOGGER.log(10, f"Conflict1: {check_conf1}, "
-                                        #                f"Conflict2: {check_conf2}")
-                                        valid = False
-                                        break
-
-                                    pst1.update(pst2)
-                                    sco1 += sco2
-                                    cf1.update(cf2)
-                                    pr1 += pr2
-                                    wg1 += wg2
-
-                                if valid:
-                                    if root_key != next_node_key:
-                                        pst1.add(cur_key)
-                                    cf1.update(cur_item_conflicts)
-                                    sco1 += cur_item_score
-                                    pr1 += cur_item_price
-                                    wg1 += cur_item_weight
-                                    if sco1 > 0 or cur_node.required:
-                                        scores[parent_node_key].append((pst1, sco1, cf1, pr1, wg1))
-                                        count += 1
-                                        if root_key == parent_node_key and count > stop_at_counter:
-                                            # end_preset_stop = True
-                                            break
-                                    else:
-                                        LOGGER.log(13, f"Preset valid and rejected: score: {sco1}")
-
-                            LOGGER.log(11, f"Saved {count} presets")
-
-                    else:
-                        "ITEM HAS NO SLOTS or matching sub parts"
-                        LOGGER.log(11, f"Item has no slots or sub parts: {cur_key}")
-                        # LOGGER.log(20, f"score: {cur_item_score}")
-                        # LOGGER.log(11, f"Parent key: {parent_node_key}")
-                        if cur_item_score > 0 or cur_node.required:
-                            scores[parent_node_key].append(
-                                    (
-                                            {cur_key}, cur_item_score, cur_item_conflicts,
-                                            cur_item_price, cur_item_weight
-                                    )
-                            )
-                            # LOGGER.log(11, f"scores[parent]: {scores[parent_node_key]}")
-                    merged.add(cur_key)
-
-                if isitem and cur_key in merged:
-                    "Propagate first declaration"
-                    if stack:
-                        parent_node_key = stack[-1][0]
-                        LOGGER.log(11, f"Propagate stored values: {cur_key} -> {parent_node_key}")
-                        if parent_node_key not in scores:
-                            scores[parent_node_key] = deque(maxlen=max_parts)
-                        for ob in scores[cur_key]:
-                            scores[parent_node_key].append(ob)
-                            iter_counter += 1
+                    "It can be defined, so can't copy whole object"
+                    for ob in scores[cur_key]:
+                        scores[parent_node_key].append(ob)
+                        iter_counter += 1
 
                 else:
                     "THIS IS SLOT"
@@ -1499,35 +1539,454 @@ class ItemsTree:
 
                 if not stack:
                     "STACK IS EMPTY"
-                    print(f"======== Last item in tree. iteration: {iter_counter}")
+                    print(f"======== Last item in tree. Iterations: {iter_counter}")
                     LOGGER.info(f"Iterations: {iter_counter}")
                     break
                 else:
                     LOGGER.debug(f"Going back to {next_node_key} <-")
 
-        "End of while"
+        weapon_slots = {(root_key, n) for n in weapon_node.good_keys}
+        slots_scores = {k: v for k, v in scores.items() if k in weapon_slots}
+        return slots_scores
 
-        results = scores[name]
-        results = sorted(results, key=lambda x: x[1], reverse=True)
+    def merge_item_subparts(
+            self,
+            cur_key, cur_node, iter_counter, max_parts, merged,
+            next_node_key, root_key,
+            scores,
+    ):
+        """PROPAGATE SLOTS TO ITEM LEVEL"""
+        # weapon = self.items_dict[]
+        LOGGER.log(12, f"First Propagate. Checking slots of {cur_key}")
+        weapon = self.items_dict[root_key]
+        merged.add(cur_key)
+        merged_item_name = cur_key
 
-        "Quick fix"
-        results = [(a, sc / factor_weights_sum, c, d, e) for a, sc, c, d, e in results]
+        scores[cur_key] = deque(maxlen=max_parts)
+        cur_item_score = cur_node.ergo - cur_node.recoil + cur_node.acc
+        if cur_node.part_type == "suppressor":
+            LOGGER.debug("This is suppressor")
+            cur_item_score += 1
+            cur_item_is_suppressor = True
+        else:
+            cur_item_is_suppressor = False
 
-        # with open("results.txt", "wt") as fp:
-        #     fp.write(f"Results of {name}\n")
-        #     for key in scores:
-        #         fp.write(f"- -{key}\n")
-        #     for res in results:
-        #         fp.write(f"{res[1]} - {res}\n")
+        cur_item_conflicts = cur_node.conflictingItems
+        if cur_key in weapon.default_preset:
+            cur_item_price = 0
+            print(f"Default part, cost: 0, {cur_key}")
+            LOGGER.log(14, f"Default part, cost: 0, {cur_key}")
 
-        top_scores = [rs[1] for rs in results[:5]]
-        LOGGER.info(f"Top scores: {top_scores}")
+        elif cur_key in self._traders_df.index:
+            cur_item_price = self._traders_df.loc[cur_key, self.traders_keys].min()
+            if np.isnan(cur_item_price):
+                cur_item_price = 0
 
-        return results
+        else:
+            print(f"Not found price of: {cur_key}")
+            LOGGER.log(14, f"Price not found {cur_key}")
+            cur_item_price = 1000_000_000
+            # cur_item_price = 0
+        cur_item_weight = cur_node.weight
+        cur_item_ergo = cur_node.ergo
+        cur_item_recoil = cur_node.recoil
+        cur_item_acc = cur_node.acc
+        cur_slot = (cur_key, 0)
+        if len(cur_node.slots_dict) == 1 and cur_slot in scores:
+            "PROPAGATE Item with One slot"
+            presets = scores[cur_slot]
+            LOGGER.log(11, f"Merging single slot of {cur_key}, N: {len(presets)}")
+
+            count = 0
+            sub_ob: Score
+
+            for sub_ob in presets:
+                parts, sc, cf, pr, wg, erg, rec, acc, is_sup = sub_ob
+                parts = parts.copy()
+                parts.add(cur_key)
+                sc = sc + cur_item_score
+                cf = cf.copy()
+                cf.update(cur_item_conflicts)
+                if not np.isnan(cur_item_price):
+                    pr += cur_item_price
+
+                wg += cur_item_weight
+                erg += cur_item_ergo
+                rec += cur_item_recoil
+                acc += cur_item_acc
+                is_sup = is_sup or cur_item_is_suppressor
+                if sc > 0:
+                    scores[merged_item_name].append(
+                            Score((parts, sc, cf, pr, wg, erg, rec, acc, is_sup)))
+                    count += 1
+            LOGGER.log(12, f"Cached slot with good items: {count}")
+
+        elif len(cur_node.slots_dict) > 1:
+            "PROPAGATE and merge slots"
+
+            slots_with_parts = [scores[(cur_key, k)] for k in cur_node if
+                                (cur_key, k) in scores]
+            # if limit_propagation \
+            #         and isinstance(limit_propagation, int) \
+            #         and len(slots_with_parts) > 0:
+            #     if root_key == next_node_key:
+            #         limit_propagation = min([limit_propagation, limit_top_propagation])
+            #
+            #     LOGGER.log(11, f"Limiting propagation to: {limit_propagation}")
+            #     slots_with_parts = [
+            #             sorted(ob, key=lambda x: x[1], reverse=True)[:limit_propagation]
+            #             for ob in slots_with_parts
+            #     ]
+
+            if len(slots_with_parts) == 0:
+                "NO SUB PARTS"
+                LOGGER.log(12, f"Merging: No sub parts to merge for {cur_key}")
+                if cur_item_score > 0 or cur_node.required:
+                    scores[merged_item_name].append(
+                            Score(({cur_key}, cur_item_score, cur_item_conflicts,
+                                   cur_item_price, cur_item_weight,
+                                   cur_item_ergo, cur_item_recoil, cur_item_acc, cur_item_is_suppressor)
+                                  ))
+
+            elif len(slots_with_parts) == 1:
+                LOGGER.log(
+                        11,
+                        f"Mering: Item has only sub parts in one slot: "
+                        f"{cur_key} - N:{len(slots_with_parts[0])}")
+
+                count = 0
+                for pst, sc, cf, pr, wg, erg, rec, acc, is_sup in slots_with_parts[0]:
+                    conflict = cur_item_conflicts.intersection(pst)
+
+                    if len(conflict) > 0:
+                        LOGGER.log(20, f"Conflict in preset: {pst}")
+                        continue
+                    else:
+                        "No conflicts so its ok."
+                        pst = pst.copy()
+                        cf = cf.copy()
+                        pst.add(cur_key)
+                        cf.update(cur_item_conflicts)
+                        sc += cur_item_score
+                        pr += cur_item_price
+                        wg += cur_item_weight
+                        erg += cur_item_ergo
+                        rec += cur_item_recoil
+                        acc += cur_item_acc
+                        is_sup = is_sup or cur_item_is_suppressor
+                        LOGGER.log(12, f"No conflicts. Merged to -> {pst}")
+                        if sc > 0 or cur_node.required_slots:
+                            scores[merged_item_name].append(
+                                    Score((pst, sc, cf, pr, wg, erg, rec, acc, is_sup))
+                            )
+                            count += 1
+                LOGGER.log(11, f"Defined good items: {count}")
+
+            else:
+                n_elements = [len(ob) for ob in slots_with_parts]
+                LOGGER.log(13,
+                           f"Merging: Combining items in sub parts: {cur_key}: {n_elements}")
+                LOGGER.log(13,
+                           f"Parent ({merged_item_name}) maxsize: {scores[merged_item_name].maxlen}")
+
+                # n_slots = len(slots_with_parts)
+                count = 0
+                # end_preset_stop = False
+                # stop_at_counter = 200
+                # if stop_at_counter > max_parts:
+                #     LOGGER.log(15,
+                #                f"Too many parts to return. limited counter to max size of deque: {max_parts}")
+                #     stop_at_counter = max_parts - 1
+
+                for preset in itertools.product(*slots_with_parts):
+                    # parts_names = [ob[0] for ob in preset]
+                    # LOGGER.log(10, f"Checking combination of: {names}")
+
+                    # LOGGER.log(12, f"Checking preset of {n_slots}")
+                    valid = True
+                    pst1, sco1, cf1, pr1, wg1, erg1, rec1, acc1, is_sup1 = preset[0]
+                    pst1 = pst1.copy()
+                    cf1 = cf1.copy()
+
+                    for pst2, sco2, cf2, pr2, wg2, erg2, rec2, acc2, is_sup2 in preset[1:]:
+                        iter_counter += 1
+
+                        check_conf1 = cf1.intersection(pst2)
+                        check_conf2 = cf2.intersection(pst1)
+                        if check_conf1 or check_conf2:
+                            # LOGGER.log(10, "Preset has conflict.")
+                            # LOGGER.log(10,
+                            #            f"Preset: Checking combination of parts: {parts_names}")
+                            # LOGGER.log(10, f"Conflict1: {check_conf1}, "
+                            #                f"Conflict2: {check_conf2}")
+                            valid = False
+                            break
+
+                        pst1.update(pst2)
+                        sco1 += sco2
+                        cf1.update(cf2)
+                        pr1 += pr2
+                        wg1 += wg2
+                        erg1 += erg2
+                        rec1 += rec2
+                        acc1 += acc2
+                        is_sup1 = is_sup1 or is_sup2
+
+                    if valid:
+                        if root_key != next_node_key:
+                            pst1.add(cur_key)
+                        cf1.update(cur_item_conflicts)
+                        sco1 += cur_item_score
+                        pr1 += cur_item_price
+                        wg1 += cur_item_weight
+                        erg1 += cur_item_ergo
+                        rec1 += cur_item_recoil
+                        acc1 += cur_item_acc
+                        is_sup1 = is_sup1 or cur_item_is_suppressor
+                        if sco1 > 0 or cur_node.required_slots:
+                            scores[merged_item_name].append(
+                                    Score((pst1, sco1, cf1, pr1, wg1, erg1, rec1, acc1, is_sup1))
+                            )
+                            count += 1
+
+                        else:
+                            LOGGER.log(13, f"Preset valid and rejected: score: {sco1}")
+
+                LOGGER.log(11, f"Saved {count} presets")
+
+        else:
+            "ITEM HAS NO SLOTS or matching sub parts"
+            LOGGER.log(11, f"Item has no slots or sub parts: {cur_key}")
+            # LOGGER.log(20, f"score: {cur_item_score}")
+            # LOGGER.log(11, f"Parent key: {parent_node_key}")
+            if cur_item_score > 0 or cur_node.required_slots:
+                scores[merged_item_name].append(
+                        Score(({cur_key}, cur_item_score, cur_item_conflicts, cur_item_price,
+                               cur_item_weight, cur_item_ergo, cur_item_recoil,
+                               cur_item_acc, cur_item_is_suppressor))
+                )
+                # LOGGER.log(11, f"scores[parent]: {scores[parent_node_key]}")
+
+        return iter_counter
 
     @measure_time_decorator
-    def preset_resolver(self, scoring_dictionary):
-        pass
+    def preset_slots_resolver(
+            self,
+            cur_key, cur_node, iter_counter, max_parts, merged,
+            next_node_key, root_key,
+            scores,
+    ):
+        raise NotImplemented
+        """PROPAGATE SLOTS TO ITEM LEVEL"""
+        LOGGER.log(12, f"First Propagate. Checking slots of {cur_key}")
+        merged.add(cur_key)
+        merged_item_name = cur_key
+
+        scores[cur_key] = deque(maxlen=max_parts)
+        cur_item_score = cur_node.ergo - cur_node.recoil + cur_node.acc
+        if cur_node.part_type == "suppressor":
+            LOGGER.debug("This is suppressor")
+            cur_item_score += 1
+            cur_item_is_suppressor = True
+        else:
+            cur_item_is_suppressor = False
+
+        cur_item_conflicts = cur_node.conflictingItems
+        if cur_key in weapon.default_preset:
+            cur_item_price = 0
+            print(f"Default part, cost: 0, {cur_key}")
+            LOGGER.log(14, f"Default part, cost: 0, {cur_key}")
+
+        elif cur_key in self._traders_df.index:
+            cur_item_price = self._traders_df.loc[cur_key, self.traders_keys].min()
+            if np.isnan(cur_item_price):
+                cur_item_price = 0
+
+        else:
+            print(f"Not found price of: {cur_key}")
+            LOGGER.log(14, f"Price not found {cur_key}")
+            cur_item_price = 1000_000_000
+            # cur_item_price = 0
+        cur_item_weight = cur_node.weight
+        cur_item_ergo = cur_node.ergo
+        cur_item_recoil = cur_node.recoil
+        cur_item_acc = cur_node.acc
+        cur_slot = (cur_key, 0)
+        if len(cur_node.slots_dict) == 1 and cur_slot in scores:
+            "PROPAGATE Item with One slot"
+            presets = scores[cur_slot]
+            LOGGER.log(11, f"Merging single slot of {cur_key}, N: {len(presets)}")
+
+            count = 0
+            sub_ob: Score
+
+            for sub_ob in presets:
+                parts, sc, cf, pr, wg, erg, rec, acc, is_sil = sub_ob
+                parts = parts.copy()
+                parts.add(cur_key)
+                sc = sc + cur_item_score
+                cf = cf.copy()
+                cf.update(cur_item_conflicts)
+                if not np.isnan(cur_item_price):
+                    pr += cur_item_price
+
+                wg += cur_item_weight
+                erg += cur_item_ergo
+                rec += cur_item_recoil
+                acc += cur_item_acc
+                is_sil = is_sil or cur_item_is_suppressor
+                if sc > 0:
+                    scores[merged_item_name].append(
+                            Score((parts, sc, cf, pr, wg, erg, rec, acc, is_sil))
+                    )
+                    count += 1
+            LOGGER.log(12, f"Cached slot with good items: {count}")
+
+        elif len(cur_node.slots_dict) > 1:
+            "PROPAGATE and merge slots"
+
+            slots_with_parts = [scores[(cur_key, k)] for k in cur_node if
+                                (cur_key, k) in scores]
+            # if limit_propagation \
+            #         and isinstance(limit_propagation, int) \
+            #         and len(slots_with_parts) > 0:
+            #     if root_key == next_node_key:
+            #         limit_propagation = min([limit_propagation, limit_top_propagation])
+            #
+            #     LOGGER.log(11, f"Limiting propagation to: {limit_propagation}")
+            #     slots_with_parts = [
+            #             sorted(ob, key=lambda x: x[1], reverse=True)[:limit_propagation]
+            #             for ob in slots_with_parts
+            #     ]
+
+            if len(slots_with_parts) == 0:
+                "NO SUB PARTS"
+                LOGGER.log(12, f"Merging: No sub parts to merge for {cur_key}")
+                if cur_item_score > 0 or cur_node.required:
+                    scores[merged_item_name].append(
+                            Score(({cur_key}, cur_item_score, cur_item_conflicts,
+                                   cur_item_price, cur_item_weight,
+                                   cur_item_ergo, cur_item_recoil, cur_item_acc, cur_item_is_suppressor))
+                    )
+
+            elif len(slots_with_parts) == 1:
+                LOGGER.log(
+                        11,
+                        f"Mering: Item has only sub parts in one slot: "
+                        f"{cur_key} - N:{len(slots_with_parts[0])}")
+
+                count = 0
+                for pst, sc, cf, pr, wg, erg, rec, acc, is_sil in slots_with_parts[0]:
+                    conflict = cur_item_conflicts.intersection(pst)
+
+                    if len(conflict) > 0:
+                        LOGGER.log(20, f"Conflict in preset: {pst}")
+                        continue
+                    else:
+                        "No conflicts so its ok."
+                        pst = pst.copy()
+                        cf = cf.copy()
+                        pst.add(cur_key)
+                        cf.update(cur_item_conflicts)
+                        sc += cur_item_score
+                        pr += cur_item_price
+                        wg += cur_item_weight
+                        erg += cur_item_ergo
+                        rec += cur_item_recoil
+                        acc += cur_item_acc
+                        is_sil = is_sil or cur_item_is_suppressor
+                        LOGGER.log(12, f"No conflicts. Merged to -> {pst}")
+                        if sc > 0 or cur_node.required_slots:
+                            scores[merged_item_name].append(
+                                    Score(pst, sc, cf, pr, wg, erg, rec, acc, is_sil)
+                            )
+                            count += 1
+                LOGGER.log(11, f"Defined good items: {count}")
+
+            else:
+                n_elements = [len(ob) for ob in slots_with_parts]
+                LOGGER.log(13,
+                           f"Merging: Combining items in sub parts: {cur_key}: {n_elements}")
+                LOGGER.log(13,
+                           f"Parent ({merged_item_name}) maxsize: {scores[merged_item_name].maxlen}")
+
+                # n_slots = len(slots_with_parts)
+                count = 0
+                # end_preset_stop = False
+                # stop_at_counter = 200
+                # if stop_at_counter > max_parts:
+                #     LOGGER.log(15,
+                #                f"Too many parts to return. limited counter to max size of deque: {max_parts}")
+                #     stop_at_counter = max_parts - 1
+
+                for preset in itertools.product(*slots_with_parts):
+                    # parts_names = [ob[0] for ob in preset]
+                    # LOGGER.log(10, f"Checking combination of: {names}")
+
+                    # LOGGER.log(12, f"Checking preset of {n_slots}")
+                    valid = True
+                    pst1, sco1, cf1, pr1, wg1, erg1, rec1, acc1 = preset[0]
+                    pst1 = pst1.copy()
+                    cf1 = cf1.copy()
+
+                    for pst2, sco2, cf2, pr2, wg2, erg2, rec2, acc2 in preset[1:]:
+                        iter_counter += 1
+
+                        check_conf1 = cf1.intersection(pst2)
+                        check_conf2 = cf2.intersection(pst1)
+                        if check_conf1 or check_conf2:
+                            # LOGGER.log(10, "Preset has conflict.")
+                            # LOGGER.log(10,
+                            #            f"Preset: Checking combination of parts: {parts_names}")
+                            # LOGGER.log(10, f"Conflict1: {check_conf1}, "
+                            #                f"Conflict2: {check_conf2}")
+                            valid = False
+                            break
+
+                        pst1.update(pst2)
+                        sco1 += sco2
+                        cf1.update(cf2)
+                        pr1 += pr2
+                        wg1 += wg2
+                        erg1 += erg2
+                        rec1 += rec2
+                        acc1 += acc2
+
+                    if valid:
+                        if root_key != next_node_key:
+                            pst1.add(cur_key)
+                        cf1.update(cur_item_conflicts)
+                        sco1 += cur_item_score
+                        pr1 += cur_item_price
+                        wg1 += cur_item_weight
+                        erg1 += cur_item_ergo
+                        rec1 += cur_item_recoil
+                        acc1 += cur_item_acc
+                        if sco1 > 0 or cur_node.required_slots:
+                            scores[merged_item_name].append(
+                                    Score(pst1, sco1, cf1, pr1, wg1, erg1, rec1, acc1))
+                            count += 1
+
+                        else:
+                            LOGGER.log(13, f"Preset valid and rejected: score: {sco1}")
+
+                LOGGER.log(11, f"Saved {count} presets")
+
+        else:
+            "ITEM HAS NO SLOTS or matching sub parts"
+            LOGGER.log(11, f"Item has no slots or sub parts: {cur_key}")
+            # LOGGER.log(20, f"score: {cur_item_score}")
+            # LOGGER.log(11, f"Parent key: {parent_node_key}")
+            if cur_item_score > 0 or cur_node.required_slots:
+                scores[merged_item_name].append(
+                        Score({cur_key}, cur_item_score, cur_item_conflicts,
+                              cur_item_price, cur_item_weight,
+                              cur_item_ergo, cur_item_recoil, cur_item_acc
+                              )
+                )
+                # LOGGER.log(11, f"scores[parent]: {scores[parent_node_key]}")
+
+        return iter_counter
 
 
 def sort_images_on_type():
@@ -1543,63 +2002,87 @@ def sort_images_on_type():
         shutil.copy(src, dst)
 
 
+@measure_time_decorator
+def find_same_items(tree: ItemsTree) -> None:
+    checked = set()
+    for key1, item1 in tree.items():
+        checked.add(key1)
+        if item1.part_type in ['sight', 'magazine', 'gun']:
+            continue
+
+        for key2, item2 in tree.items():
+            if key2 in checked:
+                continue
+
+            if item1 == item2:
+                print(f"Found same items {item1.part_type}: `{key1}`, `{key2}`")
+                print(item1.pretty_print())
+                print(item2.pretty_print())
+
+
 if __name__ == "__main__":
     tree = ItemsTree()
-    tree.dump_items(MAIN_DATA_DIR)
-    # tree.dump_weapons(DATA_DIR)
+    # tree.dump_items(MAIN_DATA_DIR)
 
-    wep = [k for k in tree.weapon_keys if '133' in k.lower()][0]
-    print(wep)
-    weapon = tree[wep]
-    print(weapon.default_preset)
+    # wep = [k for k in tree.weapon_keys if '133' in k.lower()][0]
+    # print(weapon)
+    # print(weapon.default_preset)
 
-    results = []
-    results = tree.find_best_brute(wep,
-                                   ergo_factor=5,
-                                   recoil_factor=8,
-                                   limit_propagation=50, limit_top_propagation=10,
-                                   useAllParts=False, useSilencer=False,
-                                   praporLv=3, skierLv=2,
-                                   peacekeeperLv=2, mechanicLv=3, jaegerLv=3,
-                                   )
-    time.sleep(0.1)
-    print(wep)
-    print(f"Got: {len(results)}")
+    # find_same_items(tree)
 
-    print(wep)
-    print(wep)
+    for wep in tree.weapon_keys:
+        # weapon = tree[wep]
+        results = tree.find_best_preset(
+                wep,
+                ergo_factor=5,
+                recoil_factor=8,
+                # limit_propagation=50, limit_top_propagation=10,
+                use_all_parts=False, want_silencer=False,
+                prapor_lv=2, skier_lv=1,
+                peacekeeper_lv=1, mechanic_lv=3, jaeger_lv=3,
+        )
 
-    show_n = 5
-    price_limit = 32_000
+    save_cache(CACHE)
 
-    res_print = [r for r in results[1:] if r[3] <= price_limit]
-    res_print = res_print[::3]
-    res_print = [results[0]] + res_print[:show_n]
 
-    for pres in res_print:
-        parts = pres[0]
-        score = pres[1]
-        print()
-        print(f"Points: {score:4.1f}")
-        ptypes = [tree.items_dict[p].part_type for p in parts]
-        ergo = sum(tree.items_dict[p].ergo for p in parts)
-        recoil = sum(tree.items_dict[p].recoil for p in parts)
-        acc = sum(tree.items_dict[p].acc for p in parts)
-
-        price = f"{pres[3]:,.0f} RUB"
-        print(f"Ergo: +{ergo}, Recoil: {recoil}%, Acc: {acc}, Upgrade Price: {price}")
-
-        zp = zip(ptypes, parts)
-        zp = sorted(zp, key=lambda x: (x[0], x[1]))
-
-        for pt, pn in zp:
-            if pn in ColorRemover.refs:
-                variant = f"(variants: {list(ColorRemover.refs[pn])})"
-            else:
-                variant = ''
-            # short_name = tree.items_dict[pr].name_short
-            if pn not in weapon.default_preset:
-                prc = tree._traders_df.loc[pn, tree.traders_keys].min()
-            else:
-                prc = 0
-            print(f"{pt:>15}: {prc:>8,.0f} R - {pn} {variant},")
+    # time.sleep(0.1)
+    # print(wep)
+    # print(f"Got: {len(results)}")
+    #
+    # print(wep)
+    # print(wep)
+    #
+    # show_n = 5
+    # price_limit = 32_000
+    #
+    # res_print = [r for r in results[1:] if r[3] <= price_limit]
+    # res_print = res_print[::3]
+    # res_print = [results[0]] + res_print[:show_n]
+    #
+    # for pres in res_print:
+    #     parts = pres[0]
+    #     score = pres[1]
+    #     print()
+    #     print(f"Points: {score:4.1f}")
+    #     ptypes = [tree.items_dict[p].part_type for p in parts]
+    #     ergo = sum(tree.items_dict[p].ergo for p in parts)
+    #     recoil = sum(tree.items_dict[p].recoil for p in parts)
+    #     acc = sum(tree.items_dict[p].acc for p in parts)
+    #
+    #     price = f"{pres[3]:,.0f} RUB"
+    #     print(f"Ergo: +{ergo}, Recoil: {recoil}%, Acc: {acc}, Upgrade Price: {price}")
+    #
+    #     zp = zip(ptypes, parts)
+    #     zp = sorted(zp, key=lambda x: (x[0], x[1]))
+    #
+    #     for pt, pn in zp:
+    #         if pn in ColorRemover.refs:
+    #             variant = f"(variants: {list(ColorRemover.refs[pn])})"
+    #         else:
+    #             variant = ''
+    #         # short_name = tree.items_dict[pr].name_short
+    #         if pn not in weapon.default_preset:
+    #             prc = tree._traders_df.loc[pn, tree.traders_keys].min()
+    #         else:
+    #             prc = 0
+    #         print(f"{pt:>15}: {prc:>8,.0f} R - {pn} {variant},")

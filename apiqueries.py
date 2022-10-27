@@ -6,7 +6,7 @@ import requests
 
 import multiprocessing as mpc
 
-from global_settings import JSON_DIR, PICS_DIR
+from global_settings import PICS_DIR, SRC_DIR
 
 
 API_URL = """https://api.tarkov.dev/graphql"""
@@ -302,7 +302,7 @@ def send_traders_query():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "traders.json", "wt") as file:
+        with open(SRC_DIR + "traders.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Traders not ok: {response.status_code}")
@@ -317,7 +317,7 @@ def send_food_query():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "food.json", "wt") as file:
+        with open(SRC_DIR + "food.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Food not ok: {response.status_code}")
@@ -331,7 +331,7 @@ def send_parts_query():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "parts.json", "wt") as file:
+        with open(SRC_DIR + "parts.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Parts not ok: {response.status_code}")
@@ -347,7 +347,7 @@ def send_weapons_query():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "weapons.json", "wt") as file:
+        with open(SRC_DIR + "weapons.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Guns not ok: {response.status_code}")
@@ -363,7 +363,7 @@ def send_ammo_query():
 
         js = json.loads(response.text)
 
-        with open(JSON_DIR + "ammo.json", "wt") as file:
+        with open(SRC_DIR + "ammo.json", "wt") as file:
             json.dump(js, file, indent=1)
     else:
         print(f"Ammo not ok: {response.status_code}")
@@ -444,28 +444,28 @@ def fetch_images():
     arg_list = []
 
     "Get args from parts"
-    with open(JSON_DIR + "parts.json", "rt") as file:
+    with open(SRC_DIR + "parts.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
     for item in items:
         arg_list.append(item)
 
     "Get args from weapons"
-    with open(JSON_DIR + "weapons.json", "rt") as file:
+    with open(SRC_DIR + "weapons.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
     for item in items:
         arg_list.append(item)
 
     "Get args "
-    with open(JSON_DIR + "ammo.json", "rt") as file:
+    with open(SRC_DIR + "ammo.json", "rt") as file:
         data = json.load(file)
         items = data['data']['ammo']
     for item in items:
         arg_list.append(item['item'])
 
     "Get args "
-    with open(JSON_DIR + "food.json", "rt") as file:
+    with open(SRC_DIR + "food.json", "rt") as file:
         data = json.load(file)
         items = data['data']['items']
     for item in items:
@@ -476,9 +476,9 @@ def fetch_images():
 
 
 if __name__ == "__main__":
-    # send_weapons_query()
-    # send_traders_query()
-    # send_ammo_query()
-    # send_parts_query()
+    send_weapons_query()
+    send_traders_query()
+    send_ammo_query()
+    send_parts_query()
     send_food_query()
     # fetch_images()

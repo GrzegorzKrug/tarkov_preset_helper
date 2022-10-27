@@ -1,17 +1,19 @@
 import logging
 import os
 
+from global_settings import LOGS_DIR
+
 
 def get_logger():
     os.makedirs("logs", exist_ok=True)
 
     formatter = logging.Formatter(fmt="%(name)s - %(levelname)s : %(message)s")
 
-    main_file_handler = logging.FileHandler("mainLog.log", mode='at')
+    main_file_handler = logging.FileHandler(LOGS_DIR+"mainLog.log", mode='at')
     main_file_handler.setFormatter(formatter)
     main_file_handler.setLevel("INFO")
 
-    debug_file_handler = logging.FileHandler("last_run.log", mode='wt')
+    debug_file_handler = logging.FileHandler(LOGS_DIR+"last_run.log", mode='wt')
     debug_file_handler.setFormatter(formatter)
     debug_file_handler.setLevel(10)
     console_handler = logging.StreamHandler()

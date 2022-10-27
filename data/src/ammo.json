@@ -3588,6 +3588,29 @@
     "heavyBleedModifier": 0,
     "tracer": true,
     "weight": 0.07
+   },
+   {
+    "item": {
+     "name": "26x75mm distress signal flare (poison green)",
+     "shortName": "DSF",
+     "wikiLink": "",
+     "baseImageLink": "https://assets.tarkov.dev/unknown-item-base-image.png"
+    },
+    "caliber": "Caliber26x75",
+    "ammoType": "bullet",
+    "accuracyModifier": 0,
+    "recoilModifier": 0,
+    "initialSpeed": 80,
+    "damage": 37,
+    "armorDamage": 60,
+    "fragmentationChance": 0,
+    "ricochetChance": 1,
+    "penetrationChance": 0,
+    "penetrationPower": 0,
+    "lightBleedModifier": 0,
+    "heavyBleedModifier": 0,
+    "tracer": true,
+    "weight": 0.07
    }
   ]
  }
