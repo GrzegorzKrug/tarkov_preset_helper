@@ -1,7 +1,10 @@
 import numpy as np
 
 from abc import ABC, abstractmethod
-from logger import LOGGER
+from logger import get_logger_instance
+
+
+LOGGER = get_logger_instance()
 
 
 class ReadType:
@@ -110,7 +113,7 @@ class ReadType:
         return type_
 
 
-class TreeWalkingMethods(ABC):
+class TreeWalkingMethodsABC(ABC):
     """
     Abstract base class.
 
@@ -171,13 +174,22 @@ class ColorRemover:
     # white_types = {}
 
 
-    refs = {}
-    "Items variant refs"
-    rejected = set()
+    variants_dict = {}
+    "Item variants. Clean name: variant lists"
+    rejected_set = set()
     "Rejected colors ()"
     accepted = set()
     "Accepted colors ()"
     parts_renamed = {}
+    "Part=Key, Clean name=Value"
+
+    @classmethod
+    def clear(cls):
+        cls.variants_dict = {}
+        cls.rejected_set = set()
+        cls.accepted = set()
+        cls.parts_renamed = {}
+
     white_postfix = {
             '(Red)',
             '(Golden)',
@@ -237,13 +249,13 @@ class ColorRemover:
             if nawias in cls.white_postfix:
                 cls.accepted.add(nawias)
                 clean_name = name[:ind - 1]
-                if clean_name not in cls.refs:
-                    cls.refs[clean_name] = {nawias}
+                if clean_name not in cls.variants_dict:
+                    cls.variants_dict[clean_name] = {nawias}
                 else:
-                    cls.refs[clean_name].add(nawias)
+                    cls.variants_dict[clean_name].add(nawias)
 
             else:
-                cls.rejected.add(nawias)
+                cls.rejected_set.add(nawias)
 
     @classmethod
     def rename(cls, name: str, type_: str, loginfo='part'):
@@ -257,7 +269,7 @@ class ColorRemover:
 
             if nawias in cls.white_postfix:
                 clean_name = name[:ind - 1]
-                if clean_name in cls.refs:
+                if clean_name in cls.variants_dict:
                     LOGGER.log(10, f"Renaming ({loginfo}) {name} -> {clean_name}")
                     cls.parts_renamed[name] = clean_name
                     return clean_name
@@ -270,13 +282,13 @@ class ColorRemover:
         for key in cls.accepted:
             txt += f"{key}\n"
         txt += "\nRejected: \n"
-        for key in cls.rejected:
+        for key in cls.rejected_set:
             txt += f"{key}\n"
 
         return txt
 
 
-class Score(tuple):
+class Preset(tuple):
     """
         Inherits from `tuple`
 
@@ -299,25 +311,6 @@ class Score(tuple):
         is_silencer `bool`
 
     """
-
-    # def __new__(cls, arg):
-    #     """
-    #
-    #     :param parts:
-    #     :param score:
-    #     :param conflicts:
-    #     :param price:
-    #     :param weight:
-    #     :param ergo:
-    #     :param recoil:
-    #     :param acc:
-    #     :param is_silencer:
-    #     """
-    #     parts, score, conflicts, price, weight, ergo, recoil, acc, is_silencer = arg
-    #     return super().__new__(
-    #             cls,
-    #             (parts, score, conflicts, price, weight, ergo, recoil, acc, is_silencer)
-    #     )
 
     def __str__(self):
         return f"Preset with score: {self[1]}"
@@ -358,7 +351,7 @@ class Score(tuple):
     def is_silencer(self):
         return self[8]
 
-    def update(
+    def copy_update(
             self,
             parts=None, score=None, conflicts=None,
             price=None, weight=None, ergo=None,
@@ -381,4 +374,28 @@ class Score(tuple):
         if is_silencer is None:
             is_silencer = self.is_silencer
 
-        return Score((parts, score, conflicts, price, weight, ergo, recoil, is_silencer))
+        return Preset((parts, score, conflicts, price, weight, ergo, recoil, is_silencer))
+
+    def update(self,
+               parts=None, score=None, conflicts=None,
+               price=None, weight=None, ergo=None,
+               recoil=None, is_silencer=None
+               ):
+        raise NotImplementedError
+        if parts is not None:
+            self.parts = parts
+            # parts = self.parts.copy()
+        if score is None:
+            score = self.score
+        if conflicts is None:
+            conflicts = self.conflicts.copy()
+        if price is None:
+            price = self.price
+        if weight is None:
+            weight = self.weight
+        if ergo is None:
+            ergo = self.ergo
+        if recoil is None:
+            recoil = self.recoil
+        if is_silencer is None:
+            is_silencer = self.is_silencer
