@@ -59,7 +59,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="main.Item">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="tree_utils.html#tree_utils.StringFormat" title="tree_utils.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a>, <a class="reference internal" href="tree_utils.html#tree_utils.TreeWalkingMethods" title="tree_utils.TreeWalkingMethods"><code class="xref py py-class docutils literal notranslate"><span class="pre">TreeWalkingMethods</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="tree_utils.html#tree_utils.StringFormat" title="tree_utils.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a>, <a class="reference internal" href="tree_utils.html#tree_utils.TreeWalkingMethodsABC" title="tree_utils.TreeWalkingMethodsABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TreeWalkingMethodsABC</span></code></a></p>
 <p>Item object storing slots and current part values</p>
 <dl class="field-list simple">
 <dt class="field-odd">Fields<span class="colon">:</span></dt>
@@ -69,8 +69,8 @@
 <li><p>has_required_slots:</p></li>
 <li><p>part_type - <cite>string</cite> assigned by <code class="xref py py-func docutils literal notranslate"><span class="pre">ReadType.read_type()</span></code></p></li>
 <li><p>slots_dict: <cite>dict</cite> of enumerated slots instances</p></li>
-<li><p>good_keys: <cite>set</cite> filled by <a class="reference internal" href="#main.ItemsTree" title="main.ItemsTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree</span></code></a> backpropagation</p></li>
-<li><p>conflictingItems: <cite>set</cite> read from properties. Extended by <a class="reference internal" href="#main.ItemsTree" title="main.ItemsTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree</span></code></a> backpropagation.</p></li>
+<li><p>good_keys: <cite>set</cite> filled by <a class="reference internal" href="#main.ItemsTreeDS" title="main.ItemsTreeDS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTreeDS</span></code></a> backpropagation</p></li>
+<li><p>conflictingItems: <cite>set</cite> read from properties. Extended by <a class="reference internal" href="#main.ItemsTreeDS" title="main.ItemsTreeDS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTreeDS</span></code></a> backpropagation.</p></li>
 <li><p>ergo</p></li>
 <li><p>recoil - %</p></li>
 <li><p>acc - Modifier</p></li>
@@ -86,57 +86,36 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="main.ItemsTree">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">ItemsTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regenerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">ItemsTreeDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regenerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Data structure for items.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>weapons_df</strong> (<cite>pandas.DataFrame</cite>) – </p></li>
-<li><p><strong>parts_df</strong> (<cite>pandas.DataFrame</cite>) – </p></li>
-<li><p><strong>_traders_df</strong> (<cite>pandas.DataFrame</cite>) – </p></li>
-</ul>
-</dd>
-</dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.add_item">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.add_item" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.add_item">
+<span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.add_item" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add item to tree</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.counter">
-<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'adapter':</span> <span class="pre">0,</span> <span class="pre">'barrel':</span> <span class="pre">0,</span> <span class="pre">'bipod':</span> <span class="pre">0,</span> <span class="pre">'device':</span> <span class="pre">0,</span> <span class="pre">'gas</span> <span class="pre">block':</span> <span class="pre">0,</span> <span class="pre">'grip':</span> <span class="pre">0,</span> <span class="pre">'gun':</span> <span class="pre">0,</span> <span class="pre">'handguard':</span> <span class="pre">0,</span> <span class="pre">'magazine':</span> <span class="pre">0,</span> <span class="pre">'mod':</span> <span class="pre">0,</span> <span class="pre">'mount':</span> <span class="pre">0,</span> <span class="pre">'muzzle':</span> <span class="pre">0,</span> <span class="pre">'pistol</span> <span class="pre">grip':</span> <span class="pre">0,</span> <span class="pre">'receiver':</span> <span class="pre">0,</span> <span class="pre">'sight':</span> <span class="pre">0,</span> <span class="pre">'stock':</span> <span class="pre">0,</span> <span class="pre">'suppressor':</span> <span class="pre">0,</span> <span class="pre">'unknown':</span> <span class="pre">0}</span></em><a class="headerlink" href="#main.ItemsTree.counter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.counter">
+<span class="sig-name descname"><span class="pre">counter</span></span><a class="headerlink" href="#main.ItemsTreeDS.counter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Counter of item types</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.df_price_check_avg">
-<span class="sig-name descname"><span class="pre">df_price_check_avg</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['prapor',</span> <span class="pre">'mechanic',</span> <span class="pre">'skier',</span> <span class="pre">'peacekeeper',</span> <span class="pre">'jaeger',</span> <span class="pre">'therapist',</span> <span class="pre">'ragman',</span> <span class="pre">'fence',</span> <span class="pre">'avg24hPrice']</span></em><a class="headerlink" href="#main.ItemsTree.df_price_check_avg" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.do_tree_backpropagation">
-<span class="sig-name descname"><span class="pre">do_tree_backpropagation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.do_tree_backpropagation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Propagate sub parts types. Find parts that modify gun positively in any way and store key in
-<a class="reference internal" href="#main.ItemsTree.good_parts_keys" title="main.ItemsTree.good_parts_keys"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree.good_parts_keys</span></code></a></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.do_tree_check">
-<span class="sig-name descname"><span class="pre">do_tree_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.do_tree_check" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.do_tree_check">
+<span class="sig-name descname"><span class="pre">do_tree_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.do_tree_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method for testing tree propagation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.dump_items">
-<span class="sig-name descname"><span class="pre">dump_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.dump_items" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.dump_items">
+<span class="sig-name descname"><span class="pre">dump_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.dump_items" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.dump_weapons">
-<span class="sig-name descname"><span class="pre">dump_weapons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.dump_weapons" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.dump_weapons">
+<span class="sig-name descname"><span class="pre">dump_weapons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.dump_weapons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves weapon params and slots into text file <cite>&lt;path&gt;tree.txt</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -149,14 +128,14 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.euro">
-<span class="sig-name descname"><span class="pre">euro</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#main.ItemsTree.euro" title="Permalink to this definition">¶</a></dt>
-<dd><p>Current price in tarkovs ruble</p>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.euro">
+<span class="sig-name descname"><span class="pre">euro</span></span><a class="headerlink" href="#main.ItemsTreeDS.euro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current price in tarkov’s ruble</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.find_best_preset">
-<span class="sig-name descname"><span class="pre">find_best_preset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weapon_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ergo_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recoil_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prapor_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skier_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeper_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanic_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaeger_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_all_parts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">want_silencer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.find_best_preset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.find_best_preset">
+<span class="sig-name descname"><span class="pre">find_best_preset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weapon_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ergo_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recoil_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prapor_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skier_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeper_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanic_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaeger_lv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_all_parts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">want_silencer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.find_best_preset" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -181,58 +160,52 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.gather_slots_dict">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gather_slots_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.gather_slots_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.get_hashed_part">
+<span class="sig-name descname"><span class="pre">get_hashed_part</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">praporLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skierLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanicLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaegerLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeperLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.get_hashed_part" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.get_combination_for_each_slot">
-<span class="sig-name descname"><span class="pre">get_combination_for_each_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weapon_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanicLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaegerLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeperLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">praporLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skierLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">useAllParts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.get_combination_for_each_slot" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.get_hashed_part">
-<span class="sig-name descname"><span class="pre">get_hashed_part</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">praporLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skierLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanicLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaegerLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeperLv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.get_hashed_part" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.get_items_combinations_for_each_slot">
+<span class="sig-name descname"><span class="pre">get_items_combinations_for_each_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weapon_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanicLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jaegerLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peacekeeperLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">praporLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skierLv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">useAllParts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.get_items_combinations_for_each_slot" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.good_parts_keys">
-<span class="sig-name descname"><span class="pre">good_parts_keys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#main.ItemsTree.good_parts_keys" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.good_parts_keys">
+<span class="sig-name descname"><span class="pre">good_parts_keys</span></span><a class="headerlink" href="#main.ItemsTreeDS.good_parts_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parts that are good or have good subparts</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.items">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls builtin <cite>items</cite> on <a class="reference internal" href="#main.ItemsTree.items_dict" title="main.ItemsTree.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree.items_dict</span></code></a></p>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls builtin <cite>items</cite> on <a class="reference internal" href="#main.ItemsTreeDS.items_dict" title="main.ItemsTreeDS.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTreeDS.items_dict</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.items_dict">
-<span class="sig-name descname"><span class="pre">items_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#main.ItemsTree.items_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.items_dict">
+<span class="sig-name descname"><span class="pre">items_dict</span></span><a class="headerlink" href="#main.ItemsTreeDS.items_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary of item instances</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.load_traders">
-<span class="sig-name descname"><span class="pre">load_traders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.load_traders" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load hashed traders</p>
-</dd></dl>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.merge_item_subparts">
-<span class="sig-name descname"><span class="pre">merge_item_subparts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cur_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merged</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_node_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.merge_item_subparts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.merge_item_subparts">
+<span class="sig-name descname"><span class="pre">merge_item_subparts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cur_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merged</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_node_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.merge_item_subparts" title="Permalink to this definition">¶</a></dt>
 <dd><p>PROPAGATE SLOTS TO ITEM LEVEL</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.preset_slots_resolver">
-<span class="sig-name descname"><span class="pre">preset_slots_resolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cur_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merged</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_node_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.preset_slots_resolver" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.preset_slots_resolver">
+<span class="sig-name descname"><span class="pre">preset_slots_resolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slots_combinations_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.preset_slots_resolver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.process_item">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_item" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.process_item">
+<span class="sig-name descname"><span class="pre">process_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.process_item" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read items/guns from df</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -242,75 +215,53 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.process_traders">
-<span class="sig-name descname"><span class="pre">process_traders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traders_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.process_traders" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hashing trader items. Creating traders df. Reading euro/usd price.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>traders_dict</strong> (<em>dict</em>) – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.reevaluate_presets">
-<span class="sig-name descname"><span class="pre">reevaluate_presets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.reevaluate_presets" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.recreate_data_structure">
+<span class="sig-name descname"><span class="pre">recreate_data_structure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.recreate_data_structure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.save_traders">
-<span class="sig-name descname"><span class="pre">save_traders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.save_traders" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save traders and hash tiers</p>
-</dd></dl>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.reevaluate_presets">
+<span class="sig-name descname"><span class="pre">reevaluate_presets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ergo_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recoil_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silencer_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.reevaluate_presets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.ItemsTreeDS.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.slots_dict">
-<span class="sig-name descname"><span class="pre">slots_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#main.ItemsTree.slots_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.slots_dict">
+<span class="sig-name descname"><span class="pre">slots_dict</span></span><a class="headerlink" href="#main.ItemsTreeDS.slots_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary of slots instances <cite>&lt;part name&gt;&lt;slot key&gt;</cite></p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.sorted_keys">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sorted_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.sorted_keys" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sorted keys of <a class="reference internal" href="#main.ItemsTree.items_dict" title="main.ItemsTree.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree.items_dict</span></code></a></p>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.sorted_keys">
+<span class="sig-name descname"><span class="pre">sorted_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.sorted_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorted keys of <a class="reference internal" href="#main.ItemsTreeDS.items_dict" title="main.ItemsTreeDS.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTreeDS.items_dict</span></code></a></p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.squash_item_colors">
-<span class="sig-name descname"><span class="pre">squash_item_colors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.squash_item_colors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.traders_keys">
-<span class="sig-name descname"><span class="pre">traders_keys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['prapor',</span> <span class="pre">'mechanic',</span> <span class="pre">'skier',</span> <span class="pre">'peacekeeper',</span> <span class="pre">'jaeger',</span> <span class="pre">'therapist',</span> <span class="pre">'ragman',</span> <span class="pre">'fence']</span></em><a class="headerlink" href="#main.ItemsTree.traders_keys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.traders_levels_hashed">
-<span class="sig-name descname"><span class="pre">traders_levels_hashed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#main.ItemsTree.traders_levels_hashed" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.traders_levels_hashed">
+<span class="sig-name descname"><span class="pre">traders_levels_hashed</span></span><a class="headerlink" href="#main.ItemsTreeDS.traders_levels_hashed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dict storing hashed parts names for each level of each trader</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.update_prices">
-<span class="sig-name descname"><span class="pre">update_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.update_prices" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.usd">
-<span class="sig-name descname"><span class="pre">usd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#main.ItemsTree.usd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Current price in tarkovs ruble</p>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.usd">
+<span class="sig-name descname"><span class="pre">usd</span></span><a class="headerlink" href="#main.ItemsTreeDS.usd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current price in tarkov’s ruble</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="main.ItemsTree.values">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTree.values" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls builtin <cite>values</cite> on <a class="reference internal" href="#main.ItemsTree.items_dict" title="main.ItemsTree.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTree.items_dict</span></code></a></p>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.ItemsTreeDS.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls builtin <cite>values</cite> on <a class="reference internal" href="#main.ItemsTreeDS.items_dict" title="main.ItemsTreeDS.items_dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ItemsTreeDS.items_dict</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="main.ItemsTree.weapon_keys">
-<span class="sig-name descname"><span class="pre">weapon_keys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#main.ItemsTree.weapon_keys" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="main.ItemsTreeDS.weapon_keys">
+<span class="sig-name descname"><span class="pre">weapon_keys</span></span><a class="headerlink" href="#main.ItemsTreeDS.weapon_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Weapon keys in dictionary</p>
 </dd></dl>
 
@@ -319,7 +270,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="main.Slot">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Slot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="tree_utils.html#tree_utils.StringFormat" title="tree_utils.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a>, <a class="reference internal" href="tree_utils.html#tree_utils.TreeWalkingMethods" title="tree_utils.TreeWalkingMethods"><code class="xref py py-class docutils literal notranslate"><span class="pre">TreeWalkingMethods</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="tree_utils.html#tree_utils.StringFormat" title="tree_utils.StringFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFormat</span></code></a>, <a class="reference internal" href="tree_utils.html#tree_utils.TreeWalkingMethodsABC" title="tree_utils.TreeWalkingMethodsABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TreeWalkingMethodsABC</span></code></a></p>
 <p>Slot stores information of subpart.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Fields<span class="colon">:</span></dt>
@@ -329,7 +280,7 @@
 <li><p>required - <cite>bool</cite></p></li>
 <li><p>allowedItems - None or list of itemKeys</p></li>
 <li><p>slot_type - <cite>string</cite> assigned by <code class="xref py py-func docutils literal notranslate"><span class="pre">ReadType.read_type()</span></code></p></li>
-<li><p>good_keys: <cite>set</cite> filled by <a class="reference internal" href="#main.ItemsTree.do_tree_backpropagation" title="main.ItemsTree.do_tree_backpropagation"><code class="xref py py-func docutils literal notranslate"><span class="pre">ItemsTree.do_tree_backpropagation()</span></code></a></p></li>
+<li><p>good_keys: <cite>set</cite> filled by <code class="xref py py-func docutils literal notranslate"><span class="pre">ItemsTree.do_tree_backpropagation()</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -362,7 +313,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="main.find_same_items">
-<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">find_same_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#main.ItemsTree" title="main.ItemsTree"><span class="pre">ItemsTree</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#main.find_same_items" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">find_same_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#main.ItemsTreeDS" title="main.ItemsTreeDS"><span class="pre">ItemsTreeDS</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#main.find_same_items" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -477,38 +428,32 @@
 <li><a class="reference internal" href="#main.Item.pretty_print"><code class="docutils literal notranslate"><span class="pre">Item.pretty_print()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#main.ItemsTree"><code class="docutils literal notranslate"><span class="pre">ItemsTree</span></code></a><ul>
-<li><a class="reference internal" href="#main.ItemsTree.add_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.add_item()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.counter"><code class="docutils literal notranslate"><span class="pre">ItemsTree.counter</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.df_price_check_avg"><code class="docutils literal notranslate"><span class="pre">ItemsTree.df_price_check_avg</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.do_tree_backpropagation"><code class="docutils literal notranslate"><span class="pre">ItemsTree.do_tree_backpropagation()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.do_tree_check"><code class="docutils literal notranslate"><span class="pre">ItemsTree.do_tree_check()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.dump_items"><code class="docutils literal notranslate"><span class="pre">ItemsTree.dump_items()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.dump_weapons"><code class="docutils literal notranslate"><span class="pre">ItemsTree.dump_weapons()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.euro"><code class="docutils literal notranslate"><span class="pre">ItemsTree.euro</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.find_best_preset"><code class="docutils literal notranslate"><span class="pre">ItemsTree.find_best_preset()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.gather_slots_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTree.gather_slots_dict()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.get_combination_for_each_slot"><code class="docutils literal notranslate"><span class="pre">ItemsTree.get_combination_for_each_slot()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.get_hashed_part"><code class="docutils literal notranslate"><span class="pre">ItemsTree.get_hashed_part()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.good_parts_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.good_parts_keys</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.items"><code class="docutils literal notranslate"><span class="pre">ItemsTree.items()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.items_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTree.items_dict</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.load_traders"><code class="docutils literal notranslate"><span class="pre">ItemsTree.load_traders()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.merge_item_subparts"><code class="docutils literal notranslate"><span class="pre">ItemsTree.merge_item_subparts()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.preset_slots_resolver"><code class="docutils literal notranslate"><span class="pre">ItemsTree.preset_slots_resolver()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.process_item"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_item()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.process_traders"><code class="docutils literal notranslate"><span class="pre">ItemsTree.process_traders()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.reevaluate_presets"><code class="docutils literal notranslate"><span class="pre">ItemsTree.reevaluate_presets()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.save_traders"><code class="docutils literal notranslate"><span class="pre">ItemsTree.save_traders()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.slots_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTree.slots_dict</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.sorted_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.sorted_keys()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.squash_item_colors"><code class="docutils literal notranslate"><span class="pre">ItemsTree.squash_item_colors()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.traders_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_keys</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.traders_levels_hashed"><code class="docutils literal notranslate"><span class="pre">ItemsTree.traders_levels_hashed</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.update_prices"><code class="docutils literal notranslate"><span class="pre">ItemsTree.update_prices()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.usd"><code class="docutils literal notranslate"><span class="pre">ItemsTree.usd</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.values"><code class="docutils literal notranslate"><span class="pre">ItemsTree.values()</span></code></a></li>
-<li><a class="reference internal" href="#main.ItemsTree.weapon_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTree.weapon_keys</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS</span></code></a><ul>
+<li><a class="reference internal" href="#main.ItemsTreeDS.add_item"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.add_item()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.counter"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.counter</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.do_tree_check"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.do_tree_check()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.dump_items"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.dump_items()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.dump_weapons"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.dump_weapons()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.euro"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.euro</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.find_best_preset"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.find_best_preset()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.get_hashed_part"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.get_hashed_part()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.get_items_combinations_for_each_slot"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.get_items_combinations_for_each_slot()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.good_parts_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.good_parts_keys</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.items"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.items()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.items_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.items_dict</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.load"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.load()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.merge_item_subparts"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.merge_item_subparts()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.preset_slots_resolver"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.preset_slots_resolver()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.process_item"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.process_item()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.recreate_data_structure"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.recreate_data_structure()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.reevaluate_presets"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.reevaluate_presets()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.save"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.save()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.slots_dict"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.slots_dict</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.sorted_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.sorted_keys()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.traders_levels_hashed"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.traders_levels_hashed</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.usd"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.usd</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.values"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.values()</span></code></a></li>
+<li><a class="reference internal" href="#main.ItemsTreeDS.weapon_keys"><code class="docutils literal notranslate"><span class="pre">ItemsTreeDS.weapon_keys</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#main.Slot"><code class="docutils literal notranslate"><span class="pre">Slot</span></code></a><ul>
@@ -587,7 +532,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Grzegorz Krug.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>
